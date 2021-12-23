@@ -5,3 +5,4 @@ zip -h > help.txt
 zip -h2 > help2.txt
 zip -L > license.txt
 zip -u ziphelp.zip *.txt
+hexdump -C ziphelp.zip > ziphelp.zip.hexdump.txt
