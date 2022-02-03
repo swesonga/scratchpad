@@ -12,13 +12,15 @@ fatal: Authentication failed for 'https://github.com/swesonga/jdk/'
 saint@ubuntuvm2-saint:~/repos/jdk$
 ```
 
-I created the PAT and used it as the password but authentication still failed.
-My only `git config --global -l` entries were related to my user name/email and git command aliases.
+To fix this error:
 
-## Solution
+1. Create the PAT as described at https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+2. Run the git command that needs authentication.
+3. Close the login window that pops up (on Windows).
+4. Enter your user name and then use the PAT as the password.
 
-Run this command after creating a PAT:
+These steps failed the first time I tried them. I noticed that my only `git config --global -l` entries were related to my user name/email and git command aliases. To address this error, I ran this command after creating a PAT:
 
 `git config --global credential.helper cache`
 
-Now retrying the push operation succeeds. Perhaps a review of [gitcredentials](https://git-scm.com/docs/gitcredentials) might be helpful.
+Now retrying the push operation succeeded. Perhaps a review of [gitcredentials](https://git-scm.com/docs/gitcredentials) might be helpful.
