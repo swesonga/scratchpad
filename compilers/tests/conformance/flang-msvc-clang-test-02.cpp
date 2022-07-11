@@ -45,10 +45,6 @@ public:
 	}
 };
 
-// https://github.com/llvm/llvm-project/blob/c0702ac07b8e206f424930ff0331151954fb821c/flang/include/flang/Evaluate/real.h#L33
-template <typename WORD, int PREC>
-class Real { };
-
 // https://github.com/llvm/llvm-project/blob/c0702ac07b8e206f424930ff0331151954fb821c/flang/include/flang/Evaluate/type.h#L47
 // Specific intrinsic types are represented by specializations of
 // this class template Type<CATEGORY, KIND>.
@@ -59,13 +55,6 @@ template <int KIND>
 class Type<TypeCategory::Integer, KIND> {
 public:
 	using Scalar = ::Integer<8 * KIND>;
-};
-
-// https://github.com/llvm/llvm-project/blob/c0702ac07b8e206f424930ff0331151954fb821c/flang/include/flang/Evaluate/type.h#L265
-template <int KIND>
-class Type<TypeCategory::Real, KIND> {
-public:
-	using Scalar = ::Real<::Integer<32>, 32>;
 };
 
 // https://github.com/llvm/llvm-project/blob/c0702ac07b8e206f424930ff0331151954fb821c/flang/include/flang/Common/visit.h#L69
@@ -102,8 +91,6 @@ static constexpr bool IsValidKindOfIntrinsicType(
 	switch (category) {
 	case TypeCategory::Integer:
 		return kind == 1 || kind == 2 || kind == 4 || kind == 8 || kind == 16;
-	case TypeCategory::Real:
-		return true;
 	default:
 		return false;
 	}
@@ -168,30 +155,6 @@ public:
 // https://github.com/llvm/llvm-project/blob/c0702ac07b8e206f424930ff0331151954fb821c/flang/include/flang/Evaluate/common.h#L229
 class FoldingContext { };
 
-// https://github.com/llvm/llvm-project/blob/c0702ac07b8e206f424930ff0331151954fb821c/flang/include/flang/Evaluate/type.h#L419
-using SomeReal = SomeKind<TypeCategory::Real>;
-
-// https://github.com/llvm/llvm-project/blob/c0702ac07b8e206f424930ff0331151954fb821c/flang/lib/Evaluate/fold-real.cpp#L46
-template <int KIND>
-Expr<Type<TypeCategory::Real, KIND>> FoldIntrinsicFunction(
-	FoldingContext& context,
-	FunctionRef<Type<TypeCategory::Real, KIND>>&& funcRef) {
-	using T = Type<TypeCategory::Real, KIND>;
-
-	// https://github.com/llvm/llvm-project/blob/c0702ac07b8e206f424930ff0331151954fb821c/flang/lib/Evaluate/fold-real.cpp#L193
-	const Expr<SomeReal>* sExpr{ nullptr };
-	return ::visit2(
-		[&](const auto& sVal) {
-			// using T = Type<TypeCategory::Real, KIND>; // Needed if MSVC is compiling with /permissive-
-
-			auto lambda = [&](const Scalar<T>& x) {};
-
-			Expr<T>* someExpr{ nullptr };
-			return *someExpr;
-		},
-		sExpr->u);
-}
-
 // https://github.com/llvm/llvm-project/blob/c0702ac07b8e206f424930ff0331151954fb821c/flang/include/flang/Evaluate/type.h#L418
 using SomeInteger = SomeKind<TypeCategory::Integer>;
 
@@ -238,8 +201,6 @@ Expr<Type<TypeCategory::Integer, KIND>> FoldIntrinsicFunction(
 int main()
 {
 	FoldingContext foldingContext;
-	FunctionRef<Type<TypeCategory::Real, 2>> funcRef;
-	auto someVal = FoldIntrinsicFunction<2>(foldingContext, std::move(funcRef));
 
 	FunctionRef<Type<TypeCategory::Integer, 2>> funcRefInteger;
 	auto someIntVal = FoldIntrinsicFunction(foldingContext, std::move(funcRefInteger));
