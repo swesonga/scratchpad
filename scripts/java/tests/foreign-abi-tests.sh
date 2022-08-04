@@ -84,13 +84,13 @@ echo "Missing tests: "
 for java_test in ${missing_tests[@]}
 do
     echo $java_test
-done
+done | sort
 
 echo -e "\nExisting tests: "
 for java_test in "${existing_tests[@]}"
 do
     echo $java_test
-done
+done | sort
 
 echo -e "\nCommits that deleted the missing files:"
 for java_test in ${missing_tests[@]}
