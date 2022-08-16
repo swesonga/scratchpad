@@ -19,8 +19,9 @@
 timestamp=`date +%Y-%m-%d_%H%M-%S`
 
 # TODO: make these configurable
-debug_level=release
+debug_level=slowdebug
 build_hsdis=1
+llvm_path=/cygdrive/d/dev/software/llvm-aarch64
 
 echo "Starting build at $timestamp"
 
@@ -36,6 +37,8 @@ make images CONF=$debug_level LOG=debug > $images_log
 echo "Building jtreg native binaries"
 make build-test-jdk-jtreg-native CONF=$debug_level LOG=debug > $jtreg_native_log
 
+built_jdk="build/windows-aarch64-server-${debug_level}/jdk/"
+
 if [ $build_hsdis -ne 0 ]; then
     hsdis_build_log="build/hsdis_build-${timestamp}.txt"
     hsdis_install_log="build/hsdis_install-${timestamp}.txt"
@@ -45,9 +48,9 @@ if [ $build_hsdis -ne 0 ]; then
 
     echo "Installing hsdis"
     make install-hsdis CONF=$debug_level LOG=debug > $hsdis_install_log
-fi
 
-built_jdk="build/windows-aarch64-server-${debug_level}/jdk"
+    cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
+fi
 
 echo "Zipping the JDK"
 cd $built_jdk
