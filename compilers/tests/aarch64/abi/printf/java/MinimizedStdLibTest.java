@@ -109,8 +109,9 @@ public class MinimizedStdLibTest {
     static int printf(String format, List<PrintfArg> args) throws Throwable {
         try (MemorySession session = MemorySession.openConfined()) {
             MemorySegment formatStr = session.allocateUtf8String(format);
-            return (int)specializedPrintf(args).invoke(formatStr,
-                    args.stream().map(a -> a.nativeValue(session)).toArray());
+            MethodHandle mh = specializedPrintf(args);
+            var finalArgs = args.stream().map(a -> a.nativeValue(session)).toArray();
+            return (int)mh.invoke(formatStr, finalArgs);
         }
     }
 
