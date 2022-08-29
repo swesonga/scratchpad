@@ -1,7 +1,9 @@
 /*
 * Test code for comparing how MSVC and Clang build LLVM Flang using the C++17 standard.
 * 
-* - MSVC 19.32.31332 for x64 fails when line 157 is commented out.
+* - MSVC 19.32.31332 for x64 fails when line 159 is commented out.
+*   cl /c /TP /std:c++17 /permissive- flang-msvc-clang-test.cpp
+*
 * - Apple clang 13.1.6 (clang-1316.0.21.2.5) target: arm64-apple-darwin21.2.0 compiles it just fine
 *   using "clang++ -std=c++17 flang-msvc-clang-test.cpp"
 * 
