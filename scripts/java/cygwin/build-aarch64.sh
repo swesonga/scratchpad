@@ -23,7 +23,7 @@ debug_level=slowdebug
 build_hsdis=1
 llvm_path=/cygdrive/d/dev/software/llvm-aarch64
 
-echo "Starting build at $timestamp"
+echo "Starting $debug_level build at $timestamp"
 
 images_log="build/abi-${timestamp}.txt"
 jtreg_native_log="build/test-${timestamp}.txt"
