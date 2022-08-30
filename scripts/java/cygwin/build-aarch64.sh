@@ -16,6 +16,12 @@
 #  time /cygdrive/d/dev/repos/scratchpad/scripts/java/cygwin/build-aarch64.sh
 #
 
+function log_message()
+{
+    current_time=`date +%Y-%m-%d_%H%M-%S`
+    echo "$current_time $1"
+}
+
 timestamp=`date +%Y-%m-%d_%H%M-%S`
 
 # TODO: make these configurable
@@ -23,7 +29,7 @@ debug_level=slowdebug
 build_hsdis=1
 llvm_path=/cygdrive/d/dev/software/llvm-aarch64
 
-echo "Starting $debug_level build at $timestamp"
+log_message "Starting $debug_level build with timestamp $timestamp"
 
 images_log="build/abi-${timestamp}.txt"
 jtreg_native_log="build/test-${timestamp}.txt"
@@ -31,10 +37,10 @@ jtreg_native_log="build/test-${timestamp}.txt"
 images_zip="jdk-${timestamp}.zip"
 test_zip="test-${timestamp}.zip"
 
-echo "Building images"
+log_message "Building images"
 make images CONF=$debug_level LOG=debug > $images_log
 
-echo "Building jtreg native binaries"
+log_message "Building jtreg native binaries"
 make build-test-jdk-jtreg-native CONF=$debug_level LOG=debug > $jtreg_native_log
 
 built_jdk="build/windows-aarch64-server-${debug_level}/jdk/"
@@ -43,23 +49,22 @@ if [ $build_hsdis -ne 0 ]; then
     hsdis_build_log="build/hsdis_build-${timestamp}.txt"
     hsdis_install_log="build/hsdis_install-${timestamp}.txt"
 
-    echo "Building hsdis"
+    log_message "Building hsdis"
     make build-hsdis CONF=$debug_level LOG=debug > $hsdis_build_log
 
-    echo "Installing hsdis"
+    log_message "Installing hsdis"
     make install-hsdis CONF=$debug_level LOG=debug > $hsdis_install_log
 
     cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
 fi
 
-echo "Zipping the JDK"
+log_message "Zipping the JDK"
 cd $built_jdk
 zip -qru $images_zip .
 mv $images_zip ..
 
-echo "Zipping support/test"
+log_message "Zipping support/test"
 cd ..
 zip -qru $test_zip support/test
 
-completion_time=`date +%Y-%m-%d_%H%M-%S`
-echo "Completing build at $completion_time"
+log_message "Build complete"
