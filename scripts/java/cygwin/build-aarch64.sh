@@ -28,14 +28,16 @@ timestamp=`date +%Y-%m-%d_%H%M-%S`
 debug_level=slowdebug
 build_hsdis=1
 llvm_path=/cygdrive/d/dev/software/llvm-aarch64
+log_root="build/mylogs"
 
 log_message "Starting $debug_level build with timestamp $timestamp"
+mkdir -p $log_root
 
-images_log="build/abi-${timestamp}.txt"
-jtreg_native_log="build/test-${timestamp}.txt"
+images_log="$log_root/images-${debug_level}-${timestamp}.txt"
+jtreg_native_log="$log_root/test-${debug_level}-${timestamp}.txt"
 
-images_zip="jdk-${timestamp}.zip"
-test_zip="test-${timestamp}.zip"
+images_zip="jdk-${debug_level}-${timestamp}.zip"
+test_zip="test-${debug_level}-${timestamp}.zip"
 
 log_message "Building images"
 make images CONF=$debug_level LOG=debug > $images_log
@@ -46,8 +48,8 @@ make build-test-jdk-jtreg-native CONF=$debug_level LOG=debug > $jtreg_native_log
 built_jdk="build/windows-aarch64-server-${debug_level}/jdk/"
 
 if [ $build_hsdis -ne 0 ]; then
-    hsdis_build_log="build/hsdis_build-${timestamp}.txt"
-    hsdis_install_log="build/hsdis_install-${timestamp}.txt"
+    hsdis_build_log="$log_root/hsdis_build-${timestamp}.txt"
+    hsdis_install_log="$log_root/hsdis_install-${timestamp}.txt"
 
     log_message "Building hsdis"
     make build-hsdis CONF=$debug_level LOG=debug > $hsdis_build_log
@@ -68,3 +70,12 @@ cd ..
 zip -qru $test_zip support/test
 
 log_message "Build complete"
+
+if [ $# -gt 0 ]
+then
+    log_message "Moving $images_zip to $1"
+    mv $images_zip $1
+
+    log_message "Moving $test_zip to $1"
+    mv $test_zip $1
+fi
