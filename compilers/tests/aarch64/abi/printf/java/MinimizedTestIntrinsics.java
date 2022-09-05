@@ -69,14 +69,23 @@ public class MinimizedTestIntrinsics {
     public static void main(String[] args) throws Throwable {
         var abiTests = tests();
         for (int i = 0; i < abiTests.size(); i++) {
-            testIntrinsics(abiTests.get(i));
+
+            try {
+                testIntrinsics(abiTests.get(i));
+            }
+            catch (Exception ex) {
+                System.out.println(ex);
+            }
         }
+
+        System.out.println("Test complete");
     }
 
     private static void assertEquals(Object found, Object expected) throws Exception {
-        if (found != expected) {
+        if ((found != expected) &&
+            ((found != null && !found.equals(expected)) ||
+            (expected != null && !expected.equals(found))))
             throw new Exception("Expected " + expected + " but found " + found);
-        }
     }
 
     private interface RunnableX {
