@@ -138,7 +138,7 @@ public class MinimizedTestVarArgs {
 
     public static void testVarArgs(int count, String fName, Ret ret, // ignore this stuff
                             List<ParamType> paramTypes, List<StructFieldType> fields) throws Throwable {
-        List<Arg> args = makeArgs(paramTypes, fields);
+        List<Arg> args = makeArgs(paramTypes, fields, fName);
 
         try (MemorySession session = MemorySession.openConfined()) {
             MethodHandle checker = MethodHandles.insertArguments(MH_CHECK, 2, args);
@@ -175,12 +175,12 @@ public class MinimizedTestVarArgs {
         }
     }
 
-    private static List<Arg> makeArgs(List<ParamType> paramTypes, List<StructFieldType> fields) throws Exception {
+    private static List<Arg> makeArgs(List<ParamType> paramTypes, List<StructFieldType> fields, String fName) throws Exception {
         List<Arg> args = new ArrayList<>();
         for (ParamType pType : paramTypes) {
             MemoryLayout layout = pType.layout(fields);
             List<Consumer<Object>> checks = new ArrayList<>();
-            Object arg = makeArg(layout, checks, true);
+            Object arg = makeArg(layout, checks, true, fName);
             Arg.NativeType type = Arg.NativeType.of(pType.type(fields));
             args.add(pType == ParamType.STRUCT
                 ? Arg.structArg(type, layout, arg, checks)
@@ -192,10 +192,10 @@ public class MinimizedTestVarArgs {
     //helper methods
 
     @SuppressWarnings("unchecked")
-    static Object makeArg(MemoryLayout layout, List<Consumer<Object>> checks, boolean check) throws Exception {
+    static Object makeArg(MemoryLayout layout, List<Consumer<Object>> checks, boolean check, String fName) throws Exception {
         if (layout instanceof GroupLayout) {
             MemorySegment segment = MemorySegment.allocateNative(layout, MemorySession.openImplicit());
-            initStruct(segment, (GroupLayout)layout, checks, check);
+            initStruct(segment, (GroupLayout)layout, checks, check, fName);
             return segment;
         } else if (isPointer(layout)) {
             MemorySegment segment = MemorySegment.allocateNative(1, MemorySession.openImplicit());
@@ -216,7 +216,7 @@ public class MinimizedTestVarArgs {
                         try {
                             assertEquals(o, 42);
                         } catch (Exception ex) {
-                            System.out.println(ex);
+                            System.err.println(fName + " " + ex);
                         }
                     });
                 }
@@ -227,7 +227,7 @@ public class MinimizedTestVarArgs {
                         try {
                             assertEquals(o, 12f);
                         } catch (Exception ex) {
-                            System.out.println(ex);
+                            System.err.println(fName + " " + ex);
                         }
                     });
                 }
@@ -238,7 +238,7 @@ public class MinimizedTestVarArgs {
                         try {
                             assertEquals(o, 24d);
                         } catch (Exception ex) {
-                            System.out.println(ex);
+                            System.err.println(fName + " " + ex);
                         }
                     });
                 }
@@ -249,12 +249,12 @@ public class MinimizedTestVarArgs {
         }
     }
 
-    static void initStruct(MemorySegment str, GroupLayout g, List<Consumer<Object>> checks, boolean check) throws Exception {
+    static void initStruct(MemorySegment str, GroupLayout g, List<Consumer<Object>> checks, boolean check, String fName) throws Exception {
         for (MemoryLayout l : g.memberLayouts()) {
             if (l.isPadding()) continue;
             VarHandle accessor = g.varHandle(MemoryLayout.PathElement.groupElement(l.name().get()));
             List<Consumer<Object>> fieldsCheck = new ArrayList<>();
-            Object value = makeArg(l, fieldsCheck, check);
+            Object value = makeArg(l, fieldsCheck, check, fName);
             //set value
             accessor.set(str, value);
             //add check
