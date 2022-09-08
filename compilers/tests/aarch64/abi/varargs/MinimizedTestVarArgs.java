@@ -125,12 +125,9 @@ public class MinimizedTestVarArgs {
             List<ParamType> paramTypes = (List<ParamType>)params[3];
             List<StructFieldType> fields = (List<StructFieldType>)params[4];
 
-            try {
-                testVarArgs(count, fName, ret, paramTypes, fields);
-            }
-            catch (Exception ex) {
-                System.out.println(ex);
-            }
+            System.out.print("Starting test " + i + " for " + fName + " ... ");
+            testVarArgs(count, fName, ret, paramTypes, fields);
+            System.out.println("Finished test " + i + " for " + fName);
         }
 
         System.out.println("Test complete");
