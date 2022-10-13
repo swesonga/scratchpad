@@ -30,12 +30,17 @@ function log_message()
 timestamp=`date +%Y-%m-%d_%H%M-%S`
 
 # TODO: make these configurable
-debug_level=slowdebug
+os=windows
 build_hsdis=1
+debug_level=slowdebug
 llvm_path=/cygdrive/d/dev/software/llvm-aarch64
 log_root="build/mylogs"
+# use "debug" for a more detailed log
+log_verbosity=cmdlines
+redirect_output=1
 
-log_message "Starting $debug_level build with timestamp $timestamp"
+
+log_message "Starting $debug_level build with timestamp $timestamp for OS type $OSTYPE"
 mkdir -p $log_root
 
 images_log="$log_root/images-${debug_level}-${timestamp}.txt"
@@ -45,22 +50,38 @@ images_zip="jdk-${debug_level}-${timestamp}.zip"
 test_zip="test-${debug_level}-${timestamp}.zip"
 
 log_message "Building images"
-make images CONF=$debug_level LOG=debug > $images_log
+if [ $redirect_output -ne 0 ]; then
+    make images CONF=$debug_level LOG=$log_verbosity > $images_log
+else
+    make images CONF=$debug_level LOG=$log_verbosity
+fi
 
 log_message "Building jtreg native binaries"
-make build-test-jdk-jtreg-native CONF=$debug_level LOG=debug > $jtreg_native_log
+if [ $redirect_output -ne 0 ]; then
+    make build-test-jdk-jtreg-native CONF=$debug_level LOG=$log_verbosity > $jtreg_native_log
+else
+    make build-test-jdk-jtreg-native CONF=$debug_level LOG=$log_verbosity
+fi
 
-built_jdk="build/windows-aarch64-server-${debug_level}/jdk/"
+built_jdk="build/${os}-aarch64-server-${debug_level}/jdk/"
 
 if [ $build_hsdis -ne 0 ]; then
     hsdis_build_log="$log_root/hsdis_build-${timestamp}.txt"
     hsdis_install_log="$log_root/hsdis_install-${timestamp}.txt"
 
     log_message "Building hsdis"
-    make build-hsdis CONF=$debug_level LOG=debug > $hsdis_build_log
+    if [ $redirect_output -ne 0 ]; then
+        make build-hsdis CONF=$debug_level LOG=$log_verbosity > $hsdis_build_log
+    else
+        make build-hsdis CONF=$debug_level LOG=$log_verbosity
+    fi
 
     log_message "Installing hsdis"
-    make install-hsdis CONF=$debug_level LOG=debug > $hsdis_install_log
+    if [ $redirect_output -ne 0 ]; then
+        make install-hsdis CONF=$debug_level LOG=$log_verbosity > $hsdis_install_log
+    else
+        make install-hsdis CONF=$debug_level LOG=$log_verbosity
+    fi
 
     cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
 fi
