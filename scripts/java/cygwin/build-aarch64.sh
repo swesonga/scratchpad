@@ -30,6 +30,7 @@ function log_message()
 timestamp=`date +%Y-%m-%d_%H%M-%S`
 
 # TODO: make these configurable
+arch=aarch64
 os=windows
 build_hsdis=1
 debug_level=slowdebug
@@ -39,15 +40,14 @@ log_root="build/mylogs"
 log_verbosity=cmdlines
 redirect_output=1
 
-
 log_message "Starting $debug_level build with timestamp $timestamp for OS type $OSTYPE"
 mkdir -p $log_root
 
 images_log="$log_root/images-${debug_level}-${timestamp}.txt"
 jtreg_native_log="$log_root/test-${debug_level}-${timestamp}.txt"
 
-images_zip="jdk-${debug_level}-${timestamp}.zip"
-test_zip="test-${debug_level}-${timestamp}.zip"
+images_zip="jdk-${arch}-${debug_level}-${timestamp}.zip"
+test_zip="test-${arch}-${debug_level}-${timestamp}.zip"
 
 log_message "Building images"
 if [ $redirect_output -ne 0 ]; then
@@ -63,7 +63,7 @@ else
     make build-test-jdk-jtreg-native CONF=$debug_level LOG=$log_verbosity
 fi
 
-built_jdk="build/${os}-aarch64-server-${debug_level}/jdk/"
+built_jdk="build/${os}-${arch}-server-${debug_level}/jdk/"
 
 if [ $build_hsdis -ne 0 ]; then
     hsdis_build_log="$log_root/hsdis_build-${timestamp}.txt"
@@ -86,12 +86,12 @@ if [ $build_hsdis -ne 0 ]; then
     cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
 fi
 
-log_message "Zipping the JDK"
+log_message "Zipping the JDK into $images_zip"
 cd $built_jdk
 zip -qru $images_zip .
 mv $images_zip ..
 
-log_message "Zipping support/test"
+log_message "Zipping support/test into $test_zip"
 cd ..
 zip -qru $test_zip support/test
 
