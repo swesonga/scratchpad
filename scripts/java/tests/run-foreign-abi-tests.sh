@@ -21,35 +21,43 @@ jdk_artifacts=$3
 
 cd $jdk_repo
 
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/callarranger/TestAarch64CallArranger.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/callarranger/TestSysVCallArranger.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/callarranger/TestWindowsCallArranger.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/stackwalk/TestStackWalk.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/StdLibTest.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestAdaptVarHandles.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestArrays.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestByteBuffer.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestFree.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestFunctionDescriptor.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestHandshake.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestIllegalLink.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestIntrinsics.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestLayoutEquality.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestLayoutPaths.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestLayouts.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestMemoryAccess.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestMemoryAlignment.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestMismatch.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestNative.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestNoForeignUnsafeOverride.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestNulls.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestReshape.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestSegments.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestSharedAccess.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestSlices.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestSpliterator.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestTypeAccess.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestUpcallHighArity.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestVarArgs.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/TestVarHandleCombinators.java
-$jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib test/jdk/java/foreign/valist/VaListTest.java
+declare -a java_foreign_tests=(
+ "test/jdk/java/foreign/callarranger/TestAarch64CallArranger.java"
+ "test/jdk/java/foreign/callarranger/TestSysVCallArranger.java"
+ "test/jdk/java/foreign/callarranger/TestWindowsCallArranger.java"
+ "test/jdk/java/foreign/stackwalk/TestStackWalk.java"
+ "test/jdk/java/foreign/StdLibTest.java"
+ "test/jdk/java/foreign/TestAdaptVarHandles.java"
+ "test/jdk/java/foreign/TestArrays.java"
+ "test/jdk/java/foreign/TestByteBuffer.java"
+ "test/jdk/java/foreign/TestFree.java"
+ "test/jdk/java/foreign/TestFunctionDescriptor.java"
+ "test/jdk/java/foreign/TestHandshake.java"
+ "test/jdk/java/foreign/TestIllegalLink.java"
+ "test/jdk/java/foreign/TestIntrinsics.java"
+ "test/jdk/java/foreign/TestLayoutEquality.java"
+ "test/jdk/java/foreign/TestLayoutPaths.java"
+ "test/jdk/java/foreign/TestLayouts.java"
+ "test/jdk/java/foreign/TestMemoryAccess.java"
+ "test/jdk/java/foreign/TestMemoryAlignment.java"
+ "test/jdk/java/foreign/TestMismatch.java"
+ "test/jdk/java/foreign/TestNative.java"
+ "test/jdk/java/foreign/TestNoForeignUnsafeOverride.java"
+ "test/jdk/java/foreign/TestNulls.java"
+ "test/jdk/java/foreign/TestReshape.java"
+ "test/jdk/java/foreign/TestSegments.java"
+ "test/jdk/java/foreign/TestSharedAccess.java"
+ "test/jdk/java/foreign/TestSlices.java"
+ "test/jdk/java/foreign/TestSpliterator.java"
+ "test/jdk/java/foreign/TestTypeAccess.java"
+ "test/jdk/java/foreign/TestUpcallHighArity.java"
+ "test/jdk/java/foreign/TestVarArgs.java"
+ "test/jdk/java/foreign/TestVarHandleCombinators.java"
+ "test/jdk/java/foreign/valist/VaListTest.java"
+)
+
+# https://stackoverflow.com/questions/8880603/loop-through-an-array-of-strings-in-bash
+for java_test in "${java_foreign_tests[@]}"
+do
+    $jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib $java_test
+done
