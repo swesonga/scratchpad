@@ -16,6 +16,11 @@
 #  time /cygdrive/d/dev/repos/scratchpad/scripts/java/cygwin/build-aarch64.sh
 #
 
+# Exit immediately if a command exits with a non-zero status. See
+# https://unix.stackexchange.com/questions/22726/how-to-conditionally-do-something-if-a-command-succeeded-or-failed
+# https://stackoverflow.com/questions/19622198/what-does-set-e-mean-in-a-bash-script
+set -e
+
 function log_message()
 {
     current_time=`date +%Y-%m-%d_%H%M-%S`
