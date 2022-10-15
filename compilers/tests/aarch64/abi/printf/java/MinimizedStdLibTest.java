@@ -45,7 +45,7 @@ public class MinimizedStdLibTest {
     public static final ValueLayout.OfAddress C_POINTER = ValueLayout.ADDRESS.withBitAlignment(64);
 
     final static Linker abi = Linker.nativeLinker();
-    final static Addressable printfAddr = abi.defaultLookup().lookup("printf").get();
+    final static MemorySegment printfAddr = abi.defaultLookup().find("printf").get();
     final static FunctionDescriptor printfBase = FunctionDescriptor.of(C_INT, C_POINTER);
 
     public static void main(String[] args) {
@@ -121,18 +121,18 @@ public class MinimizedStdLibTest {
         for (PrintfArg arg : args) {
             variadicLayouts.add(arg.layout);
         }
+        Linker.Option varargIndex = Linker.Option.firstVariadicArg(fd.argumentLayouts().size());
         MethodHandle mh = abi.downcallHandle(printfAddr,
-                fd.asVariadic(variadicLayouts.toArray(new MemoryLayout[args.size()])));
+                fd.appendArgumentLayouts(variadicLayouts.toArray(new MemoryLayout[args.size()])),
+                varargIndex);
         return mh.asSpreader(1, Object[].class, args.size());
     }
 
     enum PrintfArg implements BiConsumer<VaList.Builder, MemorySession> {
 
         INTEGRAL(int.class, C_INT, "%d", session -> 42, 42, VaList.Builder::addVarg),
-        STRING(MemoryAddress.class, C_POINTER, "%s", session -> {
-            var segment = MemorySegment.allocateNative(4, session);
-            segment.setUtf8String(0, "str");
-            return segment.address();
+        STRING(MemorySegment.class, C_POINTER, "%s", session -> {
+            return session.allocateUtf8String("str");
         }, "str", VaList.Builder::addVarg),
         CHAR(byte.class, C_CHAR, "%c", session -> (byte) 'h', 'h',
                 (builder, layout, value) -> builder.addVarg(C_INT, (int) value)),

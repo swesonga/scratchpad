@@ -33,14 +33,13 @@
 * - https://nipafx.dev/enable-preview-language-features/
 */
 
-import java.lang.foreign.Addressable;
 import java.lang.foreign.Linker;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.GroupLayout;
-import java.lang.foreign.MemoryAddress;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.MemorySession;
+import java.lang.foreign.PaddingLayout;
 import java.lang.foreign.SymbolLookup;
 import java.lang.foreign.ValueLayout;
 
@@ -77,17 +76,17 @@ public class MinimizedTestVarArgs {
         System.loadLibrary("VarArgs");
         try {
             MH_CHECK = MethodHandles.lookup().findStatic(MinimizedTestVarArgs.class, "check",
-                    MethodType.methodType(void.class, int.class, MemoryAddress.class, List.class));
+                    MethodType.methodType(void.class, int.class, MemorySegment.class, List.class));
         } catch (ReflectiveOperationException e) {
             throw new ExceptionInInitializerError(e);
         }
     }
 
-    public static Addressable findNativeOrThrow(String name) {
-        return SymbolLookup.loaderLookup().lookup(name).orElseThrow();
+    public static MemorySegment findNativeOrThrow(String name) {
+        return SymbolLookup.loaderLookup().find(name).orElseThrow();
     }
 
-    static final Addressable VARARGS_ADDR = findNativeOrThrow("varargs");
+    static final MemorySegment VARARGS_ADDR = findNativeOrThrow("varargs");
 
     private static void assertEquals(Object found, Object expected) throws Exception {
         if (found != expected &&
@@ -111,7 +110,7 @@ public class MinimizedTestVarArgs {
     }
 
     public static boolean isPointer(MemoryLayout layout) {
-        return layout instanceof ValueLayout valueLayout && valueLayout.carrier() == MemoryAddress.class;
+        return layout instanceof ValueLayout valueLayout && valueLayout.carrier() == MemorySegment.class;
     }
 
     public static void main(String[] args) throws Throwable {
@@ -126,6 +125,7 @@ public class MinimizedTestVarArgs {
             List<StructFieldType> fields = (List<StructFieldType>)params[4];
 
             System.out.print("Starting test " + i + " for " + fName + " ... ");
+            // if ("f0_V_S_FFF".equals(fName))
             testVarArgs(count, fName, ret, paramTypes, fields);
             System.out.println("Finished test " + i + " for " + fName);
         }
@@ -140,10 +140,10 @@ public class MinimizedTestVarArgs {
         try (MemorySession session = MemorySession.openConfined()) {
             MethodHandle checker = MethodHandles.insertArguments(MH_CHECK, 2, args);
             MemorySegment writeBack = LINKER.upcallStub(checker, FunctionDescriptor.ofVoid(C_INT, C_POINTER), session);
-            MemorySegment callInfo = MemorySegment.allocateNative(CallInfo.LAYOUT, session);
-            MemorySegment argIDs = MemorySegment.allocateNative(MemoryLayout.sequenceLayout(args.size(), C_INT), session);
+            MemorySegment callInfo = session.allocate(CallInfo.LAYOUT);
+            MemorySegment argIDs = session.allocate(MemoryLayout.sequenceLayout(args.size(), C_INT));
 
-            MemoryAddress callInfoPtr = callInfo.address();
+            MemorySegment callInfoPtr = callInfo;
 
             CallInfo.writeback(callInfo, writeBack);
             CallInfo.argIDs(callInfo, argIDs);
@@ -156,10 +156,11 @@ public class MinimizedTestVarArgs {
             argLayouts.add(C_POINTER); // call info
             argLayouts.add(C_INT); // size
 
-            FunctionDescriptor desc = FunctionDescriptor.ofVoid(argLayouts.toArray(MemoryLayout[]::new))
-                    .asVariadic(args.stream().map(a -> a.layout).toArray(MemoryLayout[]::new));
+            FunctionDescriptor baseDesc = FunctionDescriptor.ofVoid(argLayouts.toArray(MemoryLayout[]::new));
+            Linker.Option varargIndex = Linker.Option.firstVariadicArg(baseDesc.argumentLayouts().size());
+            FunctionDescriptor desc = baseDesc.appendArgumentLayouts(args.stream().map(a -> a.layout).toArray(MemoryLayout[]::new));
 
-            MethodHandle downcallHandle = LINKER.downcallHandle(VARARGS_ADDR, desc);
+            MethodHandle downcallHandle = LINKER.downcallHandle(VARARGS_ADDR, desc, varargIndex);
 
             List<Object> argValues = new ArrayList<>();
             argValues.add(callInfoPtr); // call info
@@ -186,26 +187,26 @@ public class MinimizedTestVarArgs {
         return args;
     }
 
-    //helper methods
+    //helper methods from CallGeneratorHelper
 
     @SuppressWarnings("unchecked")
     static Object makeArg(MemoryLayout layout, List<Consumer<Object>> checks, boolean check, String fName) throws Exception {
         if (layout instanceof GroupLayout) {
-            MemorySegment segment = MemorySegment.allocateNative(layout, MemorySession.openImplicit());
+            MemorySegment segment = MemorySegment.allocateNative(layout);
             initStruct(segment, (GroupLayout)layout, checks, check, fName);
             return segment;
         } else if (isPointer(layout)) {
-            MemorySegment segment = MemorySegment.allocateNative(1, MemorySession.openImplicit());
+            MemorySegment segment = MemorySegment.allocateNative(1L);
             if (check) {
                 checks.add(o -> {
                     try {
-                        assertEquals(o, segment.address());
+                        assertEquals(o, segment);
                     } catch (Throwable ex) {
                         throw new IllegalStateException(ex);
                     }
                 });
             }
-            return segment.address();
+            return segment;
         } else if (layout instanceof ValueLayout) {
             if (isIntegral(layout)) {
                 if (check) {
@@ -248,7 +249,7 @@ public class MinimizedTestVarArgs {
 
     static void initStruct(MemorySegment str, GroupLayout g, List<Consumer<Object>> checks, boolean check, String fName) throws Exception {
         for (MemoryLayout l : g.memberLayouts()) {
-            if (l.isPadding()) continue;
+            if (l instanceof PaddingLayout) continue;
             VarHandle accessor = g.varHandle(MemoryLayout.PathElement.groupElement(l.name().get()));
             List<Consumer<Object>> fieldsCheck = new ArrayList<>();
             Object value = makeArg(l, fieldsCheck, check, fName);
@@ -269,13 +270,13 @@ public class MinimizedTestVarArgs {
         }
     }
 
-    private static void check(int index, MemoryAddress ptr, List<Arg> args) throws Exception {
+    private static void check(int index, MemorySegment ptr, List<Arg> args) throws Exception {
         Arg varArg = args.get(index);
         MemoryLayout layout = varArg.layout;
         MethodHandle getter = varArg.getter;
         List<Consumer<Object>> checks = varArg.checks;
         try (MemorySession session = MemorySession.openConfined()) {
-            MemorySegment seg = MemorySegment.ofAddress(ptr, layout.byteSize(), session);
+            MemorySegment seg = MemorySegment.ofAddress(ptr.address(), layout.byteSize(), session);
             Object obj = getter.invoke(seg);
             checks.forEach(check -> check.accept(obj));
         } catch (Throwable e) {
@@ -291,11 +292,11 @@ public class MinimizedTestVarArgs {
         static final VarHandle VH_writeback = LAYOUT.varHandle(groupElement("writeback"));
         static final VarHandle VH_argIDs = LAYOUT.varHandle(groupElement("argIDs"));
 
-        static void writeback(MemorySegment seg, Addressable addr) {
-            VH_writeback.set(seg, addr.address());
+        static void writeback(MemorySegment seg, MemorySegment addr) {
+            VH_writeback.set(seg, addr);
         }
-        static void argIDs(MemorySegment seg, Addressable addr) {
-            VH_argIDs.set(seg, addr.address());
+        static void argIDs(MemorySegment seg, MemorySegment addr) {
+            VH_argIDs.set(seg, addr);
         }
     }
 
