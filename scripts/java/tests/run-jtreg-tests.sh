@@ -39,6 +39,10 @@ declare -a java_tests=(
  "test/hotspot/jtreg/compiler/loopopts/superword/TestPeeledReductionNode.java"
  "test/hotspot/jtreg/compiler/rangechecks/TestRangeCheckCmpUUnderflow.java"
  "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large002/TestDescription.java"
+ "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large002/TestDescription.java"
+ "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large003/TestDescription.java"
+ "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large004/TestDescription.java"
+ "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large005/TestDescription.java"
  "test/jdk/java/nio/file/Files/probeContentType/Basic.java"
  "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/QuoVadisCA.java"
  "test/langtools/tools/javac/6257443/T6257443.java"
@@ -51,14 +55,17 @@ declare -a java_tests=(
 if [ $# -lt 2 ]
 then
     echo "Usage:   run-jtreg-tests.sh openjdk-repo-path test-jdk-path jtreg-jar-path"
-    echo "Example: run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/jdk-17.0.5+8 /d/java/binaries/jtreg7/lib/jtreg.jar"
-    echo "Example: run-jtreg-tests.sh /c/java/ms/openjdk-jdk11u /c/java/binaries/jdk/jdk-11.0.17+8 /c/java/binaries/jtreg-6.1+1/lib/jtreg.jar"
+    echo "Example: run-jtreg-tests.sh /c/java/ms/openjdk-jdk11u /c/java/binaries/jdk/x64/jdk-11.0.17+8 /c/java/binaries/jtreg-6.1+1/lib/jtreg.jar"
+    echo "Example: run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x64/jdk-17.0.5+8 /d/java/binaries/jtreg7/lib/jtreg.jar"
+    echo "Example: run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x86/jdk-17.0.5+8 /d/java/binaries/jtreg7/lib/jtreg.jar"
     exit
 fi
 
 openjdk_repo_path=$1
 test_jdk=$2
 jtreg_jar_path=$3
+
+$test_jdk/bin/java -version
 
 cd $openjdk_repo_path
 
