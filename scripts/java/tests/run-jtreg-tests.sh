@@ -52,6 +52,7 @@ if [ $# -lt 2 ]
 then
     echo "Usage:   run-jtreg-tests.sh openjdk-repo-path test-jdk-path jtreg-jar-path"
     echo "Example: run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/jdk-17.0.5+8 /d/java/binaries/jtreg7/lib/jtreg.jar"
+    echo "Example: run-jtreg-tests.sh /c/java/ms/openjdk-jdk11u /c/java/binaries/jdk/jdk-11.0.17+8 /c/java/binaries/jtreg-6.1+1/lib/jtreg.jar"
     exit
 fi
 
@@ -69,7 +70,10 @@ do
    if test -f $java_test ; then
        echo -e "\n\n\n---- Running $java_test ----"
 
-       $test_jdk/bin/java -Xmx512m -jar $jtreg_jar_path -agentvm -ignore:quiet -automatic -xml -vmoption:-Xmx512m -timeoutFactor:4 -concurrency:1 -testjdk:$test_jdk -verbose:fail,error,summary $java_test
+       command="$test_jdk/bin/java -Xmx512m -jar $jtreg_jar_path -agentvm -ignore:quiet -automatic -xml -vmoption:-Xmx512m -timeoutFactor:4 -concurrency:1 -testjdk:$test_jdk -verbose:fail,error,summary $java_test"
+
+       echo -e "Executing: $command"
+       $command
    else
        missing_tests+=($java_test)
    fi
