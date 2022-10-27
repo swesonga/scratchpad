@@ -23,7 +23,7 @@
 #
 # Run this script as follows:
 #
-#  time /cygdrive/d/dev/repos/scratchpad/scripts/java/cygwin/build-aarch64.sh /cygdrive/c/shared/java/builds/
+#  time /cygdrive/d/dev/repos/scratchpad/scripts/java/cygwin/build-jdk.sh /cygdrive/c/shared/java/builds/
 #
 
 # Exit immediately if a command exits with a non-zero status. See
@@ -33,7 +33,7 @@ set -e
 
 function log_message()
 {
-    current_time=`date +%Y-%m-%d_%H%M-%S`
+    current_time=`date +%Y-%m-%d%t%H:%M:%S`
     echo "$current_time $1"
 }
 
