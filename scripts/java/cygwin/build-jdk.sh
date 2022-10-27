@@ -57,6 +57,7 @@ mkdir -p $log_root
 
 images_log="$log_root/images-${build_conf}-${timestamp}.txt"
 jtreg_native_log="$log_root/test-${build_conf}-${timestamp}.txt"
+test_image_log="$log_root/test-image-${build_conf}-${timestamp}.txt"
 
 images_zip="jdk-${build_conf}-${timestamp}.zip"
 test_zip="test-${build_conf}-${timestamp}.zip"
@@ -73,6 +74,13 @@ if [ $redirect_output -ne 0 ]; then
     make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity > $jtreg_native_log
 else
     make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity
+fi
+
+log_message "Building test image"
+if [ $redirect_output -ne 0 ]; then
+    make test-image CONF=$build_conf LOG=$log_verbosity > $test_image_log
+else
+    make test-image CONF=$build_conf LOG=$log_verbosity
 fi
 
 built_jdk="build/${build_conf}/jdk/"
