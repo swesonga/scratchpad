@@ -13,13 +13,13 @@
 #  bash configure --with-boot-jdk=/cygdrive/d/dev/Software/java/jdk-19+36  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-x86_64/
 #
 # aarch64 Debug:
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/dev/repos/java/infra/binaries/jdk-18.0.2
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/dev/repos/java/infra/binaries/jdk-18.0.2  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-aarch64/
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/dev/repos/java/forks/jdk/build/windows-x86_64-server-slowdebug/jdk  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+34
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+34  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/forks/jdk/build/windows-x86_64-server-slowdebug/jdk  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-aarch64/
 #
 # aarch64 Release:
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/d/dev/repos/java/infra/binaries/jdk-18.0.2
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/d/dev/repos/java/infra/binaries/jdk-18.0.2  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+34
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+34  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-aarch64/
 #
 # Run this script as follows:
 #
