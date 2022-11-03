@@ -72,16 +72,16 @@ float variadic_func_S_F(int flag, ...)
     return floats.p0;
 }
 
-void call_S_F()
+float call_S_F()
 {
     struct S_F struct_float_1 = { 1234.56789012345 };
-    func_S_F(0xCAFE0123, struct_float_1);
+    return func_S_F(0xCAFE0123, struct_float_1);
 }
 
-void call_variadic_S_F()
+float call_variadic_S_F()
 {
     struct S_F struct_float_1 = { 1234.56789012345 };
-    variadic_func_S_F(0xCAFE0123, struct_float_1);
+    return variadic_func_S_F(0xCAFE0123, struct_float_1);
 }
 
 /*
@@ -102,16 +102,16 @@ float variadic_func_S_FF(int flag, ...)
     return floats.p0 + floats.p1;
 }
 
-void call_S_FF()
+float call_S_FF()
 {
     struct S_FF struct_float_2 = { 1234.56789012345, 240.0 };
-    func_S_FF(0xCAFE1234, struct_float_2);
+    return func_S_FF(0xCAFE1234, struct_float_2);
 }
 
-void call_variadic_S_FF()
+float call_variadic_S_FF()
 {
     struct S_FF struct_float_2 = { 1234.56789012345, 240.0 };
-    variadic_func_S_FF(0xCAFE1234, struct_float_2);
+    return variadic_func_S_FF(0xCAFE1234, struct_float_2);
 }
 
 /*
@@ -132,16 +132,16 @@ float variadic_func_S_FFF(int flag, ...)
     return floats.p0 + floats.p1 + floats.p2;
 }
 
-void call_S_FFF()
+float call_S_FFF()
 {
     struct S_FFF struct_float_3 = { 1234.56789012345, 2400.0, 1200.0 };
-    func_S_FFF(0xCAFE2345, struct_float_3);
+    return func_S_FFF(0xCAFE2345, struct_float_3);
 }
 
-void call_variadic_S_FFF()
+float call_variadic_S_FFF()
 {
     struct S_FFF struct_float_3 = { 1234.56789012345, 2400.0, 1200.0 };
-    variadic_func_S_FFF(0xCAFE2345, struct_float_3);
+    return variadic_func_S_FFF(0xCAFE2345, struct_float_3);
 }
 
 /*
@@ -162,16 +162,16 @@ float variadic_func_S_FFFF(int flag, ...)
     return floats.p0 + floats.p1 + floats.p2 + floats.p3;
 }
 
-void call_S_FFFF()
+float call_S_FFFF()
 {
     struct S_FFFF struct_float_4 = { 1234.56789012345, 24000.0, 12000.0, 3.14159265358979323846 };
-    func_S_FFFF(0xCAFE4567, struct_float_4);
+    return func_S_FFFF(0xCAFE4567, struct_float_4);
 }
 
-void call_variadic_S_FFFF()
+float call_variadic_S_FFFF()
 {
     struct S_FFFF struct_float_4 = { 1234.56789012345, 24000.0, 12000.0, 3.14159265358979323846 };
-    variadic_func_S_FFFF(0xCAFE4567, struct_float_4);
+    return variadic_func_S_FFFF(0xCAFE4567, struct_float_4);
 }
 
 /*
@@ -192,16 +192,16 @@ double variadic_func_S_D(int flag, ...)
     return doubles.p0;
 }
 
-void call_S_D()
+double call_S_D()
 {
     struct S_D struct_double_1 = { 1234.56789012345 };
-    func_S_D(0xCAFE5678, struct_double_1);
+    return func_S_D(0xCAFE5678, struct_double_1);
 }
 
-void call_variadic_S_D()
+double call_variadic_S_D()
 {
     struct S_D struct_double_1 = { 1234.56789012345 };
-    variadic_func_S_D(0xCAFE5678, struct_double_1);
+    return variadic_func_S_D(0xCAFE5678, struct_double_1);
 }
 
 /*
@@ -222,16 +222,16 @@ double variadic_func_S_DD(int flag, ...)
     return doubles.p0 + doubles.p1;
 }
 
-void call_S_DD()
+double call_S_DD()
 {
     struct S_DD struct_double_2 = { 1234.56789012345, 240.0 };
-    func_S_DD(0xCAFE6789, struct_double_2);
+    return func_S_DD(0xCAFE6789, struct_double_2);
 }
 
-void call_variadic_S_DD()
+double call_variadic_S_DD()
 {
     struct S_DD struct_double_2 = { 1234.56789012345, 240.0 };
-    variadic_func_S_DD(0xCAFE6789, struct_double_2);
+    return variadic_func_S_DD(0xCAFE6789, struct_double_2);
 }
 
 /*
@@ -252,16 +252,16 @@ double variadic_func_S_DDD(int flag, ...)
     return doubles.p0 + doubles.p1 + doubles.p2;
 }
 
-void call_S_DDD()
+double call_S_DDD()
 {
     struct S_DDD struct_double_3 = { 1234.56789012345, 2400.0, 1200.0 };
-    func_S_DDD(0xCAFE7890, struct_double_3);
+    return func_S_DDD(0xCAFE7890, struct_double_3);
 }
 
-void call_variadic_S_DDD()
+double call_variadic_S_DDD()
 {
     struct S_DDD struct_double_3 = { 1234.56789012345, 2400.0, 1200.0 };
-    variadic_func_S_DDD(0xCAFE7890, struct_double_3);
+    return variadic_func_S_DDD(0xCAFE7890, struct_double_3);
 }
 
 /*
@@ -282,16 +282,16 @@ double variadic_func_S_DDDD(int flag, ...)
     return doubles.p0 + doubles.p1 + doubles.p2 + doubles.p3;
 }
 
-void call_S_DDDD()
+double call_S_DDDD()
 {
     struct S_DDDD struct_double_4 = { 1234.56789012345, 24000.0, 12000.0, 3.14159265358979323846 };
-    func_S_DDDD(0xCAFE890A, struct_double_4);
+    return func_S_DDDD(0xCAFE890A, struct_double_4);
 }
 
-void call_variadic_S_DDDD()
+double call_variadic_S_DDDD()
 {
     struct S_DDDD struct_double_4 = { 1234.56789012345, 24000.0, 12000.0, 3.14159265358979323846 };
-    variadic_func_S_DDDD(0xCAFE890A, struct_double_4);
+    return variadic_func_S_DDDD(0xCAFE890A, struct_double_4);
 }
 
 int main()
