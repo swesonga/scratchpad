@@ -294,6 +294,82 @@ double call_variadic_S_DDDD()
     return variadic_func_S_DDDD(0xCAFE890A, struct_double_4);
 }
 
+float sum_struct_hfa_floats(int num_floats, ...)
+{
+    va_list argptr;
+    va_start(argptr, num_floats);
+
+    float sum = 0.0f;
+
+    switch (num_floats)
+    {
+        case 1: {
+            struct S_F floats = va_arg(argptr, struct S_F);
+            sum = floats.p0;
+            break;
+        }
+        case 2: {
+            struct S_FF floats = va_arg(argptr, struct S_FF);
+            sum = floats.p0 + floats.p1;
+            break;
+        }
+        case 3: {
+            struct S_FFF floats = va_arg(argptr, struct S_FFF);
+            sum = floats.p0 + floats.p1 + floats.p2;
+            break;
+        }
+        case 4: {
+            struct S_FFFF floats = va_arg(argptr, struct S_FFFF);
+            sum = floats.p0 + floats.p1 + floats.p2 + floats.p3;
+            break;
+        }
+    }
+
+    va_end(argptr);
+    return sum;
+}
+
+double sum_struct_hfa_doubles(int num_doubles, ...)
+{
+    va_list argptr;
+    va_start(argptr, num_doubles);
+
+    double sum = 0.0f;
+
+    switch (num_doubles)
+    {
+        case 1: {
+            struct S_D doubles = va_arg(argptr, struct S_D);
+            sum = doubles.p0;
+            break;
+        }
+        case 2: {
+            struct S_DD doubles = va_arg(argptr, struct S_DD);
+            sum = doubles.p0 + doubles.p1;
+            break;
+        }
+        case 3: {
+            struct S_DDD doubles = va_arg(argptr, struct S_DDD);
+            sum = doubles.p0 + doubles.p1 + doubles.p2;
+            break;
+        }
+        case 4: {
+            struct S_DDDD doubles = va_arg(argptr, struct S_DDDD);
+            sum = doubles.p0 + doubles.p1 + doubles.p2 + doubles.p3;
+            break;
+        }
+    }
+
+    va_end(argptr);
+    return sum;
+}
+
 int main()
 {
+    /*
+    struct S_DDDD struct_double_4 = { 1.2, 3.4, 4.5, 5.6 };
+    float sum1 = func_S_DDDD(0xCAFE890A, struct_double_4);
+    float sum2 = sum_struct_hfa_doubles(4, struct_double_4);
+    printf("sum1 = %f\nsum2 = %f\n", sum1, sum2);
+    */
 }
