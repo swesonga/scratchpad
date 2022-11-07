@@ -364,6 +364,43 @@ double sum_struct_hfa_doubles(int num_doubles, ...)
     return sum;
 }
 
+float sum_spilled_struct_hfa_floats(int num_floats,
+    int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ...)
+{
+    va_list argptr;
+    va_start(argptr, arg6);
+
+    int sum_of_ints = arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    float sum = sum_of_ints;
+
+    switch (num_floats)
+    {
+        case 1: {
+            struct S_F floats = va_arg(argptr, struct S_F);
+            sum += floats.p0;
+            break;
+        }
+        case 2: {
+            struct S_FF floats = va_arg(argptr, struct S_FF);
+            sum += floats.p0 + floats.p1;
+            break;
+        }
+        case 3: {
+            struct S_FFF floats = va_arg(argptr, struct S_FFF);
+            sum += floats.p0 + floats.p1 + floats.p2;
+            break;
+        }
+        case 4: {
+            struct S_FFFF floats = va_arg(argptr, struct S_FFFF);
+            sum += floats.p0 + floats.p1 + floats.p2 + floats.p3;
+            break;
+        }
+    }
+
+    va_end(argptr);
+    return sum;
+}
+
 int main()
 {
     /*
@@ -372,4 +409,8 @@ int main()
     float sum2 = sum_struct_hfa_doubles(4, struct_double_4);
     printf("sum1 = %f\nsum2 = %f\n", sum1, sum2);
     */
+    struct S_FFFF struct_f4 = { 1.2f, 3.4f, 4.5f, 5.6f };
+    float sum1 = func_S_FFFF(0xCAFE890A, struct_f4);
+    float sum2 = sum_spilled_struct_hfa_floats(4, 2, 3, 4, 5, 6, 7, struct_f4);
+    printf("sum1 = %f\nsum2 = %f\n", sum1, sum2);
 }
