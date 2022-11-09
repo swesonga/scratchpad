@@ -401,6 +401,38 @@ float sum_spilled_struct_hfa_floats(int num_floats,
     return sum;
 }
 
+float sum_spilled_struct_hfa_1float_nonvariadic(float arg0,
+    float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, struct S_F floats)
+{
+    float sum = arg0 + arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    sum += floats.p0;
+    return sum;
+}
+
+float sum_spilled_struct_hfa_2floats_nonvariadic(float arg0,
+    float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, struct S_FF floats)
+{
+    float sum = arg0 + arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    sum += floats.p0 + floats.p1;
+    return sum;
+}
+
+float sum_spilled_struct_hfa_3floats_nonvariadic(float arg0,
+    float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, struct S_FFF floats)
+{
+    float sum = arg0 + arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    sum += floats.p0 + floats.p1 + floats.p2;
+    return sum;
+}
+
+float sum_spilled_struct_hfa_4floats_nonvariadic(float arg0,
+    float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, struct S_FFFF floats)
+{
+    float sum = arg0 + arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    sum += floats.p0 + floats.p1 + floats.p2 + floats.p3;
+    return sum;
+}
+
 int main()
 {
     /*

@@ -332,6 +332,58 @@ printf:
   000000000000004C: A8C653F3  ldp         x19,x20,[sp],#0x60
   0000000000000050: D65F03C0  ret
 
+sum_spilled_struct_hfa_1float_nonvariadic:
+  0000000000000000: 1E212810  fadd        s16,s0,s1
+  0000000000000004: 1E222A11  fadd        s17,s16,s2
+  0000000000000008: 1E232A32  fadd        s18,s17,s3
+  000000000000000C: 1E242A53  fadd        s19,s18,s4
+  0000000000000010: 1E252A74  fadd        s20,s19,s5
+  0000000000000014: 1E262A95  fadd        s21,s20,s6
+  0000000000000018: 1E272AA0  fadd        s0,s21,s7
+  000000000000001C: D65F03C0  ret
+
+sum_spilled_struct_hfa_2floats_nonvariadic:
+  0000000000000000: 1E212810  fadd        s16,s0,s1
+  0000000000000004: 2D405BF5  ldp         s21,s22,[sp]
+  0000000000000008: 1E352AD5  fadd        s21,s22,s21
+  000000000000000C: 1E222A11  fadd        s17,s16,s2
+  0000000000000010: 1E232A32  fadd        s18,s17,s3
+  0000000000000014: 1E242A53  fadd        s19,s18,s4
+  0000000000000018: 1E252A74  fadd        s20,s19,s5
+  000000000000001C: 1E262A97  fadd        s23,s20,s6
+  0000000000000020: 1E352AE0  fadd        s0,s23,s21
+  0000000000000024: D65F03C0  ret
+
+sum_spilled_struct_hfa_3floats_nonvariadic:
+  0000000000000000: 1E212810  fadd        s16,s0,s1
+  0000000000000004: 2D405BF5  ldp         s21,s22,[sp]
+  0000000000000008: 1E352AD7  fadd        s23,s22,s21
+  000000000000000C: BD400BF6  ldr         s22,[sp,#8]
+  0000000000000010: 1E222A11  fadd        s17,s16,s2
+  0000000000000014: 1E362AF5  fadd        s21,s23,s22
+  0000000000000018: 1E232A32  fadd        s18,s17,s3
+  000000000000001C: 1E242A53  fadd        s19,s18,s4
+  0000000000000020: 1E252A74  fadd        s20,s19,s5
+  0000000000000024: 1E262A98  fadd        s24,s20,s6
+  0000000000000028: 1E352B00  fadd        s0,s24,s21
+  000000000000002C: D65F03C0  ret
+
+sum_spilled_struct_hfa_4floats_nonvariadic:
+  0000000000000000: 1E212810  fadd        s16,s0,s1
+  0000000000000004: 2D405BF5  ldp         s21,s22,[sp]
+  0000000000000008: 1E352AD7  fadd        s23,s22,s21
+  000000000000000C: BD400BF6  ldr         s22,[sp,#8]
+  0000000000000010: 1E222A11  fadd        s17,s16,s2
+  0000000000000014: 1E362AF8  fadd        s24,s23,s22
+  0000000000000018: BD400FF7  ldr         s23,[sp,#0xC]
+  000000000000001C: 1E232A32  fadd        s18,s17,s3
+  0000000000000020: 1E372B15  fadd        s21,s24,s23
+  0000000000000024: 1E242A53  fadd        s19,s18,s4
+  0000000000000028: 1E252A74  fadd        s20,s19,s5
+  000000000000002C: 1E262A99  fadd        s25,s20,s6
+  0000000000000030: 1E352B20  fadd        s0,s25,s21
+  0000000000000034: D65F03C0  ret
+
 sum_spilled_struct_hfa_floats:
   0000000000000000: D10043FF  sub         sp,sp,#0x10
   0000000000000004: F90007E7  str         x7,[sp,#8]
@@ -647,10 +699,10 @@ variadic_func_S_FFFF:
 
   Summary
 
-         268 .chks64
+         288 .chks64
           A8 .debug$S
           2F .drectve
           98 .pdata
           15 .rdata
-         7E8 .text$mn
+         898 .text$mn
           B4 .xdata
