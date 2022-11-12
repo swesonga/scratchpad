@@ -26,12 +26,16 @@
 * Code for investigating MSVC ARM64 ABI code generation.
 * Derived from https://github.com/openjdk/jdk/blob/18cd16d2eae2ee624827eb86621f3a4ffd98fe8c/test/jdk/java/foreign/libVarArgs.c
 *
-*   Compile (unoptimized):
+* Set up Visual Studio build command prompt by running:
+*
+*   "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsamd64_arm64.bat"
+*
+*   To compile (unoptimized):
 *       cl /c hfa.c
 *       dumpbin /disasm /out:hfa.asm hfa.obj
 *       dumpbin /all /out:hfa.txt hfa.obj
 *
-*   Compile (optimized):
+*   To compile (optimized):
 *       cl /c /O2 /Fo"hfa-optimized.obj" hfa.c
 *       dumpbin /disasm /out:hfa-optimized.asm hfa-optimized.obj
 *       dumpbin /all /out:hfa-optimized.txt hfa-optimized.obj
@@ -53,6 +57,11 @@ struct S_D { double p0; };
 struct S_DD { double p0; double p1; };
 struct S_DDD { double p0; double p1; double p2; };
 struct S_DDDD { double p0; double p1; double p2; double p3; };
+
+struct S_I { int p0; };
+struct S_II { int p0; int p1; };
+struct S_III { int p0; int p1; int p2; };
+struct S_IIII { int p0; int p1; int p2; int p3; };
 
 /*
 * Struct with 1 float
@@ -398,6 +407,101 @@ float sum_spilled_struct_hfa_floats(int num_floats,
     }
 
     va_end(argptr);
+    return sum;
+}
+
+double sum_spilled_struct_hfa_doubles(int num_doubles,
+    int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ...)
+{
+    va_list argptr;
+    va_start(argptr, arg6);
+
+    int sum_of_ints = arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    double sum = sum_of_ints;
+
+    switch (num_doubles)
+    {
+        case 1: {
+            struct S_D doubles = va_arg(argptr, struct S_D);
+            sum += doubles.p0;
+            break;
+        }
+        case 2: {
+            struct S_DD doubles = va_arg(argptr, struct S_DD);
+            sum += doubles.p0 + doubles.p1;
+            break;
+        }
+    }
+
+    va_end(argptr);
+    return sum;
+}
+
+int sum_spilled_struct_ints(int num_ints,
+    int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ...)
+{
+    va_list argptr;
+    va_start(argptr, arg6);
+
+    int sum = arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+
+    switch (num_ints)
+    {
+        case 1: {
+            struct S_I data = va_arg(argptr, struct S_I);
+            sum += data.p0;
+            break;
+        }
+        case 2: {
+            struct S_II data = va_arg(argptr, struct S_II);
+            sum += data.p0 + data.p1;
+            break;
+        }
+        case 3: {
+            struct S_III data = va_arg(argptr, struct S_III);
+            sum += data.p0 + data.p1 + data.p2;
+            break;
+        }
+        case 4: {
+            struct S_IIII data = va_arg(argptr, struct S_IIII);
+            sum += data.p0 + data.p1 + data.p2 + data.p3;
+            break;
+        }
+    }
+
+    va_end(argptr);
+    return sum;
+}
+
+int sum_spilled_struct_1int_nonvariadic(int arg0,
+    int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, struct S_I data)
+{
+    int sum = arg0 + arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    sum += data.p0;
+    return sum;
+}
+
+int sum_spilled_struct_2ints_nonvariadic(int arg0,
+    int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, struct S_II data)
+{
+    int sum = arg0 + arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    sum += data.p0 + data.p1;
+    return sum;
+}
+
+int sum_spilled_struct_3ints_nonvariadic(int arg0,
+    int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, struct S_III data)
+{
+    int sum = arg0 + arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    sum += data.p0 + data.p1 + data.p2;
+    return sum;
+}
+
+int sum_spilled_struct_4ints_nonvariadic(int arg0,
+    int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, struct S_IIII data)
+{
+    int sum = arg0 + arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    sum += data.p0 + data.p1 + data.p2 + data.p3;
     return sum;
 }
 

@@ -6,9 +6,9 @@ File Type: COFF OBJECT
 FILE HEADER VALUES
             AA64 machine (ARM64)
                D number of sections
-        636A9E17 time date stamp Tue Nov  8 11:21:11 2022
-            1D1A file pointer to symbol table
-              F7 number of symbols
+        636EC2F1 time date stamp Fri Nov 11 14:47:29 2022
+            2368 file pointer to symbol table
+             116 number of symbols
                0 size of optional header
                0 characteristics
 
@@ -69,11 +69,11 @@ SECTION HEADER #3
 .text$mn name
        0 physical address
        0 virtual address
-    13D0 size of raw data
-     2E7 file pointer to raw data (000002E7 to 000016B6)
-    16B7 file pointer to relocation table
+    1960 size of raw data
+     2E7 file pointer to raw data (000002E7 to 00001C46)
+    1C47 file pointer to relocation table
        0 file pointer to line numbers
-      15 number of relocations
+      17 number of relocations
        0 number of line numbers
 60400020 flags
          Code
@@ -353,51 +353,140 @@ RAW DATA #3
   000010D0: F0 67 40 BD 31 2A 30 1E F0 03 40 BD 10 2A 31 1E  ðg@½1*0.ð.@½.*1.
   000010E0: F0 03 00 BD 08 00 80 D2 E8 07 00 F9 E0 03 40 BD  ð..½...Òè..ùà.@½
   000010F0: FF 43 02 91 FF 43 00 91 C0 03 5F D6 00 00 00 00  ÿC..ÿC..À._Ö....
-  00001100: FF C3 00 D1 E0 07 00 BD E1 0B 00 BD E2 0F 00 BD  ÿÃ.Ñà..½á..½â..½
-  00001110: E3 13 00 BD E4 17 00 BD E5 1B 00 BD E6 1F 00 BD  ã..½ä..½å..½æ..½
-  00001120: E7 23 00 BD F1 07 40 BD F0 0B 40 BD 31 2A 30 1E  ç#.½ñ.@½ð.@½1*0.
-  00001130: F0 0F 40 BD 31 2A 30 1E F0 13 40 BD 31 2A 30 1E  ð.@½1*0.ð.@½1*0.
-  00001140: F0 17 40 BD 31 2A 30 1E F0 1B 40 BD 31 2A 30 1E  ð.@½1*0.ð.@½1*0.
-  00001150: F0 1F 40 BD 30 2A 30 1E F0 03 00 BD F1 03 40 BD  ð.@½0*0.ð..½ñ.@½
-  00001160: F0 23 40 BD 30 2A 30 1E F0 03 00 BD E0 03 40 BD  ð#@½0*0.ð..½à.@½
-  00001170: FF C3 00 91 C0 03 5F D6 FF 83 00 D1 E0 07 00 BD  ÿÃ..À._Öÿ..Ñà..½
-  00001180: E1 0B 00 BD E2 0F 00 BD E3 13 00 BD E4 17 00 BD  á..½â..½ã..½ä..½
-  00001190: E5 1B 00 BD E6 1F 00 BD F1 07 40 BD F0 0B 40 BD  å..½æ..½ñ.@½ð.@½
-  000011A0: 31 2A 30 1E F0 0F 40 BD 31 2A 30 1E F0 13 40 BD  1*0.ð.@½1*0.ð.@½
-  000011B0: 31 2A 30 1E F0 17 40 BD 31 2A 30 1E F0 1B 40 BD  1*0.ð.@½1*0.ð.@½
-  000011C0: 31 2A 30 1E F0 1F 40 BD 30 2A 30 1E F0 03 00 BD  1*0.ð.@½0*0.ð..½
-  000011D0: F1 23 40 BD F0 27 40 BD 31 2A 30 1E F0 03 40 BD  ñ#@½ð'@½1*0.ð.@½
-  000011E0: 10 2A 31 1E F0 03 00 BD E0 03 40 BD FF 83 00 91  .*1.ð..½à.@½ÿ...
-  000011F0: C0 03 5F D6 00 00 00 00 FF 83 00 D1 E0 07 00 BD  À._Ö....ÿ..Ñà..½
-  00001200: E1 0B 00 BD E2 0F 00 BD E3 13 00 BD E4 17 00 BD  á..½â..½ã..½ä..½
-  00001210: E5 1B 00 BD E6 1F 00 BD F1 07 40 BD F0 0B 40 BD  å..½æ..½ñ.@½ð.@½
-  00001220: 31 2A 30 1E F0 0F 40 BD 31 2A 30 1E F0 13 40 BD  1*0.ð.@½1*0.ð.@½
-  00001230: 31 2A 30 1E F0 17 40 BD 31 2A 30 1E F0 1B 40 BD  1*0.ð.@½1*0.ð.@½
-  00001240: 31 2A 30 1E F0 1F 40 BD 30 2A 30 1E F0 03 00 BD  1*0.ð.@½0*0.ð..½
-  00001250: F1 23 40 BD F0 27 40 BD 31 2A 30 1E F0 2B 40 BD  ñ#@½ð'@½1*0.ð+@½
-  00001260: 31 2A 30 1E F0 03 40 BD 10 2A 31 1E F0 03 00 BD  1*0.ð.@½.*1.ð..½
-  00001270: E0 03 40 BD FF 83 00 91 C0 03 5F D6 00 00 00 00  à.@½ÿ...À._Ö....
-  00001280: FF 83 00 D1 E0 07 00 BD E1 0B 00 BD E2 0F 00 BD  ÿ..Ñà..½á..½â..½
-  00001290: E3 13 00 BD E4 17 00 BD E5 1B 00 BD E6 1F 00 BD  ã..½ä..½å..½æ..½
-  000012A0: F1 07 40 BD F0 0B 40 BD 31 2A 30 1E F0 0F 40 BD  ñ.@½ð.@½1*0.ð.@½
-  000012B0: 31 2A 30 1E F0 13 40 BD 31 2A 30 1E F0 17 40 BD  1*0.ð.@½1*0.ð.@½
-  000012C0: 31 2A 30 1E F0 1B 40 BD 31 2A 30 1E F0 1F 40 BD  1*0.ð.@½1*0.ð.@½
-  000012D0: 30 2A 30 1E F0 03 00 BD F1 23 40 BD F0 27 40 BD  0*0.ð..½ñ#@½ð'@½
-  000012E0: 31 2A 30 1E F0 2B 40 BD 31 2A 30 1E F0 2F 40 BD  1*0.ð+@½1*0.ð/@½
-  000012F0: 31 2A 30 1E F0 03 40 BD 10 2A 31 1E F0 03 00 BD  1*0.ð.@½.*1.ð..½
-  00001300: E0 03 40 BD FF 83 00 91 C0 03 5F D6 00 00 00 00  à.@½ÿ...À._Ö....
-  00001310: FD 7B BD A9 FD 03 00 91 FF 43 00 D1 30 05 00 1C  ý{½©ý...ÿC.Ñ0...
-  00001320: F0 2B 00 BD 10 05 00 1C F0 2F 00 BD 10 50 22 1E  ð+.½....ð/.½.P".
-  00001330: F0 33 00 BD B0 04 00 1C F0 37 00 BD E3 37 40 BD  ð3.½°...ð7.½ã7@½
-  00001340: E2 33 40 BD E1 2F 40 BD E0 2B 40 BD 00 04 00 18  â3@½á/@½à+@½....
-  00001350: 00 00 00 94 E0 27 00 BD E8 1B 40 F9 E8 03 00 F9  ....à'.½è.@ùè..ù
-  00001360: E7 17 40 F9 E6 00 80 52 C5 00 80 52 A4 00 80 52  ç.@ùæ..RÅ..R¤..R
-  00001370: 83 00 80 52 62 00 80 52 41 00 80 52 80 00 80 52  ...Rb..RA..R...R
-  00001380: 00 00 00 94 E0 23 00 BD F0 23 40 BD 11 C2 22 1E  ....à#.½ð#@½.Â".
-  00001390: F0 27 40 BD 10 C2 22 1E 22 02 66 9E 01 02 66 9E  ð'@½.Â".".f...f.
-  000013A0: 08 00 00 90 00 01 00 91 00 00 00 94 00 00 80 52  ...............R
-  000013B0: FF 43 00 91 FD 7B C3 A8 C0 03 5F D6 1F 20 03 D5  ÿC..ý{Ã¨À._Ö. .Õ
-  000013C0: 9A 99 99 3F 9A 99 59 40 33 33 B3 40 0A 89 FE CA  ...?..Y@33³@..þÊ
+  00001100: FF 43 00 D1 E7 07 00 F9 FF C3 01 D1 E0 37 00 B9  ÿC.Ñç..ùÿÃ.Ñà7.¹
+  00001110: E1 1B 00 B9 E2 1F 00 B9 E3 23 00 B9 E4 27 00 B9  á..¹â..¹ã#.¹ä'.¹
+  00001120: E5 2B 00 B9 E6 2F 00 B9 E8 E3 01 91 E8 03 00 F9  å+.¹æ/.¹èã..è..ù
+  00001130: E9 1B 40 B9 E8 1F 40 B9 29 01 08 0B E8 23 40 B9  é.@¹è.@¹)...è#@¹
+  00001140: 29 01 08 0B E8 27 40 B9 29 01 08 0B E8 2B 40 B9  )...è'@¹)...è+@¹
+  00001150: 29 01 08 0B E8 2F 40 B9 28 01 08 0B E8 33 00 B9  )...è/@¹(...è3.¹
+  00001160: E8 33 40 B9 10 01 62 1E F0 0B 00 FD E8 37 40 B9  è3@¹..b.ð..ýè7@¹
+  00001170: E8 0B 00 B9 E8 0B 40 B9 1F 05 00 71 A0 00 00 54  è..¹è.@¹...q...T
+  00001180: E8 0B 40 B9 1F 09 00 71 A0 02 00 54 2A 00 00 14  è.@¹...q...T*...
+  00001190: 09 00 80 D2 E8 03 40 F9 28 01 08 CB 08 09 40 92  ...Òè.@ù(..Ë..@.
+  000011A0: 09 21 00 91 E8 03 40 F9 08 01 09 8B E8 03 00 F9  .!..è.@ù....è..ù
+  000011B0: E8 03 40 F9 08 21 00 D1 08 01 40 F9 E8 1F 00 F9  è.@ù.!.Ñ..@ùè..ù
+  000011C0: F0 1F 40 FD F0 23 00 FD F1 0B 40 FD F0 23 40 FD  ð.@ýð#.ýñ.@ýð#@ý
+  000011D0: 30 2A 70 1E F0 0B 00 FD 17 00 00 14 09 00 80 D2  0*p.ð..ý.......Ò
+  000011E0: E8 03 40 F9 28 01 08 CB 08 09 40 92 09 41 00 91  è.@ù(..Ë..@..A..
+  000011F0: E8 03 40 F9 08 01 09 8B E8 03 00 F9 E8 03 40 F9  è.@ù....è..ùè.@ù
+  00001200: 08 41 00 D1 10 01 C0 3D F0 1B 80 3D F0 37 40 FD  .A.Ñ..À=ð..=ð7@ý
+  00001210: F0 2B 00 FD F0 33 40 FD F0 27 00 FD F1 27 40 FD  ð+.ýð3@ýð'.ýñ'@ý
+  00001220: F0 2B 40 FD 31 2A 70 1E F0 0B 40 FD 10 2A 71 1E  ð+@ý1*p.ð.@ý.*q.
+  00001230: F0 0B 00 FD 08 00 80 D2 E8 03 00 F9 E0 0B 40 FD  ð..ý...Òè..ùà.@ý
+  00001240: FF C3 01 91 FF 43 00 91 C0 03 5F D6 00 00 00 00  ÿÃ..ÿC..À._Ö....
+  00001250: FD 7B BE A9 E7 0F 00 F9 FD 03 00 91 00 00 00 94  ý{¾©ç..ùý.......
+  00001260: FF 43 02 D1 E0 2F 00 B9 E1 17 00 B9 E2 1B 00 B9  ÿC.Ñà/.¹á..¹â..¹
+  00001270: E3 1F 00 B9 E4 23 00 B9 E5 27 00 B9 E6 2B 00 B9  ã..¹ä#.¹å'.¹æ+.¹
+  00001280: E8 E3 02 91 E8 07 00 F9 E9 17 40 B9 E8 1B 40 B9  èã..è..ùé.@¹è.@¹
+  00001290: 29 01 08 0B E8 1F 40 B9 29 01 08 0B E8 23 40 B9  )...è.@¹)...è#@¹
+  000012A0: 29 01 08 0B E8 27 40 B9 29 01 08 0B E8 2B 40 B9  )...è'@¹)...è+@¹
+  000012B0: 28 01 08 0B E8 03 00 B9 E8 2F 40 B9 E8 13 00 B9  (...è..¹è/@¹è..¹
+  000012C0: E8 13 40 B9 1F 05 00 71 60 01 00 54 E8 13 40 B9  è.@¹...q`..Tè.@¹
+  000012D0: 1F 09 00 71 60 03 00 54 E8 13 40 B9 1F 0D 00 71  ...q`..Tè.@¹...q
+  000012E0: A0 05 00 54 E8 13 40 B9 1F 11 00 71 A0 08 00 54  ...Tè.@¹...q...T
+  000012F0: 5C 00 00 14 09 00 80 D2 E8 07 40 F9 28 01 08 CB  \......Òè.@ù(..Ë
+  00001300: 08 05 40 92 09 21 00 91 E8 07 40 F9 08 01 09 8B  ..@..!..è.@ù....
+  00001310: E8 07 00 F9 E8 07 40 F9 08 21 00 D1 08 01 40 B9  è..ùè.@ù.!.Ñ..@¹
+  00001320: E8 33 00 B9 E8 33 40 B9 E8 37 00 B9 E9 03 40 B9  è3.¹è3@¹è7.¹é.@¹
+  00001330: E8 37 40 B9 28 01 08 0B E8 03 00 B9 49 00 00 14  è7@¹(...è..¹I...
+  00001340: 09 00 80 D2 E8 07 40 F9 28 01 08 CB 08 05 40 92  ...Òè.@ù(..Ë..@.
+  00001350: 09 21 00 91 E8 07 40 F9 08 01 09 8B E8 07 00 F9  .!..è.@ù....è..ù
+  00001360: E8 07 40 F9 08 21 00 D1 08 01 40 F9 E8 2B 00 F9  è.@ù.!.Ñ..@ùè+.ù
+  00001370: E8 2B 40 F9 E8 1F 00 F9 E9 3B 40 B9 E8 3F 40 B9  è+@ùè..ùé;@¹è?@¹
+  00001380: 29 01 08 0B E8 03 40 B9 08 01 09 0B E8 03 00 B9  )...è.@¹....è..¹
+  00001390: 34 00 00 14 09 00 80 D2 E8 07 40 F9 28 01 08 CB  4......Òè.@ù(..Ë
+  000013A0: 08 05 40 92 09 41 00 91 E8 07 40 F9 08 01 09 8B  ..@..A..è.@ù....
+  000013B0: E8 07 00 F9 E8 07 40 F9 09 41 00 D1 28 01 40 F9  è..ùè.@ù.A.Ñ(.@ù
+  000013C0: E8 23 00 F9 28 09 40 B9 E8 4B 00 B9 E8 23 40 F9  è#.ù(.@¹èK.¹è#@ù
+  000013D0: E8 3B 00 F9 E8 4B 40 B9 E8 7B 00 B9 E9 73 40 B9  è;.ùèK@¹è{.¹és@¹
+  000013E0: E8 77 40 B9 29 01 08 0B E8 7B 40 B9 29 01 08 0B  èw@¹)...è{@¹)...
+  000013F0: E8 03 40 B9 08 01 09 0B E8 03 00 B9 19 00 00 14  è.@¹....è..¹....
+  00001400: 09 00 80 D2 E8 07 40 F9 28 01 08 CB 08 05 40 92  ...Òè.@ù(..Ë..@.
+  00001410: 09 41 00 91 E8 07 40 F9 08 01 09 8B E8 07 00 F9  .A..è.@ù....è..ù
+  00001420: E8 07 40 F9 08 41 00 D1 10 01 C0 3D F0 1B 80 3D  è.@ù.A.Ñ..À=ð..=
+  00001430: F0 1B C0 3D F0 23 80 3D E9 83 40 B9 E8 87 40 B9  ð.À=ð#.=é.@¹è.@¹
+  00001440: 29 01 08 0B E8 8B 40 B9 29 01 08 0B E8 8F 40 B9  )...è.@¹)...è.@¹
+  00001450: 29 01 08 0B E8 03 40 B9 08 01 09 0B E8 03 00 B9  )...è.@¹....è..¹
+  00001460: 08 00 80 D2 E8 07 00 F9 E0 03 40 B9 FF 43 02 91  ...Òè..ùà.@¹ÿC..
+  00001470: 00 00 00 94 FD 7B C2 A8 C0 03 5F D6 00 00 00 00  ....ý{Â¨À._Ö....
+  00001480: FF C3 00 D1 E0 07 00 B9 E1 0B 00 B9 E2 0F 00 B9  ÿÃ.Ñà..¹á..¹â..¹
+  00001490: E3 13 00 B9 E4 17 00 B9 E5 1B 00 B9 E6 1F 00 B9  ã..¹ä..¹å..¹æ..¹
+  000014A0: E7 23 00 B9 E9 07 40 B9 E8 0B 40 B9 29 01 08 0B  ç#.¹é.@¹è.@¹)...
+  000014B0: E8 0F 40 B9 29 01 08 0B E8 13 40 B9 29 01 08 0B  è.@¹)...è.@¹)...
+  000014C0: E8 17 40 B9 29 01 08 0B E8 1B 40 B9 29 01 08 0B  è.@¹)...è.@¹)...
+  000014D0: E8 1F 40 B9 28 01 08 0B E8 03 00 B9 E9 03 40 B9  è.@¹(...è..¹é.@¹
+  000014E0: E8 23 40 B9 28 01 08 0B E8 03 00 B9 E0 03 40 B9  è#@¹(...è..¹à.@¹
+  000014F0: FF C3 00 91 C0 03 5F D6 FF C3 00 D1 E0 07 00 B9  ÿÃ..À._ÖÿÃ.Ñà..¹
+  00001500: E1 0B 00 B9 E2 0F 00 B9 E3 13 00 B9 E4 17 00 B9  á..¹â..¹ã..¹ä..¹
+  00001510: E5 1B 00 B9 E6 1F 00 B9 E7 13 00 F9 E9 07 40 B9  å..¹æ..¹ç..ùé.@¹
+  00001520: E8 0B 40 B9 29 01 08 0B E8 0F 40 B9 29 01 08 0B  è.@¹)...è.@¹)...
+  00001530: E8 13 40 B9 29 01 08 0B E8 17 40 B9 29 01 08 0B  è.@¹)...è.@¹)...
+  00001540: E8 1B 40 B9 29 01 08 0B E8 1F 40 B9 28 01 08 0B  è.@¹)...è.@¹(...
+  00001550: E8 03 00 B9 E9 23 40 B9 E8 27 40 B9 29 01 08 0B  è..¹é#@¹è'@¹)...
+  00001560: E8 03 40 B9 08 01 09 0B E8 03 00 B9 E0 03 40 B9  è.@¹....è..¹à.@¹
+  00001570: FF C3 00 91 C0 03 5F D6 FF 83 00 D1 E0 07 00 B9  ÿÃ..À._Öÿ..Ñà..¹
+  00001580: E1 0B 00 B9 E2 0F 00 B9 E3 13 00 B9 E4 17 00 B9  á..¹â..¹ã..¹ä..¹
+  00001590: E5 1B 00 B9 E6 1F 00 B9 E9 07 40 B9 E8 0B 40 B9  å..¹æ..¹é.@¹è.@¹
+  000015A0: 29 01 08 0B E8 0F 40 B9 29 01 08 0B E8 13 40 B9  )...è.@¹)...è.@¹
+  000015B0: 29 01 08 0B E8 17 40 B9 29 01 08 0B E8 1B 40 B9  )...è.@¹)...è.@¹
+  000015C0: 29 01 08 0B E8 1F 40 B9 28 01 08 0B E8 03 00 B9  )...è.@¹(...è..¹
+  000015D0: E9 23 40 B9 E8 27 40 B9 29 01 08 0B E8 2B 40 B9  é#@¹è'@¹)...è+@¹
+  000015E0: 29 01 08 0B E8 03 40 B9 08 01 09 0B E8 03 00 B9  )...è.@¹....è..¹
+  000015F0: E0 03 40 B9 FF 83 00 91 C0 03 5F D6 00 00 00 00  à.@¹ÿ...À._Ö....
+  00001600: FF 83 00 D1 E0 07 00 B9 E1 0B 00 B9 E2 0F 00 B9  ÿ..Ñà..¹á..¹â..¹
+  00001610: E3 13 00 B9 E4 17 00 B9 E5 1B 00 B9 E6 1F 00 B9  ã..¹ä..¹å..¹æ..¹
+  00001620: E9 07 40 B9 E8 0B 40 B9 29 01 08 0B E8 0F 40 B9  é.@¹è.@¹)...è.@¹
+  00001630: 29 01 08 0B E8 13 40 B9 29 01 08 0B E8 17 40 B9  )...è.@¹)...è.@¹
+  00001640: 29 01 08 0B E8 1B 40 B9 29 01 08 0B E8 1F 40 B9  )...è.@¹)...è.@¹
+  00001650: 28 01 08 0B E8 03 00 B9 E9 23 40 B9 E8 27 40 B9  (...è..¹é#@¹è'@¹
+  00001660: 29 01 08 0B E8 2B 40 B9 29 01 08 0B E8 2F 40 B9  )...è+@¹)...è/@¹
+  00001670: 29 01 08 0B E8 03 40 B9 08 01 09 0B E8 03 00 B9  )...è.@¹....è..¹
+  00001680: E0 03 40 B9 FF 83 00 91 C0 03 5F D6 00 00 00 00  à.@¹ÿ...À._Ö....
+  00001690: FF C3 00 D1 E0 07 00 BD E1 0B 00 BD E2 0F 00 BD  ÿÃ.Ñà..½á..½â..½
+  000016A0: E3 13 00 BD E4 17 00 BD E5 1B 00 BD E6 1F 00 BD  ã..½ä..½å..½æ..½
+  000016B0: E7 23 00 BD F1 07 40 BD F0 0B 40 BD 31 2A 30 1E  ç#.½ñ.@½ð.@½1*0.
+  000016C0: F0 0F 40 BD 31 2A 30 1E F0 13 40 BD 31 2A 30 1E  ð.@½1*0.ð.@½1*0.
+  000016D0: F0 17 40 BD 31 2A 30 1E F0 1B 40 BD 31 2A 30 1E  ð.@½1*0.ð.@½1*0.
+  000016E0: F0 1F 40 BD 30 2A 30 1E F0 03 00 BD F1 03 40 BD  ð.@½0*0.ð..½ñ.@½
+  000016F0: F0 23 40 BD 30 2A 30 1E F0 03 00 BD E0 03 40 BD  ð#@½0*0.ð..½à.@½
+  00001700: FF C3 00 91 C0 03 5F D6 FF 83 00 D1 E0 07 00 BD  ÿÃ..À._Öÿ..Ñà..½
+  00001710: E1 0B 00 BD E2 0F 00 BD E3 13 00 BD E4 17 00 BD  á..½â..½ã..½ä..½
+  00001720: E5 1B 00 BD E6 1F 00 BD F1 07 40 BD F0 0B 40 BD  å..½æ..½ñ.@½ð.@½
+  00001730: 31 2A 30 1E F0 0F 40 BD 31 2A 30 1E F0 13 40 BD  1*0.ð.@½1*0.ð.@½
+  00001740: 31 2A 30 1E F0 17 40 BD 31 2A 30 1E F0 1B 40 BD  1*0.ð.@½1*0.ð.@½
+  00001750: 31 2A 30 1E F0 1F 40 BD 30 2A 30 1E F0 03 00 BD  1*0.ð.@½0*0.ð..½
+  00001760: F1 23 40 BD F0 27 40 BD 31 2A 30 1E F0 03 40 BD  ñ#@½ð'@½1*0.ð.@½
+  00001770: 10 2A 31 1E F0 03 00 BD E0 03 40 BD FF 83 00 91  .*1.ð..½à.@½ÿ...
+  00001780: C0 03 5F D6 00 00 00 00 FF 83 00 D1 E0 07 00 BD  À._Ö....ÿ..Ñà..½
+  00001790: E1 0B 00 BD E2 0F 00 BD E3 13 00 BD E4 17 00 BD  á..½â..½ã..½ä..½
+  000017A0: E5 1B 00 BD E6 1F 00 BD F1 07 40 BD F0 0B 40 BD  å..½æ..½ñ.@½ð.@½
+  000017B0: 31 2A 30 1E F0 0F 40 BD 31 2A 30 1E F0 13 40 BD  1*0.ð.@½1*0.ð.@½
+  000017C0: 31 2A 30 1E F0 17 40 BD 31 2A 30 1E F0 1B 40 BD  1*0.ð.@½1*0.ð.@½
+  000017D0: 31 2A 30 1E F0 1F 40 BD 30 2A 30 1E F0 03 00 BD  1*0.ð.@½0*0.ð..½
+  000017E0: F1 23 40 BD F0 27 40 BD 31 2A 30 1E F0 2B 40 BD  ñ#@½ð'@½1*0.ð+@½
+  000017F0: 31 2A 30 1E F0 03 40 BD 10 2A 31 1E F0 03 00 BD  1*0.ð.@½.*1.ð..½
+  00001800: E0 03 40 BD FF 83 00 91 C0 03 5F D6 00 00 00 00  à.@½ÿ...À._Ö....
+  00001810: FF 83 00 D1 E0 07 00 BD E1 0B 00 BD E2 0F 00 BD  ÿ..Ñà..½á..½â..½
+  00001820: E3 13 00 BD E4 17 00 BD E5 1B 00 BD E6 1F 00 BD  ã..½ä..½å..½æ..½
+  00001830: F1 07 40 BD F0 0B 40 BD 31 2A 30 1E F0 0F 40 BD  ñ.@½ð.@½1*0.ð.@½
+  00001840: 31 2A 30 1E F0 13 40 BD 31 2A 30 1E F0 17 40 BD  1*0.ð.@½1*0.ð.@½
+  00001850: 31 2A 30 1E F0 1B 40 BD 31 2A 30 1E F0 1F 40 BD  1*0.ð.@½1*0.ð.@½
+  00001860: 30 2A 30 1E F0 03 00 BD F1 23 40 BD F0 27 40 BD  0*0.ð..½ñ#@½ð'@½
+  00001870: 31 2A 30 1E F0 2B 40 BD 31 2A 30 1E F0 2F 40 BD  1*0.ð+@½1*0.ð/@½
+  00001880: 31 2A 30 1E F0 03 40 BD 10 2A 31 1E F0 03 00 BD  1*0.ð.@½.*1.ð..½
+  00001890: E0 03 40 BD FF 83 00 91 C0 03 5F D6 00 00 00 00  à.@½ÿ...À._Ö....
+  000018A0: FD 7B BD A9 FD 03 00 91 FF 43 00 D1 30 05 00 1C  ý{½©ý...ÿC.Ñ0...
+  000018B0: F0 2B 00 BD 10 05 00 1C F0 2F 00 BD 10 50 22 1E  ð+.½....ð/.½.P".
+  000018C0: F0 33 00 BD B0 04 00 1C F0 37 00 BD E3 37 40 BD  ð3.½°...ð7.½ã7@½
+  000018D0: E2 33 40 BD E1 2F 40 BD E0 2B 40 BD 00 04 00 18  â3@½á/@½à+@½....
+  000018E0: 00 00 00 94 E0 27 00 BD E8 1B 40 F9 E8 03 00 F9  ....à'.½è.@ùè..ù
+  000018F0: E7 17 40 F9 E6 00 80 52 C5 00 80 52 A4 00 80 52  ç.@ùæ..RÅ..R¤..R
+  00001900: 83 00 80 52 62 00 80 52 41 00 80 52 80 00 80 52  ...Rb..RA..R...R
+  00001910: 00 00 00 94 E0 23 00 BD F0 23 40 BD 11 C2 22 1E  ....à#.½ð#@½.Â".
+  00001920: F0 27 40 BD 10 C2 22 1E 22 02 66 9E 01 02 66 9E  ð'@½.Â".".f...f.
+  00001930: 08 00 00 90 00 01 00 91 00 00 00 94 00 00 80 52  ...............R
+  00001940: FF 43 00 91 FD 7B C3 A8 C0 03 5F D6 1F 20 03 D5  ÿC..ý{Ã¨À._Ö. .Õ
+  00001950: 9A 99 99 3F 9A 99 59 40 33 33 B3 40 0A 89 FE CA  ...?..Y@33³@..þÊ
 
 RELOCATIONS #3
                                                 Symbol    Symbol
@@ -419,19 +508,21 @@ RELOCATIONS #3
  000008C8  BRANCH26                   94000000        2C  variadic_func_S_DDD
  00000A14  BRANCH26                   94000000        2F  func_S_DDDD
  00000A98  BRANCH26                   94000000        30  variadic_func_S_DDDD
- 00001350  BRANCH26                   94000000        1F  func_S_FFFF
- 00001380  BRANCH26                   94000000        35  sum_spilled_struct_hfa_floats
- 000013A0  PAGEBASE_REL21             90000008        F3  $SG7498
- 000013A4  PAGEOFFSET_12A             91000100        F3  $SG7498
- 000013A8  BRANCH26                   94000000        12  printf
+ 0000125C  BRANCH26                   94000000        43  __security_push_cookie
+ 00001470  BRANCH26                   94000000        42  __security_pop_cookie
+ 000018E0  BRANCH26                   94000000        1F  func_S_FFFF
+ 00001910  BRANCH26                   94000000        35  sum_spilled_struct_hfa_floats
+ 00001930  PAGEBASE_REL21             90000008       112  $SG7707
+ 00001934  PAGEOFFSET_12A             91000100       112  $SG7707
+ 00001938  BRANCH26                   94000000        12  printf
 
 SECTION HEADER #4
 .text$mn name
        0 physical address
        0 virtual address
        C size of raw data
-    1789 file pointer to raw data (00001789 to 00001794)
-    1795 file pointer to relocation table
+    1D2D file pointer to raw data (00001D2D to 00001D38)
+    1D39 file pointer to relocation table
        0 file pointer to line numbers
        2 number of relocations
        0 number of line numbers
@@ -448,16 +539,16 @@ RELOCATIONS #4
                                                 Symbol    Symbol
  Offset    Type              Applied To         Index     Name
  --------  ----------------  -----------------  --------  ------
- 00000000  PAGEBASE_REL21             90000008        F0  ?_OptionsStorage@?1??__local_stdio_printf_options@@9@9 (`__local_stdio_printf_options'::`2'::_OptionsStorage)
- 00000004  PAGEOFFSET_12A             91000100        F0  ?_OptionsStorage@?1??__local_stdio_printf_options@@9@9 (`__local_stdio_printf_options'::`2'::_OptionsStorage)
+ 00000000  PAGEBASE_REL21             90000008       10F  ?_OptionsStorage@?1??__local_stdio_printf_options@@9@9 (`__local_stdio_printf_options'::`2'::_OptionsStorage)
+ 00000004  PAGEOFFSET_12A             91000100       10F  ?_OptionsStorage@?1??__local_stdio_printf_options@@9@9 (`__local_stdio_printf_options'::`2'::_OptionsStorage)
 
 SECTION HEADER #5
 .text$mn name
        0 physical address
        0 virtual address
       44 size of raw data
-    17A9 file pointer to raw data (000017A9 to 000017EC)
-    17ED file pointer to relocation table
+    1D4D file pointer to raw data (00001D4D to 00001D90)
+    1D91 file pointer to relocation table
        0 file pointer to line numbers
        2 number of relocations
        0 number of line numbers
@@ -486,8 +577,8 @@ SECTION HEADER #6
        0 physical address
        0 virtual address
       60 size of raw data
-    1801 file pointer to raw data (00001801 to 00001860)
-    1861 file pointer to relocation table
+    1DA5 file pointer to raw data (00001DA5 to 00001E04)
+    1E05 file pointer to relocation table
        0 file pointer to line numbers
        2 number of relocations
        0 number of line numbers
@@ -517,8 +608,8 @@ SECTION HEADER #7
        0 physical address
        0 virtual address
        8 size of raw data
-    1875 file pointer to raw data (00001875 to 0000187C)
-    187D file pointer to relocation table
+    1E19 file pointer to raw data (00001E19 to 00001E20)
+    1E21 file pointer to relocation table
        0 file pointer to line numbers
        1 number of relocations
        0 number of line numbers
@@ -541,14 +632,14 @@ RELOCATIONS #7
                                                 Symbol    Symbol
  Offset    Type              Applied To         Index     Name
  --------  ----------------  -----------------  --------  ------
- 00000000  ADDR32NB                   00000000        3B  $LN3
+ 00000000  ADDR32NB                   00000000        44  $LN3
 
 SECTION HEADER #8
   .xdata name
        0 physical address
        0 virtual address
       10 size of raw data
-    1887 file pointer to raw data (00001887 to 00001896)
+    1E2B file pointer to raw data (00001E2B to 00001E3A)
        0 file pointer to relocation table
        0 file pointer to line numbers
        0 number of relocations
@@ -567,8 +658,8 @@ SECTION HEADER #9
        0 physical address
        0 virtual address
        8 size of raw data
-    1897 file pointer to raw data (00001897 to 0000189E)
-    189F file pointer to relocation table
+    1E3B file pointer to raw data (00001E3B to 00001E42)
+    1E43 file pointer to relocation table
        0 file pointer to line numbers
        2 number of relocations
        0 number of line numbers
@@ -591,18 +682,18 @@ RELOCATIONS #9
                                                 Symbol    Symbol
  Offset    Type              Applied To         Index     Name
  --------  ----------------  -----------------  --------  ------
- 00000000  ADDR32NB                   00000000        3C  $LN3
- 00000004  ADDR32NB                   00000000        B5  $unwind$printf
+ 00000000  ADDR32NB                   00000000        45  $LN3
+ 00000004  ADDR32NB                   00000000        CC  $unwind$printf
 
 SECTION HEADER #A
   .pdata name
        0 physical address
        0 virtual address
-     140 size of raw data
-    18B3 file pointer to raw data (000018B3 to 000019F2)
-    19F3 file pointer to relocation table
+     170 size of raw data
+    1E57 file pointer to raw data (00001E57 to 00001FC6)
+    1FC7 file pointer to relocation table
        0 file pointer to line numbers
-      33 number of relocations
+      3B number of relocations
        0 number of line numbers
 40300040 flags
          Initialized Data
@@ -627,11 +718,14 @@ RAW DATA #A
   000000E0: 00 00 00 00 3D 00 80 01 00 00 00 00 00 00 00 00  ....=...........
   000000F0: 00 00 00 00 49 00 E0 01 00 00 00 00 5D 00 E0 02  ....I.à.....].à.
   00000100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-  00000110: 00 00 00 00 00 00 00 00 00 00 00 00 79 00 80 01  ............y...
-  00000120: 00 00 00 00 7D 00 00 01 00 00 00 00 85 00 00 01  ....}...........
-  00000130: 00 00 00 00 8D 00 00 01 00 00 00 00 AD 00 E0 01  ............­.à.
+  00000110: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  00000120: 00 00 00 00 00 00 00 00 00 00 00 00 79 00 80 01  ............y...
+  00000130: 00 00 00 00 81 00 80 01 00 00 00 00 85 00 00 01  ................
+  00000140: 00 00 00 00 8D 00 00 01 00 00 00 00 79 00 80 01  ............y...
+  00000150: 00 00 00 00 7D 00 00 01 00 00 00 00 85 00 00 01  ....}...........
+  00000160: 00 00 00 00 8D 00 00 01 00 00 00 00 AD 00 E0 01  ............­.à.
 
-Function Table #10 (40)
+Function Table #10 (46)
 
            Begin    Packed Fragment
 
@@ -670,77 +764,91 @@ Function Table #10 (40)
   00000100 00000000    N      N
   00000108 00000000    N      N
   00000110 00000000    N      N
-  00000118 00000000    Y      N
-  00000120 00000000    Y      N
+  00000118 00000000    N      N
+  00000120 00000000    N      N
   00000128 00000000    Y      N
   00000130 00000000    Y      N
   00000138 00000000    Y      N
+  00000140 00000000    Y      N
+  00000148 00000000    Y      N
+  00000150 00000000    Y      N
+  00000158 00000000    Y      N
+  00000160 00000000    Y      N
+  00000168 00000000    Y      N
 
 RELOCATIONS #A
                                                 Symbol    Symbol
  Offset    Type              Applied To         Index     Name
  --------  ----------------  -----------------  --------  ------
- 00000000  ADDR32NB                   00000000        3D  $LN3
- 00000008  ADDR32NB                   00000000        3E  $LN3
- 0000000C  ADDR32NB                   00000000        BE  $unwind$variadic_func_S_F
- 00000010  ADDR32NB                   00000000        41  $LN5
- 00000018  ADDR32NB                   00000000        44  $LN5
- 00000020  ADDR32NB                   00000000        45  $LN3
- 00000028  ADDR32NB                   00000000        46  $LN3
- 0000002C  ADDR32NB                   00000000        C3  $unwind$variadic_func_S_FF
- 00000030  ADDR32NB                   00000000        4A  $LN6
- 00000038  ADDR32NB                   00000000        4E  $LN6
- 00000040  ADDR32NB                   00000000        4F  $LN3
- 00000048  ADDR32NB                   00000000        50  $LN3
- 0000004C  ADDR32NB                   00000000        C8  $unwind$variadic_func_S_FFF
- 00000050  ADDR32NB                   00000000        55  $LN7
- 00000058  ADDR32NB                   00000000        5A  $LN7
- 00000060  ADDR32NB                   00000000        5B  $LN3
- 00000068  ADDR32NB                   00000000        5C  $LN3
- 0000006C  ADDR32NB                   00000000        CD  $unwind$variadic_func_S_FFFF
- 00000070  ADDR32NB                   00000000        62  $LN8
- 00000078  ADDR32NB                   00000000        68  $LN8
- 00000080  ADDR32NB                   00000000        69  $LN3
- 00000088  ADDR32NB                   00000000        6A  $LN3
- 0000008C  ADDR32NB                   00000000        D2  $unwind$variadic_func_S_D
- 00000090  ADDR32NB                   00000000        6D  $LN5
- 00000098  ADDR32NB                   00000000        70  $LN5
- 000000A0  ADDR32NB                   00000000        71  $LN3
- 000000A8  ADDR32NB                   00000000        72  $LN3
- 000000AC  ADDR32NB                   00000000        D7  $unwind$variadic_func_S_DD
- 000000B0  ADDR32NB                   00000000        76  $LN6
- 000000B8  ADDR32NB                   00000000        7A  $LN6
- 000000C0  ADDR32NB                   00000000        7B  $LN3
- 000000C8  ADDR32NB                   00000000        7C  $LN3
- 000000CC  ADDR32NB                   00000000        DC  $unwind$variadic_func_S_DDD
- 000000D0  ADDR32NB                   00000000        81  $LN7
- 000000D8  ADDR32NB                   00000000        86  $LN7
- 000000E0  ADDR32NB                   00000000        87  $LN3
- 000000E8  ADDR32NB                   00000000        88  $LN3
- 000000EC  ADDR32NB                   00000000        E1  $unwind$variadic_func_S_DDDD
- 000000F0  ADDR32NB                   00000000        8E  $LN8
- 000000F8  ADDR32NB                   00000000        94  $LN8
- 00000100  ADDR32NB                   00000000        9A  $LN9
- 00000104  ADDR32NB                   00000000        E5  $unwind$sum_struct_hfa_floats
- 00000108  ADDR32NB                   00000000        A0  $LN9
- 0000010C  ADDR32NB                   00000000        E7  $unwind$sum_struct_hfa_doubles
- 00000110  ADDR32NB                   00000000        A6  $LN9
- 00000114  ADDR32NB                   00000000        E9  $unwind$sum_spilled_struct_hfa_floats
- 00000118  ADDR32NB                   00000000        A7  $LN3
- 00000120  ADDR32NB                   00000000        A8  $LN3
- 00000128  ADDR32NB                   00000000        A9  $LN3
- 00000130  ADDR32NB                   00000000        AA  $LN3
- 00000138  ADDR32NB                   00000000        AF  $LN7
+ 00000000  ADDR32NB                   00000000        46  $LN3
+ 00000008  ADDR32NB                   00000000        47  $LN3
+ 0000000C  ADDR32NB                   00000000        D5  $unwind$variadic_func_S_F
+ 00000010  ADDR32NB                   00000000        4A  $LN5
+ 00000018  ADDR32NB                   00000000        4D  $LN5
+ 00000020  ADDR32NB                   00000000        4E  $LN3
+ 00000028  ADDR32NB                   00000000        4F  $LN3
+ 0000002C  ADDR32NB                   00000000        DA  $unwind$variadic_func_S_FF
+ 00000030  ADDR32NB                   00000000        53  $LN6
+ 00000038  ADDR32NB                   00000000        57  $LN6
+ 00000040  ADDR32NB                   00000000        58  $LN3
+ 00000048  ADDR32NB                   00000000        59  $LN3
+ 0000004C  ADDR32NB                   00000000        DF  $unwind$variadic_func_S_FFF
+ 00000050  ADDR32NB                   00000000        5E  $LN7
+ 00000058  ADDR32NB                   00000000        63  $LN7
+ 00000060  ADDR32NB                   00000000        64  $LN3
+ 00000068  ADDR32NB                   00000000        65  $LN3
+ 0000006C  ADDR32NB                   00000000        E4  $unwind$variadic_func_S_FFFF
+ 00000070  ADDR32NB                   00000000        6B  $LN8
+ 00000078  ADDR32NB                   00000000        71  $LN8
+ 00000080  ADDR32NB                   00000000        72  $LN3
+ 00000088  ADDR32NB                   00000000        73  $LN3
+ 0000008C  ADDR32NB                   00000000        E9  $unwind$variadic_func_S_D
+ 00000090  ADDR32NB                   00000000        76  $LN5
+ 00000098  ADDR32NB                   00000000        79  $LN5
+ 000000A0  ADDR32NB                   00000000        7A  $LN3
+ 000000A8  ADDR32NB                   00000000        7B  $LN3
+ 000000AC  ADDR32NB                   00000000        EE  $unwind$variadic_func_S_DD
+ 000000B0  ADDR32NB                   00000000        7F  $LN6
+ 000000B8  ADDR32NB                   00000000        83  $LN6
+ 000000C0  ADDR32NB                   00000000        84  $LN3
+ 000000C8  ADDR32NB                   00000000        85  $LN3
+ 000000CC  ADDR32NB                   00000000        F3  $unwind$variadic_func_S_DDD
+ 000000D0  ADDR32NB                   00000000        8A  $LN7
+ 000000D8  ADDR32NB                   00000000        8F  $LN7
+ 000000E0  ADDR32NB                   00000000        90  $LN3
+ 000000E8  ADDR32NB                   00000000        91  $LN3
+ 000000EC  ADDR32NB                   00000000        F8  $unwind$variadic_func_S_DDDD
+ 000000F0  ADDR32NB                   00000000        97  $LN8
+ 000000F8  ADDR32NB                   00000000        9D  $LN8
+ 00000100  ADDR32NB                   00000000        A3  $LN9
+ 00000104  ADDR32NB                   00000000        FC  $unwind$sum_struct_hfa_floats
+ 00000108  ADDR32NB                   00000000        A9  $LN9
+ 0000010C  ADDR32NB                   00000000        FE  $unwind$sum_struct_hfa_doubles
+ 00000110  ADDR32NB                   00000000        AF  $LN9
+ 00000114  ADDR32NB                   00000000       100  $unwind$sum_spilled_struct_hfa_floats
+ 00000118  ADDR32NB                   00000000        B3  $LN7
+ 0000011C  ADDR32NB                   00000000       102  $unwind$sum_spilled_struct_hfa_doubles
+ 00000120  ADDR32NB                   00000000        B9  $LN9
+ 00000124  ADDR32NB                   00000000       104  $unwind$sum_spilled_struct_ints
+ 00000128  ADDR32NB                   00000000        BA  $LN3
+ 00000130  ADDR32NB                   00000000        BB  $LN3
+ 00000138  ADDR32NB                   00000000        BC  $LN3
+ 00000140  ADDR32NB                   00000000        BD  $LN3
+ 00000148  ADDR32NB                   00000000        BE  $LN3
+ 00000150  ADDR32NB                   00000000        BF  $LN3
+ 00000158  ADDR32NB                   00000000        C0  $LN3
+ 00000160  ADDR32NB                   00000000        C1  $LN3
+ 00000168  ADDR32NB                   00000000        C6  $LN7
 
 SECTION HEADER #B
   .xdata name
        0 physical address
        0 virtual address
-      AC size of raw data
-    1BF1 file pointer to raw data (00001BF1 to 00001C9C)
-       0 file pointer to relocation table
+      CC size of raw data
+    2215 file pointer to raw data (00002215 to 000022E0)
+    22E1 file pointer to relocation table
        0 file pointer to line numbers
-       0 number of relocations
+       1 number of relocations
        0 number of line numbers
 40300040 flags
          Initialized Data
@@ -758,14 +866,22 @@ RAW DATA #B
   00000070: 27 00 E0 19 05 E3 E3 E3 E3 04 E4 05 04 E4 E3 E3  '.à..ãããã.ä..äãã
   00000080: 7D 00 E0 19 07 E3 E3 E3 E3 04 E4 07 04 E4 E3 E3  }.à..ãããã.ä..äãã
   00000090: 77 00 E0 19 0D E3 E3 E3 E3 04 E4 0D 04 E4 E3 E3  w.à..ãããã.ä..äãã
-  000000A0: 95 00 20 11 09 E3 01 E4 09 01 E4 E3              .. ..ã.ä..äã
+  000000A0: 95 00 20 11 09 E3 01 E4 09 01 E4 E3 53 00 20 11  .. ..ã.ä..äãS. .
+  000000B0: 07 E3 01 E4 07 01 E4 E3 8B 00 30 11 E1 E3 83 E4  .ã.ä..äã..0.áã.ä
+  000000C0: 09 01 83 E4 00 00 00 00 D8 FF FF FF              ...ä....Øÿÿÿ
+
+RELOCATIONS #B
+                                                Symbol    Symbol
+ Offset    Type              Applied To         Index     Name
+ --------  ----------------  -----------------  --------  ------
+ 000000C4  ADDR32NB                   00000000        41  __GSHandlerCheck
 
 SECTION HEADER #C
    .data name
        0 physical address
        0 virtual address
       15 size of raw data
-    1C9D file pointer to raw data (00001C9D to 00001CB1)
+    22EB file pointer to raw data (000022EB to 000022FF)
        0 file pointer to relocation table
        0 file pointer to line numbers
        0 number of relocations
@@ -784,7 +900,7 @@ SECTION HEADER #D
        0 physical address
        0 virtual address
       68 size of raw data
-    1CB2 file pointer to raw data (00001CB2 to 00001D19)
+    2300 file pointer to raw data (00002300 to 00002367)
        0 file pointer to relocation table
        0 file pointer to line numbers
        0 number of relocations
@@ -796,11 +912,11 @@ SECTION HEADER #D
 
 RAW DATA #D
   00000000: 23 07 66 15 27 1A BF 1A 50 B3 38 59 90 16 F3 AF  #.f.'.¿.P³8Y..ó¯
-  00000010: EF 57 D5 EC 59 0C 92 63 0C CC 47 EB 36 E2 7D CF  ïWÕìY..c.ÌGë6â}Ï
+  00000010: 5F 6D B6 39 71 E5 A8 A0 0C CC 47 EB 36 E2 7D CF  _m¶9qå¨..ÌGë6â}Ï
   00000020: C3 43 CB 41 92 1C E0 74 51 C2 34 44 D5 2E CF 82  ÃCËA..àtQÂ4DÕ.Ï.
   00000030: B9 25 62 E1 1B D8 2C 3A 37 A0 2B C3 20 7D 43 8D  ¹%bá.Ø,:7.+Ã }C.
-  00000040: AF 55 70 F5 A1 81 0B 7A C2 C6 4B 16 7B 34 E6 C3  ¯Upõ¡..zÂÆK.{4æÃ
-  00000050: 77 DF 5A 10 12 ED EE C2 1F 80 E5 88 76 38 60 D6  wßZ..íîÂ..å.v8`Ö
+  00000040: AF 55 70 F5 A1 81 0B 7A 9E 74 2A 23 C7 D9 32 2B  ¯Upõ¡..z.t*#ÇÙ2+
+  00000050: 68 58 05 40 43 1F 87 BD 1F 80 E5 88 76 38 60 D6  hX.@C..½..å.v8`Ö
   00000060: 00 00 00 00 00 00 00 00                          ........
 
 COFF SYMBOL TABLE
@@ -811,7 +927,7 @@ COFF SYMBOL TABLE
 004 00000000 SECT2  notype       Static       | .debug$S
     Section length   9C, #relocs    0, #linenums    0, checksum        0
 006 00000000 SECT3  notype       Static       | .text$mn
-    Section length 13D0, #relocs   15, #linenums    0, checksum 1833E422
+    Section length 1960, #relocs   17, #linenums    0, checksum 91C763FF
 008 00000000 SECT4  notype       Static       | .text$mn
     Section length    C, #relocs    2, #linenums    0, checksum A01057F1, selection    2 (pick any)
 00A 00000000 SECT5  notype       Static       | .text$mn
@@ -858,201 +974,232 @@ COFF SYMBOL TABLE
 033 00000AD0 SECT3  notype ()    External     | sum_struct_hfa_floats
 034 00000CC8 SECT3  notype ()    External     | sum_struct_hfa_doubles
 035 00000EA8 SECT3  notype ()    External     | sum_spilled_struct_hfa_floats
-036 00001100 SECT3  notype ()    External     | sum_spilled_struct_hfa_1float_nonvariadic
-037 00001178 SECT3  notype ()    External     | sum_spilled_struct_hfa_2floats_nonvariadic
-038 000011F8 SECT3  notype ()    External     | sum_spilled_struct_hfa_3floats_nonvariadic
-039 00001280 SECT3  notype ()    External     | sum_spilled_struct_hfa_4floats_nonvariadic
-03A 00001310 SECT3  notype ()    External     | main
-03B 00000000 SECT5  notype       Label        | $LN3
-03C 00000000 SECT6  notype       Label        | $LN3
-03D 00000000 SECT3  notype       Label        | $LN3
-03E 00000018 SECT3  notype       Label        | $LN3
-03F 000000B8 SECT3  notype       Static       | $LN3
-040 000000BC SECT3  notype       Static       | $LN4
-041 00000090 SECT3  notype       Label        | $LN5
-042 000000E8 SECT3  notype       Static       | $LN3
-043 000000EC SECT3  notype       Static       | $LN4
-044 000000C0 SECT3  notype       Label        | $LN5
-045 000000F0 SECT3  notype       Label        | $LN3
-046 00000118 SECT3  notype       Label        | $LN3
-047 000001D0 SECT3  notype       Static       | $LN3
-048 000001D4 SECT3  notype       Static       | $LN4
-049 000001D8 SECT3  notype       Static       | $LN5
-04A 000001A0 SECT3  notype       Label        | $LN6
-04B 00000210 SECT3  notype       Static       | $LN3
-04C 00000214 SECT3  notype       Static       | $LN4
-04D 00000218 SECT3  notype       Static       | $LN5
-04E 000001E0 SECT3  notype       Label        | $LN6
-04F 00000220 SECT3  notype       Label        | $LN3
-050 00000250 SECT3  notype       Label        | $LN3
-051 00000330 SECT3  notype       Static       | $LN3
-052 00000334 SECT3  notype       Static       | $LN4
-053 00000338 SECT3  notype       Static       | $LN5
-054 0000033C SECT3  notype       Static       | $LN6
-055 000002F0 SECT3  notype       Label        | $LN7
-056 00000378 SECT3  notype       Static       | $LN3
-057 0000037C SECT3  notype       Static       | $LN4
-058 00000380 SECT3  notype       Static       | $LN5
-059 00000384 SECT3  notype       Static       | $LN6
-05A 00000340 SECT3  notype       Label        | $LN7
-05B 00000388 SECT3  notype       Label        | $LN3
-05C 000003C8 SECT3  notype       Label        | $LN3
-05D 000004B8 SECT3  notype       Static       | $LN3
-05E 000004BC SECT3  notype       Static       | $LN4
-05F 000004C0 SECT3  notype       Static       | $LN5
-060 000004C4 SECT3  notype       Static       | $LN6
-061 000004C8 SECT3  notype       Static       | $LN7
-062 00000470 SECT3  notype       Label        | $LN8
-063 00000510 SECT3  notype       Static       | $LN3
-064 00000514 SECT3  notype       Static       | $LN4
-065 00000518 SECT3  notype       Static       | $LN5
-066 0000051C SECT3  notype       Static       | $LN6
-067 00000520 SECT3  notype       Static       | $LN7
-068 000004D0 SECT3  notype       Label        | $LN8
-069 00000528 SECT3  notype       Label        | $LN3
-06A 00000540 SECT3  notype       Label        | $LN3
-06B 000005E0 SECT3  notype       Static       | $LN3
-06C 000005E8 SECT3  notype       Static       | $LN4
-06D 000005B8 SECT3  notype       Label        | $LN5
-06E 00000618 SECT3  notype       Static       | $LN3
-06F 00000620 SECT3  notype       Static       | $LN4
-070 000005F0 SECT3  notype       Label        | $LN5
-071 00000628 SECT3  notype       Label        | $LN3
-072 00000650 SECT3  notype       Label        | $LN3
-073 00000708 SECT3  notype       Static       | $LN3
-074 00000710 SECT3  notype       Static       | $LN4
-075 00000718 SECT3  notype       Static       | $LN5
-076 000006D8 SECT3  notype       Label        | $LN6
-077 00000750 SECT3  notype       Static       | $LN3
-078 00000758 SECT3  notype       Static       | $LN4
-079 00000760 SECT3  notype       Static       | $LN5
-07A 00000720 SECT3  notype       Label        | $LN6
-07B 00000768 SECT3  notype       Label        | $LN3
-07C 00000798 SECT3  notype       Label        | $LN3
-07D 00000868 SECT3  notype       Static       | $LN3
-07E 00000870 SECT3  notype       Static       | $LN4
-07F 00000878 SECT3  notype       Static       | $LN5
-080 00000880 SECT3  notype       Static       | $LN6
-081 00000828 SECT3  notype       Label        | $LN7
-082 000008D8 SECT3  notype       Static       | $LN3
-083 000008E0 SECT3  notype       Static       | $LN4
-084 000008E8 SECT3  notype       Static       | $LN5
-085 000008F0 SECT3  notype       Static       | $LN6
-086 00000888 SECT3  notype       Label        | $LN7
-087 000008F8 SECT3  notype       Label        | $LN3
-088 00000938 SECT3  notype       Label        | $LN3
-089 00000A20 SECT3  notype       Static       | $LN3
-08A 00000A28 SECT3  notype       Static       | $LN4
-08B 00000A30 SECT3  notype       Static       | $LN5
-08C 00000A38 SECT3  notype       Static       | $LN6
-08D 00000A40 SECT3  notype       Static       | $LN7
-08E 000009D8 SECT3  notype       Label        | $LN8
-08F 00000AA8 SECT3  notype       Static       | $LN3
-090 00000AB0 SECT3  notype       Static       | $LN4
-091 00000AB8 SECT3  notype       Static       | $LN5
-092 00000AC0 SECT3  notype       Static       | $LN6
-093 00000AC8 SECT3  notype       Static       | $LN7
-094 00000A48 SECT3  notype       Label        | $LN8
-095 00000B38 SECT3  notype       Label        | $LN4
-096 00000B7C SECT3  notype       Label        | $LN5
-097 00000BD0 SECT3  notype       Label        | $LN6
-098 00000C3C SECT3  notype       Label        | $LN7
-099 00000CAC SECT3  notype       Label        | $LN2
-09A 00000AD0 SECT3  notype       Label        | $LN9
-09B 00000D30 SECT3  notype       Label        | $LN4
-09C 00000D74 SECT3  notype       Label        | $LN5
-09D 00000DC8 SECT3  notype       Label        | $LN6
-09E 00000E24 SECT3  notype       Label        | $LN7
-09F 00000E8C SECT3  notype       Label        | $LN2
-0A0 00000CC8 SECT3  notype       Label        | $LN9
-0A1 00000F50 SECT3  notype       Label        | $LN4
-0A2 00000F9C SECT3  notype       Label        | $LN5
-0A3 00000FF8 SECT3  notype       Label        | $LN6
-0A4 0000106C SECT3  notype       Label        | $LN7
-0A5 000010E4 SECT3  notype       Label        | $LN2
-0A6 00000EA8 SECT3  notype       Label        | $LN9
-0A7 00001100 SECT3  notype       Label        | $LN3
-0A8 00001178 SECT3  notype       Label        | $LN3
-0A9 000011F8 SECT3  notype       Label        | $LN3
-0AA 00001280 SECT3  notype       Label        | $LN3
-0AB 000013C0 SECT3  notype       Static       | $LN3
-0AC 000013C4 SECT3  notype       Static       | $LN4
-0AD 000013C8 SECT3  notype       Static       | $LN5
-0AE 000013CC SECT3  notype       Static       | $LN6
-0AF 00001310 SECT3  notype       Label        | $LN7
-0B0 00000000 SECT7  notype       Static       | .pdata
+036 00001100 SECT3  notype ()    External     | sum_spilled_struct_hfa_doubles
+037 00001250 SECT3  notype ()    External     | sum_spilled_struct_ints
+038 00001480 SECT3  notype ()    External     | sum_spilled_struct_1int_nonvariadic
+039 000014F8 SECT3  notype ()    External     | sum_spilled_struct_2ints_nonvariadic
+03A 00001578 SECT3  notype ()    External     | sum_spilled_struct_3ints_nonvariadic
+03B 00001600 SECT3  notype ()    External     | sum_spilled_struct_4ints_nonvariadic
+03C 00001690 SECT3  notype ()    External     | sum_spilled_struct_hfa_1float_nonvariadic
+03D 00001708 SECT3  notype ()    External     | sum_spilled_struct_hfa_2floats_nonvariadic
+03E 00001788 SECT3  notype ()    External     | sum_spilled_struct_hfa_3floats_nonvariadic
+03F 00001810 SECT3  notype ()    External     | sum_spilled_struct_hfa_4floats_nonvariadic
+040 000018A0 SECT3  notype ()    External     | main
+041 00000000 UNDEF  notype ()    External     | __GSHandlerCheck
+042 00000000 UNDEF  notype ()    External     | __security_pop_cookie
+043 00000000 UNDEF  notype ()    External     | __security_push_cookie
+044 00000000 SECT5  notype       Label        | $LN3
+045 00000000 SECT6  notype       Label        | $LN3
+046 00000000 SECT3  notype       Label        | $LN3
+047 00000018 SECT3  notype       Label        | $LN3
+048 000000B8 SECT3  notype       Static       | $LN3
+049 000000BC SECT3  notype       Static       | $LN4
+04A 00000090 SECT3  notype       Label        | $LN5
+04B 000000E8 SECT3  notype       Static       | $LN3
+04C 000000EC SECT3  notype       Static       | $LN4
+04D 000000C0 SECT3  notype       Label        | $LN5
+04E 000000F0 SECT3  notype       Label        | $LN3
+04F 00000118 SECT3  notype       Label        | $LN3
+050 000001D0 SECT3  notype       Static       | $LN3
+051 000001D4 SECT3  notype       Static       | $LN4
+052 000001D8 SECT3  notype       Static       | $LN5
+053 000001A0 SECT3  notype       Label        | $LN6
+054 00000210 SECT3  notype       Static       | $LN3
+055 00000214 SECT3  notype       Static       | $LN4
+056 00000218 SECT3  notype       Static       | $LN5
+057 000001E0 SECT3  notype       Label        | $LN6
+058 00000220 SECT3  notype       Label        | $LN3
+059 00000250 SECT3  notype       Label        | $LN3
+05A 00000330 SECT3  notype       Static       | $LN3
+05B 00000334 SECT3  notype       Static       | $LN4
+05C 00000338 SECT3  notype       Static       | $LN5
+05D 0000033C SECT3  notype       Static       | $LN6
+05E 000002F0 SECT3  notype       Label        | $LN7
+05F 00000378 SECT3  notype       Static       | $LN3
+060 0000037C SECT3  notype       Static       | $LN4
+061 00000380 SECT3  notype       Static       | $LN5
+062 00000384 SECT3  notype       Static       | $LN6
+063 00000340 SECT3  notype       Label        | $LN7
+064 00000388 SECT3  notype       Label        | $LN3
+065 000003C8 SECT3  notype       Label        | $LN3
+066 000004B8 SECT3  notype       Static       | $LN3
+067 000004BC SECT3  notype       Static       | $LN4
+068 000004C0 SECT3  notype       Static       | $LN5
+069 000004C4 SECT3  notype       Static       | $LN6
+06A 000004C8 SECT3  notype       Static       | $LN7
+06B 00000470 SECT3  notype       Label        | $LN8
+06C 00000510 SECT3  notype       Static       | $LN3
+06D 00000514 SECT3  notype       Static       | $LN4
+06E 00000518 SECT3  notype       Static       | $LN5
+06F 0000051C SECT3  notype       Static       | $LN6
+070 00000520 SECT3  notype       Static       | $LN7
+071 000004D0 SECT3  notype       Label        | $LN8
+072 00000528 SECT3  notype       Label        | $LN3
+073 00000540 SECT3  notype       Label        | $LN3
+074 000005E0 SECT3  notype       Static       | $LN3
+075 000005E8 SECT3  notype       Static       | $LN4
+076 000005B8 SECT3  notype       Label        | $LN5
+077 00000618 SECT3  notype       Static       | $LN3
+078 00000620 SECT3  notype       Static       | $LN4
+079 000005F0 SECT3  notype       Label        | $LN5
+07A 00000628 SECT3  notype       Label        | $LN3
+07B 00000650 SECT3  notype       Label        | $LN3
+07C 00000708 SECT3  notype       Static       | $LN3
+07D 00000710 SECT3  notype       Static       | $LN4
+07E 00000718 SECT3  notype       Static       | $LN5
+07F 000006D8 SECT3  notype       Label        | $LN6
+080 00000750 SECT3  notype       Static       | $LN3
+081 00000758 SECT3  notype       Static       | $LN4
+082 00000760 SECT3  notype       Static       | $LN5
+083 00000720 SECT3  notype       Label        | $LN6
+084 00000768 SECT3  notype       Label        | $LN3
+085 00000798 SECT3  notype       Label        | $LN3
+086 00000868 SECT3  notype       Static       | $LN3
+087 00000870 SECT3  notype       Static       | $LN4
+088 00000878 SECT3  notype       Static       | $LN5
+089 00000880 SECT3  notype       Static       | $LN6
+08A 00000828 SECT3  notype       Label        | $LN7
+08B 000008D8 SECT3  notype       Static       | $LN3
+08C 000008E0 SECT3  notype       Static       | $LN4
+08D 000008E8 SECT3  notype       Static       | $LN5
+08E 000008F0 SECT3  notype       Static       | $LN6
+08F 00000888 SECT3  notype       Label        | $LN7
+090 000008F8 SECT3  notype       Label        | $LN3
+091 00000938 SECT3  notype       Label        | $LN3
+092 00000A20 SECT3  notype       Static       | $LN3
+093 00000A28 SECT3  notype       Static       | $LN4
+094 00000A30 SECT3  notype       Static       | $LN5
+095 00000A38 SECT3  notype       Static       | $LN6
+096 00000A40 SECT3  notype       Static       | $LN7
+097 000009D8 SECT3  notype       Label        | $LN8
+098 00000AA8 SECT3  notype       Static       | $LN3
+099 00000AB0 SECT3  notype       Static       | $LN4
+09A 00000AB8 SECT3  notype       Static       | $LN5
+09B 00000AC0 SECT3  notype       Static       | $LN6
+09C 00000AC8 SECT3  notype       Static       | $LN7
+09D 00000A48 SECT3  notype       Label        | $LN8
+09E 00000B38 SECT3  notype       Label        | $LN4
+09F 00000B7C SECT3  notype       Label        | $LN5
+0A0 00000BD0 SECT3  notype       Label        | $LN6
+0A1 00000C3C SECT3  notype       Label        | $LN7
+0A2 00000CAC SECT3  notype       Label        | $LN2
+0A3 00000AD0 SECT3  notype       Label        | $LN9
+0A4 00000D30 SECT3  notype       Label        | $LN4
+0A5 00000D74 SECT3  notype       Label        | $LN5
+0A6 00000DC8 SECT3  notype       Label        | $LN6
+0A7 00000E24 SECT3  notype       Label        | $LN7
+0A8 00000E8C SECT3  notype       Label        | $LN2
+0A9 00000CC8 SECT3  notype       Label        | $LN9
+0AA 00000F50 SECT3  notype       Label        | $LN4
+0AB 00000F9C SECT3  notype       Label        | $LN5
+0AC 00000FF8 SECT3  notype       Label        | $LN6
+0AD 0000106C SECT3  notype       Label        | $LN7
+0AE 000010E4 SECT3  notype       Label        | $LN2
+0AF 00000EA8 SECT3  notype       Label        | $LN9
+0B0 00001190 SECT3  notype       Label        | $LN4
+0B1 000011DC SECT3  notype       Label        | $LN5
+0B2 00001234 SECT3  notype       Label        | $LN2
+0B3 00001100 SECT3  notype       Label        | $LN7
+0B4 000012F4 SECT3  notype       Label        | $LN4
+0B5 00001340 SECT3  notype       Label        | $LN5
+0B6 00001394 SECT3  notype       Label        | $LN6
+0B7 00001400 SECT3  notype       Label        | $LN7
+0B8 00001460 SECT3  notype       Label        | $LN2
+0B9 00001250 SECT3  notype       Label        | $LN9
+0BA 00001480 SECT3  notype       Label        | $LN3
+0BB 000014F8 SECT3  notype       Label        | $LN3
+0BC 00001578 SECT3  notype       Label        | $LN3
+0BD 00001600 SECT3  notype       Label        | $LN3
+0BE 00001690 SECT3  notype       Label        | $LN3
+0BF 00001708 SECT3  notype       Label        | $LN3
+0C0 00001788 SECT3  notype       Label        | $LN3
+0C1 00001810 SECT3  notype       Label        | $LN3
+0C2 00001950 SECT3  notype       Static       | $LN3
+0C3 00001954 SECT3  notype       Static       | $LN4
+0C4 00001958 SECT3  notype       Static       | $LN5
+0C5 0000195C SECT3  notype       Static       | $LN6
+0C6 000018A0 SECT3  notype       Label        | $LN7
+0C7 00000000 SECT7  notype       Static       | .pdata
     Section length    8, #relocs    1, #linenums    0, checksum 85B36B75, selection    5 (pick associative Section 0x5)
-0B2 00000000 SECT7  notype       Static       | $pdata$_vfprintf_l
-0B3 00000000 SECT8  notype       Static       | .xdata
+0C9 00000000 SECT7  notype       Static       | $pdata$_vfprintf_l
+0CA 00000000 SECT8  notype       Static       | .xdata
     Section length   10, #relocs    0, #linenums    0, checksum 7BAD120D, selection    5 (pick associative Section 0x6)
-0B5 00000000 SECT8  notype       Static       | $unwind$printf
-0B6 00000000 SECT9  notype       Static       | .pdata
+0CC 00000000 SECT8  notype       Static       | $unwind$printf
+0CD 00000000 SECT9  notype       Static       | .pdata
     Section length    8, #relocs    2, #linenums    0, checksum        0, selection    5 (pick associative Section 0x6)
-0B8 00000000 SECT9  notype       Static       | $pdata$printf
-0B9 00000000 SECTA  notype       Static       | .pdata
-    Section length  140, #relocs   33, #linenums    0, checksum AD620E71
-0BB 00000000 SECTA  notype       Static       | $pdata$func_S_F
-0BC 00000000 SECTB  notype       Static       | .xdata
-    Section length   AC, #relocs    0, #linenums    0, checksum 440573E0
-0BE 00000000 SECTB  notype       Static       | $unwind$variadic_func_S_F
-0BF 00000008 SECTA  notype       Static       | $pdata$variadic_func_S_F
-0C0 00000010 SECTA  notype       Static       | $pdata$call_S_F
-0C1 00000018 SECTA  notype       Static       | $pdata$call_variadic_S_F
-0C2 00000020 SECTA  notype       Static       | $pdata$func_S_FF
-0C3 00000010 SECTB  notype       Static       | $unwind$variadic_func_S_FF
-0C4 00000028 SECTA  notype       Static       | $pdata$variadic_func_S_FF
-0C5 00000030 SECTA  notype       Static       | $pdata$call_S_FF
-0C6 00000038 SECTA  notype       Static       | $pdata$call_variadic_S_FF
-0C7 00000040 SECTA  notype       Static       | $pdata$func_S_FFF
-0C8 00000020 SECTB  notype       Static       | $unwind$variadic_func_S_FFF
-0C9 00000048 SECTA  notype       Static       | $pdata$variadic_func_S_FFF
-0CA 00000050 SECTA  notype       Static       | $pdata$call_S_FFF
-0CB 00000058 SECTA  notype       Static       | $pdata$call_variadic_S_FFF
-0CC 00000060 SECTA  notype       Static       | $pdata$func_S_FFFF
-0CD 00000030 SECTB  notype       Static       | $unwind$variadic_func_S_FFFF
-0CE 00000068 SECTA  notype       Static       | $pdata$variadic_func_S_FFFF
-0CF 00000070 SECTA  notype       Static       | $pdata$call_S_FFFF
-0D0 00000078 SECTA  notype       Static       | $pdata$call_variadic_S_FFFF
-0D1 00000080 SECTA  notype       Static       | $pdata$func_S_D
-0D2 00000040 SECTB  notype       Static       | $unwind$variadic_func_S_D
-0D3 00000088 SECTA  notype       Static       | $pdata$variadic_func_S_D
-0D4 00000090 SECTA  notype       Static       | $pdata$call_S_D
-0D5 00000098 SECTA  notype       Static       | $pdata$call_variadic_S_D
-0D6 000000A0 SECTA  notype       Static       | $pdata$func_S_DD
-0D7 00000050 SECTB  notype       Static       | $unwind$variadic_func_S_DD
-0D8 000000A8 SECTA  notype       Static       | $pdata$variadic_func_S_DD
-0D9 000000B0 SECTA  notype       Static       | $pdata$call_S_DD
-0DA 000000B8 SECTA  notype       Static       | $pdata$call_variadic_S_DD
-0DB 000000C0 SECTA  notype       Static       | $pdata$func_S_DDD
-0DC 00000060 SECTB  notype       Static       | $unwind$variadic_func_S_DDD
-0DD 000000C8 SECTA  notype       Static       | $pdata$variadic_func_S_DDD
-0DE 000000D0 SECTA  notype       Static       | $pdata$call_S_DDD
-0DF 000000D8 SECTA  notype       Static       | $pdata$call_variadic_S_DDD
-0E0 000000E0 SECTA  notype       Static       | $pdata$func_S_DDDD
-0E1 00000070 SECTB  notype       Static       | $unwind$variadic_func_S_DDDD
-0E2 000000E8 SECTA  notype       Static       | $pdata$variadic_func_S_DDDD
-0E3 000000F0 SECTA  notype       Static       | $pdata$call_S_DDDD
-0E4 000000F8 SECTA  notype       Static       | $pdata$call_variadic_S_DDDD
-0E5 00000080 SECTB  notype       Static       | $unwind$sum_struct_hfa_floats
-0E6 00000100 SECTA  notype       Static       | $pdata$sum_struct_hfa_floats
-0E7 00000090 SECTB  notype       Static       | $unwind$sum_struct_hfa_doubles
-0E8 00000108 SECTA  notype       Static       | $pdata$sum_struct_hfa_doubles
-0E9 000000A0 SECTB  notype       Static       | $unwind$sum_spilled_struct_hfa_floats
-0EA 00000110 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_floats
-0EB 00000118 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_1float_nonvariadic
-0EC 00000120 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_2floats_nonvariadic
-0ED 00000128 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_3floats_nonvariadic
-0EE 00000130 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_4floats_nonvariadic
-0EF 00000138 SECTA  notype       Static       | $pdata$main
-0F0 00000008 UNDEF  notype       External     | ?_OptionsStorage@?1??__local_stdio_printf_options@@9@9 (`__local_stdio_printf_options'::`2'::_OptionsStorage)
-0F1 00000000 SECTC  notype       Static       | .data
+0CF 00000000 SECT9  notype       Static       | $pdata$printf
+0D0 00000000 SECTA  notype       Static       | .pdata
+    Section length  170, #relocs   3B, #linenums    0, checksum AC709DA1
+0D2 00000000 SECTA  notype       Static       | $pdata$func_S_F
+0D3 00000000 SECTB  notype       Static       | .xdata
+    Section length   CC, #relocs    1, #linenums    0, checksum 6DEEDD0F
+0D5 00000000 SECTB  notype       Static       | $unwind$variadic_func_S_F
+0D6 00000008 SECTA  notype       Static       | $pdata$variadic_func_S_F
+0D7 00000010 SECTA  notype       Static       | $pdata$call_S_F
+0D8 00000018 SECTA  notype       Static       | $pdata$call_variadic_S_F
+0D9 00000020 SECTA  notype       Static       | $pdata$func_S_FF
+0DA 00000010 SECTB  notype       Static       | $unwind$variadic_func_S_FF
+0DB 00000028 SECTA  notype       Static       | $pdata$variadic_func_S_FF
+0DC 00000030 SECTA  notype       Static       | $pdata$call_S_FF
+0DD 00000038 SECTA  notype       Static       | $pdata$call_variadic_S_FF
+0DE 00000040 SECTA  notype       Static       | $pdata$func_S_FFF
+0DF 00000020 SECTB  notype       Static       | $unwind$variadic_func_S_FFF
+0E0 00000048 SECTA  notype       Static       | $pdata$variadic_func_S_FFF
+0E1 00000050 SECTA  notype       Static       | $pdata$call_S_FFF
+0E2 00000058 SECTA  notype       Static       | $pdata$call_variadic_S_FFF
+0E3 00000060 SECTA  notype       Static       | $pdata$func_S_FFFF
+0E4 00000030 SECTB  notype       Static       | $unwind$variadic_func_S_FFFF
+0E5 00000068 SECTA  notype       Static       | $pdata$variadic_func_S_FFFF
+0E6 00000070 SECTA  notype       Static       | $pdata$call_S_FFFF
+0E7 00000078 SECTA  notype       Static       | $pdata$call_variadic_S_FFFF
+0E8 00000080 SECTA  notype       Static       | $pdata$func_S_D
+0E9 00000040 SECTB  notype       Static       | $unwind$variadic_func_S_D
+0EA 00000088 SECTA  notype       Static       | $pdata$variadic_func_S_D
+0EB 00000090 SECTA  notype       Static       | $pdata$call_S_D
+0EC 00000098 SECTA  notype       Static       | $pdata$call_variadic_S_D
+0ED 000000A0 SECTA  notype       Static       | $pdata$func_S_DD
+0EE 00000050 SECTB  notype       Static       | $unwind$variadic_func_S_DD
+0EF 000000A8 SECTA  notype       Static       | $pdata$variadic_func_S_DD
+0F0 000000B0 SECTA  notype       Static       | $pdata$call_S_DD
+0F1 000000B8 SECTA  notype       Static       | $pdata$call_variadic_S_DD
+0F2 000000C0 SECTA  notype       Static       | $pdata$func_S_DDD
+0F3 00000060 SECTB  notype       Static       | $unwind$variadic_func_S_DDD
+0F4 000000C8 SECTA  notype       Static       | $pdata$variadic_func_S_DDD
+0F5 000000D0 SECTA  notype       Static       | $pdata$call_S_DDD
+0F6 000000D8 SECTA  notype       Static       | $pdata$call_variadic_S_DDD
+0F7 000000E0 SECTA  notype       Static       | $pdata$func_S_DDDD
+0F8 00000070 SECTB  notype       Static       | $unwind$variadic_func_S_DDDD
+0F9 000000E8 SECTA  notype       Static       | $pdata$variadic_func_S_DDDD
+0FA 000000F0 SECTA  notype       Static       | $pdata$call_S_DDDD
+0FB 000000F8 SECTA  notype       Static       | $pdata$call_variadic_S_DDDD
+0FC 00000080 SECTB  notype       Static       | $unwind$sum_struct_hfa_floats
+0FD 00000100 SECTA  notype       Static       | $pdata$sum_struct_hfa_floats
+0FE 00000090 SECTB  notype       Static       | $unwind$sum_struct_hfa_doubles
+0FF 00000108 SECTA  notype       Static       | $pdata$sum_struct_hfa_doubles
+100 000000A0 SECTB  notype       Static       | $unwind$sum_spilled_struct_hfa_floats
+101 00000110 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_floats
+102 000000AC SECTB  notype       Static       | $unwind$sum_spilled_struct_hfa_doubles
+103 00000118 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_doubles
+104 000000B8 SECTB  notype       Static       | $unwind$sum_spilled_struct_ints
+105 00000120 SECTA  notype       Static       | $pdata$sum_spilled_struct_ints
+106 00000128 SECTA  notype       Static       | $pdata$sum_spilled_struct_1int_nonvariadic
+107 00000130 SECTA  notype       Static       | $pdata$sum_spilled_struct_2ints_nonvariadic
+108 00000138 SECTA  notype       Static       | $pdata$sum_spilled_struct_3ints_nonvariadic
+109 00000140 SECTA  notype       Static       | $pdata$sum_spilled_struct_4ints_nonvariadic
+10A 00000148 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_1float_nonvariadic
+10B 00000150 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_2floats_nonvariadic
+10C 00000158 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_3floats_nonvariadic
+10D 00000160 SECTA  notype       Static       | $pdata$sum_spilled_struct_hfa_4floats_nonvariadic
+10E 00000168 SECTA  notype       Static       | $pdata$main
+10F 00000008 UNDEF  notype       External     | ?_OptionsStorage@?1??__local_stdio_printf_options@@9@9 (`__local_stdio_printf_options'::`2'::_OptionsStorage)
+110 00000000 SECTC  notype       Static       | .data
     Section length   15, #relocs    0, #linenums    0, checksum AEFC9160
-0F3 00000000 SECTC  notype       Static       | $SG7498
-0F4 00000000 UNDEF  notype       External     | _fltused
-0F5 00000000 SECTD  notype       Static       | .chks64
+112 00000000 SECTC  notype       Static       | $SG7707
+113 00000000 UNDEF  notype       External     | _fltused
+114 00000000 SECTD  notype       Static       | .chks64
     Section length   68, #relocs    0, #linenums    0, checksum        0
 
-String Table Size = 0x8A0 bytes
+String Table Size = 0xAE3 bytes
 
   Summary
 
@@ -1060,6 +1207,6 @@ String Table Size = 0x8A0 bytes
           15 .data
           9C .debug$S
           2F .drectve
-         150 .pdata
-        1480 .text$mn
-          BC .xdata
+         180 .pdata
+        1A10 .text$mn
+          DC .xdata
