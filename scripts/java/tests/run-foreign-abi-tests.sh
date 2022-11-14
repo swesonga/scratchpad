@@ -12,7 +12,8 @@
 #
 # To run the foreign function & memory tests, use a command line similar to this one:
 #
-#  time run-foreign-abi-tests.sh /Users/saint/repos/java/forks/panama-foreign /Users/saint/repos/java/infra/bin/jtreg /Users/saint/repos/java/forks/panama-foreign/build/macosx-aarch64-server-release
+#  time ./run-foreign-abi-tests.sh /Users/saint/repos/java/forks/panama-foreign /Users/saint/repos/java/infra/bin/jtreg /Users/saint/repos/java/forks/panama-foreign/build/macosx-aarch64-server-release
+#  time ./run-foreign-abi-tests.sh /d/java/forks/panama-foreign /d/java/binaries/jtreg7 /d/java/forks/panama-foreign/build/windows-x86_64-server-slowdebug
 #
 
 jdk_repo=$1
@@ -56,8 +57,11 @@ declare -a java_foreign_tests=(
  "test/jdk/java/foreign/valist/VaListTest.java"
 )
 
+echo "java version launching jtreg:"
+java -version
+
 # https://stackoverflow.com/questions/8880603/loop-through-an-array-of-strings-in-bash
 for java_test in "${java_foreign_tests[@]}"
 do
-    $jdk_artifacts/jdk/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib $java_test
+    java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -testjdk:$jdk_artifacts/jdk -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib $java_test
 done
