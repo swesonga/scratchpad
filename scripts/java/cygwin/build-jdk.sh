@@ -37,7 +37,7 @@ function log_message()
     echo "$current_time $1"
 }
 
-timestamp=`date +%Y-%m-%d_%H%M-%S`
+timestamp=`date +%Y-%m-%d_%H%M%S`
 
 # TODO: make these configurable
 # Select either the x86_64 or aarch64 architectures
@@ -115,8 +115,6 @@ log_message "Zipping support/test into $test_zip"
 cd ..
 zip -qru $test_zip support/test
 
-log_message "Build complete"
-
 if [ $# -gt 0 ]
 then
     log_message "Moving $images_zip to $1"
@@ -125,3 +123,6 @@ then
     log_message "Moving $test_zip to $1"
     mv $test_zip $1
 fi
+
+log_message "Build complete"
+date
