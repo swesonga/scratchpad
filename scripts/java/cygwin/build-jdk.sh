@@ -5,12 +5,12 @@
 # Download JDKs from https://adoptium.net/temurin/releases/?version=19
 #
 # x86_64 Debug:
-#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/dev/Software/java/jdk-19+36
-#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/dev/Software/java/jdk-19+36  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-x86_64/
+#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+36
+#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+36  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-x86_64/
 #
 # x86_64 Release:
-#  bash configure --with-boot-jdk=/cygdrive/d/dev/Software/java/jdk-19+36
-#  bash configure --with-boot-jdk=/cygdrive/d/dev/Software/java/jdk-19+36  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-x86_64/
+#  bash configure --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+36
+#  bash configure --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+36  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-x86_64/
 #
 # aarch64 Debug:
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+34
