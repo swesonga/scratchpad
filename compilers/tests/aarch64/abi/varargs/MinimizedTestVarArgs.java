@@ -33,6 +33,7 @@
 * - https://nipafx.dev/enable-preview-language-features/
 */
 
+import java.lang.foreign.Arena;
 import java.lang.foreign.Linker;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.GroupLayout;
@@ -137,11 +138,11 @@ public class MinimizedTestVarArgs {
                             List<ParamType> paramTypes, List<StructFieldType> fields) throws Throwable {
         List<Arg> args = makeArgs(paramTypes, fields, fName);
 
-        try (MemorySession session = MemorySession.openConfined()) {
+        try (Arena arena = Arena.openConfined()) {
             MethodHandle checker = MethodHandles.insertArguments(MH_CHECK, 2, args);
-            MemorySegment writeBack = LINKER.upcallStub(checker, FunctionDescriptor.ofVoid(C_INT, C_POINTER), session);
-            MemorySegment callInfo = session.allocate(CallInfo.LAYOUT);
-            MemorySegment argIDs = session.allocate(MemoryLayout.sequenceLayout(args.size(), C_INT));
+            MemorySegment writeBack = LINKER.upcallStub(checker, FunctionDescriptor.ofVoid(C_INT, C_POINTER), arena.session());
+            MemorySegment callInfo = MemorySegment.allocateNative(CallInfo.LAYOUT, arena.session());;
+            MemorySegment argIDs = MemorySegment.allocateNative(MemoryLayout.sequenceLayout(args.size(), C_INT), arena.session());;
 
             MemorySegment callInfoPtr = callInfo;
 
@@ -192,11 +193,11 @@ public class MinimizedTestVarArgs {
     @SuppressWarnings("unchecked")
     static Object makeArg(MemoryLayout layout, List<Consumer<Object>> checks, boolean check, String fName) throws Exception {
         if (layout instanceof GroupLayout) {
-            MemorySegment segment = MemorySegment.allocateNative(layout);
+            MemorySegment segment = MemorySegment.allocateNative(layout, MemorySession.implicit());
             initStruct(segment, (GroupLayout)layout, checks, check, fName);
             return segment;
         } else if (isPointer(layout)) {
-            MemorySegment segment = MemorySegment.allocateNative(1L);
+            MemorySegment segment = MemorySegment.allocateNative(1L, MemorySession.implicit());
             if (check) {
                 checks.add(o -> {
                     try {
@@ -275,8 +276,8 @@ public class MinimizedTestVarArgs {
         MemoryLayout layout = varArg.layout;
         MethodHandle getter = varArg.getter;
         List<Consumer<Object>> checks = varArg.checks;
-        try (MemorySession session = MemorySession.openConfined()) {
-            MemorySegment seg = MemorySegment.ofAddress(ptr.address(), layout.byteSize(), session);
+        try (Arena arena = Arena.openConfined()) {
+            MemorySegment seg = MemorySegment.ofAddress(ptr.address(), layout.byteSize(), arena.session());
             Object obj = getter.invoke(seg);
             checks.forEach(check -> check.accept(obj));
         } catch (Throwable e) {
