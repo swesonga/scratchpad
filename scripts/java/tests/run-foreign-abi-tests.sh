@@ -2,9 +2,11 @@
 #
 # Run the foreign function & memory API jtreg tests.
 #
-# To download jtreg, run this command:
+# To download and set up jtreg, run these commands:
 #
-#  curl -Lo jtreg-7+1.tar.gz https://ci.adoptopenjdk.net/view/Dependencies/job/dependency_pipeline/lastSuccessfulBuild/artifact/jtreg/jtreg-7+1.tar.gz
+#  curl -Lo jtreg-7.1.1+1.tar.gz https://ci.adoptopenjdk.net/view/Dependencies/job/dependency_pipeline/lastSuccessfulBuild/artifact/jtreg/jtreg-7.1.1+1.tar.gz
+#  tar xzf jtreg-7.1.1+1.tar.gz
+#  cp -r jtreg jtreg-7.1.1+1
 #
 # To build the artifacts, run this script from the root of the JDK repo:
 #
