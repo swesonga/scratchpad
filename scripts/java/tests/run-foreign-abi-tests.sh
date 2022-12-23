@@ -24,7 +24,7 @@
 #  time ./run-foreign-abi-tests.sh  ~/repos/java/forks/panama-foreign ~/repos/java/infra/bin/jtreg ~/repos/java/forks/panama-foreign/build/macosx-aarch64-server-release
 #
 #  time ./run-foreign-abi-tests.sh ~/java/forks/panama-foreign ~/java/binaries/jtreg7 ~/java/forks/panama-foreign/build/linux-x86_64-server-slowdebug
-#  time ./run-foreign-abi-tests.sh /d/java/forks/panama-foreign /d/java/binaries/jtreg7 /d/java/forks/panama-foreign/build/windows-x86_64-server-slowdebug
+#  time ./run-foreign-abi-tests.sh /d/java/forks/panama-foreign /d/java/binaries/jtreg-7.1.1+1 /d/java/forks/panama-foreign/build/windows-x86_64-server-slowdebug
 #
 
 jdk_repo=$1
@@ -36,6 +36,7 @@ cd $jdk_repo
 declare -a java_foreign_tests=(
  "test/jdk/java/foreign/callarranger/TestLinuxAarch64CallArranger.java"
  "test/jdk/java/foreign/callarranger/TestMacOsAarch64CallArranger.java"
+ "test/jdk/java/foreign/callarranger/TestWindowsAarch64CallArranger.java"
  "test/jdk/java/foreign/callarranger/TestSysVCallArranger.java"
  "test/jdk/java/foreign/callarranger/TestWindowsCallArranger.java"
  "test/jdk/java/foreign/stackwalk/TestStackWalk.java"
@@ -101,13 +102,15 @@ declare -a java_foreign_tests=(
  "test/jdk/java/foreign/valist/VaListTest.java"
 )
 
+echo "launching jtreg from $jdk_repo"
 echo "java version launching jtreg:"
 java -version
 
 # https://stackoverflow.com/questions/8880603/loop-through-an-array-of-strings-in-bash
 for java_test in "${java_foreign_tests[@]}"
 do
-    java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -testjdk:$jdk_artifacts/jdk -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib $java_test
+    date
+    time java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -testjdk:$jdk_artifacts/jdk -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib $java_test
 
     echo "----------------"
 done
