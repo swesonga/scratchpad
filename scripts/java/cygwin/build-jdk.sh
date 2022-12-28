@@ -5,25 +5,25 @@
 # Download JDKs from https://adoptium.net/temurin/releases/?version=19
 #
 # x86_64 Debug:
-#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+36
-#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+36  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-x86_64/
+#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+36
+#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+36  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-x86_64/
 #
 # x86_64 Release:
-#  bash configure --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+36
-#  bash configure --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+36  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-x86_64/
+#  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+36
+#  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+36  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-x86_64/
 #
 # aarch64 Debug:
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+34
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+34  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-aarch64/
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/d/java/forks/jdk/build/windows-x86_64-server-slowdebug/jdk  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+34
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+34  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/forks/jdk/build/windows-x86_64-server-slowdebug/jdk  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-aarch64/
 #
 # aarch64 Release:
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+34
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/d/java/binaries/jdk/x64/jdk-19+34  --with-hsdis=llvm --with-llvm=/cygdrive/d/dev/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+34
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+34  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-aarch64/
 #
 # Run this script as follows:
 #
-#  time /cygdrive/d/dev/repos/scratchpad/scripts/java/cygwin/build-jdk.sh /cygdrive/c/shared/java/builds/
+#  time /cygdrive/c/dev/repos/scratchpad/scripts/java/cygwin/build-jdk.sh /cygdrive/c/shared/java/builds/
 #
 
 # Exit immediately if a command exits with a non-zero status. See
@@ -45,7 +45,7 @@ arch=x86_64
 os=windows
 build_hsdis=1
 debug_level=slowdebug
-llvm_path=/cygdrive/d/dev/software/llvm-$arch
+llvm_path=/cygdrive/c/dev/software/llvm-$arch
 log_root="build/mylogs"
 # use "debug" for a more detailed log
 log_verbosity=cmdlines
