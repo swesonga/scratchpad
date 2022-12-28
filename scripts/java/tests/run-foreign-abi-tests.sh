@@ -10,20 +10,18 @@
 #
 # To build the artifacts, run this script from the root of the JDK repo:
 #
-#  /Users/saint/repos/scratchpad/scripts/java/cygwin/build-jdk.sh
+#  ~/repos/scratchpad/scripts/java/cygwin/build-jdk.sh
 #
 # To see the tests and the test subdirectories:
 #
-#  cd /Users/saint/repos/java/forks/panama-foreign/test/jdk/java/foreign
+#  cd ~/repos/java/forks/panama-foreign/test/jdk/java/foreign
 #  ls -1 *Test*.java
 #  ls -1d */
 #
 # To run the foreign function & memory tests, use a command line similar to this one:
 #
-#  time ./run-foreign-abi-tests.sh /Users/saint/repos/java/forks/panama-foreign /Users/saint/repos/java/infra/bin/jtreg /Users/saint/repos/java/forks/panama-foreign/build/macosx-aarch64-server-release
-#  time ./run-foreign-abi-tests.sh  ~/repos/java/forks/panama-foreign ~/repos/java/infra/bin/jtreg ~/repos/java/forks/panama-foreign/build/macosx-aarch64-server-release
-#
-#  time ./run-foreign-abi-tests.sh ~/java/forks/panama-foreign ~/java/binaries/jtreg7 ~/java/forks/panama-foreign/build/linux-x86_64-server-slowdebug
+#  time ./run-foreign-abi-tests.sh ~/repos/java/forks/panama-foreign ~/java/binaries/jtreg-7.1.1+1 ~/repos/java/forks/panama-foreign/build/macosx-aarch64-server-release
+#  time ./run-foreign-abi-tests.sh ~/java/forks/panama-foreign ~/java/binaries/jtreg-7.1.1+1 ~/java/forks/panama-foreign/build/linux-x86_64-server-slowdebug
 #  time ./run-foreign-abi-tests.sh /d/java/forks/panama-foreign /d/java/binaries/jtreg-7.1.1+1 /d/java/forks/panama-foreign/build/windows-x86_64-server-slowdebug
 #
 
