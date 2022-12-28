@@ -13,13 +13,13 @@
 #  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10 --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-x86_64/
 #
 # aarch64 Debug:
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+34
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+34  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-aarch64/
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/forks/jdk/build/windows-x86_64-server-slowdebug/jdk  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-aarch64/
 #
 # aarch64 Release:
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+34
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19+34  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10  --with-hsdis=llvm --with-llvm=/cygdrive/c/dev/software/llvm-aarch64/
 #
 # Run this script as follows:
 #
