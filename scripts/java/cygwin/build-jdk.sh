@@ -23,7 +23,7 @@
 #
 # Run this script as follows:
 #
-#  time /cygdrive/c/dev/repos/scratchpad/scripts/java/cygwin/build-jdk.sh /cygdrive/c/shared/java/builds/
+#  time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh
 #
 
 # Exit immediately if a command exits with a non-zero status. See
