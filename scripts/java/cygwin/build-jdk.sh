@@ -52,7 +52,7 @@ log_verbosity=cmdlines
 redirect_output=1
 build_conf="${os}-${arch}-server-${debug_level}"
 
-log_message "Starting $debug_level build with timestamp $timestamp for OS type $OSTYPE"
+log_message "Starting $build_conf build with timestamp $timestamp for OS type $OSTYPE"
 mkdir -p $log_root
 
 images_log="$log_root/images-${build_conf}-${timestamp}.txt"
