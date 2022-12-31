@@ -1,0 +1,318 @@
+
+C:\repos\forks\rstudio\dependencies\windows>install-dependencies.cmd
+--2022-12-31 15:33:13--  https://s3.amazonaws.com/rstudio-buildtools/gnudiff.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.244.246, 52.216.61.208, 52.217.34.62, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.244.246|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 850533 (831K) [application/zip]
+Saving to: 'gnudiff.zip'
+
+gnudiff.zip                        100%[==============================================================>] 830.60K  1.98MB/s    in 0.4s
+
+2022-12-31 15:33:14 (1.98 MB/s) - 'gnudiff.zip' saved [850533/850533]
+
+Unzipping gnudiff.zip
+--2022-12-31 15:33:14--  https://s3.amazonaws.com/rstudio-buildtools/gnugrep-3.0.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.244.246, 52.216.61.208, 52.217.34.62, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.244.246|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2280471 (2.2M) [application/zip]
+Saving to: 'gnugrep-3.0.zip'
+
+gnugrep-3.0.zip                    100%[==============================================================>]   2.17M  2.47MB/s    in 0.9s
+
+2022-12-31 15:33:16 (2.47 MB/s) - 'gnugrep-3.0.zip' saved [2280471/2280471]
+
+Unzipping gnugrep-3.0.zip
+--2022-12-31 15:33:16--  https://s3.amazonaws.com/rstudio-buildtools/msys-ssh-1000-18.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.244.246, 52.216.61.208, 52.217.34.62, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.244.246|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2529433 (2.4M) [application/zip]
+Saving to: 'msys-ssh-1000-18.zip'
+
+msys-ssh-1000-18.zip               100%[==============================================================>]   2.41M  3.63MB/s    in 0.7s
+
+2022-12-31 15:33:17 (3.63 MB/s) - 'msys-ssh-1000-18.zip' saved [2529433/2529433]
+
+Unzipping msys-ssh-1000-18.zip
+--2022-12-31 15:33:17--  https://s3.amazonaws.com/rstudio-buildtools/sumatrapdf/SumatraPDF-3.1.2-64.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.249.214, 52.217.198.0, 54.231.132.56, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.249.214|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3882783 (3.7M) [application/zip]
+Saving to: 'SumatraPDF-3.1.2-64.zip'
+
+SumatraPDF-3.1.2-64.zip            100%[==============================================================>]   3.70M  2.79MB/s    in 1.3s
+
+2022-12-31 15:33:18 (2.79 MB/s) - 'SumatraPDF-3.1.2-64.zip' saved [3882783/3882783]
+
+Unzipping SumatraPDF-3.1.2-64.zip
+--2022-12-31 15:33:19--  https://s3.amazonaws.com/rstudio-buildtools/winutils-1.0.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.249.214, 52.217.198.0, 54.231.132.56, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.249.214|:443... connected.
+HTTP request sent, awaiting response... 200 OKLength: 54311 (53K) [application/zip]Saving to: 'winutils-1.0.zip'winutils-1.0.zip                   100%[==============================================================>]  53.04K  --.-KB/s    in 0.08s
+
+2022-12-31 15:33:19 (636 KB/s) - 'winutils-1.0.zip' saved [54311/54311]
+
+Unzipping winutils-1.0.zip
+--2022-12-31 15:33:19--  https://s3.amazonaws.com/rstudio-buildtools/winpty-0.4.3-msys2-2.7.0.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.249.214, 52.217.198.0, 54.231.132.56, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.249.214|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2473809 (2.4M) [application/x-zip-compressed]
+Saving to: 'winpty-0.4.3-msys2-2.7.0.zip'
+
+winpty-0.4.3-msys2-2.7.0.zip       100%[==============================================================>]   2.36M  3.68MB/s    in 0.6s
+
+2022-12-31 15:33:20 (3.68 MB/s) - 'winpty-0.4.3-msys2-2.7.0.zip' saved [2473809/2473809]
+
+Unzipping winpty-0.4.3-msys2-2.7.0.zip
+--2022-12-31 15:33:20--  https://s3.amazonaws.com/rstudio-buildtools/openssl-1.1.1i.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.217.201.128, 52.216.138.53, 52.217.42.126, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.217.201.128|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 80346253 (77M) [application/zip]
+Saving to: 'openssl-1.1.1i.zip'
+
+openssl-1.1.1i.zip                 100%[==============================================================>]  76.62M  5.75MB/s    in 14s
+
+2022-12-31 15:33:35 (5.37 MB/s) - 'openssl-1.1.1i.zip' saved [80346253/80346253]
+
+Unzipping openssl-1.1.1i.zip
+--2022-12-31 15:34:29--  https://s3.amazonaws.com/rstudio-buildtools/Boost/boost-1.78.0-win-msvc142.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.130.37, 54.231.193.40, 52.217.167.152, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.130.37|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 118264525 (113M) [application/zip]
+Saving to: 'boost-1.78.0-win-msvc142.zip'
+
+boost-1.78.0-win-msvc142.zip       100%[==============================================================>] 112.79M  5.80MB/s    in 20s
+
+2022-12-31 15:34:50 (5.69 MB/s) - 'boost-1.78.0-win-msvc142.zip' saved [118264525/118264525]
+
+Unzipping boost-1.78.0-win-msvc142.zip
+--2022-12-31 15:36:20--  https://s3.amazonaws.com/rstudio-buildtools/yaml-cpp/yaml-cpp-0.6.3.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.28.158, 52.217.165.56, 52.217.0.117, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.28.158|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 6222337 (5.9M) [application/zip]
+Saving to: 'yaml-cpp-0.6.3.zip'
+
+yaml-cpp-0.6.3.zip                 100%[==============================================================>]   5.93M  4.64MB/s    in 1.3s
+
+2022-12-31 15:36:22 (4.64 MB/s) - 'yaml-cpp-0.6.3.zip' saved [6222337/6222337]
+
+--2022-12-31 15:36:22--  https://s3.amazonaws.com/rstudio-buildtools/resource-hacker/resource_hacker.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.28.158, 52.217.165.56, 52.217.0.117, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.28.158|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3167439 (3.0M) [application/zip]
+Saving to: 'resource_hacker.zip'
+
+resource_hacker.zip                100%[==============================================================>]   3.02M  3.23MB/s    in 0.9s
+
+2022-12-31 15:36:23 (3.23 MB/s) - 'resource_hacker.zip' saved [3167439/3167439]
+
+Installing sentry-cli
+Installed Sentry CLI version:
+Installing breakpad tools for Windows
+--2022-12-31 15:36:29--  https://s3.amazonaws.com/getsentry-builds/getsentry/breakpad-tools/windows/breakpad-tools-windows.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.217.136.64, 52.217.161.24, 52.217.4.62, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.217.136.64|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2000264 (1.9M) [application/zip]
+Saving to: 'breakpad-tools-windows.zip'
+
+breakpad-tools-windows.zip         100%[==============================================================>]   1.91M  3.59MB/s    in 0.5s
+
+2022-12-31 15:36:30 (3.59 MB/s) - 'breakpad-tools-windows.zip' saved [2000264/2000264]
+
+Unzipping breakpad tools
+--2022-12-31 15:36:30--  https://s3.amazonaws.com/rstudio-buildtools/nsprocess/NsProcess.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.217.136.64, 52.217.161.24, 52.217.4.62, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.217.136.64|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2467 (2.4K) [application/zip]
+Saving to: 'NsProcess.zip'
+
+NsProcess.zip                      100%[==============================================================>]   2.41K  --.-KB/s    in 0s
+
+2022-12-31 15:36:30 (17.9 MB/s) - 'NsProcess.zip' saved [2467/2467]
+
+Unzipping NSIS NsProcess plugin
+--2022-12-31 15:36:30--  https://s3.amazonaws.com/rstudio-buildtools/dictionaries/core-dictionaries.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.217.136.64, 52.217.161.24, 52.217.4.62, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.217.136.64|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 876339 (856K) [application/zip]
+Saving to: 'core-dictionaries.zip'
+
+core-dictionaries.zip              100%[==============================================================>] 855.80K  2.12MB/s    in 0.4s
+
+2022-12-31 15:36:31 (2.12 MB/s) - 'core-dictionaries.zip' saved [876339/876339]
+
+Unzipping core-dictionaries.zip
+--2022-12-31 15:36:31--  https://s3.amazonaws.com/rstudio-buildtools/mathjax-27.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.217.136.64, 52.217.161.24, 52.217.4.62, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.217.136.64|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3285230 (3.1M) [application/zip]
+Saving to: 'mathjax-27.zip'
+
+mathjax-27.zip                     100%[==============================================================>]   3.13M  4.43MB/s    in 0.7s
+
+2022-12-31 15:36:32 (4.43 MB/s) - 'mathjax-27.zip' saved [3285230/3285230]
+
+Unzipping mathjax-27.zip
+--2022-12-31 15:36:34--  https://s3.amazonaws.com/rstudio-buildtools/pandoc/2.18/pandoc-2.18-windows-x86_64.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.179.29, 52.216.178.229, 52.217.10.126, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.179.29|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 23101030 (22M) [application/zip]
+Saving to: 'pandoc-2.18-windows-x86_64.zip'
+
+pandoc-2.18-windows-x86_64.zip     100%[==============================================================>]  22.03M  5.96MB/s    in 3.9s
+
+2022-12-31 15:36:38 (5.58 MB/s) - 'pandoc-2.18-windows-x86_64.zip' saved [23101030/23101030]
+
+Unzipping pandoc-2.18-windows-x86_64.zip
+pandoc-2.18\pandoc.exe
+        1 file(s) copied.
+--2022-12-31 15:36:39--  https://github.com/quarto-dev/quarto-cli/releases/download/v1.2.280/quarto-1.2.280-win.zip
+Resolving github.com (github.com)... 140.82.114.4
+Connecting to github.com (github.com)|140.82.114.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/298579934/2bb9af0a-9bea-4b2b-a35a-921bd324f21e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221231%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221231T223439Z&X-Amz-Expires=300&X-Amz-Signature=7a5cd2e9a3c7b41f8dde9373dd0a75de2ae824830c8a5b4bf7bdaa2a24befcea&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=298579934&response-content-disposition=attachment%3B%20filename%3Dquarto-1.2.280-win.zip&response-content-type=application%2Foctet-stream [following]
+--2022-12-31 15:36:39--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/298579934/2bb9af0a-9bea-4b2b-a35a-921bd324f21e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221231%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221231T223439Z&X-Amz-Expires=300&X-Amz-Signature=7a5cd2e9a3c7b41f8dde9373dd0a75de2ae824830c8a5b4bf7bdaa2a24befcea&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=298579934&response-content-disposition=attachment%3B%20filename%3Dquarto-1.2.280-win.zip&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 76905039 (73M) [application/octet-stream]
+Saving to: 'quarto-1.2.280-win.zip'
+
+quarto-1.2.280-win.zip             100%[==============================================================>]  73.34M  5.85MB/s    in 13s
+
+2022-12-31 15:36:53 (5.79 MB/s) - 'quarto-1.2.280-win.zip' saved [76905039/76905039]
+
+Unzipping Quarto quarto-1.2.280-win.zip
+The system cannot find the file specified.
+--2022-12-31 15:36:58--  https://s3.amazonaws.com/rstudio-buildtools/libclang-windows-13.0.1.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.217.104.158, 54.231.226.200, 54.231.198.224, ...
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.217.104.158|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 52450901 (50M) [application/zip]
+Saving to: 'libclang-windows-13.0.1.zip'
+
+libclang-windows-13.0.1.zip        100%[==============================================================>]  50.02M  5.34MB/s    in 9.0s
+
+2022-12-31 15:37:08 (5.54 MB/s) - 'libclang-windows-13.0.1.zip' saved [52450901/52450901]
+
+Unzipping libclang-windows-13.0.1.zip
+--2022-12-31 15:37:09--  https://nodejs.org/dist/v16.14.0/node-v16.14.0-win-x64.zip
+Resolving nodejs.org (nodejs.org)... 2606:4700:10::6814:162e, 2606:4700:10::6814:172e, 104.20.22.46, ...
+Connecting to nodejs.org (nodejs.org)|2606:4700:10::6814:162e|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 26080945 (25M) [application/zip]
+Saving to: 'node-v16.14.0-win-x64.zip'
+
+node-v16.14.0-win-x64.zip          100%[==============================================================>]  24.87M  5.53MB/s    in 4.5s
+
+2022-12-31 15:37:14 (5.51 MB/s) - 'node-v16.14.0-win-x64.zip' saved [26080945/26080945]
+
+Unzipping node 16.14.0
+        1 dir(s) moved.
+"Installing yarn"
+
+added 1 package, and audited 2 packages in 2s
+
+found 0 vulnerabilities
+npm notice
+npm notice New major version of npm available! 8.3.1 -> 9.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v9.2.0
+npm notice Run npm install -g npm@9.2.0 to update!
+npm notice
+Could not find platform independent libraries <prefix>
+Python path configuration:
+  PYTHONHOME = (not set)
+  PYTHONPATH = (not set)
+  program name = 'C:\Python311\python.exe'
+  isolated = 0
+  environment = 1
+  user site = 1
+  safe_path = 0
+  import site = 1
+  is in build tree = 0
+  stdlib dir = 'C:\repos\forks\rstudio\src\gwt\tools\i18n-helpers\Lib'
+  sys._base_executable = 'C:\\Python311\\python.exe'
+  sys.base_prefix = 'C:\\repos\\forks\\rstudio\\src\\gwt\\tools\\i18n-helpers'
+  sys.base_exec_prefix = 'C:\\Python311'
+  sys.platlibdir = 'DLLs'
+  sys.executable = 'C:\\Python311\\python.exe'
+  sys.prefix = 'C:\\repos\\forks\\rstudio\\src\\gwt\\tools\\i18n-helpers'
+  sys.exec_prefix = 'C:\\Python311'
+  sys.path = [
+    'C:\\Python311\\python311.zip',
+    'C:\\repos\\forks\\rstudio\\src\\gwt\\tools\\i18n-helpers\\Lib',
+    'C:\\Python311\\DLLs',
+  ]
+Fatal Python error: init_fs_encoding: failed to get the Python codec of the filesystem encoding
+Python runtime state: core initialized
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x000005c0 (most recent call first):
+  <no Python frame>
+The system cannot find the path specified.
+"Installing panmirror (visual editor)"
+"Cloning quarto repo"
+Cloning into 'quarto'...
+remote: Enumerating objects: 8185, done.
+remote: Counting objects: 100% (612/612), done.
+remote: Compressing objects: 100% (357/357), done.
+Receiving objects: 100% (8185/8185), 5.21 MiB | 4.29 MiB/s, done.ed 7573Receiving objects:  99% (8104/8185), 4.07 MiB | 4.05 MiB/s
+
+Resolving deltas: 100% (5266/5266), done.
+--> The working directory is: 'C:/repos/forks/rstudio/dependencies/windows/install-crashpad'
+-> Producing crashpad build
+--> Downloading 'C:\repos\forks\rstudio\dependencies\windows/crashpad-debug.zip' from 'https://s3.amazonaws.com/rstudio-buildtools/crashpad-debug.zip'
+-> Downloading file:
+- 'https://s3.amazonaws.com/rstudio-buildtools/crashpad-debug.zip' => 'C:\repos\forks\rstudio\dependencies\windows/crashpad-debug.zip'
+> wget.exe --no-check-certificate -c "https://s3.amazonaws.com/rstudio-buildtools/crashpad-debug.zip" -O "C:\repos\forks\rstudio\dependencies\windows/crashpad-debug.zip"
+-> Extracting zip file 'C:\repos\forks\rstudio\dependencies\windows/crashpad-debug.zip'
+--> Downloading 'C:\repos\forks\rstudio\dependencies\windows/crashpad-release.zip' from 'https://s3.amazonaws.com/rstudio-buildtools/crashpad-release.zip'
+-> Downloading file:
+- 'https://s3.amazonaws.com/rstudio-buildtools/crashpad-release.zip' => 'C:\repos\forks\rstudio\dependencies\windows/crashpad-release.zip'
+> wget.exe --no-check-certificate -c "https://s3.amazonaws.com/rstudio-buildtools/crashpad-release.zip" -O "C:\repos\forks\rstudio\dependencies\windows/crashpad-release.zip"
+-> Extracting zip file 'C:\repos\forks\rstudio\dependencies\windows/crashpad-release.zip'
+-> crashpad installed successfully!
+--> The working directory is: 'C:/repos/forks/rstudio/dependencies/windows/install-soci'
+-> Producing SOCI build
+--> Downloading 'C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite-header.zip' from 'https://sqlite.org/2020/sqlite-amalgamation-3310100.zip'
+-> Downloading file:
+- 'https://sqlite.org/2020/sqlite-amalgamation-3310100.zip' => 'C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite-header.zip'
+> wget.exe --no-check-certificate -c "https://sqlite.org/2020/sqlite-amalgamation-3310100.zip" -O "C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite-header.zip"
+-> Extracting zip file 'C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite-header.zip'
+> build-sqlite.cmd
+--> Downloading 'C:/repos/forks/rstudio/dependencies/windows/install-soci/win-postgresql.zip' from 'https://rstudio-buildtools.s3.amazonaws.com/win-postgresql.zip'
+-> Downloading file:
+- 'https://rstudio-buildtools.s3.amazonaws.com/win-postgresql.zip' => 'C:/repos/forks/rstudio/dependencies/windows/install-soci/win-postgresql.zip'
+> wget.exe --no-check-certificate -c "https://rstudio-buildtools.s3.amazonaws.com/win-postgresql.zip" -O "C:/repos/forks/rstudio/dependencies/windows/install-soci/win-postgresql.zip"
+-> Extracting zip file 'C:/repos/forks/rstudio/dependencies/windows/install-soci/win-postgresql.zip'
+--> Downloading SOCI sources
+-> Downloading file:
+- 'https://rstudio-buildtools.s3.amazonaws.com/soci-4.0.3.tar.gz' => 'soci-4.0.3.tar.gz'
+> wget.exe --no-check-certificate -c "https://rstudio-buildtools.s3.amazonaws.com/soci-4.0.3.tar.gz" -O "soci-4.0.3.tar.gz"
+--> Unzipping SOCI sources
+> 7z.exe -aoa e soci-4.0.3.tar.gz
+> 7z.exe -aoa x soci-4.0.3.tar
+> cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INCLUDE_PATH="C:\repos\forks\rstudio\dependencies\windows\boost-1.78.0-win-msvc142-release-static\boost64/include" -DBoost_USE_STATIC_LIBS=ON -DCMAKE_LIBRARY_PATH="C:\repos\forks\rstudio\dependencies\windows\boost-1.78.0-win-msvc142-release-static\boost64/lib" -DSOCI_TESTS=OFF -DSOCI_SHARED=OFF -DWITH_POSTGRESQL=ON -DWITH_SQLITE3=ON -DSQLITE3_INCLUDE_DIR="C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite-amalgamation-3310100" -DSQLITE3_LIBRARY="C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite3-debug-x86.lib" -DPOSTGRESQL_INCLUDE_DIR="C:/repos/forks/rstudio/dependencies/windows/install-soci/postgresql/include" -DPOSTGRESQL_LIBRARY="C:/repos/forks/rstudio/dependencies/windows/install-soci/postgresql/lib/x86/Debug/libpq.lib" ..\..
+> cmake --build . --config Debug
+> cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INCLUDE_PATH="C:\repos\forks\rstudio\dependencies\windows\boost-1.78.0-win-msvc142-release-static\boost64/include" -DBoost_USE_STATIC_LIBS=ON -DCMAKE_LIBRARY_PATH="C:\repos\forks\rstudio\dependencies\windows\boost-1.78.0-win-msvc142-release-static\boost64/lib" -DSOCI_TESTS=OFF -DSOCI_SHARED=OFF -DWITH_POSTGRESQL=ON -DWITH_SQLITE3=ON -DSQLITE3_INCLUDE_DIR="C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite-amalgamation-3310100" -DSQLITE3_LIBRARY="C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite3-release-x86.lib" -DPOSTGRESQL_INCLUDE_DIR="C:/repos/forks/rstudio/dependencies/windows/install-soci/postgresql/include" -DPOSTGRESQL_LIBRARY="C:/repos/forks/rstudio/dependencies/windows/install-soci/postgresql/lib/x86/Release/libpq.lib" ..\..
+> cmake --build . --config Release
+> cmake -G "Visual Studio 16 2019" -A x64 -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INCLUDE_PATH="C:\repos\forks\rstudio\dependencies\windows\boost-1.78.0-win-msvc142-release-static\boost64/include" -DBoost_USE_STATIC_LIBS=ON -DCMAKE_LIBRARY_PATH="C:\repos\forks\rstudio\dependencies\windows\boost-1.78.0-win-msvc142-release-static\boost64/lib" -DSOCI_TESTS=OFF -DSOCI_SHARED=OFF -DWITH_POSTGRESQL=ON -DWITH_SQLITE3=ON -DSQLITE3_INCLUDE_DIR="C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite-amalgamation-3310100" -DSQLITE3_LIBRARY="C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite3-debug-x64.lib" -DPOSTGRESQL_INCLUDE_DIR="C:/repos/forks/rstudio/dependencies/windows/install-soci/postgresql/include" -DPOSTGRESQL_LIBRARY="C:/repos/forks/rstudio/dependencies/windows/install-soci/postgresql/lib/x64/Debug/libpq.lib" ..\..
+> cmake --build . --config Debug
+> cmake -G "Visual Studio 16 2019" -A x64 -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INCLUDE_PATH="C:\repos\forks\rstudio\dependencies\windows\boost-1.78.0-win-msvc142-release-static\boost64/include" -DBoost_USE_STATIC_LIBS=ON -DCMAKE_LIBRARY_PATH="C:\repos\forks\rstudio\dependencies\windows\boost-1.78.0-win-msvc142-release-static\boost64/lib" -DSOCI_TESTS=OFF -DSOCI_SHARED=OFF -DWITH_POSTGRESQL=ON -DWITH_SQLITE3=ON -DSQLITE3_INCLUDE_DIR="C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite-amalgamation-3310100" -DSQLITE3_LIBRARY="C:/repos/forks/rstudio/dependencies/windows/install-soci/sqlite/sqlite3-release-x64.lib" -DPOSTGRESQL_INCLUDE_DIR="C:/repos/forks/rstudio/dependencies/windows/install-soci/postgresql/include" -DPOSTGRESQL_LIBRARY="C:/repos/forks/rstudio/dependencies/windows/install-soci/postgresql/lib/x64/Release/libpq.lib" ..\..
+> cmake --build . --config Release
+-> SOCI installed successfully!
+
+C:\repos\forks\rstudio\dependencies\windows>
