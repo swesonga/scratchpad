@@ -1,0 +1,1043 @@
+PS C:\repos\forks\rstudio\dependencies\windows> Set-ExecutionPolicy Bypass -Scope Process -Force; iex .\Install-RStudio-Prereqs.ps1
+
+                                                                                                                                                                                                                                                                                                                                 Directory: C:\software                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Mode                 LastWriteTime         Length Name                                                                                                                                                                                                                                                                       ----                 -------------         ------ ----
+d-----        12/31/2022  11:15 AM                installers
+Downloading R 3.6.3...
+Installing R...
+Forcing web requests to allow TLS v1.2 (Required for requests to Chocolatey.org)
+Getting latest version of the Chocolatey package for download.
+Not using proxy.
+Getting Chocolatey from https://community.chocolatey.org/api/v2/package/chocolatey/1.2.1.
+Downloading https://community.chocolatey.org/api/v2/package/chocolatey/1.2.1 to C:\Users\saint\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip
+Not using proxy.
+Extracting C:\Users\saint\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip to C:\Users\saint\AppData\Local\Temp\chocolatey\chocoInstall
+Installing Chocolatey on the local machine
+Creating ChocolateyInstall as an environment variable (targeting 'Machine')
+  Setting ChocolateyInstall to 'C:\ProgramData\chocolatey'
+WARNING: It's very likely you will need to close and reopen your shell
+  before you can use choco.
+Restricting write permissions to Administrators
+We are setting up the Chocolatey package repository.
+The packages themselves go to 'C:\ProgramData\chocolatey\lib'
+  (i.e. C:\ProgramData\chocolatey\lib\yourPackageName).
+A shim file for the command line goes to 'C:\ProgramData\chocolatey\bin'
+  and points to an executable in 'C:\ProgramData\chocolatey\lib\yourPackageName'.
+
+Creating Chocolatey folders if they do not already exist.
+
+WARNING: You can safely ignore errors related to missing log files when
+  upgrading from a version of Chocolatey less than 0.9.9.
+  'Batch file could not be found' is also safe to ignore.
+  'The system cannot find the file specified' - also safe.
+chocolatey.nupkg file not installed in lib.
+ Attempting to locate it from bootstrapper.
+PATH environment variable does not have C:\ProgramData\chocolatey\bin in it. Adding...
+WARNING: Not setting tab completion: Profile file does not exist at 'C:\Users\saint\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'.
+Chocolatey (choco.exe) is now ready.
+You can call choco from anywhere, command line or powershell by typing choco.
+Run choco /? for a list of functions.
+You may need to shut down and restart powershell and/or consoles
+ first prior to using choco.
+Ensuring Chocolatey commands are on the path
+Ensuring chocolatey.nupkg is in the lib folder
+Refreshing environment variables from registry for cmd.exe. Please wait...Finished..
+Chocolatey v1.2.1
+Installing the following packages:
+cmake
+By installing, you accept licenses for the packages.
+Progress: Downloading cmake.install 3.25.1... 100%
+Progress: Downloading cmake 3.25.1... 100%
+
+cmake.install v3.25.1 [Approved]
+cmake.install package files install completed. Performing other installation steps.
+Installing 64-bit cmake.install...
+cmake.install has been installed.
+  cmake.install may be able to be automatically uninstalled.
+Environment Vars (like PATH) have changed. Close/reopen your shell to
+ see the changes (or in powershell/cmd.exe just type `refreshenv`).
+ The install of cmake.install was successful.
+  Software installed to 'C:\Program Files\CMake\'
+
+cmake v3.25.1 [Approved]
+cmake package files install completed. Performing other installation steps.
+ The install of cmake was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\cmake'
+
+Chocolatey installed 2/2 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Refreshing environment variables from registry for cmd.exe. Please wait...Finished..
+Chocolatey v1.2.1
+Installing the following packages:
+jdk8
+By installing, you accept licenses for the packages.
+Progress: Downloading jdk8 8.0.211... 100%
+
+jdk8 v8.0.211 [Approved]
+jdk8 package files install completed. Performing other installation steps.
+Downloading JDK from https://javadl.oracle.com/webapps/download/GetFile/1.8.0_211-b12/478a62b7d4e34b78b671c754eaaf38ab/windows-i586/jdk-8u211-windows-x64.exe
+Installing jdk8...
+jdk8 has been installed.
+PATH environment variable does not have C:\Program Files\Java\jdk1.8.0_211\bin in it. Adding...
+  jdk8 may be able to be automatically uninstalled.
+Environment Vars (like PATH) have changed. Close/reopen your shell to
+ see the changes (or in powershell/cmd.exe just type `refreshenv`).
+ The install of jdk8 was successful.
+  Software installed to 'C:\Program Files\Java\jdk1.8.0_211\'
+
+Chocolatey installed 1/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Chocolatey v1.2.1
+Installing the following packages:
+ant
+By installing, you accept licenses for the packages.
+Progress: Downloading ant 1.10.12... 100%
+
+ant v1.10.12 [Approved]
+ant package files install completed. Performing other installation steps.
+Extracting C:\ProgramData\chocolatey\lib\ant\tools\apache-ant-1.10.12-bin.zip to C:\ProgramData\chocolatey\lib\ant\tools...
+C:\ProgramData\chocolatey\lib\ant\tools
+Added C:\ProgramData\chocolatey\bin\ant.exe shim pointed to '..\lib\ant\tools\apache-ant-1.10.12\bin\ant.bat'.
+Environment Vars (like PATH) have changed. Close/reopen your shell to
+ see the changes (or in powershell/cmd.exe just type `refreshenv`).
+ The install of ant was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\ant\tools'
+
+Chocolatey installed 1/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Chocolatey v1.2.1
+Installing the following packages:
+7zip
+By installing, you accept licenses for the packages.
+Progress: Downloading 7zip.install 22.1... 100%
+Progress: Downloading chocolatey-core.extension 1.4.0... 100%
+Progress: Downloading chocolatey-compatibility.extension 1.0.0... 100%
+Progress: Downloading 7zip 22.1... 100%
+
+chocolatey-compatibility.extension v1.0.0 [Approved]
+chocolatey-compatibility.extension package files install completed. Performing other installation steps.
+ Installed/updated chocolatey-compatibility extensions.
+ The install of chocolatey-compatibility.extension was successful.
+  Software installed to 'C:\ProgramData\chocolatey\extensions\chocolatey-compatibility'
+
+chocolatey-core.extension v1.4.0 [Approved]
+chocolatey-core.extension package files install completed. Performing other installation steps.
+ Installed/updated chocolatey-core extensions.
+ The install of chocolatey-core.extension was successful.
+  Software installed to 'C:\ProgramData\chocolatey\extensions\chocolatey-core'
+
+7zip.install v22.1 [Approved]
+7zip.install package files install completed. Performing other installation steps.
+Installing 64 bit version
+Installing 7zip.install...
+7zip.install has been installed.
+7zip installed to 'C:\Program Files\7-Zip'
+Added C:\ProgramData\chocolatey\bin\7z.exe shim pointed to 'c:\program files\7-zip\7z.exe'.
+ The install of 7zip.install was successful.
+  Software installed as 'exe', install location is likely default.
+
+7zip v22.1 [Approved]
+7zip package files install completed. Performing other installation steps.
+ The install of 7zip was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\7zip'
+
+Chocolatey installed 4/4 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Chocolatey v1.2.1
+Installing the following packages:
+git
+By installing, you accept licenses for the packages.
+Progress: Downloading git.install 2.39.0... 100%
+Progress: Downloading git 2.39.0... 100%
+
+git.install v2.39.0 [Approved]
+git.install package files install completed. Performing other installation steps.
+Using Git LFS
+Installing 64-bit git.install...
+git.install has been installed.
+git.install installed to 'C:\Program Files\Git'
+  git.install can be automatically uninstalled.
+Environment Vars (like PATH) have changed. Close/reopen your shell to
+ see the changes (or in powershell/cmd.exe just type `refreshenv`).
+ The install of git.install was successful.
+  Software installed to 'C:\Program Files\Git\'
+
+git v2.39.0 [Approved]
+git package files install completed. Performing other installation steps.
+ The install of git was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\git'
+
+Chocolatey installed 2/2 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Chocolatey v1.2.1
+Installing the following packages:
+ninja
+By installing, you accept licenses for the packages.
+Progress: Downloading ninja 1.11.1... 100%
+
+ninja v1.11.1 [Approved]
+ninja package files install completed. Performing other installation steps.
+Extracting C:\ProgramData\chocolatey\lib\ninja\tools\ninja-win_x32.zip to C:\ProgramData\chocolatey\lib\ninja\tools...
+C:\ProgramData\chocolatey\lib\ninja\tools
+Installed to: 'C:\ProgramData\chocolatey\lib\ninja\tools'
+ ShimGen has successfully created a shim for ninja.exe
+ The install of ninja was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\ninja\tools'
+
+Chocolatey installed 1/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Chocolatey v1.2.1
+Installing the following packages:
+windows-sdk-10.1
+By installing, you accept licenses for the packages.
+windows-sdk-10.1 not installed. The package was not found with the source(s) listed.
+ Source(s): 'https://community.chocolatey.org/api/v2/'
+ NOTE: When you specify explicit sources, it overrides default sources.
+If the package version is a prerelease and you didn't specify `--pre`,
+ the package may not be found.
+Version was specified as '10.1.19041.0'. It is possible that version
+ does not exist for 'windows-sdk-10.1' at the source specified.
+Please see https://docs.chocolatey.org/en-us/troubleshooting for more
+ assistance.
+
+Chocolatey installed 0/1 packages. 1 packages failed.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+
+Failures
+ - windows-sdk-10.1 - windows-sdk-10.1 not installed. The package was not found with the source(s) listed.
+ Source(s): 'https://community.chocolatey.org/api/v2/'
+ NOTE: When you specify explicit sources, it overrides default sources.
+If the package version is a prerelease and you didn't specify `--pre`,
+ the package may not be found.
+Version was specified as '10.1.19041.0'. It is possible that version
+ does not exist for 'windows-sdk-10.1' at the source specified.
+Please see https://docs.chocolatey.org/en-us/troubleshooting for more
+ assistance.
+Chocolatey v1.2.1
+Installing the following packages:
+visualstudio2019buildtools
+By installing, you accept licenses for the packages.
+Progress: Downloading chocolatey-visualstudio.extension 1.10.2... 100%
+Progress: Downloading visualstudio2019buildtools 16.11.10.0... 100%
+Progress: Downloading KB2919355 1.0.20160915... 100%
+Progress: Downloading KB2919442 1.0.20160915... 100%
+Progress: Downloading KB2999226 1.0.20181019... 100%
+Progress: Downloading chocolatey-windowsupdate.extension 1.0.5... 100%
+Progress: Downloading dotnetfx 4.8.0.20220524... 100%
+Progress: Downloading chocolatey-dotnetfx.extension 1.0.1... 100%
+Progress: Downloading visualstudio-installer 2.0.3... 100%
+
+chocolatey-visualstudio.extension v1.10.2
+chocolatey-visualstudio.extension package files install completed. Performing other installation steps.
+ Installed/updated chocolatey-visualstudio extensions.
+ The install of chocolatey-visualstudio.extension was successful.
+  Software installed to 'C:\ProgramData\chocolatey\extensions\chocolatey-visualstudio'
+
+KB2919442 v1.0.20160915 [Approved]
+kb2919442 package files install completed. Performing other installation steps.
+Skipping installation because this hotfix only applies to Windows 8.1 and Windows Server 2012 R2.
+ The install of kb2919442 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+KB2919355 v1.0.20160915 [Approved]
+kb2919355 package files install completed. Performing other installation steps.
+Skipping installation because this hotfix only applies to Windows 8.1 and Windows Server 2012 R2.
+ The install of kb2919355 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+chocolatey-windowsupdate.extension v1.0.5 [Approved]
+chocolatey-windowsupdate.extension package files install completed. Performing other installation steps.
+ Installed/updated chocolatey-windowsupdate extensions.
+ The install of chocolatey-windowsupdate.extension was successful.
+  Software installed to 'C:\ProgramData\chocolatey\extensions\chocolatey-windowsupdate'
+
+KB2999226 v1.0.20181019 [Approved] - Possibly broken
+kb2999226 package files install completed. Performing other installation steps.
+Skipping installation because update KB2999226 does not apply to this operating system (Microsoft Windows 10 Home).
+ The install of kb2999226 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+chocolatey-dotnetfx.extension v1.0.1 [Approved]
+chocolatey-dotnetfx.extension package files install completed. Performing other installation steps.
+ Installed/updated chocolatey-dotnetfx extensions.
+ The install of chocolatey-dotnetfx.extension was successful.
+  Software installed to 'C:\ProgramData\chocolatey\extensions\chocolatey-dotnetfx'
+
+dotnetfx v4.8.0.20220524 [Approved]
+dotnetfx package files install completed. Performing other installation steps.
+Microsoft .NET Framework 4.8 or later is already installed.
+ The install of dotnetfx was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+visualstudio-installer v2.0.3 [Approved]
+visualstudio-installer package files install completed. Performing other installation steps.
+ The install of visualstudio-installer was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+visualstudio2019buildtools v16.11.10.0 [Approved]
+visualstudio2019buildtools package files install completed. Performing other installation steps.
+Downloading channel manifest
+  from 'https://aka.ms/vs/16/release/channel'
+Progress: 100% - Completed download of C:\Users\saint\AppData\Local\Temp\chocolatey\chocolatey-visualstudio.extension\ChannelManifest_-602808024.man (131.46 KB).
+Download of ChannelManifest_-602808024.man (131.46 KB) completed.
+Downloading catalog manifest
+  from 'https://download.visualstudio.microsoft.com/download/pr/486c4251-9333-4264-a38e-47174e8e8c0d/e49bd75da6e43343457ad1d81dac2a141b55aaaf23e11ab724deb005ed97b313/VisualStudio.vsman'
+Progress: 100% - Completed download of C:\Users\saint\AppData\Local\Temp\chocolatey\chocolatey-visualstudio.extension\Catalog_1995177084.man (11.25 MB).
+Download of Catalog_1995177084.man (11.25 MB) completed.
+Downloading channel manifest
+  from 'https://aka.ms/vs/17/release/channel'
+Progress: 100% - Completed download of C:\Users\saint\AppData\Local\Temp\chocolatey\chocolatey-visualstudio.extension\ChannelManifest_574806083.man (89.57 KB).
+Download of ChannelManifest_574806083.man (89.57 KB) completed.
+Downloading catalog manifest
+  from 'https://download.visualstudio.microsoft.com/download/pr/8f480125-28b8-4a2c-847c-c2b02a8cdd1b/e38ed55595d4e8e9d069a4df14a15c8242b085d925699e9ab5bead1d36f23051/VisualStudio.vsman'
+Progress: 100% - Completed download of C:\Users\saint\AppData\Local\Temp\chocolatey\chocolatey-visualstudio.extension\Catalog_199380058.man (10.74 MB).
+Download of Catalog_199380058.man (10.74 MB) completed.
+Downloading Visual Studio Installer
+  from 'https://download.visualstudio.microsoft.com/download/pr/8f480125-28b8-4a2c-847c-c2b02a8cdd1b/445a6e71ce0bbe9a0a5536ffbc22d3123dcf9b90f6a46acd16c15b56ce1ac96d/vs_Setup.exe'
+Progress: 100% - Completed download of C:\Users\saint\AppData\Local\Temp\chocolatey\Visual Studio Installer\16.11.10.0\vs_Setup.exe (2.04 MB).
+Download of vs_Setup.exe (2.04 MB) completed.
+Hashes match.
+Installing Visual Studio Installer...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1042\help.html...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1046\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\2052\help.html...
+
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1055\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1033\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1040\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1031\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1028\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1036\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1041\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1049\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1029\help.html...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\1045\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\HelpFile\3082\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\vs_setup_bootstrapper.exe...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.C2RSignatureReader.Interop.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.C2RSignatureReader.Native.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.Identity.Client.Desktop.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.Identity.Client.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.Identity.Client.Extensions.Msal.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.VisualStudio.RemoteControl.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.VisualStudio.Setup.Common.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.VisualStudio.Setup.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.VisualStudio.Setup.Download.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.VisualStudio.Telemetry.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Microsoft.VisualStudio.Utilities.Internal.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\Newtonsoft.Json.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\System.Memory.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\System.Runtime.CompilerServices.Unsafe.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\tr\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\pl\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\it\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\ru\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\cs\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\es\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\pt-BR\vs_setup_bootstrapper.resources.dll...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\de\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\ko\vs_setup_bootstrapper.resources.dll...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\fr\vs_setup_bootstrapper.resources.dll...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\zh-Hans\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\zh-Hant\vs_setup_bootstrapper.resources.dll...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\ja\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\vs_setup_bootstrapper.config...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\vs_setup_bootstrapper.exe.config...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\detection.json...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\f05bce92e702abca78\vs_bootstrapper_d15\vs_setup_bootstrapper.json...
+
+Visual Studio Installer has been installed.
+WARNING: The Visual Studio Installer got updated to version 3.4.2246.31370, which is still lower than the requirement of version 3.4.2246.285476935 or later.
+Downloading visualstudio2019buildtools
+  from 'https://download.visualstudio.microsoft.com/download/pr/791f3d28-7e20-45d9-9373-5dcfbdd1f6db/9ce5ed43b50c8126c0c0ab8a85ecaaedbfd2f17f713203ae11f70d26a2e364b5/vs_BuildTools.exe'
+Progress: 100% - Completed download of C:\Users\saint\AppData\Local\Temp\chocolatey\visualstudio2019buildtools\16.11.10.0\vs_BuildTools.exe (1.39 MB).
+Download of vs_BuildTools.exe (1.39 MB) completed.
+Hashes match.
+Installing visualstudio2019buildtools...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\2052\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1029\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1028\help.html...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1036\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\3082\help.html...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1031\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1040\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1055\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1033\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1046\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1042\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1045\help.html...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1041\help.html...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\vs_setup_bootstrapper.exe...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\HelpFile\1049\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Microsoft.C2RSignatureReader.Interop.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Microsoft.C2RSignatureReader.Native.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Microsoft.Diagnostics.Tracing.EventSource.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Microsoft.VisualStudio.RemoteControl.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Microsoft.VisualStudio.Setup.Common.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Microsoft.VisualStudio.Setup.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Microsoft.VisualStudio.Setup.Download.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Microsoft.VisualStudio.Telemetry.dll...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Newtonsoft.Json.dll...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\Microsoft.VisualStudio.Utilities.Internal.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\zh-Hans\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\zh-Hant\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\tr\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\fr\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\ru\vs_setup_bootstrapper.resources.dll...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\pl\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\es\vs_setup_bootstrapper.resources.dll...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\cs\vs_setup_bootstrapper.resources.dll...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\pt-BR\vs_setup_bootstrapper.resources.dll...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\de\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\ko\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\ja\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\it\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\vs_setup_bootstrapper.config...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\vs_setup_bootstrapper.exe.config...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\detection.json...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\fc5d435b808a4a16ecef273b59\vs_bootstrapper_d15\vs_setup_bootstrapper.json...
+
+visualstudio2019buildtools has been installed.
+  visualstudio2019buildtools may be able to be automatically uninstalled.
+ The install of visualstudio2019buildtools was successful.
+  Software installed to 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools'
+
+Chocolatey installed 9/9 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+
+Installed:
+ - kb2919355 v1.0.20160915
+ - kb2999226 v1.0.20181019
+ - dotnetfx v4.8.0.20220524
+ - chocolatey-visualstudio.extension v1.10.2
+ - visualstudio2019buildtools v16.11.10.0
+ - kb2919442 v1.0.20160915
+ - visualstudio-installer v2.0.3
+ - chocolatey-dotnetfx.extension v1.0.1
+ - chocolatey-windowsupdate.extension v1.0.5
+Chocolatey v1.2.1
+Installing the following packages:
+visualstudio2019-workload-vctools
+By installing, you accept licenses for the packages.
+Progress: Downloading visualstudio2019-workload-vctools 1.0.1... 100%
+Progress: Downloading vcredist140 14.34.31931... 100%
+Progress: Downloading KB3033929 1.0.5... 100%
+Progress: Downloading KB3035131 1.0.3... 100%
+
+KB3035131 v1.0.3 [Approved]
+kb3035131 package files install completed. Performing other installation steps.
+Skipping installation because update KB3035131 does not apply to this operating system (Microsoft Windows 10 Home).
+ The install of kb3035131 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+KB3033929 v1.0.5 [Approved]
+kb3033929 package files install completed. Performing other installation steps.
+Skipping installation because update KB3033929 does not apply to this operating system (Microsoft Windows 10 Home).
+ The install of kb3033929 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+vcredist140 v14.34.31931 [Approved]
+vcredist140 package files install completed. Performing other installation steps.
+Runtime for architecture x86 version 14.34.31931 is already installed.
+Runtime for architecture x64 version 14.34.31931 is already installed.
+ The install of vcredist140 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+visualstudio2019-workload-vctools v1.0.1 [Approved]
+visualstudio2019-workload-vctools package files install completed. Performing other installation steps.
+Downloading Visual Studio Installer
+  from 'https://download.visualstudio.microsoft.com/download/pr/8f480125-28b8-4a2c-847c-c2b02a8cdd1b/445a6e71ce0bbe9a0a5536ffbc22d3123dcf9b90f6a46acd16c15b56ce1ac96d/vs_Setup.exe'
+Progress: 100% - Completed download of C:\Users\saint\AppData\Local\Temp\chocolatey\Visual Studio Installer\1.0.1\vs_Setup.exe (2.04 MB).
+Download of vs_Setup.exe (2.04 MB) completed.
+Hashes match.
+Installing Visual Studio Installer...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1046\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1042\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\2052\help.html...
+
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1040\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1033\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1028\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1031\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1036\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1055\help.html...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1041\help.html...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1049\help.html...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1029\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\1045\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\HelpFile\3082\help.html...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\vs_setup_bootstrapper.exe...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.C2RSignatureReader.Interop.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.C2RSignatureReader.Native.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.Identity.Client.Desktop.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.Identity.Client.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.Identity.Client.Extensions.Msal.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.VisualStudio.RemoteControl.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.VisualStudio.Setup.Common.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.VisualStudio.Setup.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.VisualStudio.Setup.Download.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.VisualStudio.Telemetry.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Microsoft.VisualStudio.Utilities.Internal.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\Newtonsoft.Json.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\System.Memory.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\System.Runtime.CompilerServices.Unsafe.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\tr\vs_setup_bootstrapper.resources.dll...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\pl\vs_setup_bootstrapper.resources.dll...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\it\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\ru\vs_setup_bootstrapper.resources.dll...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\cs\vs_setup_bootstrapper.resources.dll...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\es\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\pt-BR\vs_setup_bootstrapper.resources.dll...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\de\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\ko\vs_setup_bootstrapper.resources.dll...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\fr\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\zh-Hans\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\zh-Hant\vs_setup_bootstrapper.resources.dll...
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\ja\vs_setup_bootstrapper.resources.dll...
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\vs_setup_bootstrapper.config...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\vs_setup_bootstrapper.exe.config...
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\detection.json...
+
+
+
+Preparing: C:\Users\saint\AppData\Local\Temp\chocolatey\9e2901583d02620d98f76ab20afa3a\vs_bootstrapper_d15\vs_setup_bootstrapper.json...
+Visual Studio Installer has been installed.
+WARNING: The Visual Studio Installer got updated to version 3.4.2246.31370, which is still lower than the requirement of version 3.4.2246.285476935 or later.
+Installing visualstudio2019-workload-vctools...
+
+[50e4:0001][2022-12-31T11:21:08] Saving the current locale (en-US) to user.json.
+[50e4:0001][2022-12-31T11:21:08] Setting the telemetry services
+[50e4:0004][2022-12-31T11:21:08] Creating a new telemetry service.
+[50e4:0001][2022-12-31T11:21:08] Visual Studio Installer Version: 3.4.2246
+[50e4:0001][2022-12-31T11:21:08] Raw Command line: "C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe" modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools" --includeRecommended --norestart --quiet --add Microsoft.VisualStudio.Workload.VCTools
+[50e4:0001][2022-12-31T11:21:08] Parsed command line options: modify --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools" --norestart --quiet
+[50e4:0001][2022-12-31T11:21:08] Using registry value of (1) to theme installer.
+[50e4:0001][2022-12-31T11:21:08] Getting singleton lock. Mutex name: DevdivInstallerUI
+[50e4:0001][2022-12-31T11:21:08] Getting singleton lock succeed.
+[50e4:0004][2022-12-31T11:21:08] Telemetry session ID: 1e6d9288-9a30-4a93-ba69-412e8db2160b
+[50e4:0003][2022-12-31T11:21:08] Creating new ExperimentationService
+[50e4:0001][2022-12-31T11:21:08] Navigation requested from ApplicationViewModel to MainPageViewModel
+[50e4:0003][2022-12-31T11:21:08] Telemetry property VS.ABExp.Flights : lazytoolboxinit;fwlargebuffer;refactoring;spmoretempsbtn1;asloff;keybindgoldbarext;asynccsproj;vsfricheditor;completionapi;typeimportcompletion:30562486;multitenanttasmigration_002:30108253;vsttk:30514303;vsttkdebugcheckerexptf:30634195;1b1ac847:30622683;87ce9466:30635376
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.source : WPF
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.locale : en-US
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.installerversion : 3.4.2246.31370
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.startmethod : direct
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.activityid : 0bdffa84-91b8-4ce0-8357-0fb9a76a678a
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.campaign : 2030:b6d7965ff5fc44528c6966b7603063ad
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.passive : False
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.quiet : True
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.processtype : ui
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.force : False
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.willow.noweb : False
+[50e4:000f][2022-12-31T11:21:08] Creating the default public client application builder.
+[50e4:000f][2022-12-31T11:21:08] Checking for WAM OS Support: OS Version: 10.0.19044.0, Is Server: False
+[50e4:000f][2022-12-31T11:21:08] Checking for .NET Framework Runtime Version. Value: 528372
+[50e4:000f][2022-12-31T11:21:08] The .NET runtime version is greater than or equal to net461.
+[50e4:000f][2022-12-31T11:21:08] WAM is enabled.
+[50e4:000f][2022-12-31T11:21:08] Telemetry property VS.SetupEngine.ChannelUpdateDisabled : False
+Warning: [50e4:000f][2022-12-31T11:21:08] Setup expects one or more channel manifest in the repository.
+Warning: [50e4:000f][2022-12-31T11:21:08] Setup expects one or more channel manifest in the repository.
+[50e4:000f][2022-12-31T11:21:08] Authentication Environment variable setting value: null
+[50e4:001a][2022-12-31T11:21:08] Uri 'https://go.microsoft.com/fwlink/?linkid=857708' redirected to 'https://sendvsfeedback2.azurewebsites.net/api'
+[50e4:0003][2022-12-31T11:21:08] Authentication remote setting value: False
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.setup.WorkloadOverrides.DidReceiveOverride : False
+[50e4:0004][2022-12-31T11:21:08] Telemetry property vs.setup.WorkloadOverrides.RuleId : None
+[50e4:0003][2022-12-31T11:21:08] Download requested: https://aka.ms/vs/17/release/channel
+[50e4:001c][2022-12-31T11:21:08] Attempting download 'https://aka.ms/vs/17/release/channel' using engine 'WebClient'
+[50e4:001c][2022-12-31T11:21:08] Uri 'https://aka.ms/vs/17/release/channel' redirected to 'https://download.visualstudio.microsoft.com/download/pr/8f480125-28b8-4a2c-847c-c2b02a8cdd1b/0578ada3bfb13fefe61a25dca5cc5221bd65b0c334fb198374d80160a26d15d9/VisualStudio.17.Release.chman'
+[50e4:001c][2022-12-31T11:21:09] ManifestVerifier Result: Success
+[50e4:001c][2022-12-31T11:21:09] Download of 'https://aka.ms/vs/17/release/channel' succeeded using engine 'WebClient'
+[50e4:0009][2022-12-31T11:21:09] Download requested: https://aka.ms/vs/16/release/channel
+[50e4:001a][2022-12-31T11:21:09] Attempting download 'https://aka.ms/vs/16/release/channel' using engine 'WebClient'
+[50e4:001a][2022-12-31T11:21:09] Uri 'https://aka.ms/vs/16/release/channel' redirected to 'https://download.visualstudio.microsoft.com/download/pr/486c4251-9333-4264-a38e-47174e8e8c0d/9ce33d94505ef6a0d210109798ba09f1256570acfd5cc6ccc71d4669ccb452f2/VisualStudio.16.Release.chman'
+[50e4:001a][2022-12-31T11:21:09] ManifestVerifier Result: Success
+[50e4:001a][2022-12-31T11:21:09] Download of 'https://aka.ms/vs/16/release/channel' succeeded using engine 'WebClient'
+[50e4:0012][2022-12-31T11:21:09] Trying to remove channel manifest: C:\Users\saint\AppData\Local\Microsoft\VisualStudio\Packages\_Channels\0d921f0d\installChannelManifest.json
+[50e4:0012][2022-12-31T11:21:09] Trying to remove product manifest: C:\Users\saint\AppData\Local\Microsoft\VisualStudio\Packages\_Channels\0d921f0d\install_catalog.json
+[50e4:0012][2022-12-31T11:21:09] Trying to remove channel manifest: C:\Users\saint\AppData\Local\Microsoft\VisualStudio\Packages\_Channels\cd3605ac\installChannelManifest.json
+[50e4:0012][2022-12-31T11:21:09] Trying to remove product manifest: C:\Users\saint\AppData\Local\Microsoft\VisualStudio\Packages\_Channels\cd3605ac\install_catalog.json
+[50e4:0011][2022-12-31T11:21:09] Download requested: https://go.microsoft.com/fwlink/?linkid=2066144
+[50e4:0024][2022-12-31T11:21:09] Attempting download 'https://go.microsoft.com/fwlink/?linkid=2066144' using engine 'WebClient'
+Warning: [50e4:0003][2022-12-31T11:21:09] No previous catalog found at 'C:\ProgramData\Microsoft\VisualStudio\Packages\_Instances\c8eba20e\catalog.previous.json'
+[50e4:0008][2022-12-31T11:21:09] Status changed to NoUpdate
+[50e4:0024][2022-12-31T11:21:09] Uri 'https://go.microsoft.com/fwlink/?linkid=2066144' redirected to 'https://vsstartpagenewsfeed.azureedge.net/news/vs'
+[50e4:0024][2022-12-31T11:21:09] Download of 'https://go.microsoft.com/fwlink/?linkid=2066144' succeeded using engine 'WebClient'
+[50e4:0015][2022-12-31T11:21:09] Setup Engine v3.4.2246, Microsoft Windows NT 10.0.19044.0
+[50e4:0015][2022-12-31T11:21:09] Command line: "C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe" modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools" --includeRecommended --norestart --quiet --add Microsoft.VisualStudio.Workload.VCTools
+[50e4:0015][2022-12-31T11:21:09] Loading packages for instance 'c8eba20e'
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{49559293-3192-40D3-864C-5AB88E744A79}' found for package 'Microsoft.Build.FileTracker.Msi,version=16.10.31303.231'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{B1CFE19E-298A-4D14-BACD-CAA36AC4895B}' found for package 'Microsoft.VisualStudio.Setup.Configuration,version=2.11.65.22356'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{85516DED-4402-44CD-9D01-1D1F3D0C0178}' found for package 'Microsoft.VisualStudio.Setup.WMIProvider,version=2.11.65.22356'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{26D20F81-7672-441B-9092-88E0D2409992}' found for package 'Microsoft.VisualCpp.RuntimeDebug.14,version=14.29.30139,chip=x86'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{28E7B326-6E09-4960-88C1-AF305A11665C}' found for package 'Microsoft.VisualCpp.RuntimeDebug.14,version=14.29.30139,chip=x64'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{98D28609-D108-43DD-91C8-636C1B8A9087}' found for package 'Microsoft.VisualCpp.CRT.ClickOnce.Msi,version=14.29.30139,language=en-US'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{C8EA234A-FC2F-4EEC-BF7F-DB14C28C84D2}' found for package 'Microsoft.VisualStudio.Debugger.Script.Msi,version=16.10.31205.180,chip=x64'
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.VisualStudio.Debugger.Script.Msi,version=16.10.31205.180,chip=x86' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.VisualStudio.MinShell.Msi.Resources,version=16.10.31306.167,language=en-US' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x86' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x64' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.VisualStudio.Community.Msi.Resources,version=16.10.31213.239,language=en-US' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{BD75F257-50A4-E0CD-9942-C3550CA3E66A}' found for package 'Microsoft.Windows.UniversalCRT.Tools.Msi,version=10.0.26624,chip=x86'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{CD06199B-41C1-AE6D-7567-984CC68792C3}' found for package 'Microsoft.Windows.UniversalCRT.Tools.Msi,version=10.0.26624,chip=x64'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{1A9C3A1A-566B-4CFA-8B27-71FC623963BE}' found for package 'Microsoft.Net.Cumulative.TargetingPack.Resources,version=4.8.3761.2,language=en-US'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{FD0248DE-638E-46C7-9E7F-083358448ABF}' found for package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x64,version=16.11.33130.400,chip=x64'
+[50e4:0015][2022-12-31T11:21:10] Compatible package version is less than or equal to the package version. Code '{FD0248DE-638E-46C7-9E7F-083358448ABF}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x64,version=16.11.33130.400,chip=x64' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{EFA77B23-E0EA-4C6F-9B32-3FDADF203854}' found for package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x86,version=16.11.33130.400'
+[50e4:0015][2022-12-31T11:21:10] Compatible package version is less than or equal to the package version. Code '{EFA77B23-E0EA-4C6F-9B32-3FDADF203854}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x86,version=16.11.33130.400' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{6AF210BE-348B-4156-8B2E-CD57FC573ABD}' found for package 'Microsoft.ClickOnce.BootStrapper.Msi,version=16.10.31206.173'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{3826E149-22D5-470D-B8A7-D11244EA2720}' found for package 'Microsoft.ClickOnce.BootStrapper.Msi.Resources,version=16.0.28329.73'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{22E13608-4DB0-4977-A267-3AAFA09CD54A}' found for package 'Microsoft.Net.ClickOnceBootstrapper,version=4.8.4119.2'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{8C352959-35A5-40CA-A49C-91B349AB2778}' found for package 'Microsoft.SQL.ClickOnceBootstrapper.Msi,version=16.10.31205.180'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{7B907A0B-2606-42EB-A880-80E1F6AA4C48}' found for package 'Microsoft.ClickOnce.SignTool.Msi,version=16.0.28329.73'
+[50e4:0015][2022-12-31T11:21:10] Loaded existing instance for product 'Microsoft.VisualStudio.Product.BuildTools,version=16.11.33130.400'
+[50e4:0015][2022-12-31T11:21:10] Telemetry property VS.SetupEngine.Id : VisualStudio/16.11.22+33130.400
+[50e4:0015][2022-12-31T11:21:10] Telemetry property VS.SetupEngine.Branch : d16.11
+[50e4:0015][2022-12-31T11:21:10] Telemetry property VS.SetupEngine.BuildNumber : 16.11.33130.400
+[50e4:0015][2022-12-31T11:21:10] Telemetry property VS.SetupEngine.InstanceId : c8eba20e
+[50e4:0015][2022-12-31T11:21:10] Telemetry property VS.SetupEngine.EngineVersion : 3.4.2246.31370
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{49559293-3192-40D3-864C-5AB88E744A79}' found for package 'Microsoft.Build.FileTracker.Msi,version=16.10.31303.231'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{B1CFE19E-298A-4D14-BACD-CAA36AC4895B}' found for package 'Microsoft.VisualStudio.Setup.Configuration,version=2.11.65.22356'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{85516DED-4402-44CD-9D01-1D1F3D0C0178}' found for package 'Microsoft.VisualStudio.Setup.WMIProvider,version=2.11.65.22356'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{26D20F81-7672-441B-9092-88E0D2409992}' found for package 'Microsoft.VisualCpp.RuntimeDebug.14,version=14.29.30139,chip=x86'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{28E7B326-6E09-4960-88C1-AF305A11665C}' found for package 'Microsoft.VisualCpp.RuntimeDebug.14,version=14.29.30139,chip=x64'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{98D28609-D108-43DD-91C8-636C1B8A9087}' found for package 'Microsoft.VisualCpp.CRT.ClickOnce.Msi,version=14.29.30139,language=en-US'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{C8EA234A-FC2F-4EEC-BF7F-DB14C28C84D2}' found for package 'Microsoft.VisualStudio.Debugger.Script.Msi,version=16.10.31205.180,chip=x64'
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.VisualStudio.MinShell.Msi.Resources,version=16.10.31306.167,language=en-US' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x86' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x64' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.VisualStudio.Community.Msi.Resources,version=16.10.31213.239,language=en-US' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{BD75F257-50A4-E0CD-9942-C3550CA3E66A}' found for package 'Microsoft.Windows.UniversalCRT.Tools.Msi,version=10.0.26624,chip=x86'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{CD06199B-41C1-AE6D-7567-984CC68792C3}' found for package 'Microsoft.Windows.UniversalCRT.Tools.Msi,version=10.0.26624,chip=x64'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{1A9C3A1A-566B-4CFA-8B27-71FC623963BE}' found for package 'Microsoft.Net.Cumulative.TargetingPack.Resources,version=4.8.3761.2,language=en-US'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{FD0248DE-638E-46C7-9E7F-083358448ABF}' found for package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x64,version=16.11.33130.400,chip=x64'
+[50e4:0015][2022-12-31T11:21:10] Compatible package version is less than or equal to the package version. Code '{FD0248DE-638E-46C7-9E7F-083358448ABF}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x64,version=16.11.33130.400,chip=x64' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{EFA77B23-E0EA-4C6F-9B32-3FDADF203854}' found for package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x86,version=16.11.33130.400'
+[50e4:0015][2022-12-31T11:21:10] Compatible package version is less than or equal to the package version. Code '{EFA77B23-E0EA-4C6F-9B32-3FDADF203854}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0015][2022-12-31T11:21:10] Windows Installer found the package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x86,version=16.11.33130.400' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{6AF210BE-348B-4156-8B2E-CD57FC573ABD}' found for package 'Microsoft.ClickOnce.BootStrapper.Msi,version=16.10.31206.173'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{3826E149-22D5-470D-B8A7-D11244EA2720}' found for package 'Microsoft.ClickOnce.BootStrapper.Msi.Resources,version=16.0.28329.73'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{22E13608-4DB0-4977-A267-3AAFA09CD54A}' found for package 'Microsoft.Net.ClickOnceBootstrapper,version=4.8.4119.2'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{8C352959-35A5-40CA-A49C-91B349AB2778}' found for package 'Microsoft.SQL.ClickOnceBootstrapper.Msi,version=16.10.31205.180'
+[50e4:0015][2022-12-31T11:21:10] Compatible ProductCode '{7B907A0B-2606-42EB-A880-80E1F6AA4C48}' found for package 'Microsoft.ClickOnce.SignTool.Msi,version=16.0.28329.73'
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Windows.UniversalCRT.Msu.8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.2,6.3)'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Windows.UniversalCRT.Msu.81 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.3,6.4)'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Net.4.7.2.FullRedist is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1.1,10.0.16299]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Windows.UniversalCRT.Msu.7 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.2)'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.VisualStudio.Debugger.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.VisualStudio.Debugger.Remote.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.VisualStudio.Debugger.Remote.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Net.4.8.FullRedist is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1.1,10.0.17763]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.VisualStudio.NuGet.PowershellBindingRedirect is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.2)'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Windows.UniversalCRT.Msu.8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.2,6.3)'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Windows.UniversalCRT.Msu.81 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.3,6.4)'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Net.4.7.2.FullRedist is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1.1,10.0.16299]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Windows.UniversalCRT.Msu.7 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.2)'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.VisualStudio.Debugger.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.VisualStudio.Debugger.Remote.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.VisualStudio.Debugger.Remote.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.Net.4.8.FullRedist is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1.1,10.0.17763]'.
+[50e4:0015][2022-12-31T11:21:10] Package Microsoft.VisualStudio.NuGet.PowershellBindingRedirect is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.2)'.
+Warning: [50e4:0015][2022-12-31T11:21:10] No previous catalog found at 'C:\ProgramData\Microsoft\VisualStudio\Packages\_Instances\c8eba20e\catalog.previous.json'
+[50e4:0007][2022-12-31T11:21:10] Adding packages from --add
+[50e4:0014][2022-12-31T11:21:10] Planning graph selection
+[50e4:0014][2022-12-31T11:21:10] Graph.PlanSelection completed in 2ms
+[50e4:0014][2022-12-31T11:21:10] Building the required chain
+[50e4:0014][2022-12-31T11:21:10] Committing graph selection
+[50e4:0014][2022-12-31T11:21:10] Graph.CommitSelection completed in 1ms
+[50e4:0014][2022-12-31T11:21:10] Updating graph selection
+[50e4:0014][2022-12-31T11:21:10] Graph.UpdateSelection completed in 3ms
+[50e4:0014][2022-12-31T11:21:10] Notifying VMs with the updated selections: GroupSelected - Microsoft.VisualStudio.Workload.VCTools Microsoft.VisualStudio.Component.VC.CoreBuildTools Microsoft.VisualStudio.Component.VC.Tools.x86.x64 Microsoft.VisualStudio.Component.VC.Redist.14.Latest Microsoft.VisualStudio.Component.Windows10SDK.19041 Microsoft.VisualStudio.Component.VC.CMake.Project Microsoft.VisualStudio.Component.TestTools.BuildTools Microsoft.VisualStudio.Component.VC.ASAN Microsoft.VisualStudio.ComponentGroup.NativeDesktop.Core Microsoft.VisualStudio.Component.Windows10SDK Microsoft.VisualStudio.Component.TextTemplating Microsoft.VisualStudio.Component.VC.CoreIde
+[50e4:0015][2022-12-31T11:21:10] No restart manager available. Assuming no reboot required for instance state.
+[50e4:0015][2022-12-31T11:21:10] No restart manager available. Assuming no reboot required for instance state.
+[50e4:000d][2022-12-31T11:21:10] Creating a UnelevatedProductModifier to modify the following packages: Microsoft.VisualStudio.Product.BuildTools Microsoft.VisualStudio.Workload.MSBuildTools Microsoft.VisualStudio.Workload.VCTools Microsoft.VisualStudio.Component.Roslyn.Compiler Microsoft.Component.MSBuild Microsoft.VisualStudio.Component.CoreBuildTools Microsoft.VisualStudio.Component.Windows10SDK Microsoft.VisualStudio.Component.VC.CoreBuildTools Microsoft.VisualStudio.Component.VC.Tools.x86.x64 Microsoft.VisualStudio.Component.VC.Redist.14.Latest Microsoft.VisualStudio.Component.Windows10SDK.19041 Microsoft.VisualStudio.Component.VC.CMake.Project Microsoft.VisualStudio.Component.TestTools.BuildTools Microsoft.VisualStudio.Component.VC.ASAN Microsoft.VisualStudio.Component.TextTemplating Microsoft.VisualStudio.Component.VC.CoreIde Microsoft.VisualStudio.ComponentGroup.NativeDesktop.Core
+[50e4:000d][2022-12-31T11:21:10] Created a UnelevatedProductModifier
+[50e4:000d][2022-12-31T11:21:10] Decorating UnelevatedProductModifier with UnelevatedInstallerTelemetryDecorator
+Warning: [50e4:000b][2022-12-31T11:21:10] The operation was canceled.
+Warning: [50e4:0011][2022-12-31T11:21:10] The operation was canceled.
+[50e4:0011][2022-12-31T11:21:10] ManifestVerifier Result: Success
+[50e4:0011][2022-12-31T11:21:10] Download requested: https://aka.ms/vs/channels
+[50e4:0024][2022-12-31T11:21:10] Attempting download 'https://aka.ms/vs/channels' using engine 'WebClient'
+[50e4:0024][2022-12-31T11:21:11] Uri 'https://aka.ms/vs/channels' redirected to 'https://download.visualstudio.microsoft.com/download/pr/1dfb55e7-58df-420d-8250-d3d06a8f7605/35bdb1190f8308972642f79288509e80/channels.json'
+[50e4:0024][2022-12-31T11:21:11] ManifestVerifier Result: Success
+[50e4:0024][2022-12-31T11:21:11] Download of 'https://aka.ms/vs/channels' succeeded using engine 'WebClient'
+[50e4:0024][2022-12-31T11:21:11] ManifestVerifier Result: Success
+[50e4:0024][2022-12-31T11:21:11] ManifestVerifier Result: Success
+[50e4:000e][2022-12-31T11:21:11] Status changed to NoUpdate
+Warning: [50e4:0012][2022-12-31T11:25:19] No previous catalog found at 'C:\ProgramData\Microsoft\VisualStudio\Packages\_Instances\c8eba20e\catalog.previous.json'
+[50e4:0012][2022-12-31T11:25:19] Setup Engine v3.4.2246, Microsoft Windows NT 10.0.19044.0
+[50e4:0012][2022-12-31T11:25:19] Command line: "C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe" modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools" --includeRecommended --norestart --quiet --add Microsoft.VisualStudio.Workload.VCTools
+[50e4:0012][2022-12-31T11:25:19] Loading packages for instance 'c8eba20e'
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{49559293-3192-40D3-864C-5AB88E744A79}' found for package 'Microsoft.Build.FileTracker.Msi,version=16.10.31303.231'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{B1CFE19E-298A-4D14-BACD-CAA36AC4895B}' found for package 'Microsoft.VisualStudio.Setup.Configuration,version=2.11.65.22356'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{85516DED-4402-44CD-9D01-1D1F3D0C0178}' found for package 'Microsoft.VisualStudio.Setup.WMIProvider,version=2.11.65.22356'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{26D20F81-7672-441B-9092-88E0D2409992}' found for package 'Microsoft.VisualCpp.RuntimeDebug.14,version=14.29.30139,chip=x86'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{28E7B326-6E09-4960-88C1-AF305A11665C}' found for package 'Microsoft.VisualCpp.RuntimeDebug.14,version=14.29.30139,chip=x64'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{98D28609-D108-43DD-91C8-636C1B8A9087}' found for package 'Microsoft.VisualCpp.CRT.ClickOnce.Msi,version=14.29.30139,language=en-US'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{C8EA234A-FC2F-4EEC-BF7F-DB14C28C84D2}' found for package 'Microsoft.VisualStudio.Debugger.Script.Msi,version=16.10.31205.180,chip=x64'
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.VisualStudio.Debugger.Script.Msi,version=16.10.31205.180,chip=x86' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{0916C6E1-6A0A-4887-9E00-D96FD44AFACE}' found for package 'Microsoft.VisualStudio.MinShell.Msi.Resources,version=16.10.31306.167,language=en-US'
+[50e4:0012][2022-12-31T11:25:20] Compatible package is not installed. Code '{0916C6E1-6A0A-4887-9E00-D96FD44AFACE}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.VisualStudio.MinShell.Msi.Resources,version=16.10.31306.167,language=en-US' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{6CBDE7BE-E956-4E0E-81FB-2CB79190C924}' found for package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x86'
+[50e4:0012][2022-12-31T11:25:20] Compatible package is not installed. Code '{6CBDE7BE-E956-4E0E-81FB-2CB79190C924}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x86' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{102E83BD-B6A0-4C74-AD22-7D594A3435D3}' found for package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x64'
+[50e4:0012][2022-12-31T11:25:20] Compatible package is not installed. Code '{102E83BD-B6A0-4C74-AD22-7D594A3435D3}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x64' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{3751D1CF-9A44-43D2-B4BB-80FA6E7925A8}' found for package 'Microsoft.VisualStudio.Community.Msi.Resources,version=16.10.31213.239,language=en-US'
+[50e4:0012][2022-12-31T11:25:20] Compatible package is not installed. Code '{3751D1CF-9A44-43D2-B4BB-80FA6E7925A8}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.VisualStudio.Community.Msi.Resources,version=16.10.31213.239,language=en-US' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{BD75F257-50A4-E0CD-9942-C3550CA3E66A}' found for package 'Microsoft.Windows.UniversalCRT.Tools.Msi,version=10.0.26624,chip=x86'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{CD06199B-41C1-AE6D-7567-984CC68792C3}' found for package 'Microsoft.Windows.UniversalCRT.Tools.Msi,version=10.0.26624,chip=x64'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{1A9C3A1A-566B-4CFA-8B27-71FC623963BE}' found for package 'Microsoft.Net.Cumulative.TargetingPack.Resources,version=4.8.3761.2,language=en-US'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{FD0248DE-638E-46C7-9E7F-083358448ABF}' found for package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x64,version=16.11.33130.400,chip=x64'
+[50e4:0012][2022-12-31T11:25:20] Compatible package version is less than or equal to the package version. Code '{FD0248DE-638E-46C7-9E7F-083358448ABF}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x64,version=16.11.33130.400,chip=x64' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{EFA77B23-E0EA-4C6F-9B32-3FDADF203854}' found for package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x86,version=16.11.33130.400'
+[50e4:0012][2022-12-31T11:25:20] Compatible package version is less than or equal to the package version. Code '{EFA77B23-E0EA-4C6F-9B32-3FDADF203854}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x86,version=16.11.33130.400' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{6AF210BE-348B-4156-8B2E-CD57FC573ABD}' found for package 'Microsoft.ClickOnce.BootStrapper.Msi,version=16.10.31206.173'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{3826E149-22D5-470D-B8A7-D11244EA2720}' found for package 'Microsoft.ClickOnce.BootStrapper.Msi.Resources,version=16.0.28329.73'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{22E13608-4DB0-4977-A267-3AAFA09CD54A}' found for package 'Microsoft.Net.ClickOnceBootstrapper,version=4.8.4119.2'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{8C352959-35A5-40CA-A49C-91B349AB2778}' found for package 'Microsoft.SQL.ClickOnceBootstrapper.Msi,version=16.10.31205.180'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{7B907A0B-2606-42EB-A880-80E1F6AA4C48}' found for package 'Microsoft.ClickOnce.SignTool.Msi,version=16.0.28329.73'
+[50e4:0012][2022-12-31T11:25:20] Loaded existing instance for product 'Microsoft.VisualStudio.Product.BuildTools,version=16.11.33130.400'
+[50e4:0012][2022-12-31T11:25:20] Telemetry property VS.SetupEngine.Id : VisualStudio/16.11.22+33130.400
+[50e4:0012][2022-12-31T11:25:20] Telemetry property VS.SetupEngine.Branch : d16.11
+[50e4:0012][2022-12-31T11:25:20] Telemetry property VS.SetupEngine.BuildNumber : 16.11.33130.400
+[50e4:0012][2022-12-31T11:25:20] Telemetry property VS.SetupEngine.InstanceId : c8eba20e
+[50e4:0012][2022-12-31T11:25:20] Telemetry property VS.SetupEngine.EngineVersion : 3.4.2246.31370
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{49559293-3192-40D3-864C-5AB88E744A79}' found for package 'Microsoft.Build.FileTracker.Msi,version=16.10.31303.231'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{B1CFE19E-298A-4D14-BACD-CAA36AC4895B}' found for package 'Microsoft.VisualStudio.Setup.Configuration,version=2.11.65.22356'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{85516DED-4402-44CD-9D01-1D1F3D0C0178}' found for package 'Microsoft.VisualStudio.Setup.WMIProvider,version=2.11.65.22356'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{26D20F81-7672-441B-9092-88E0D2409992}' found for package 'Microsoft.VisualCpp.RuntimeDebug.14,version=14.29.30139,chip=x86'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{28E7B326-6E09-4960-88C1-AF305A11665C}' found for package 'Microsoft.VisualCpp.RuntimeDebug.14,version=14.29.30139,chip=x64'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{98D28609-D108-43DD-91C8-636C1B8A9087}' found for package 'Microsoft.VisualCpp.CRT.ClickOnce.Msi,version=14.29.30139,language=en-US'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{C8EA234A-FC2F-4EEC-BF7F-DB14C28C84D2}' found for package 'Microsoft.VisualStudio.Debugger.Script.Msi,version=16.10.31205.180,chip=x64'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{0916C6E1-6A0A-4887-9E00-D96FD44AFACE}' found for package 'Microsoft.VisualStudio.MinShell.Msi.Resources,version=16.10.31306.167,language=en-US'
+[50e4:0012][2022-12-31T11:25:20] Compatible package is not installed. Code '{0916C6E1-6A0A-4887-9E00-D96FD44AFACE}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.VisualStudio.MinShell.Msi.Resources,version=16.10.31306.167,language=en-US' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{6CBDE7BE-E956-4E0E-81FB-2CB79190C924}' found for package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x86'
+[50e4:0012][2022-12-31T11:25:20] Compatible package is not installed. Code '{6CBDE7BE-E956-4E0E-81FB-2CB79190C924}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x86' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{102E83BD-B6A0-4C74-AD22-7D594A3435D3}' found for package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x64'
+[50e4:0012][2022-12-31T11:25:20] Compatible package is not installed. Code '{102E83BD-B6A0-4C74-AD22-7D594A3435D3}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.VisualStudio.FileHandler.Msi,version=16.11.31503.54,chip=x64' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{3751D1CF-9A44-43D2-B4BB-80FA6E7925A8}' found for package 'Microsoft.VisualStudio.Community.Msi.Resources,version=16.10.31213.239,language=en-US'
+[50e4:0012][2022-12-31T11:25:20] Compatible package is not installed. Code '{3751D1CF-9A44-43D2-B4BB-80FA6E7925A8}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.VisualStudio.Community.Msi.Resources,version=16.10.31213.239,language=en-US' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{BD75F257-50A4-E0CD-9942-C3550CA3E66A}' found for package 'Microsoft.Windows.UniversalCRT.Tools.Msi,version=10.0.26624,chip=x86'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{CD06199B-41C1-AE6D-7567-984CC68792C3}' found for package 'Microsoft.Windows.UniversalCRT.Tools.Msi,version=10.0.26624,chip=x64'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{1A9C3A1A-566B-4CFA-8B27-71FC623963BE}' found for package 'Microsoft.Net.Cumulative.TargetingPack.Resources,version=4.8.3761.2,language=en-US'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{FD0248DE-638E-46C7-9E7F-083358448ABF}' found for package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x64,version=16.11.33130.400,chip=x64'
+[50e4:0012][2022-12-31T11:25:20] Compatible package version is less than or equal to the package version. Code '{FD0248DE-638E-46C7-9E7F-083358448ABF}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x64,version=16.11.33130.400,chip=x64' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{EFA77B23-E0EA-4C6F-9B32-3FDADF203854}' found for package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x86,version=16.11.33130.400'
+[50e4:0012][2022-12-31T11:25:20] Compatible package version is less than or equal to the package version. Code '{EFA77B23-E0EA-4C6F-9B32-3FDADF203854}' will not be used for repair/uninstall attempts.
+Warning: [50e4:0012][2022-12-31T11:25:20] Windows Installer found the package 'Microsoft.NetCore.SharedFramework.6.0.6.0.12.x86,version=16.11.33130.400' superseded but corresponding compatible package information was not found. Attempts to repair will be skipped and that to uninstall may leave the cache behind.
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{6AF210BE-348B-4156-8B2E-CD57FC573ABD}' found for package 'Microsoft.ClickOnce.BootStrapper.Msi,version=16.10.31206.173'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{3826E149-22D5-470D-B8A7-D11244EA2720}' found for package 'Microsoft.ClickOnce.BootStrapper.Msi.Resources,version=16.0.28329.73'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{22E13608-4DB0-4977-A267-3AAFA09CD54A}' found for package 'Microsoft.Net.ClickOnceBootstrapper,version=4.8.4119.2'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{8C352959-35A5-40CA-A49C-91B349AB2778}' found for package 'Microsoft.SQL.ClickOnceBootstrapper.Msi,version=16.10.31205.180'
+[50e4:0012][2022-12-31T11:25:20] Compatible ProductCode '{7B907A0B-2606-42EB-A880-80E1F6AA4C48}' found for package 'Microsoft.ClickOnce.SignTool.Msi,version=16.0.28329.73'
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Windows.UniversalCRT.Msu.8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.2,6.3)'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Windows.UniversalCRT.Msu.81 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.3,6.4)'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Net.4.7.2.FullRedist is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1.1,10.0.16299]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Windows.UniversalCRT.Msu.7 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.2)'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.VisualStudio.Debugger.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.VisualStudio.Debugger.Remote.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.VisualStudio.Debugger.Remote.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Net.4.8.FullRedist is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1.1,10.0.17763]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.VisualStudio.NuGet.PowershellBindingRedirect is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.2)'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Windows.UniversalCRT.Msu.8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.2,6.3)'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Windows.UniversalCRT.Msu.81 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.3,6.4)'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Net.4.7.2.FullRedist is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1.1,10.0.16299]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Windows.UniversalCRT.Msu.7 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.2)'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.VisualStudio.Debugger.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.VisualStudio.Debugger.Remote.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.VisualStudio.Debugger.Remote.DbgHelp.Win8 is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.3]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.Net.4.8.FullRedist is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1.1,10.0.17763]'.
+[50e4:0012][2022-12-31T11:25:20] Package Microsoft.VisualStudio.NuGet.PowershellBindingRedirect is not applicable: The current OS Version '10.0.19044.0' is not in the supported version range '[6.1,6.2)'.
+Warning: [50e4:0012][2022-12-31T11:25:20] No previous catalog found at 'C:\ProgramData\Microsoft\VisualStudio\Packages\_Instances\c8eba20e\catalog.previous.json'
+[50e4:0012][2022-12-31T11:25:20] Shutting down the application with exit code 0
+[50e4:0001][2022-12-31T11:25:20] Releasing singleton lock.
+[50e4:0001][2022-12-31T11:25:20] Releasing singleton lock succeed.
+[50e4:0001][2022-12-31T11:25:20] Releasing singleton lock.
+[50e4:0001][2022-12-31T11:25:20] Singleton lock does not exist. Releasing singleton lock skipped.
+Warning: [50e4:0014][2022-12-31T11:25:21] No previous catalog found at 'C:\ProgramData\Microsoft\VisualStudio\Packages\_Instances\c8eba20e\catalog.previous.json'
+[50e4:0014][2022-12-31T11:25:21] Status changed to NoUpdate
+[50e4:0001][2022-12-31T11:25:21] Closing the installer with exit code 0
+[50e4:0001][2022-12-31T11:25:21] Exit Code: 0
+[50e4:0001][2022-12-31T11:25:21] Cleared previous session ID.
+[50e4:0001][2022-12-31T11:25:21] Trying to remove channel manifest: C:\Users\saint\AppData\Local\Microsoft\VisualStudio\Packages\_Channels\0d921f0d\installChannelManifest.json
+[50e4:0001][2022-12-31T11:25:21] Trying to remove product manifest: C:\Users\saint\AppData\Local\Microsoft\VisualStudio\Packages\_Channels\0d921f0d\install_catalog.json
+[50e4:0001][2022-12-31T11:25:21] Trying to remove channel manifest: C:\Users\saint\AppData\Local\Microsoft\VisualStudio\Packages\_Channels\cd3605ac\installChannelManifest.json
+[50e4:0001][2022-12-31T11:25:21] Trying to remove product manifest: C:\Users\saint\AppData\Local\Microsoft\VisualStudio\Packages\_Channels\cd3605ac\install_catalog.json
+visualstudio2019-workload-vctools has been installed.
+  visualstudio2019-workload-vctools may be able to be automatically uninstalled.
+ The install of visualstudio2019-workload-vctools was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+Chocolatey installed 4/4 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Chocolatey v1.2.1
+Installing the following packages:
+nsis
+By installing, you accept licenses for the packages.
+Progress: Downloading nsis.install 3.08... 100%
+Progress: Downloading nsis 3.08... 100%
+
+nsis.install v3.08 [Approved]
+nsis.install package files install completed. Performing other installation steps.
+Installing nsis.install...
+nsis.install has been installed.
+  nsis.install can be automatically uninstalled.
+ The install of nsis.install was successful.
+  Software installed to 'C:\Program Files (x86)\NSIS'
+
+nsis v3.08 [Approved]
+nsis package files install completed. Performing other installation steps.
+ The install of nsis was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\nsis'
+
+Chocolatey installed 2/2 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Chocolatey v1.2.1
+Installing the following packages:
+python
+By installing, you accept licenses for the packages.
+Progress: Downloading python3 3.11.0... 100%
+Progress: Downloading vcredist2015 14.0.24215.20170201... 100%
+Progress: Downloading python 3.11.0... 100%
+
+vcredist2015 v14.0.24215.20170201 [Approved]
+vcredist2015 package files install completed. Performing other installation steps.
+ The install of vcredist2015 was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\vcredist2015'
+
+python3 v3.11.0 [Approved]
+python3 package files install completed. Performing other installation steps.
+Installing 64-bit python3...
+WARNING: Generic MSI Error. This is a local environment error, not an issue with a package or the MSI itself - it could mean a pending reboot is necessary prior to install or something else (like the same version is already installed). Please see MSI log if available. If not, try again adding '--install-arguments="'/l*v c:\python3_msi_install.log'"'. Then search the MSI Log for "Return Value 3" and look above that for the error.
+ERROR: Running ["C:\ProgramData\chocolatey\lib\python3\tools\python-3.11.0-amd64.exe" /quiet InstallAllUsers=1 PrependPath=1 TargetDir="C:\Python311" ] was not successful. Exit code was '1603'. Exit code indicates the following: Generic MSI Error. This is a local environment error, not an issue with a package or the MSI itself - it could mean a pending reboot is necessary prior to install or something else (like the same version is already installed). Please see MSI log if available. If not, try again adding '--install-arguments="'/l*v c:\python3_msi_install.log'"'. Then search the MSI Log for "Return Value 3" and look above that for the error..
+The install of python3 was NOT successful.
+Error while running 'C:\ProgramData\chocolatey\lib\python3\tools\chocolateyInstall.ps1'.
+ See log for details.
+
+python v3.11.0 [Approved]
+python package files install completed. Performing other installation steps.
+ The install of python was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\python'
+
+Chocolatey installed 2/3 packages. 1 packages failed.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+
+Failures
+ - python3 (exited 1603) - Error while running 'C:\ProgramData\chocolatey\lib\python3\tools\chocolateyInstall.ps1'.
+ See log for details.
+Chocolatey v1.2.1
+Installing the following packages:
+jq
+By installing, you accept licenses for the packages.
+Progress: Downloading jq 1.6... 100%
+
+jq v1.6 [Approved]
+jq package files install completed. Performing other installation steps.
+Downloading jq 64 bit
+  from 'https://github.com/stedolan/jq/releases/download/jq-1.6/jq-win64.exe'
+Progress: 100% - Completed download of C:\ProgramData\chocolatey\lib\jq\tools\jq.exe (3.36 MB).
+Download of jq.exe (3.36 MB) completed.
+Hashes match.
+C:\ProgramData\chocolatey\lib\jq\tools\jq.exe
+ ShimGen has successfully created a shim for jq.exe
+ The install of jq was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+
+Chocolatey installed 1/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+-----------------------------------------------------------
+Core dependencies successfully installed. Next steps:
+(1) Install Qt 5.12.8 from https://qt.io for MSVC 2017 64-bit with QtWebEngine
+(2) Start a non-administrator Command Prompt
+(3) git clone https://github.com/rstudio/rstudio
+(4) change working dir to rstudio\src\dependencies\windows
+(5) install-dependencies.cmd
+(6) open Qt Creator, load rstudio\src\cpp\CMakelists.txt
+-----------------------------------------------------------
+
+
+PS C:\repos\forks\rstudio\dependencies\windows>
