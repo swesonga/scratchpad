@@ -22,15 +22,19 @@ void PrintError(LPCTSTR lpszFunction, DWORD lastError)
 
     // Display the error message
 
+    // https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localalloc
     lpDisplayBuf = (LPVOID)LocalAlloc(LMEM_ZEROINIT,
         (lstrlen((LPCTSTR)lpMsgBuf) + lstrlen((LPCTSTR)lpszFunction) + 40) * sizeof(TCHAR));
 
+    // https://learn.microsoft.com/en-us/windows/win32/api/strsafe/nf-strsafe-stringcchprintfw
     StringCchPrintf((LPTSTR)lpDisplayBuf,
         LocalSize(lpDisplayBuf) / sizeof(TCHAR),
         TEXT("%s failed with error %d: %s"), lpszFunction, lastError, lpMsgBuf);
 
+    // https://learn.microsoft.com/en-us/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions
     printf("%ls\n", (LPCTSTR)lpDisplayBuf);
 
+    // https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localfree
     LocalFree(lpMsgBuf);
     LocalFree(lpDisplayBuf);
 }
@@ -97,6 +101,7 @@ int main(int argc, char** argv)
         printf("Successfully adjusted token privileges.\n");
     }
 
+    // https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc
     LPVOID pointer = VirtualAlloc((LPVOID)address, (SIZE_T)size, (DWORD)allocationType, (DWORD)protect);
     lastError = GetLastError();
 
