@@ -1,4 +1,6 @@
-﻿#include <Windows.h>
+﻿#define UNICODE
+
+#include <Windows.h>
 #include <strsafe.h>
 #include <stdio.h>
 
@@ -32,7 +34,7 @@ void PrintError(LPCTSTR lpszFunction, DWORD lastError)
         TEXT("%s failed with error %d: %s"), lpszFunction, lastError, lpMsgBuf);
 
     // https://learn.microsoft.com/en-us/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions
-    printf("%ls\n", (LPCTSTR)lpDisplayBuf);
+    printf("%lS\n", (LPCTSTR)lpDisplayBuf);
 
     // https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localfree
     LocalFree(lpMsgBuf);
