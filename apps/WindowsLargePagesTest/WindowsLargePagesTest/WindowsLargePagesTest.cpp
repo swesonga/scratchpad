@@ -1,7 +1,6 @@
 ﻿#include <Windows.h>
 #include <strsafe.h>
 #include <stdio.h>
-#include "WindowsLargePagesTest.h"
 
 // This function is a modification of the example at
 // https://learn.microsoft.com/en-us/windows/win32/debug/retrieving-the-last-error-code
@@ -30,7 +29,7 @@ void PrintError(LPCTSTR lpszFunction, DWORD lastError)
         LocalSize(lpDisplayBuf) / sizeof(TCHAR),
         TEXT("%s failed with error %d: %s"), lpszFunction, lastError, lpMsgBuf);
 
-    printf("%hs\n", (LPCTSTR)lpDisplayBuf);
+    printf("%ls\n", (LPCTSTR)lpDisplayBuf);
 
     LocalFree(lpMsgBuf);
     LocalFree(lpDisplayBuf);
@@ -38,15 +37,75 @@ void PrintError(LPCTSTR lpszFunction, DWORD lastError)
 
 int main(int argc, char** argv)
 {
-    const DWORD flags = MEM_RESERVE | MEM_COMMIT | MEM_LARGE_PAGES;
+    if (argc < 5) {
+        printf("Usage: WindowsLargePagesTest lpAddress dwSize flAllocationType flProtect\n");
+        printf("All arguments must be in hexadecimal\n\n");
+        printf("Example:\n WindowsLargePagesTest 0 f000000 20003000 40\n\n");
+        return 0;
+    }
 
-    LPVOID pointer = VirtualAlloc(0, 0x0f000000, flags, PAGE_EXECUTE_READWRITE);
-    DWORD lastError = GetLastError();
+    const char* addressArg = argv[1];
+    const char* sizeArg = argv[2];
+    const char* allocationTypeArg = argv[3];
+    const char* protectArg = argv[4];
+
+    // https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strtoull-strtoull-l-wcstoull-wcstoull-l?view=msvc-170
+    const int base = 16;
+    auto address = strtoull(addressArg, NULL, base);
+    auto size = strtoull(sizeArg, NULL, base);
+    auto allocationType = strtoull(allocationTypeArg, NULL, base);
+    auto protect = strtoull(protectArg, NULL, base);
+
+    DWORD lastError;
+
+    if (allocationType & MEM_LARGE_PAGES) {
+        // https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess
+        HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, GetCurrentProcessId());
+        if (!hProcess) {
+            PrintError(TEXT("OpenProcess"), GetLastError());
+            return -1;
+        }
+
+        // https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocesstoken
+        HANDLE hToken = NULL;
+        if (!OpenProcessToken(hProcess, TOKEN_ADJUST_PRIVILEGES, &hToken)) {
+            PrintError(TEXT("OpenProcessToken"), GetLastError());
+            return -1;
+        }
+
+        // https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupprivilegevaluew
+        LUID luid;
+        if (!LookupPrivilegeValue(NULL, TEXT("SeLockMemoryPrivilege"), &luid)) {
+            PrintError(TEXT("LookupPrivilegeValue"), GetLastError());
+            return -1;
+        }
+
+        TOKEN_PRIVILEGES tp;
+        tp.PrivilegeCount = 1;
+        tp.Privileges[0].Luid = luid;
+        tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+
+        // https://learn.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-adjusttokenprivileges
+        BOOL adjustedTokenPrivileges = AdjustTokenPrivileges(hToken, false, &tp, sizeof(tp), NULL, NULL);
+        lastError = GetLastError();
+
+        if (!adjustedTokenPrivileges || lastError != ERROR_SUCCESS) {
+            PrintError(TEXT("AdjustTokenPrivileges"), lastError);
+            return -1;
+        }
+
+        printf("Successfully adjusted token privileges.\n");
+    }
+
+    LPVOID pointer = VirtualAlloc((LPVOID)address, (SIZE_T)size, (DWORD)allocationType, (DWORD)protect);
+    lastError = GetLastError();
 
     // https://learn.microsoft.com/en-us/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions
-    printf("VirtualAlloc(0, 0x0f000000, MEM_RESERVE | MEM_COMMIT | MEM_LARGE_PAGES, PAGE_EXECUTE_READWRITE) returned %p\n", pointer);
+    printf("VirtualAlloc returned %p\n", pointer);
 
     if (!pointer) {
         PrintError(TEXT("VirtualAlloc"), lastError);
     }
+
+    return 0;
 }
