@@ -54,7 +54,13 @@ int main(int argc, char** argv)
         printf(" TruncateFile pathToFile newSize mapFile\n\n");
         printf("pathToFile: path to the file to truncate\n");
         printf("newSize:    path to the file to truncate\n");
-        printf("mapFile:    1 to map the file before truncation, 0 otherwise\n");
+        printf("mapFile:    1 to map the file before truncation, 0 otherwise\n\n");
+        printf("Sample Usage:\n\n");
+        printf(" ver > test.txt\n");
+        printf(" type test.txt\n");
+        printf(" TruncateFile test.txt 19 1\n");
+        printf(" TruncateFile test.txt 19 0\n");
+        printf(" type test.txt\n");
         return -1;
     }
 
@@ -89,6 +95,7 @@ int main(int argc, char** argv)
             return -1;
         }
 
+        // https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-createfilemappingw
         HANDLE hMapFile = CreateFileMapping(hFile,          // current file handle
             NULL,           // default security
             PAGE_READWRITE, // read/write permission
@@ -107,6 +114,7 @@ int main(int argc, char** argv)
     FILE_END_OF_FILE_INFO feofi;
     feofi.EndOfFile.QuadPart = size;
 
+    // https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfileinformationbyhandle
     if (!SetFileInformationByHandle(hFile,
         FileEndOfFileInfo,
         &feofi,
@@ -117,7 +125,10 @@ int main(int argc, char** argv)
 
     printf("Successfully truncated the file\n");
 
+    // https://learn.microsoft.com/en-us/windows/win32/api/handleapi/nf-handleapi-closehandle
     BOOL succeeded = CloseHandle(hFile);
+
+    // https://learn.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror
     DWORD lastError = GetLastError();
     if (lastError != ERROR_SUCCESS) {
         PrintError(TEXT("CloseHandle"), lastError);
