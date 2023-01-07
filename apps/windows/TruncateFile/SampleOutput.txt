@@ -1,0 +1,21 @@
+C:\Test> ver > test.txt
+
+C:\Test> type test.txt
+
+Microsoft Windows [Version 10.0.22621.963]
+
+C:\Test> TruncateFile test.txt 19 1
+Opened the file
+Successfully mapped the file
+SetFileInformationByHandle failed with error 1224: The requested operation cannot be performed on a file with a user-mapped section open.
+
+
+C:\Test> TruncateFile test.txt 19 0
+Opened the file
+Successfully truncated the file
+Closed the file
+
+C:\Test> type test.txt
+
+Microsoft Windows
+C:\Test>
