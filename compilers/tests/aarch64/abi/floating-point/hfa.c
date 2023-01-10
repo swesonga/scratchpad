@@ -537,6 +537,51 @@ float sum_spilled_struct_hfa_4floats_nonvariadic(float arg0,
     return sum;
 }
 
+float sum_spilled_nonvariadic_struct_hfa_floats_to_variadic_func(int num_floats,
+    int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, struct S_FFFF arg7, ...)
+{
+    va_list argptr;
+    va_start(argptr, arg7);
+
+    int sum_of_ints = arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    float sum = sum_of_ints + arg7.p0 + arg7.p1 + arg7.p2 + arg7.p3;
+
+    switch (num_floats)
+    {
+        case 1: {
+            struct S_F floats = va_arg(argptr, struct S_F);
+            sum += floats.p0;
+            break;
+        }
+        case 2: {
+            struct S_FF floats = va_arg(argptr, struct S_FF);
+            sum += floats.p0 + floats.p1;
+            break;
+        }
+        case 3: {
+            struct S_FFF floats = va_arg(argptr, struct S_FFF);
+            sum += floats.p0 + floats.p1 + floats.p2;
+            break;
+        }
+        case 4: {
+            struct S_FFFF floats = va_arg(argptr, struct S_FFFF);
+            sum += floats.p0 + floats.p1 + floats.p2 + floats.p3;
+            break;
+        }
+    }
+
+    va_end(argptr);
+    return sum;
+}
+
+float sum_spilled_struct_hfa_3floats_variadic(float arg0,
+    float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, struct S_FFF floats, ...)
+{
+    float sum = arg0 + arg1 + arg2 + arg3 + arg4 + arg5 + arg6;
+    sum += floats.p0 + floats.p1 + floats.p2;
+    return sum;
+}
+
 int main()
 {
     /*
@@ -549,4 +594,12 @@ int main()
     float sum1 = func_S_FFFF(0xCAFE890A, struct_f4);
     float sum2 = sum_spilled_struct_hfa_floats(4, 2, 3, 4, 5, 6, 7, struct_f4);
     printf("sum1 = %f\nsum2 = %f\n", sum1, sum2);
+
+    struct S_FFFF struct_arg7 = { 6.7f, 7.8f, 8.9f, 9.0f };
+    float sum3 = sum_spilled_nonvariadic_struct_hfa_floats_to_variadic_func(4, 1, 2, 3, 4, 5, 6, struct_arg7, struct_f4);
+    printf("sum3 = %f\n", sum3);
+
+    struct S_FFF struct_f3 = { 3.4f, 4.5f, 5.6f };
+    float sum4 = sum_spilled_struct_hfa_3floats_variadic(0, 10, 20, 30, 40, 50, 60, struct_f3, struct_f4);
+    printf("sum4 = %f\n", sum4);
 }
