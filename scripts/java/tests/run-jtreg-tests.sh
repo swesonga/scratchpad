@@ -54,10 +54,11 @@ declare -a java_tests=(
 
 if [ $# -lt 2 ]
 then
-    echo "Usage:   run-jtreg-tests.sh openjdk-repo-path test-jdk-path jtreg-jar-path"
-    echo "Example: run-jtreg-tests.sh /c/java/ms/openjdk-jdk11u /c/java/binaries/jdk/x64/jdk-11.0.17+8 /c/java/binaries/jtreg-6.1+1/lib/jtreg.jar"
-    echo "Example: run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x64/jdk-17.0.5+8 /d/java/binaries/jtreg7/lib/jtreg.jar"
-    echo "Example: run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x86/jdk-17.0.5+8 /d/java/binaries/jtreg7/lib/jtreg.jar"
+    echo "Usage:    run-jtreg-tests.sh openjdk-repo-path test-jdk-path jtreg-jar-path"
+    echo -e "\nExamples:"
+    echo "          run-jtreg-tests.sh /c/java/ms/openjdk-jdk11u /c/java/binaries/jdk/x64/jdk-11.0.17+8 /c/java/binaries/jtreg-6.1+1/lib/jtreg.jar"
+    echo "          run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x64/jdk-17.0.5+8 /d/java/binaries/jtreg7/lib/jtreg.jar"
+    echo "          run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x86/jdk-17.0.5+8 /d/java/binaries/jtreg7/lib/jtreg.jar"
     exit
 fi
 
