@@ -1,0 +1,5 @@
+git config --global alias.b branch
+git config --global alias.co checkout
+git config --global alias.l log
+git config --global alias.l2 "log -2"
+git config --global alias.l3 "log -3"
