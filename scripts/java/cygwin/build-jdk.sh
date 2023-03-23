@@ -2,24 +2,38 @@
 #
 # Execute in Cygwin after configuring the repo.
 # A boot JDK may be required if building the latest code from upstream.
-# Download JDKs from https://adoptium.net/temurin/releases/?version=19
+# Download JDKs from https://adoptium.net/temurin/releases/?version=20
+#
+# To download and set up jtreg, run these commands:
+#
+#  curl -Lo jtreg-7.1.1+1.tar.gz https://ci.adoptopenjdk.net/view/Dependencies/job/dependency_pipeline/lastSuccessfulBuild/artifact/jtreg/jtreg-7.1.1+1.tar.gz
+#  tar xzf jtreg-7.1.1+1.tar.gz
+#  mv jtreg jtreg-7.1.1+1
+#
+# To download googletest (use the "release-1.8.1" branch for JDK 17):
+#
+#  cd /c/repos
+#  git clone -b v1.13.0 https://github.com/google/googletest
+#
+# Use jdk-17.0.6+10 as the boot JDK if building JDK 17. Otherwise,
+# to configure the build on tip for:
 #
 # x86_64 Debug:
-#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest
-#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-x86_64/
+#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest
+#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-x86_64/
 #
 # x86_64 Release:
-#  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest
-#  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-x86_64/
+#  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest
+#  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-x86_64/
 #
 # aarch64 Debug:
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-aarch64/
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/forks/jdk/build/windows-x86_64-server-slowdebug/jdk --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-aarch64/
 #
 # aarch64 Release:
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-19.0.1+10 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-aarch64/
 #
 # Run this script as follows:
 #
