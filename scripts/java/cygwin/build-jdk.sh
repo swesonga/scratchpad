@@ -20,20 +20,20 @@
 #
 # x86_64 Debug:
 #  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest
-#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-x86_64/
+#  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-x86_64/
 #
 # x86_64 Release:
 #  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest
-#  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-x86_64/
+#  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-x86_64/
 #
 # aarch64 Debug:
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-aarch64/
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/forks/jdk/build/windows-x86_64-server-slowdebug/jdk --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/forks/jdk/build/windows-x86_64-server-slowdebug/jdk --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-aarch64/
 #
 # aarch64 Release:
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36
-#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm-aarch64/
+#  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.1.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-20+36 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-aarch64/
 #
 # Run this script as follows:
 #
@@ -59,7 +59,7 @@ arch=x86_64
 os=windows
 build_hsdis=1
 debug_level=slowdebug
-llvm_path=/cygdrive/c/software/llvm-$arch
+llvm_path=/cygdrive/c/software/llvm/llvm-$arch
 log_root="build/mylogs"
 # use "debug" for a more detailed log
 log_verbosity=cmdlines
