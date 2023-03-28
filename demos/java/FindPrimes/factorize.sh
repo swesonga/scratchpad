@@ -12,7 +12,10 @@ then
     upper_lim=$1
 fi
 
-# export JAVA_HOME /c/java/binaries/jdk/x64/jdk-20+36
+# Download JDKs from https://adoptium.net/temurin/releases/?version=20
+#
+# export JAVA_HOME=/c/java/binaries/jdk/x64/jdk-20+36
+# export JAVA_HOME=~/java/binaries/jdk/x64/jdk-20+36
 
 $JAVA_HOME/bin/javac Factorize.java
 
