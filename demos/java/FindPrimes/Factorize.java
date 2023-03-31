@@ -20,11 +20,14 @@
  *
  */
 import java.math.BigInteger;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Factorize {
     final static BigInteger ZERO = BigInteger.ZERO;
     final static BigInteger ONE = BigInteger.ONE;
     final static BigInteger TWO = BigInteger.TWO;
+    final static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
 
     static int countTrailingZeros(BigInteger number) {
         // Handle special case
@@ -57,6 +60,18 @@ public class Factorize {
         return power;
     }
 
+    static void printDate()
+    {
+        String formattedDate = dateFormat.format(new Date(System.currentTimeMillis()));
+        System.out.print(formattedDate);
+    }
+
+    static void logMessage(String message)
+    {
+        printDate();
+        System.out.println(message);
+    }
+
     public static void main(String[] args) {
         if (args.length == 0) {
             System.out.println("Usage: Factorize [Number]");
@@ -83,7 +98,7 @@ public class Factorize {
         long factors = 0;
         int trailingZeros = countTrailingZeros(number);
         if (trailingZeros > 0) {
-            System.out.println("Found a factor: 2^{" + trailingZeros + "} of " + number);
+            logMessage("Found a factor: 2^{" + trailingZeros + "} of " + number);
             number = number.divide(TWO.pow(trailingZeros));
 
             factors++;
@@ -93,20 +108,30 @@ public class Factorize {
         var sqrt = inputSqrt;
         BigInteger i = ONE.add(TWO);
 
+        logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
+        long divisibilityTests = 0;
+        long progressMsgFrequency = 1L << 31;
+
         while (i.compareTo(sqrt) <= 0) {
             if (number.remainder(i).compareTo(ZERO) == 0) {
                 factors++;
                 var maxPowerOfi = computeMaxPower(number, i);
-                System.out.println("Found a factor: " + i + "^{" + maxPowerOfi + "} of " + number);
+                logMessage("Found a factor: " + i + "^{" + maxPowerOfi + "} of " + number);
                 number = number.divide(i.pow(maxPowerOfi.intValue()));
                 sqrt = number.sqrt();
             }
 
             i = i.add(TWO);
+            divisibilityTests++;
+
+            if (divisibilityTests % progressMsgFrequency == 0) {
+                logMessage("Testing divisibility by " + i);
+                divisibilityTests = 0;
+            }
         }
 
         if (factors == 0) {
-            System.out.println(input + " is prime.\n");
+            logMessage(input + " is prime.\n");
         }
         else {
             long totalPrimeFactors = factors;
@@ -114,8 +139,9 @@ public class Factorize {
                 totalPrimeFactors++;
             }
 
-            System.out.println("Completed with number = " + number);
-            System.out.println(input + " is composite. Found " + totalPrimeFactors + " prime factors (" + factors
+            logMessage("Completed with number = " + number);
+
+            logMessage(input + " is composite. Found " + totalPrimeFactors + " prime factors (" + factors
                                 + ") of which are less than or equal to floor(sqrt(" + input + ")) = "
                                 + inputSqrt + "\n");
         }
