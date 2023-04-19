@@ -1,0 +1,16 @@
+Grep Man Page: https://www.man7.org/linux/man-pages/man1/grep.1.html
+
+-P, --perl-regexp
+              Interpret PATTERNS as Perl-compatible regular expressions
+              (PCREs).  This option is experimental when combined with
+              the -z (--null-data) option, and grep -P may warn of
+              unimplemented features.
+-R, --dereference-recursive
+              Read all files under each directory, recursively.  Follow
+              all symbolic links, unlike -r.
+-i, --ignore-case
+              Ignore case distinctions in patterns and input data, so
+              that characters that differ only in case match each other.
+-n, --line-number
+              Prefix each line of output with the 1-based line number
+              within its input file.
