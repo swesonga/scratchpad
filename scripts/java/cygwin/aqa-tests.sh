@@ -1,6 +1,7 @@
 # export TEST_JDK_HOME=/cygdrive/c/java/binaries/jdk/aarch64/jdk-11.0.19+7
+# export TESTIMAGE_PATH=/cygdrive/c/java/binaries/jdk/aarch64/jdk-11.0.19+7-test-image
 export TEST_JDK_HOME=C:\\java\\binaries\\jdk\\aarch64\\jdk-11.0.19+7
-export TESTIMAGE_PATH=/cygdrive/c/java/binaries/jdk/aarch64/jdk-11.0.19+7-test-image
+export TESTIMAGE_PATH=C:\\java\\binaries\\jdk\\aarch64\\jdk-11.0.19+7-test-image
 
 mkdir -p /cygdrive/c/java/aqa/apr2023
 cd /cygdrive/c/java/aqa/apr2023
@@ -14,4 +15,4 @@ cd ../
 ./get.sh
 ./compile.sh
 cd TKG
-make __jdk_security3_1
+make _jdk_security3_1
