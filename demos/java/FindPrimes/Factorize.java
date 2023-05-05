@@ -13,6 +13,7 @@
  *  java Factorize 438880205542
  *  java Factorize 43888020554297731
  *  java Factorize 4388802055429773100203726550535118822125
+ *  java Factorize 42039582593802342572091
  *
  * BigInteger documentation:
  *
@@ -21,9 +22,11 @@
  */
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.ArrayList;
 import java.util.Date;
 
-public class Factorize {
+public class Factorize implements Runnable {
     final static BigInteger ZERO = BigInteger.ZERO;
     final static BigInteger ONE = BigInteger.ONE;
     final static BigInteger TWO = BigInteger.TWO;
@@ -33,18 +36,20 @@ public class Factorize {
     BigInteger number;
 
     // Next prime factor candidate
-    BigInteger i;
+    BigInteger nextPrimeFactorCandidate;
 
-    long divisibilityTests;
+    AtomicLong divisibilityTests;
 
-    public long factors;
+    private long factors;
+    private long progressMsgFrequency = 1L << 31;
 
     public Factorize(BigInteger input) {
         this.input = input;
         this.number = input;
         inputSqrt = input.sqrt();
         sqrt = inputSqrt;
-        this.i = ONE;
+        this.nextPrimeFactorCandidate = ONE;
+        this.divisibilityTests = new AtomicLong();
     }
 
     public void ExtractLargestPowerOf2() {
@@ -57,24 +62,36 @@ public class Factorize {
         }
     }
 
-    public BigInteger GetNextPrimeFactorCandidate() {
-        i = i.add(TWO);
-        return i;
+    public synchronized BigInteger GetNextPrimeFactorCandidate() {
+        nextPrimeFactorCandidate = nextPrimeFactorCandidate.add(TWO);
+        return nextPrimeFactorCandidate;
     }
 
-    public void IncrementDivisibilityTests() {
-        divisibilityTests++;
-    }
-
-    public void RunFactorization() {
-
+    public void StartFactorization(int numThreads) throws InterruptedException {
         FactorizationUtils.logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
-        long progressMsgFrequency = 1L << 0;
 
-        i = GetNextPrimeFactorCandidate();
+        var threads = new ArrayList<Thread>();
+
+        for (int i = 0; i < numThreads; i++) {
+            var thread = new Thread(this);
+            threads.add(thread);
+
+            thread.start();
+        }
+
+        for (int i = 0; i < numThreads; i++) {
+            threads.get(i).join();
+        }
+
+        LogCompletion();
+    }
+
+    public void run() {
+
+        BigInteger i = GetNextPrimeFactorCandidate();
 
         while (i.compareTo(sqrt) <= 0) {
-            if (divisibilityTests % progressMsgFrequency == 0) {
+            if (divisibilityTests.getAndIncrement() % progressMsgFrequency == 0) {
                 FactorizationUtils.logMessage("Testing divisibility by " + i);
             }
 
@@ -87,7 +104,6 @@ public class Factorize {
             }
 
             i = GetNextPrimeFactorCandidate();
-            IncrementDivisibilityTests();
         }
     }
 
@@ -109,7 +125,7 @@ public class Factorize {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         if (args.length == 0) {
             System.out.println("Usage: Factorize [Number [Threads]]");
             return;
@@ -130,9 +146,19 @@ public class Factorize {
             return;
         }
 
+        int threads = 1;
+        if (args.length > 1) {
+            try {
+                threads = Integer.parseInt(args[1]);
+            }
+            catch (NumberFormatException nfe) {
+                System.err.println("Error: " + args[1] + " is not a valid number of threads.");
+                return;
+            }
+        }
+
         var factorize = new Factorize(input);
         factorize.ExtractLargestPowerOf2();
-        factorize.RunFactorization();
-        factorize.LogCompletion();
+        factorize.StartFactorization(threads);
     }
 }
