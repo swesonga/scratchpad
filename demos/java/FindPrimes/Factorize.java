@@ -28,15 +28,23 @@ public class Factorize {
     final static BigInteger ONE = BigInteger.ONE;
     final static BigInteger TWO = BigInteger.TWO;
 
-    BigInteger input, inputSqrt;
+    BigInteger input, inputSqrt, sqrt;
     // Biggest factor of the input still to be factorized by this Runnable
     BigInteger number;
+
+    // Next prime factor candidate
+    BigInteger i;
+
+    long divisibilityTests;
 
     public long factors;
 
     public Factorize(BigInteger input) {
         this.input = input;
         this.number = input;
+        inputSqrt = input.sqrt();
+        sqrt = inputSqrt;
+        this.i = ONE;
     }
 
     public void ExtractLargestPowerOf2() {
@@ -49,20 +57,25 @@ public class Factorize {
         }
     }
 
+    public BigInteger GetNextPrimeFactorCandidate() {
+        i = i.add(TWO);
+        return i;
+    }
+
+    public void IncrementDivisibilityTests() {
+        divisibilityTests++;
+    }
+
     public void RunFactorization() {
-        var inputSqrt = input.sqrt();
-        var sqrt = inputSqrt;
 
         FactorizationUtils.logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
-        long divisibilityTests = 0;
         long progressMsgFrequency = 1L << 0;
 
-        BigInteger i = ONE.add(TWO);
+        i = GetNextPrimeFactorCandidate();
 
         while (i.compareTo(sqrt) <= 0) {
             if (divisibilityTests % progressMsgFrequency == 0) {
                 FactorizationUtils.logMessage("Testing divisibility by " + i);
-                divisibilityTests = 0;
             }
 
             if (number.remainder(i).compareTo(ZERO) == 0) {
@@ -73,8 +86,8 @@ public class Factorize {
                 sqrt = number.sqrt();
             }
 
-            i = i.add(TWO);
-            divisibilityTests++;
+            i = GetNextPrimeFactorCandidate();
+            IncrementDivisibilityTests();
         }
     }
 
