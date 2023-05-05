@@ -24,6 +24,9 @@
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -73,14 +76,14 @@ public class Factorize implements Runnable {
         return largestUnfactorizedDivisor;
     }
 
-    public synchronized void DivideFactor(BigInteger factor) {
+    public synchronized BigInteger DivideFactor(BigInteger factor) {
         largestUnfactorizedDivisor = largestUnfactorizedDivisor.divide(factor);
         sqrt = largestUnfactorizedDivisor.sqrt();
+
+        return largestUnfactorizedDivisor;
     }
 
-    public void StartFactorization(int numThreads) throws InterruptedException {
-        FactorizationUtils.logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
-
+    private void LaunchThreadsManually(int numThreads) throws InterruptedException {
         var threads = new ArrayList<Thread>();
 
         for (int i = 0; i < numThreads; i++) {
@@ -92,6 +95,27 @@ public class Factorize implements Runnable {
 
         for (int i = 0; i < numThreads; i++) {
             threads.get(i).join();
+        }
+    }
+
+    private void LaunchThreadsViaExecutor(int numThreads) throws InterruptedException {
+        ExecutorService pool = Executors.newFixedThreadPool(numThreads);
+
+        for (int i = 0; i < numThreads; i++) {
+            pool.execute(this);
+        }
+
+        pool.awaitTermination(365 * 24 * 3600, TimeUnit.SECONDS);
+        pool.shutdown();
+    }
+
+    public void StartFactorization(int numThreads, boolean useExecutor) throws InterruptedException {
+        FactorizationUtils.logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
+
+        if (useExecutor) {
+            LaunchThreadsViaExecutor(numThreads);
+        } else {
+            LaunchThreadsManually(numThreads);
         }
 
         LogCompletion();
@@ -112,8 +136,9 @@ public class Factorize implements Runnable {
                 factors.getAndIncrement();
                 var maxPowerOfi = FactorizationUtils.computeMaxPower(number, i);
                 var factor = i.pow(maxPowerOfi.intValue());
-                FactorizationUtils.logMessage("Found a factor: " + i + "^{" + maxPowerOfi + "} = " + factor + " of " + number);
-                DivideFactor(factor);
+                BigInteger oldNumber = number;
+                number = DivideFactor(factor);
+                FactorizationUtils.logMessage("Found a factor: " + i + "^{" + maxPowerOfi + "} = " + factor + " of " + oldNumber + ". Number is now " + number);
             }
 
             i = GetNextPrimeFactorCandidate();
@@ -172,6 +197,8 @@ public class Factorize implements Runnable {
 
         var factorize = new Factorize(input);
         factorize.ExtractLargestPowerOf2();
-        factorize.StartFactorization(threads);
+
+        boolean useExecutor = true;
+        factorize.StartFactorization(threads, useExecutor);
     }
 }
