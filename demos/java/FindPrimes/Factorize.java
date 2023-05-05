@@ -14,6 +14,7 @@
  *  java Factorize 43888020554297731
  *  java Factorize 4388802055429773100203726550535118822125
  *  java Factorize 42039582593802342572091
+ *  java Factorize 42039582593802342572091 6
  *
  * BigInteger documentation:
  *
@@ -33,38 +34,48 @@ public class Factorize implements Runnable {
 
     BigInteger input, inputSqrt, sqrt;
     // Biggest factor of the input still to be factorized by this Runnable
-    BigInteger number;
+    BigInteger largestUnfactorizedDivisor;
 
     // Next prime factor candidate
     BigInteger nextPrimeFactorCandidate;
 
     AtomicLong divisibilityTests;
 
-    private long factors;
+    private AtomicLong factors;
     private long progressMsgFrequency = 1L << 31;
 
     public Factorize(BigInteger input) {
         this.input = input;
-        this.number = input;
+        this.largestUnfactorizedDivisor = input;
         inputSqrt = input.sqrt();
         sqrt = inputSqrt;
         this.nextPrimeFactorCandidate = ONE;
         this.divisibilityTests = new AtomicLong();
+        this.factors = new AtomicLong();
     }
 
     public void ExtractLargestPowerOf2() {
         int trailingZeros = FactorizationUtils.countTrailingZeros(input);
         if (trailingZeros > 0) {
-            FactorizationUtils.logMessage("Found a factor: 2^{" + trailingZeros + "} of " + number);
-            number = number.divide(TWO.pow(trailingZeros));
+            FactorizationUtils.logMessage("Found a factor: 2^{" + trailingZeros + "} of " + input);
+            largestUnfactorizedDivisor = largestUnfactorizedDivisor.divide(TWO.pow(trailingZeros));
 
-            factors++;
+            factors.getAndIncrement();
         }
     }
 
     public synchronized BigInteger GetNextPrimeFactorCandidate() {
         nextPrimeFactorCandidate = nextPrimeFactorCandidate.add(TWO);
         return nextPrimeFactorCandidate;
+    }
+
+    public synchronized BigInteger getLargestUnfactorizedDivisor() {
+        return largestUnfactorizedDivisor;
+    }
+
+    public synchronized void DivideFactor(BigInteger factor) {
+        largestUnfactorizedDivisor = largestUnfactorizedDivisor.divide(factor);
+        sqrt = largestUnfactorizedDivisor.sqrt();
     }
 
     public void StartFactorization(int numThreads) throws InterruptedException {
@@ -95,12 +106,14 @@ public class Factorize implements Runnable {
                 FactorizationUtils.logMessage("Testing divisibility by " + i);
             }
 
+            BigInteger number = getLargestUnfactorizedDivisor();
+
             if (number.remainder(i).compareTo(ZERO) == 0) {
-                factors++;
+                factors.getAndIncrement();
                 var maxPowerOfi = FactorizationUtils.computeMaxPower(number, i);
-                FactorizationUtils.logMessage("Found a factor: " + i + "^{" + maxPowerOfi + "} of " + number);
-                number = number.divide(i.pow(maxPowerOfi.intValue()));
-                sqrt = number.sqrt();
+                var factor = i.pow(maxPowerOfi.intValue());
+                FactorizationUtils.logMessage("Found a factor: " + i + "^{" + maxPowerOfi + "} = " + factor + " of " + number);
+                DivideFactor(factor);
             }
 
             i = GetNextPrimeFactorCandidate();
@@ -108,16 +121,16 @@ public class Factorize implements Runnable {
     }
 
     public void LogCompletion() {
-        if (factors == 0) {
+        if (factors.get() == 0) {
             FactorizationUtils.logMessage(input + " is prime.\n");
         }
         else {
-            long totalPrimeFactors = factors;
-            if (number.compareTo(ONE) == 1) {
+            long totalPrimeFactors = factors.get();
+            if (largestUnfactorizedDivisor.compareTo(ONE) == 1) {
                 totalPrimeFactors++;
             }
 
-            FactorizationUtils.logMessage("Completed with number = " + number);
+            FactorizationUtils.logMessage("Completed with largestUnfactorizedDivisor = " + largestUnfactorizedDivisor);
 
             FactorizationUtils.logMessage(input + " is composite. Found " + totalPrimeFactors + " prime factors (" + factors
                                 + ") of which are less than or equal to floor(sqrt(" + input + ")) = "
