@@ -45,9 +45,18 @@ public class FactorizationUtils {
         System.out.print(formattedDate);
     }
 
-    static void logMessage(String message)
+    static void logMessage(String message, boolean showThreadId)
     {
         printDate();
+        
+        if (showThreadId) {
+            message = "tid " + Thread.currentThread().getId() + " " + message;
+        }
         System.out.println(message);
+    }
+
+    static void logMessage(String message)
+    {
+        logMessage(message, true);
     }
 }
