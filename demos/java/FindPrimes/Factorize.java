@@ -35,6 +35,8 @@ public class Factorize implements Runnable {
     final static BigInteger ONE = BigInteger.ONE;
     final static BigInteger TWO = BigInteger.TWO;
 
+    final static int USE_EXECUTOR = 1;
+
     BigInteger input, inputSqrt, sqrt;
     // Biggest factor of the input still to be factorized by this Runnable
     BigInteger largestUnfactorizedDivisor;
@@ -94,7 +96,8 @@ public class Factorize implements Runnable {
         }
 
         for (int i = 0; i < numThreads; i++) {
-            threads.get(i).join();
+            var thread = threads.get(i);
+            thread.join();
         }
     }
 
@@ -113,8 +116,10 @@ public class Factorize implements Runnable {
         FactorizationUtils.logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
 
         if (useExecutor) {
+            FactorizationUtils.logMessage("Using executor service to run tasks.");
             LaunchThreadsViaExecutor(numThreads);
         } else {
+            FactorizationUtils.logMessage("Using Thread.start to run tasks.");
             LaunchThreadsManually(numThreads);
         }
 
@@ -126,7 +131,8 @@ public class Factorize implements Runnable {
         BigInteger i = GetNextPrimeFactorCandidate();
 
         while (i.compareTo(sqrt) <= 0) {
-            if (divisibilityTests.getAndIncrement() % progressMsgFrequency == 0) {
+            boolean showPeriodicMessages = divisibilityTests.getAndIncrement() % progressMsgFrequency == 0;
+            if (showPeriodicMessages) {
                 FactorizationUtils.logMessage("Testing divisibility by " + i);
             }
 
@@ -142,7 +148,12 @@ public class Factorize implements Runnable {
             }
 
             i = GetNextPrimeFactorCandidate();
+            if (showPeriodicMessages) {
+                FactorizationUtils.logMessage("Next prime factor candidate: " + i);
+            }
         }
+
+        FactorizationUtils.logMessage("Thread complete.");
     }
 
     public void LogCompletion() {
@@ -188,6 +199,7 @@ public class Factorize implements Runnable {
         if (args.length > 1) {
             try {
                 threads = Integer.parseInt(args[1]);
+                System.out.println("Using " + threads + " threads.");
             }
             catch (NumberFormatException nfe) {
                 System.err.println("Error: " + args[1] + " is not a valid number of threads.");
@@ -195,10 +207,21 @@ public class Factorize implements Runnable {
             }
         }
 
+        int flags = 0;
+        if (args.length > 2) {
+            try {
+                flags = Integer.parseInt(args[2]);
+            }
+            catch (NumberFormatException nfe) {
+                System.err.println("Error: " + args[2] + " is not a valid integer.");
+                return;
+            }
+        }
+
         var factorize = new Factorize(input);
         factorize.ExtractLargestPowerOf2();
 
-        boolean useExecutor = true;
+        boolean useExecutor = (flags & USE_EXECUTOR) != 0;
         factorize.StartFactorization(threads, useExecutor);
     }
 }
