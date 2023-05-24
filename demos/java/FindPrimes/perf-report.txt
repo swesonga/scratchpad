@@ -1,0 +1,941 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cpu-clock:pppH'
+# Event count (approx.): 59999997960
+#
+# Children      Self       Samples  Command          Shared Object                  Symbol                                                                                                                                                                    
+# ........  ........  ............  ...............  .............................  ..........................................................................................................................................................................
+#
+    82.34%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3a0015a
+            |
+            ---0xffffffffa3a0015a
+               |          
+               |--68.32%--0xffffffffa3a86f52
+               |          0xffffffffa3b32560
+               |          |          
+               |           --68.30%--0xffffffffa3b322f2
+               |                     0xffffffffa3b3222f
+               |                     0xffffffffa4928027
+               |                     0xffffffffa3a51372
+               |                     0xffffffffa4927ebb
+               |          
+                --14.02%--0xffffffffa5e467a1
+                          0xffffffffa5e4666b
+                          0xffffffffa5e47dda
+                          0xffffffffa5e478eb
+                          0xffffffffa4917a35
+                          0xffffffffa3b32560
+                          0xffffffffa3b322f2
+                          0xffffffffa3b3222f
+                          0xffffffffa4928027
+                          0xffffffffa3a51372
+                          0xffffffffa4927ebb
+
+    82.34%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b32560
+            |
+            ---0xffffffffa3b32560
+               |          
+                --82.32%--0xffffffffa3b322f2
+                          0xffffffffa3b3222f
+                          0xffffffffa4928027
+                          0xffffffffa3a51372
+                          0xffffffffa4927ebb
+
+    82.32%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b322f2
+            |
+            ---0xffffffffa3b322f2
+               0xffffffffa3b3222f
+               0xffffffffa4928027
+               0xffffffffa3a51372
+               0xffffffffa4927ebb
+
+    82.32%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b3222f
+            |
+            ---0xffffffffa3b3222f
+               0xffffffffa4928027
+               0xffffffffa3a51372
+               0xffffffffa4927ebb
+
+    82.32%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa4928027
+            |
+            ---0xffffffffa4928027
+               0xffffffffa3a51372
+               0xffffffffa4927ebb
+
+    82.32%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3a51372
+            |
+            ---0xffffffffa3a51372
+               0xffffffffa4927ebb
+
+    82.32%    82.13%          4780  swapper          [kernel.kallsyms]              [k] 0xffffffffa4927ebb
+            |          
+             --82.13%--0xffffffffa3a0015a
+                       |          
+                       |--68.21%--0xffffffffa3a86f52
+                       |          0xffffffffa3b32560
+                       |          0xffffffffa3b322f2
+                       |          0xffffffffa3b3222f
+                       |          0xffffffffa4928027
+                       |          0xffffffffa3a51372
+                       |          0xffffffffa4927ebb
+                       |          
+                        --13.92%--0xffffffffa5e467a1
+                                  0xffffffffa5e4666b
+                                  0xffffffffa5e47dda
+                                  0xffffffffa5e478eb
+                                  0xffffffffa4917a35
+                                  0xffffffffa3b32560
+                                  0xffffffffa3b322f2
+                                  0xffffffffa3b3222f
+                                  0xffffffffa4928027
+                                  0xffffffffa3a51372
+                                  0xffffffffa4927ebb
+
+    68.32%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3a86f52
+            |
+            ---0xffffffffa3a86f52
+               0xffffffffa3b32560
+               |          
+                --68.30%--0xffffffffa3b322f2
+                          0xffffffffa3b3222f
+                          0xffffffffa4928027
+                          0xffffffffa3a51372
+                          0xffffffffa4927ebb
+
+    14.02%     0.00%             0  swapper          [unknown]                      [k] 0xffffffffa5e467a1
+            |
+            ---0xffffffffa5e467a1
+               0xffffffffa5e4666b
+               0xffffffffa5e47dda
+               0xffffffffa5e478eb
+               0xffffffffa4917a35
+               0xffffffffa3b32560
+               0xffffffffa3b322f2
+               0xffffffffa3b3222f
+               0xffffffffa4928027
+               0xffffffffa3a51372
+               0xffffffffa4927ebb
+
+    14.02%     0.00%             0  swapper          [unknown]                      [k] 0xffffffffa5e4666b
+            |
+            ---0xffffffffa5e4666b
+               0xffffffffa5e47dda
+               0xffffffffa5e478eb
+               0xffffffffa4917a35
+               0xffffffffa3b32560
+               0xffffffffa3b322f2
+               0xffffffffa3b3222f
+               0xffffffffa4928027
+               0xffffffffa3a51372
+               0xffffffffa4927ebb
+
+    14.02%     0.00%             0  swapper          [unknown]                      [k] 0xffffffffa5e47dda
+            |
+            ---0xffffffffa5e47dda
+               0xffffffffa5e478eb
+               0xffffffffa4917a35
+               0xffffffffa3b32560
+               0xffffffffa3b322f2
+               0xffffffffa3b3222f
+               0xffffffffa4928027
+               0xffffffffa3a51372
+               0xffffffffa4927ebb
+
+    14.02%     0.00%             0  swapper          [unknown]                      [k] 0xffffffffa5e478eb
+            |
+            ---0xffffffffa5e478eb
+               0xffffffffa4917a35
+               0xffffffffa3b32560
+               0xffffffffa3b322f2
+               0xffffffffa3b3222f
+               0xffffffffa4928027
+               0xffffffffa3a51372
+               0xffffffffa4927ebb
+
+    14.02%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa4917a35
+            |
+            ---0xffffffffa4917a35
+               0xffffffffa3b32560
+               0xffffffffa3b322f2
+               0xffffffffa3b3222f
+               0xffffffffa4928027
+               0xffffffffa3a51372
+               0xffffffffa4927ebb
+
+     1.62%     1.62%            94  java             [JIT] tid 26632                [.] 0x00007f366c71d32d
+            |
+            ---0x7f366c71d32d
+
+     0.93%     0.93%            54  java             [JIT] tid 26632                [.] 0x00007f366c703665
+            |
+            ---0x7f366c703665
+
+     0.74%     0.00%             0  java             [unknown]                      [.] 0x0000000100074388
+            |
+            ---0x100074388
+
+     0.65%     0.65%            38  java             [JIT] tid 26632                [.] 0x00007f366c6f5ce5
+            |
+            ---0x7f366c6f5ce5
+
+     0.58%     0.00%             0  java             [unknown]                      [.] 0x0000000201041af8
+            |
+            ---0x201041af8
+
+     0.57%     0.00%             0  java             [unknown]                      [.] 0x0000000400002628
+            |
+            ---0x400002628
+
+     0.45%     0.45%            26  java             [JIT] tid 26632                [.] 0x00007f366c71460d
+     0.36%     0.36%            21  java             [JIT] tid 26632                [.] 0x00007f366c703635
+     0.34%     0.34%            20  java             [JIT] tid 26632                [.] 0x00007f366c7022af
+     0.29%     0.29%            17  java             [JIT] tid 26632                [.] 0x00007f366c714139
+     0.27%     0.27%            16  java             [JIT] tid 26632                [.] 0x00007f366c7036b1
+     0.27%     0.27%            16  java             [JIT] tid 26632                [.] 0x00007f366c71ca96
+     0.19%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3ad364e
+     0.19%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3ad32cd
+     0.15%     0.15%             9  VM Thread        [kernel.kallsyms]              [k] 0xffffffffa49289f1
+     0.15%     0.00%             0  VM Thread        [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.15%     0.00%             0  VM Thread        [kernel.kallsyms]              [k] 0xffffffffa4912179
+     0.15%     0.00%             0  VM Thread        [kernel.kallsyms]              [k] 0xffffffffa3bb26b8
+     0.15%     0.00%             0  VM Thread        [kernel.kallsyms]              [k] 0xffffffffa3bb2107
+     0.15%     0.00%             0  VM Thread        [kernel.kallsyms]              [k] 0xffffffffa3bb516f
+     0.15%     0.00%             0  VM Thread        [kernel.kallsyms]              [k] 0xffffffffa3b14180
+     0.15%     0.00%             0  VM Thread        [kernel.kallsyms]              [k] 0xffffffffa3b13d19
+     0.14%     0.14%             8  java             [JIT] tid 26632                [.] 0x00007f366c71d33c
+     0.14%     0.14%             8  swapper          [kernel.kallsyms]              [k] 0xffffffffa4c0006e
+     0.14%     0.00%             0  VM Thread        libc.so.6                      [.] start_thread
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] thread_native_entry
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] Thread::call_run
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] VMThread::run
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] VMThread::inner_execute
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] VMThread::evaluate_operation
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] VM_Operation::evaluate
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] VM_G1CollectForAllocation::doit
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] G1CollectedHeap::do_collection_pause_at_safepoint
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] G1CollectedHeap::do_collection_pause_at_safepoint_helper
+     0.14%     0.00%             0  VM Thread        libjvm.so                      [.] G1YoungCollector::collect
+     0.14%     0.00%             0  VM Thread        libc.so.6                      [.] sem_post@GLIBC_2.2.5
+     0.12%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa4a00f2b
+     0.12%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa4916566
+     0.10%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x7546646e756f4200
+     0.10%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x0000000004000400
+     0.10%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x00007fbe575e9800
+     0.10%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x0000000000002110
+     0.10%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6dec7758
+     0.10%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6adde19a
+     0.10%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a0333e4ee
+     0.09%     0.09%             5  java             [JIT] tid 26632                [.] 0x00007f366c71d2a0
+     0.09%     0.09%             5  java             [JIT] tid 26632                [.] 0x00007f366c702321
+     0.09%     0.09%             5  java             [JIT] tid 26632                [.] 0x00007f366c71c4a9
+     0.09%     0.09%             5  java             [JIT] tid 26632                [.] 0x00007f366c71cc1b
+     0.09%     0.09%             5  java             [JIT] tid 26632                [.] 0x00007f366c71cc46
+     0.09%     0.09%             5  java             [JIT] tid 26632                [.] 0x00007f366c71cc63
+     0.09%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.09%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa4912179
+     0.09%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.09%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa4912179
+     0.07%     0.07%             4  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa49289f1
+     0.07%     0.07%             4  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa49289f1
+     0.07%     0.02%             1  java             libjvm.so                      [.] OptoRuntime::new_instance_C
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c7141b4
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c7022e4
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c703cd2
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c714267
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c7144ed
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71c2c8
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71c740
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71c964
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71c98c
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71c994
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71c9ea
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71cd45
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71cfbe
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71d328
+     0.07%     0.07%             4  java             [JIT] tid 26632                [.] 0x00007f366c71d4e9
+     0.07%     0.00%             0  IPC I/O Child    [unknown]                      [k] 0x656e2d65676e6168
+     0.07%     0.00%             0  IPDL Background  [unknown]                      [k] 0x00007fd189ffe680
+     0.07%     0.00%             0  IPDL Background  libpthread-2.31.so             [.] 0x00007fd1ca25718d
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa4912179
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa45e864d
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa45e85dc
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa45e8501
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa45e53b4
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa45e4fec
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa4780884
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa45eb510
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa3b3b140
+     0.07%     0.00%             0  IPDL Background  [kernel.kallsyms]              [k] 0xffffffffa3b3a9fa
+     0.07%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3bb26b8
+     0.07%     0.00%             0  VM Thread        libjvm.so                      [.] G1YoungCollector::post_evacuate_collection_set
+     0.07%     0.00%             0  VM Thread        libjvm.so                      [.] WorkerThreads::run_task
+     0.07%     0.00%             0  VM Thread        libjvm.so                      [.] WorkerThreads::run_task
+     0.07%     0.00%             0  gnome-shell      [unknown]                      [.] 0000000000000000
+     0.07%     0.00%             0  java             [JIT] tid 26632                [.] 0x00007f366c25d5ad
+     0.07%     0.00%             0  java             [JIT] tid 26632                [.] 0x00007f366c70231b
+     0.07%     0.00%             0  java             [unknown]                      [.] 0x0000000101041af8
+     0.05%     0.00%             0  IPC I/O Child    libpthread-2.31.so             [.] 0x00007fbe73a680ed
+     0.05%     0.05%             3  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa49289f1
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c700f6d
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c703967
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c70397b
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d15c
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d1ac
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c6f5d39
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c7022cb
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c70379a
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c703890
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c703957
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c7140e7
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c714502
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71c684
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71c957
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71c989
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71c9d9
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71cabb
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71cb11
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71cf26
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71cf48
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71cf9c
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d052
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d2da
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d2f3
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d339
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d352
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d38c
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d391
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d3a5
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d446
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d509
+     0.05%     0.05%             3  java             [JIT] tid 26632                [.] 0x00007f366c71d566
+     0.05%     0.00%             0  IPC I/O Child    libpthread-2.31.so             [.] 0x00007fbe73a6732f
+     0.05%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa3df2829
+     0.05%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa3df27dd
+     0.05%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa3df239d
+     0.05%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa3def632
+     0.05%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa3dfdbf3
+     0.05%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa3b3b140
+     0.05%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa3b3a9fa
+     0.05%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a034ca5b9
+     0.05%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a034bae0e
+     0.05%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a0333e2d5
+     0.05%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.05%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa4912179
+     0.05%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a03565a37
+     0.05%     0.00%             0  Softwar~cThread  libpthread-2.31.so             [.] 0x00007fd1ca25318d
+     0.05%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3bb2107
+     0.05%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3bb516f
+     0.05%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3b14180
+     0.05%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3b13d19
+     0.05%     0.00%             0  VM Thread        libjvm.so                      [.] G1YoungCollector::pre_evacuate_collection_set
+     0.05%     0.00%             0  java             libjvm.so                      [.] InstanceKlass::allocate_instance
+     0.05%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa4a0108b
+     0.05%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa4916196
+     0.05%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa4c000d5
+     0.05%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b7d76e
+     0.03%     0.03%             2  Isolated Web Co  libxul.so                      [.] 0x00000000035ae1c5
+     0.03%     0.03%             2  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa49289f1
+     0.03%     0.00%             0  java             libjvm.so                      [.] MemAllocator::allocate
+     0.03%     0.00%             0  java             libjvm.so                      [.] MemAllocator::mem_allocate_inside_tlab_slow
+     0.03%     0.00%             0  java             libjvm.so                      [.] G1CollectedHeap::allocate_new_tlab
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c177adc
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c6ea9c2
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c6eabe8
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c700e80
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c700e88
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c700ee0
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c700ef1
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c700ef3
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c700f7a
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c700fa0
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c703986
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c7141cf
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c7141ed
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71423a
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d0d1
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d1a4
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d1f0
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d236
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d251
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d28e
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c177b40
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c6ea9f7
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c6eaa33
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c6eaa3e
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c6eaa80
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c6eabfb
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c6f5cfc
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c6f5d07
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c703566
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c703578
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c703789
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c70381d
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c70385f
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c7038a0
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c703923
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c703937
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c703945
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c703cc8
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71415c
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c714283
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c7142c8
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c714319
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71442b
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c714431
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c714489
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c714607
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c2ec
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c30e
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c354
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c36b
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c378
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c3cb
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c46a
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c4db
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c512
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c523
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c533
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c634
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c666
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c688
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c6d3
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c72c
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c75c
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c792
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c7ca
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c94b
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c95c
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c975
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71c978
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71ca34
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71caa1
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cab2
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cad4
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cb09
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cc0f
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cc14
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cc4c
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cc51
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cc70
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71ccef
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cd8f
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cdec
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cec9
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cede
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cf3b
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cfad
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71cfcf
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d01a
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d2ad
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d31b
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d359
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d37f
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d3a9
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d400
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d430
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d441
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d4b6
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d4be
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d6b1
+     0.03%     0.03%             2  java             [JIT] tid 26632                [.] 0x00007f366c71d6bc
+     0.03%     0.03%             2  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b77e5f
+     0.03%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa45e8a7d
+     0.03%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa45e8a09
+     0.03%     0.00%             0  Isolated Web Co  libpthread-2.31.so             [.] 0x00007fbe73a6418d
+     0.03%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0000000000000000
+     0.03%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3bb26b8
+     0.03%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3bb2107
+     0.03%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a034cafc8
+     0.03%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a03564a0c
+     0.03%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3bb516f
+     0.03%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x74f685067478fe83
+     0.03%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a033fef65
+     0.03%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a0346a8c1
+     0.03%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3b14180
+     0.03%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6aa92720
+     0.03%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a0346a269
+     0.03%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a03531aa0
+     0.03%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3b13d19
+     0.03%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6a76e1c5
+     0.03%     0.00%             0  VM Thread        libjvm.so                      [.] G1CollectedHeap::rebuild_free_region_list
+     0.03%     0.00%             0  VM Thread        libjvm.so                      [.] HeapRegionManager::rebuild_free_list
+     0.03%     0.00%             0  gnome-shell      [unknown]                      [.] 0x0000000100000000
+     0.03%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b7d4c7
+     0.03%     0.00%             0  systemd-oomd     [unknown]                      [k] 0000000000000000
+     0.03%     0.00%             0  systemd-oomd     libc.so.6                      [.] read
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa4912179
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3df26d9
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3df2637
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3df1af7
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3def438
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3eb4724
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3e27112
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3eb3f03
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3bc3785
+     0.03%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3dcbed1
+     0.02%     0.02%             1  GC Thread#0      [kernel.kallsyms]              [k] 0xffffffffa4917640
+     0.02%     0.02%             1  GC Thread#1      libjvm.so                      [.] SpinPause
+     0.02%     0.02%             1  GC Thread#2      [kernel.kallsyms]              [k] 0xffffffffa49289f1
+     0.02%     0.02%             1  GC Thread#3      ld-linux-x86-64.so.2           [.] update_get_addr
+     0.02%     0.02%             1  GC Thread#4      libjvm.so                      [.] CompositeElapsedCounterSource::now
+     0.02%     0.02%             1  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa45ed053
+     0.02%     0.02%             1  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa3de6d12
+     0.02%     0.02%             1  IPC I/O Child    libxul.so                      [.] mozilla::detail::ConditionVariableImpl::notify_one@plt
+     0.02%     0.02%             1  IPC I/O Child    libpthread-2.31.so             [.] 0x00000000000140ed
+     0.02%     0.02%             1  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a03472ceb
+     0.02%     0.02%             1  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a034c9a8a
+     0.02%     0.02%             1  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a034c9cc5
+     0.02%     0.02%             1  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3d46151
+     0.02%     0.02%             1  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3df1a81
+     0.02%     0.02%             1  Isolated Web Co  firefox                        [.] malloc
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x00000000043ba360
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x000000000390f530
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x000000000390f601
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x00000000037398fd
+     0.02%     0.02%             1  Isolated Web Co  libc-2.31.so                   [.] 0x000000000011299f
+     0.02%     0.02%             1  Isolated Web Co  libglib-2.0.so.0.6400.6        [.] 0x0000000000054b98
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x00000000035a8451
+     0.02%     0.02%             1  Isolated Web Co  libc-2.31.so                   [.] 0x0000000000094654
+     0.02%     0.02%             1  Isolated Web Co  libc-2.31.so                   [.] 0x0000000000189f43
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x00000000038868d2
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x0000000003e553ac
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x00000000047be92f
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x00000000047fb3b1
+     0.02%     0.02%             1  Isolated Web Co  libxul.so                      [.] 0x0000000004803c48
+     0.02%     0.02%             1  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3bb26a4
+     0.02%     0.02%             1  VM Periodic Tas  [kernel.kallsyms]              [k] 0xffffffffa41891ef
+     0.02%     0.02%             1  Xorg             libc.so.6                      [.] __memmove_evex_unaligned_erms
+     0.02%     0.02%             1  code             code                           [.] v8::internal::Object::SetProperty
+     0.02%     0.02%             1  code             libc.so.6                      [.] __GI___pthread_enable_asynccancel
+     0.02%     0.02%             1  gnome-shell      libgobject-2.0.so.0.7200.4     [.] 0x0000000000028f86
+     0.02%     0.02%             1  gnome-shell      libmutter-clutter-10.so.0.0.0  [.] clutter_actor_paint
+     0.02%     0.02%             1  gnome-shell      libmozjs-91.so.91.10.0         [.] 0x0000000000540223
+     0.02%     0.02%             1  gnome-shell      libmozjs-91.so.91.10.0         [.] 0x0000000000550d5f
+     0.02%     0.02%             1  gnome-shell      libmutter-10.so.0.0.0          [.] meta_window_get_compositor_private
+     0.02%     0.02%             1  gnome-shell      swrast_dri.so                  [.] 0x00000000006e9f50
+     0.02%     0.02%             1  ib_log_files_g   libc.so.6                      [.] pthread_mutex_lock@@GLIBC_2.2.5
+     0.02%     0.02%             1  java             libjvm.so                      [.] G1MonitoringSupport::update_eden_size
+     0.02%     0.02%             1  java             libc.so.6                      [.] pthread_mutex_unlock@@GLIBC_2.2.5
+     0.02%     0.02%             1  java             [kernel.kallsyms]              [k] 0xffffffffa4917640
+     0.02%     0.02%             1  java             ld-linux-x86-64.so.2           [.] __tls_get_addr
+     0.02%     0.00%             0  java             [unknown]                      [k] 0x0000000000009b29
+     0.02%     0.00%             0  java             libc.so.6                      [.] __GI___futex_abstimed_wait_cancelable64
+     0.02%     0.00%             0  java             [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.02%     0.00%             0  java             libjvm.so                      [.] G1CollectedHeap::attempt_allocation_slow
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c177ae1
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c177b34
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6ea994
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6ea9a8
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6ea9de
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c700eaf
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c700ee5
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c700ef7
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c700f0f
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c700f18
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c700f1d
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c700f23
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c700f59
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c700f79
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c702200
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c70221a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c702220
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c702236
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c702239
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c70223c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c702246
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c70224e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703965
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703971
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703979
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703980
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7039bc
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7039cb
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7039d3
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7039d7
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7039df
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7039e2
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703c8e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703c9c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703cb4
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703cbb
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7141e5
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7141f9
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714211
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71421a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71441f
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d073
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d085
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d0a3
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d0bc
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d145
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d14e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d17e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d186
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d18f
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d1b5
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d1c2
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d1f8
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d22d
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d278
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d27d
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d283
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d2b2
+     0.02%     0.00%             0  java             [kernel.kallsyms]              [k] 0xffffffffa4912157
+     0.02%     0.00%             0  java             libjvm.so                      [.] MutatorAllocRegion::retire
+     0.02%     0.00%             0  java             [unknown]                      [.] 0000000000000000
+     0.02%     0.00%             0  java             [unknown]                      [.] 0x0000000000000001
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6eaa08
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6eaa6e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6eaa7b
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5c80
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5cad
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5cf4
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5d10
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5d15
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5d1a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5d1e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5d21
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5d27
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c6f5d2c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c702250
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c702259
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c70230e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703598
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7035ab
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7035b9
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7035c0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7035dc
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7035e1
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7035f0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703620
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c70363e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703660
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7036a8
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7036d4
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7036e8
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7036fa
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7037b0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7037fd
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c70382c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703851
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703a00
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703a4b
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703a4f
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703a6d
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703b15
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703b25
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703cc3
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c703ce6
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714106
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714153
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71416e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71425a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7142b4
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7142d3
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71432e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714354
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714369
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71436b
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71438b
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7143a0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7143a6
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7143c6
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71441c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71442e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714446
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c7144d4
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714503
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714520
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714529
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714538
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714540
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71456b
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71457c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714580
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c714654
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c320
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c341
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c3d7
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c3de
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c44c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c457
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c493
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c4e3
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c506
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c549
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c562
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c57a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c58f
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c5a5
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c5aa
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c616
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c63c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c653
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c6ee
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c70b
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c71d
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c76d
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c7a0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c7b8
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c7fa
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c92d
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c930
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c93e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c94e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c952
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c967
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c96a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c97b
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c980
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c98f
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c998
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c99e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c9a0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c9a5
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c9ba
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c9e2
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c9ed
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71c9fd
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ca11
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ca1e
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ca28
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ca47
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ca52
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ca58
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ca69
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cac8
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cadc
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cae0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cb16
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cb61
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cbab
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cbb9
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cbbf
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cbc9
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cbe1
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cbf9
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cc00
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cc26
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cc31
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cc38
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cc49
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cc68
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cc75
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cc84
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ccc4
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ccfc
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cd02
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cd40
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cd6a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cda0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cdac
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cdd7
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cdf4
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ce07
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ce2f
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ce37
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ce58
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71ce89
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cef8
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cefb
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cf00
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cf05
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cf17
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cf3f
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cf51
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cf5a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cf89
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cfca
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71cff4
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d009
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d29a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d2c0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d2cc
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d2d5
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d2ee
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d309
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d311
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d32a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d364
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d3a0
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d3be
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d3d8
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d3ee
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d3f2
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d413
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d41c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d427
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d44c
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d460
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d463
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d471
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d48a
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d4ab
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d4b1
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d4d7
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d4fd
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d51b
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d51f
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d535
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d560
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d569
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d6ac
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d6c2
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d6c6
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d6cc
+     0.02%     0.02%             1  java             [JIT] tid 26632                [.] 0x00007f366c71d6d5
+     0.02%     0.02%             1  llvmpipe-2       [JIT] tid 1176                 [.] 0x00007fbb9408051e
+     0.02%     0.02%             1  nautilus         libc.so.6                      [.] _int_malloc
+     0.02%     0.02%             1  swapper          [kernel.kallsyms]              [k] 0xffffffffa49289f1
+     0.02%     0.02%             1  swapper          [kernel.kallsyms]              [k] 0xffffffffa4920e35
+     0.02%     0.02%             1  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa4917818
+     0.02%     0.02%             1  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa49289f1
+     0.02%     0.00%             0  GC Thread#0      libc.so.6                      [.] __GI___futex_abstimed_wait_cancelable64
+     0.02%     0.00%             0  GC Thread#0      [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.02%     0.00%             0  GC Thread#0      [kernel.kallsyms]              [k] 0xffffffffa4912157
+     0.02%     0.00%             0  GC Thread#1      libc.so.6                      [.] start_thread
+     0.02%     0.00%             0  GC Thread#1      libjvm.so                      [.] thread_native_entry
+     0.02%     0.00%             0  GC Thread#1      libjvm.so                      [.] Thread::call_run
+     0.02%     0.00%             0  GC Thread#1      libjvm.so                      [.] WorkerThread::run
+     0.02%     0.00%             0  GC Thread#1      libjvm.so                      [.] G1EvacuateRegionsBaseTask::work
+     0.02%     0.00%             0  GC Thread#1      libjvm.so                      [.] G1EvacuateRegionsTask::evacuate_live_objects
+     0.02%     0.00%             0  GC Thread#1      libjvm.so                      [.] G1ParEvacuateFollowersClosure::do_void
+     0.02%     0.00%             0  GC Thread#2      libc.so.6                      [.] start_thread
+     0.02%     0.00%             0  GC Thread#2      libjvm.so                      [.] thread_native_entry
+     0.02%     0.00%             0  GC Thread#2      libjvm.so                      [.] Thread::call_run
+     0.02%     0.00%             0  GC Thread#2      libjvm.so                      [.] WorkerThread::run
+     0.02%     0.00%             0  GC Thread#2      libc.so.6                      [.] sem_post@GLIBC_2.2.5
+     0.02%     0.00%             0  GC Thread#2      [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.02%     0.00%             0  GC Thread#2      [kernel.kallsyms]              [k] 0xffffffffa4912179
+     0.02%     0.00%             0  GC Thread#2      [kernel.kallsyms]              [k] 0xffffffffa3bb26b8
+     0.02%     0.00%             0  GC Thread#2      [kernel.kallsyms]              [k] 0xffffffffa3bb2107
+     0.02%     0.00%             0  GC Thread#2      [kernel.kallsyms]              [k] 0xffffffffa3bb516f
+     0.02%     0.00%             0  GC Thread#2      [kernel.kallsyms]              [k] 0xffffffffa3b14180
+     0.02%     0.00%             0  GC Thread#2      [kernel.kallsyms]              [k] 0xffffffffa3b13d19
+     0.02%     0.00%             0  GC Thread#3      [unknown]                      [.] 0000000000000000
+     0.02%     0.00%             0  GC Thread#4      libc.so.6                      [.] start_thread
+     0.02%     0.00%             0  GC Thread#4      libjvm.so                      [.] thread_native_entry
+     0.02%     0.00%             0  GC Thread#4      libjvm.so                      [.] Thread::call_run
+     0.02%     0.00%             0  GC Thread#4      libjvm.so                      [.] WorkerThread::run
+     0.02%     0.00%             0  GC Thread#4      libjvm.so                      [.] G1EvacuateRegionsBaseTask::work
+     0.02%     0.00%             0  GC Thread#4      libjvm.so                      [.] G1EvacuateRegionsTask::start_work
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa45e7cb0
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa45e4e58
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa45e4c65
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa45e7d13
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa477ef0d
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa40e08bb
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa477ec98
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa40e075b
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa45f9060
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa40daa9f
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa45f5e77
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa3de70b3
+     0.02%     0.00%             0  IPC I/O Child    [kernel.kallsyms]              [k] 0xffffffffa47839c6
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a034cac18
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a03476d31
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a035638a4
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a034d7d05
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a0356350f
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a034ccd4b
+     0.02%     0.00%             0  Isolated Web Co  libpthread-2.31.so             [.] 0x00007fbe73a673cc
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a0356307d
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a034bd804
+     0.02%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3df26d9
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a03560f38
+     0.02%     0.00%             0  Isolated Web Co  [JIT] tid 3491                 [.] 0x00002a9a03563cad
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fb44a17207a
+     0.02%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa4a00b77
+     0.02%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa4917151
+     0.02%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3aa9cbe
+     0.02%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3d468ea
+     0.02%     0.00%             0  Isolated Web Co  [kernel.kallsyms]              [k] 0xffffffffa3df268d
+     0.02%     0.00%             0  Isolated Web Co  libc-2.31.so                   [.] 0x00007fb455d80f43
+     0.02%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x4000000b00009afa
+     0.02%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x00000b0400000000
+     0.02%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x00007fbe701b41b0
+     0.02%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x0000bb1c00000000
+     0.02%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x000100010000002b
+     0.02%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x0300000006000000
+     0.02%     0.00%             0  Isolated Web Co  libc-2.31.so                   [.] 0x00007fbe735a2654
+     0.02%     0.00%             0  Isolated Web Co  libc-2.31.so                   [.] 0x00007fbe7362099f
+     0.02%     0.00%             0  Isolated Web Co  libglib-2.0.so.0.6400.6        [.] 0x00007fbe71d0bb98
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fb44d6fe3ac
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6a768451
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6a8f98fd
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6aa468d2
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6aacf530
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6aacf601
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6b57a360
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6b97e92f
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6b9bb3b1
+     0.02%     0.00%             0  Isolated Web Co  libxul.so                      [.] 0x00007fbe6b9c3c48
+     0.02%     0.00%             0  Isolated Web Co  [unknown]                      [.] 0x0000000100004b5d
+     0.02%     0.00%             0  Softwar~cThread  [unknown]                      [k] 0000000000000000
+     0.02%     0.00%             0  Softwar~cThread  libpthread-2.31.so             [.] 0x00007fd1ca2527d1
+     0.02%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3bb21a8
+     0.02%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3bb5a6a
+     0.02%     0.00%             0  Softwar~cThread  [unknown]                      [k] 0x00007fd1c69e1648
+     0.02%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3bb55b0
+     0.02%     0.00%             0  Softwar~cThread  libpthread-2.31.so             [.] 0x00007fd1ca24f839
+     0.02%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3b997fb
+     0.02%     0.00%             0  Softwar~cThread  [kernel.kallsyms]              [k] 0xffffffffa3b99788
+     0.02%     0.00%             0  VM Periodic Tas  [unknown]                      [k] 0000000000000000
+     0.02%     0.00%             0  VM Periodic Tas  libc.so.6                      [.] __GI___futex_abstimed_wait_cancelable64
+     0.02%     0.00%             0  VM Periodic Tas  [kernel.kallsyms]              [k] 0xffffffffa4a0009b
+     0.02%     0.00%             0  VM Periodic Tas  [kernel.kallsyms]              [k] 0xffffffffa4912189
+     0.02%     0.00%             0  VM Periodic Tas  [kernel.kallsyms]              [k] 0xffffffffa49176ea
+     0.02%     0.00%             0  VM Periodic Tas  [kernel.kallsyms]              [k] 0xffffffffa3b89059
+     0.02%     0.00%             0  VM Periodic Tas  [kernel.kallsyms]              [k] 0xffffffffa3b88f51
+     0.02%     0.00%             0  VM Periodic Tas  [kernel.kallsyms]              [k] 0xffffffffa3cec96d
+     0.02%     0.00%             0  VM Periodic Tas  [kernel.kallsyms]              [k] 0xffffffffa3cec51a
+     0.02%     0.00%             0  VM Thread        libjvm.so                      [.] G1YoungCollector::evacuate_initial_collection_set
+     0.02%     0.00%             0  VM Thread        libc.so.6                      [.] pthread_cond_signal@@GLIBC_2.3.2
+     0.02%     0.00%             0  code             libc.so.6                      [.] __libc_start_call_main
+     0.02%     0.00%             0  code             code                           [.] 0x0000555c48c3a517
+     0.02%     0.00%             0  code             code                           [.] 0x0000555c48dbae67
+     0.02%     0.00%             0  code             code                           [.] uv_run
+     0.02%     0.00%             0  code             code                           [.] 0x0000555c48c2643d
+     0.02%     0.00%             0  code             code                           [.] 0x0000555c4ed7391e
+     0.02%     0.00%             0  code             code                           [.] 0x0000555c4ed3899e
+     0.02%     0.00%             0  code             code                           [.] 0x0000555c4ed38aee
+     0.02%     0.00%             0  code             code                           [.] 0x0000555c48d72f0f
+     0.02%     0.00%             0  code             code                           [.] v8::Object::Set
+     0.02%     0.00%             0  code             code                           [.] v8::internal::Runtime::SetObjectProperty
+     0.02%     0.00%             0  code             libc.so.6                      [.] start_thread
+     0.02%     0.00%             0  code             watcher.node                   [.] std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct> >, Backend::run()::$_0> >
+     0.02%     0.00%             0  gnome-shell      [unknown]                      [.] 0x0000557d08e98410
+     0.02%     0.00%             0  gnome-shell      [unknown]                      [.] 0x0000000000000001
+     0.02%     0.00%             0  gnome-shell      libgobject-2.0.so.0.7200.4     [.] g_signal_emit
+     0.02%     0.00%             0  gnome-shell      [unknown]                      [.] 0x0000000200000004
+     0.02%     0.00%             0  gnome-shell      libgobject-2.0.so.0.7200.4     [.] 0x00007fbbc0956f86
+     0.02%     0.00%             0  gnome-shell      libmozjs-91.so.91.10.0         [.] 0x00007fbbbdf40223
+     0.02%     0.00%             0  gnome-shell      libmozjs-91.so.91.10.0         [.] 0x00007fbbbdf50d5f
+     0.02%     0.00%             0  gnome-shell      swrast_dri.so                  [.] 0x00007fbbb1ce9f50
+     0.02%     0.00%             0  ib_log_files_g   libstdc++.so.6.0.30            [.] 0x00007f258c2dc2b3
+     0.02%     0.00%             0  ib_log_files_g   mysqld                         [.] 0x000055b4e71e2459
+     0.02%     0.00%             0  ib_log_files_g   mysqld                         [.] log_files_governor
+     0.02%     0.00%             0  llvmpipe-2       [unknown]                      [.] 0x000000000000ffff
+     0.02%     0.00%             0  llvmpipe-2       swrast_dri.so                  [.] 0x00007fbbb1cc0a48
+     0.02%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b7d200
+     0.02%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa4a0104b
+     0.02%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b7b9f8
+     0.02%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa49160e6
+     0.02%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b32329
+     0.02%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b77f87
+     0.02%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa3b41016
+     0.02%     0.00%             0  swapper          [kernel.kallsyms]              [k] 0xffffffffa492194a
+     0.02%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3dcbb97
+     0.02%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3dcbe06
+     0.02%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa3dc9809
+     0.02%     0.00%             0  systemd-oomd     [kernel.kallsyms]              [k] 0xffffffffa4179ba3
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
