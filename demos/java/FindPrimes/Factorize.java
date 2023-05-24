@@ -49,6 +49,12 @@ public class Factorize implements Runnable {
     private AtomicLong factors;
     private long progressMsgFrequency = 1L << 31;
 
+    private enum ExecutionMode {
+        SINGLE_THREAD,
+        CUSTOM_THREAD_COUNT_VIA_THREAD_CLASS,
+        CUSTOM_THREAD_COUNT_VIA_EXECUTOR_SERVICE,
+    }
+
     public Factorize(BigInteger input) {
         this.input = input;
         this.largestUnfactorizedDivisor = input;
@@ -112,15 +118,22 @@ public class Factorize implements Runnable {
         pool.shutdown();
     }
 
-    public void StartFactorization(int numThreads, boolean useExecutor) throws InterruptedException {
+    public void StartFactorization(int numThreads, ExecutionMode executionMode) throws InterruptedException {
         FactorizationUtils.logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
 
-        if (useExecutor) {
-            FactorizationUtils.logMessage("Using executor service to run tasks.");
-            LaunchThreadsViaExecutor(numThreads);
-        } else {
-            FactorizationUtils.logMessage("Using Thread.start to run tasks.");
-            LaunchThreadsManually(numThreads);
+        switch (executionMode) {
+            case SINGLE_THREAD:
+                FactorizationUtils.logMessage("Using main thread to run tasks.");
+                run();
+                break;
+            case CUSTOM_THREAD_COUNT_VIA_EXECUTOR_SERVICE:
+                FactorizationUtils.logMessage("Using executor service to run tasks.");
+                LaunchThreadsViaExecutor(numThreads);
+                break;
+            case CUSTOM_THREAD_COUNT_VIA_THREAD_CLASS:
+                FactorizationUtils.logMessage("Using Thread.start to run tasks.");
+                LaunchThreadsManually(numThreads);
+                break;
         }
 
         LogCompletion();
@@ -196,32 +209,34 @@ public class Factorize implements Runnable {
         }
 
         int threads = 1;
-        if (args.length > 1) {
-            try {
-                threads = Integer.parseInt(args[1]);
-                System.out.println("Using " + threads + " threads.");
-            }
-            catch (NumberFormatException nfe) {
-                System.err.println("Error: " + args[1] + " is not a valid number of threads.");
-                return;
-            }
-        }
 
-        int flags = 0;
-        if (args.length > 2) {
+        ExecutionMode executionMode = ExecutionMode.SINGLE_THREAD;
+        if (args.length > 1) {
+            var executionModeAsStr = args[1];
             try {
-                flags = Integer.parseInt(args[2]);
+                executionMode = ExecutionMode.valueOf(executionModeAsStr);
             }
-            catch (NumberFormatException nfe) {
-                System.err.println("Error: " + args[2] + " is not a valid integer.");
+            catch (IllegalArgumentException ex) {
+                System.err.println("Error: " + executionModeAsStr + " is not a valid execution mode.");
                 return;
+            }
+
+            if (executionMode != ExecutionMode.SINGLE_THREAD && args.length > 2) {
+                var threadsAsStr = args[2];
+                try {
+                    threads = Integer.parseInt(threadsAsStr);
+                    System.out.println("Using " + threads + " threads.");
+                }
+                catch (NumberFormatException nfe) {
+                    System.err.println("Error: " + threadsAsStr + " is not a valid number of threads.");
+                    return;
+                }
             }
         }
 
         var factorize = new Factorize(input);
         factorize.ExtractLargestPowerOf2();
 
-        boolean useExecutor = (flags & USE_EXECUTOR) != 0;
-        factorize.StartFactorization(threads, useExecutor);
+        factorize.StartFactorization(threads, executionMode);
     }
 }
