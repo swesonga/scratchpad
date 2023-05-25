@@ -45,7 +45,7 @@ public class FactorizationUtils {
         System.out.print(formattedDate);
     }
 
-    static void logMessage(String message, boolean showThreadId)
+    static synchronized void logMessage(String message, boolean showThreadId)
     {
         printDate();
         
