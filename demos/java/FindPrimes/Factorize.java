@@ -23,31 +23,41 @@
  */
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Set;
 
 public class Factorize implements Runnable {
     final static BigInteger ZERO = BigInteger.ZERO;
     final static BigInteger ONE = BigInteger.ONE;
     final static BigInteger TWO = BigInteger.TWO;
 
+    final static int CHUNK_SIZE = 1024;
+    final static BigInteger CHUNK_SIZE_BIG_INTEGER = new BigInteger(Integer.toString(CHUNK_SIZE));
     final static int USE_EXECUTOR = 1;
 
-    BigInteger input, inputSqrt, sqrt;
-    // Biggest factor of the input still to be factorized by this Runnable
-    BigInteger largestUnfactorizedDivisor;
+    BigInteger originalInput, input, inputSqrt, sqrt;
+    BigInteger chunkStride, offsetOfNextChunk;
 
     // Next prime factor candidate
-    BigInteger nextPrimeFactorCandidate;
+    ThreadLocal<BigInteger> nextPrimeFactorCandidateStorage;
 
     AtomicLong divisibilityTests;
 
-    private AtomicLong factors;
     private long progressMsgFrequency = 1L << 31;
+    private int factorizationThreadCount;
+    ThreadLocal<Integer> threadId;
+    ThreadLocal<Integer> chunkValuesProcessed;
+    private AtomicInteger threadCounter;
+
+    private Set<BigInteger> primeFactors;
+    private Set<BigInteger> unfactorizedDivisors;
 
     private enum ExecutionMode {
         SINGLE_THREAD,
@@ -55,40 +65,87 @@ public class Factorize implements Runnable {
         CUSTOM_THREAD_COUNT_VIA_EXECUTOR_SERVICE,
     }
 
-    public Factorize(BigInteger input) {
+    public Factorize(BigInteger input, int factorizationThreadCount) {
         this.input = input;
-        this.largestUnfactorizedDivisor = input;
+        this.originalInput = input;
         inputSqrt = input.sqrt();
         sqrt = inputSqrt;
-        this.nextPrimeFactorCandidate = ONE;
+        this.nextPrimeFactorCandidateStorage = new ThreadLocal<>();
         this.divisibilityTests = new AtomicLong();
-        this.factors = new AtomicLong();
+        this.factorizationThreadCount = factorizationThreadCount;
+
+        this.threadId = new ThreadLocal<>();
+        this.chunkValuesProcessed = new ThreadLocal<>();
+        this.threadCounter = new AtomicInteger();
+        this.chunkStride = new BigInteger(Integer.toString(factorizationThreadCount * CHUNK_SIZE));
+        this.offsetOfNextChunk = chunkStride.subtract(CHUNK_SIZE_BIG_INTEGER).add(ONE);
+
+        // https://www.baeldung.com/java-concurrent-hashset-concurrenthashmap
+        this.primeFactors = new ConcurrentHashMap<BigInteger, BigInteger>().keySet(ZERO);
+        this.unfactorizedDivisors = new ConcurrentHashMap<BigInteger, BigInteger>().keySet(ZERO);
     }
 
-    public void ExtractLargestPowerOf2() {
+    public boolean ExtractLargestPowerOf2() {
         int trailingZeros = FactorizationUtils.countTrailingZeros(input);
         if (trailingZeros > 0) {
-            FactorizationUtils.logMessage("Found a factor: 2^{" + trailingZeros + "} of " + input);
-            largestUnfactorizedDivisor = largestUnfactorizedDivisor.divide(TWO.pow(trailingZeros));
+            input = input.divide(TWO.pow(trailingZeros));
+            inputSqrt = input.sqrt();
+            sqrt = inputSqrt;
 
-            factors.getAndIncrement();
+            primeFactors.add(TWO);
+            FactorizationUtils.logMessage("Found a factor: 2^{" + trailingZeros + "} of " + originalInput);
+            if (PrimalityTest.isPrime(input)) {
+                FactorizationUtils.logMessage("Found a factor: " + input + " of " + originalInput);
+                primeFactors.add(input);
+                return true;
+            }
         }
+
+        unfactorizedDivisors.add(input);
+        return false;
     }
 
-    public synchronized BigInteger GetNextPrimeFactorCandidate() {
-        nextPrimeFactorCandidate = nextPrimeFactorCandidate.add(TWO);
+    public BigInteger GetNextPrimeFactorCandidate() {
+        int prev = chunkValuesProcessed.get();
+        BigInteger nextPrimeFactorCandidate = nextPrimeFactorCandidateStorage.get();
+
+        if (prev == CHUNK_SIZE) {
+            prev = 0;
+            nextPrimeFactorCandidate = nextPrimeFactorCandidate.add(offsetOfNextChunk);
+        } else {
+            nextPrimeFactorCandidate = nextPrimeFactorCandidate.add(TWO);
+        }
+
+        nextPrimeFactorCandidateStorage.set(nextPrimeFactorCandidate);
+        chunkValuesProcessed.set(prev + 1);
         return nextPrimeFactorCandidate;
     }
 
-    public synchronized BigInteger getLargestUnfactorizedDivisor() {
-        return largestUnfactorizedDivisor;
+    public synchronized Set<BigInteger> getUnfactorizedDivisors() {
+        return unfactorizedDivisors;
     }
 
-    public synchronized BigInteger DivideFactor(BigInteger factor) {
-        largestUnfactorizedDivisor = largestUnfactorizedDivisor.divide(factor);
-        sqrt = largestUnfactorizedDivisor.sqrt();
+    public synchronized void factorOut(BigInteger i) {
+        Set<BigInteger> newUnfactorizedDivisors = new ConcurrentHashMap<BigInteger, BigInteger>().keySet(ZERO);
 
-        return largestUnfactorizedDivisor;
+        for (var number : unfactorizedDivisors) {
+            var maxPowerOfi = FactorizationUtils.computeMaxPower(number, i);
+
+            if (maxPowerOfi != ZERO) {
+                var factor = i.pow(maxPowerOfi.intValue());
+                BigInteger oldNumber = number;
+                number = number.divide(factor);
+                FactorizationUtils.logMessage("Found a factor: " + i + "^{" + maxPowerOfi + "} = " + factor + " of " + oldNumber + ". Number is now " + number);
+            }            
+
+            if (PrimalityTest.isPrime(number)) {
+                primeFactors.add(number);
+            } else {
+                newUnfactorizedDivisors.add(number);
+            }
+        }
+
+        unfactorizedDivisors = newUnfactorizedDivisors;
     }
 
     private void LaunchThreadsManually(int numThreads) throws InterruptedException {
@@ -118,71 +175,104 @@ public class Factorize implements Runnable {
         pool.shutdown();
     }
 
-    public void StartFactorization(int numThreads, ExecutionMode executionMode) throws InterruptedException {
-        FactorizationUtils.logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
+    public void StartFactorization(ExecutionMode executionMode) throws InterruptedException {
+        boolean factorizationComplete = ExtractLargestPowerOf2();
 
-        switch (executionMode) {
-            case SINGLE_THREAD:
-                FactorizationUtils.logMessage("Using main thread to run tasks.");
-                run();
-                break;
-            case CUSTOM_THREAD_COUNT_VIA_EXECUTOR_SERVICE:
-                FactorizationUtils.logMessage("Using executor service to run tasks.");
-                LaunchThreadsViaExecutor(numThreads);
-                break;
-            case CUSTOM_THREAD_COUNT_VIA_THREAD_CLASS:
-                FactorizationUtils.logMessage("Using Thread.start to run tasks.");
-                LaunchThreadsManually(numThreads);
-                break;
+        if (!factorizationComplete) {
+            FactorizationUtils.logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
+
+            switch (executionMode) {
+                case SINGLE_THREAD:
+                    FactorizationUtils.logMessage("Using main thread to run tasks.");
+                    run();
+                    break;
+                case CUSTOM_THREAD_COUNT_VIA_EXECUTOR_SERVICE:
+                    FactorizationUtils.logMessage("Using executor service to run tasks.");
+                    LaunchThreadsViaExecutor(factorizationThreadCount);
+                    break;
+                case CUSTOM_THREAD_COUNT_VIA_THREAD_CLASS:
+                    FactorizationUtils.logMessage("Using Thread.start to run tasks.");
+                    LaunchThreadsManually(factorizationThreadCount);
+                    break;
+            }
         }
 
+        validate();
         LogCompletion();
     }
 
-    public void run() {
+    public void factorize() {
+        int currentThreadCounter = threadCounter.getAndIncrement();
+        // Start at 3, exclude even numbers from chunk size
+        int startingNumberForThread = 1 + currentThreadCounter * CHUNK_SIZE * 2;
+
+        threadId.set(currentThreadCounter);
+        chunkValuesProcessed.set(0);
+        nextPrimeFactorCandidateStorage.set(new BigInteger(Integer.toString(startingNumberForThread)));
 
         BigInteger i = GetNextPrimeFactorCandidate();
 
         while (i.compareTo(sqrt) <= 0) {
             boolean showPeriodicMessages = divisibilityTests.getAndIncrement() % progressMsgFrequency == 0;
-            if (showPeriodicMessages) {
-                FactorizationUtils.logMessage("Testing divisibility by " + i);
+           boolean foundFactor = false;
+           for (var number : getUnfactorizedDivisors()) {
+                if (showPeriodicMessages) {
+                    FactorizationUtils.logMessage("Testing divisibility of " + number + " by " + i);
+                }
+
+                if (number.remainder(i).compareTo(ZERO) == 0) {
+                    if (PrimalityTest.isPrime(i)) {
+                        primeFactors.add(i);
+                    }
+
+                    foundFactor = true;
+                    break;
+                }
             }
 
-            BigInteger number = getLargestUnfactorizedDivisor();
-
-            if (number.remainder(i).compareTo(ZERO) == 0) {
-                factors.getAndIncrement();
-                var maxPowerOfi = FactorizationUtils.computeMaxPower(number, i);
-                var factor = i.pow(maxPowerOfi.intValue());
-                BigInteger oldNumber = number;
-                number = DivideFactor(factor);
-                FactorizationUtils.logMessage("Found a factor: " + i + "^{" + maxPowerOfi + "} = " + factor + " of " + oldNumber + ". Number is now " + number);
+            if (foundFactor) {
+                factorOut(i);
             }
 
             i = GetNextPrimeFactorCandidate();
-            if (showPeriodicMessages) {
-                FactorizationUtils.logMessage("Next prime factor candidate: " + i);
-            }
         }
 
-        FactorizationUtils.logMessage("Thread complete.");
+        FactorizationUtils.logMessage("Thread factorization tasks complete.");
+    }
+
+    public void validate() {
+        if (primeFactors.size() > 1) {
+            FactorizationUtils.logMessage("Prime factors:");
+
+            BigInteger product = ONE;
+            for (var number : primeFactors) {
+                var maxPower = FactorizationUtils.computeMaxPower(originalInput, number);
+                var maxPowerComputed = number.pow(maxPower.intValue());
+
+                product = product.multiply(maxPowerComputed);
+                System.out.println(number + "^{" + maxPower + "} = " + maxPowerComputed);
+            }
+
+            if (originalInput.compareTo(product) != 0) {
+                System.err.println("Invalid computation! Could probabilistic primality tests be at fault? Found: " + product + " but expected " + originalInput);
+            } else {
+                FactorizationUtils.logMessage("Validation complete.");
+            }
+        }
+    }
+
+    public void run() {
+        factorize();
+        FactorizationUtils.logMessage("Thread completed.");
     }
 
     public void LogCompletion() {
-        if (factors.get() == 0) {
-            FactorizationUtils.logMessage(input + " is prime.\n");
+        long totalPrimeFactors = primeFactors.size();
+        if (totalPrimeFactors == 0) {
+            FactorizationUtils.logMessage(originalInput + " is prime.\n");
         }
         else {
-            long totalPrimeFactors = factors.get();
-            if (largestUnfactorizedDivisor.compareTo(ONE) == 1) {
-                totalPrimeFactors++;
-            }
-
-            FactorizationUtils.logMessage("Completed with largestUnfactorizedDivisor = " + largestUnfactorizedDivisor);
-
-            FactorizationUtils.logMessage(input + " is composite. Found " + totalPrimeFactors + " prime factors (" + factors
-                                + ") of which are less than or equal to floor(sqrt(" + input + ")) = "
+            FactorizationUtils.logMessage(originalInput + " is composite. Found " + totalPrimeFactors + " prime factors. Checked up to floor(sqrt(" + input + ")) = "
                                 + inputSqrt + "\n");
         }
     }
@@ -234,9 +324,8 @@ public class Factorize implements Runnable {
             }
         }
 
-        var factorize = new Factorize(input);
-        factorize.ExtractLargestPowerOf2();
+        var factorize = new Factorize(input, threads);
 
-        factorize.StartFactorization(threads, executionMode);
+        factorize.StartFactorization(executionMode);
     }
 }
