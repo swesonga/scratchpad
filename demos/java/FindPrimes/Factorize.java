@@ -106,6 +106,10 @@ public class Factorize implements Runnable {
     }
 
     public BigInteger GetNextPrimeFactorCandidate() {
+        if (unfactorizedDivisors.size() == 0) {
+            return ZERO;
+        }
+
         int prev = chunkValuesProcessed.get();
         BigInteger nextPrimeFactorCandidate = nextPrimeFactorCandidateStorage.get();
 
@@ -125,7 +129,7 @@ public class Factorize implements Runnable {
         return unfactorizedDivisors;
     }
 
-    public synchronized void factorOut(BigInteger i) {
+    public synchronized boolean factorOut(BigInteger i) {
         Set<BigInteger> newUnfactorizedDivisors = new ConcurrentHashMap<BigInteger, BigInteger>().keySet(ZERO);
 
         for (var number : unfactorizedDivisors) {
@@ -136,7 +140,7 @@ public class Factorize implements Runnable {
                 BigInteger oldNumber = number;
                 number = number.divide(factor);
                 FactorizationUtils.logMessage("Found a factor: " + i + "^{" + maxPowerOfi + "} = " + factor + " of " + oldNumber + ". Number is now " + number);
-            }            
+            }
 
             if (PrimalityTest.isPrime(number)) {
                 primeFactors.add(number);
@@ -146,6 +150,18 @@ public class Factorize implements Runnable {
         }
 
         unfactorizedDivisors = newUnfactorizedDivisors;
+
+        outputUnfactorizedDivisors();
+        return unfactorizedDivisors.size() == 0;
+    }
+
+    private void outputUnfactorizedDivisors() {
+        FactorizationUtils.logMessage("**************************************");
+        FactorizationUtils.logMessage("Unfactorized Divisors");
+        for (var number : unfactorizedDivisors) {
+            System.out.println(number);
+        }
+        FactorizationUtils.logMessage("**************************************");
     }
 
     private void LaunchThreadsManually(int numThreads) throws InterruptedException {
@@ -231,10 +247,18 @@ public class Factorize implements Runnable {
             }
 
             if (foundFactor) {
-                factorOut(i);
+                // break if factorization is complete
+                if (factorOut(i)) {
+                    break;
+                }
             }
 
             i = GetNextPrimeFactorCandidate();
+
+            // break if another thread completed the factorization
+            if (i.compareTo(ZERO) == 0) {
+                break;
+            }
         }
 
         FactorizationUtils.logMessage("Thread factorization tasks complete.");
