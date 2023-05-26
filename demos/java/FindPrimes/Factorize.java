@@ -142,6 +142,12 @@ public class Factorize implements Runnable {
                 FactorizationUtils.logMessage("Found a factor: " + i + "^{" + maxPowerOfi + "} = " + factor + " of " + oldNumber + ". Number is now " + number);
             }
 
+            if (PrimalityTest.isPrime(i)) {
+                primeFactors.add(i);
+            } else {
+                newUnfactorizedDivisors.add(i);
+            }
+
             if (PrimalityTest.isPrime(number)) {
                 primeFactors.add(number);
             } else {
