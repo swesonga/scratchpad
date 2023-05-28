@@ -198,6 +198,7 @@ public class Factorize implements Runnable {
     }
 
     public void StartFactorization(ExecutionMode executionMode) throws InterruptedException {
+        FactorizationUtils.logMessage("Bit length of the input: " + input.bitLength());
         boolean factorizationComplete = ExtractLargestPowerOf2();
 
         if (!factorizationComplete) {
