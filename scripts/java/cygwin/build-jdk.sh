@@ -2,7 +2,12 @@
 #
 # Execute in Cygwin after configuring the repo.
 # A boot JDK may be required if building the latest code from upstream.
-# Download JDKs from https://adoptium.net/temurin/releases/?version=20
+# Download JDKs from https://adoptium.net/temurin/releases/?version=20 or
+# https://learn.microsoft.com/en-us/java/openjdk/download e.g.
+#
+#  mkdir -p ~/java/binaries/jdk/x64
+#  cd ~/java/binaries/jdk/x64
+#  wget https://aka.ms/download-jdk/microsoft-jdk-17.0.7-linux-x64.tar.gz
 #
 # To download and set up jtreg, run these commands:
 #
