@@ -22,7 +22,6 @@
  *
  */
 import java.math.BigInteger;
-import java.text.SimpleDateFormat;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,7 +29,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Random;
 import java.util.Set;
 
 public class Factorize implements Runnable {
@@ -68,7 +67,11 @@ public class Factorize implements Runnable {
     public Factorize(BigInteger input, int factorizationThreadCount) {
         this.input = input;
         this.originalInput = input;
+
+        FactorizationUtils.logMessage("Computing square root of the input...");
         inputSqrt = input.sqrt();
+
+        FactorizationUtils.logMessage("Square root computation complete.");
         sqrt = inputSqrt;
         this.nextPrimeFactorCandidateStorage = new ThreadLocal<>();
         this.divisibilityTests = new AtomicLong();
@@ -310,7 +313,7 @@ public class Factorize implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
         if (args.length == 0) {
-            System.out.println("Usage: Factorize [Number [Threads]]");
+            System.out.println("Usage: Factorize [Number [ExecutionMode [Threads [RNGSeed]]]]");
             return;
         }
 
@@ -340,6 +343,42 @@ public class Factorize implements Runnable {
             catch (IllegalArgumentException ex) {
                 System.err.println("Error: " + executionModeAsStr + " is not a valid execution mode.");
                 return;
+            }
+
+            if (args.length > 3) {
+                int inputAsIntValue = 0;
+                try {
+                    inputAsIntValue = input.intValueExact();
+                }
+                catch (ArithmeticException ex) {
+                    System.err.println("Error: invalid random array size.");
+                    return;
+                }
+
+                var seedAsStr = args[3];
+                long seed = 0;
+                try {
+                    seed = Long.parseLong(seedAsStr);
+                    System.out.println("Using " + threads + " threads.");
+                }
+                catch (NumberFormatException nfe) {
+                    System.err.println("Error: " + seedAsStr + " is not a valid long value.");
+                    return;
+                }
+
+                FactorizationUtils.logMessage("Creating array for the random number.");
+                var inputArray = new byte[inputAsIntValue];
+                
+                FactorizationUtils.logMessage("Generating the random number.");
+                var random = new Random();
+
+                if (seed != 0) {
+                    random.setSeed(seed);
+                }
+                random.nextBytes(inputArray);
+                
+                FactorizationUtils.logMessage("Random number generation complete. Creating a BigInteger.");
+                input = new BigInteger(inputArray).abs();
             }
 
             if (executionMode != ExecutionMode.SINGLE_THREAD && args.length > 2) {
