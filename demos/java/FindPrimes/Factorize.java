@@ -14,7 +14,15 @@
  *  java Factorize 43888020554297731
  *  java Factorize 4388802055429773100203726550535118822125
  *  java Factorize 42039582593802342572091
- *  java Factorize 42039582593802342572091 6
+ *  java Factorize 42039582593802342572091 CUSTOM_THREAD_COUNT_VIA_THREAD_CLASS 6
+ *
+ * Generate a random 13-byte integer to factorize using 4 threads:
+ *
+ *  java Factorize 13 CUSTOM_THREAD_COUNT_VIA_THREAD_CLASS 4 0
+ *
+ * To time the process and get context switching, page fault, and other stats on Linux:
+ *
+ *  usr/bin/time -v $JAVA_HOME/bin/java Factorize 42039582593802342572091 CUSTOM_THREAD_COUNT_VIA_THREAD_CLASS 4
  *
  * BigInteger documentation:
  *
