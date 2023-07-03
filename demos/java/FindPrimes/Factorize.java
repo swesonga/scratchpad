@@ -28,6 +28,10 @@
  *
  *  https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html
  *
+ * Java Command:
+ * 
+ *  https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html
+ * 
  */
 import java.math.BigInteger;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -89,7 +93,7 @@ public class Factorize implements Runnable {
         this.chunkValuesProcessed = new ThreadLocal<>();
         this.threadCounter = new AtomicInteger();
         this.chunkStride = new BigInteger(Integer.toString(factorizationThreadCount * CHUNK_SIZE));
-        this.offsetOfNextChunk = chunkStride.subtract(CHUNK_SIZE_BIG_INTEGER).add(ONE);
+        this.offsetOfNextChunk = chunkStride.subtract(CHUNK_SIZE_BIG_INTEGER);
 
         // https://www.baeldung.com/java-concurrent-hashset-concurrenthashmap
         this.primeFactors = new ConcurrentHashMap<BigInteger, BigInteger>().keySet(ZERO);
@@ -133,6 +137,11 @@ public class Factorize implements Runnable {
 
         nextPrimeFactorCandidateStorage.set(nextPrimeFactorCandidate);
         chunkValuesProcessed.set(prev + 1);
+
+        // https://stackoverflow.com/questions/24691862/java-assert-not-throwing-exception
+        // Use the -ea flag to enable assertions, e.g.
+        // java -ea Factorize 66904736496665926783368416270084639 CUSTOM_THREAD_COUNT_VIA_THREAD_CLASS 1
+        assert nextPrimeFactorCandidate.testBit(0) : "prime factor candidates cannot be even";
         return nextPrimeFactorCandidate;
     }
 
@@ -239,6 +248,8 @@ public class Factorize implements Runnable {
         int currentThreadCounter = threadCounter.getAndIncrement();
         // Start at 3, exclude even numbers from chunk size
         int startingNumberForThread = 1 + currentThreadCounter * CHUNK_SIZE * 2;
+
+        FactorizationUtils.logMessage("Thread " + currentThreadCounter + " starting candidate: " + startingNumberForThread);
 
         threadId.set(currentThreadCounter);
         chunkValuesProcessed.set(0);
