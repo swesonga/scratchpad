@@ -12,3 +12,9 @@ $profiler_path/profiler.sh -e cpu -i 5ms -d $duration -o flat        -f "Factori
 $profiler_path/profiler.sh -e cpu -i 5ms -d $duration -o traces      -f "Factorize-cpu-traces-${timestamp}.txt" jps
 $profiler_path/profiler.sh -e cpu -i 5ms -d $duration -o flat,traces -f "Factorize-cpu-flat+traces-${timestamp}.txt" jps
 $profiler_path/profiler.sh -e cpu -i 5ms -d $duration -o tree        -f "Factorize-cpu-tree-${timestamp}.html" jps
+
+$profiler_path/profiler.sh -e lock -i 5ms -d $duration -o flat        -f "Factorize-lock-flat-${timestamp}.txt" jps
+$profiler_path/profiler.sh -e lock -i 5ms -d $duration -o traces      -f "Factorize-lock-traces-${timestamp}.txt" jps
+$profiler_path/profiler.sh -e lock -i 5ms -d $duration -o flat,traces -f "Factorize-lock-flat+traces-${timestamp}.txt" jps
+$profiler_path/profiler.sh -e lock -i 5ms -d $duration -o tree        -f "Factorize-lock-tree-${timestamp}.html" jps
+$profiler_path/profiler.sh -e lock -i 5ms -d $duration -o flamegraph  -f "Factorize-lock-flamegraph-${timestamp}.html" jps
