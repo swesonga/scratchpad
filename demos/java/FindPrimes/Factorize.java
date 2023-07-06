@@ -115,6 +115,8 @@ public class Factorize implements Runnable {
                 primeFactors.add(input);
                 return true;
             }
+        } else if (PrimalityTest.isPrime(input)) {
+            return true;
         }
 
         unfactorizedDivisors.add(input);
