@@ -243,8 +243,9 @@ public class Factorize implements Runnable {
             }
         }
 
-        validate();
-        LogCompletion();
+        if (validate()) {
+            LogCompletion();
+        }
     }
 
     public void factorize() {
@@ -296,7 +297,7 @@ public class Factorize implements Runnable {
         FactorizationUtils.logMessage("Thread factorization tasks complete.");
     }
 
-    public void validate() {
+    public boolean validate() {
         if (primeFactors.size() > 1) {
             FactorizationUtils.logMessage("Prime factors:");
 
@@ -311,10 +312,16 @@ public class Factorize implements Runnable {
 
             if (originalInput.compareTo(product) != 0) {
                 System.err.println("Invalid computation! Could probabilistic primality tests be at fault? Found: " + product + " but expected " + originalInput);
+                return false;
             } else {
                 FactorizationUtils.logMessage("Validation complete.");
             }
+        } else if (!PrimalityTest.isPrime(originalInput)) {
+            System.err.println("Invalid computation! Could not factorize the input");
+            return false;
         }
+
+        return true;
     }
 
     public void run() {
