@@ -115,11 +115,8 @@ public class Factorize implements Runnable {
                 primeFactors.add(input);
                 return true;
             }
-        } else if (PrimalityTest.isPrime(input)) {
-            return true;
         }
 
-        unfactorizedDivisors.add(input);
         return false;
     }
 
@@ -222,9 +219,11 @@ public class Factorize implements Runnable {
 
     public void StartFactorization(ExecutionMode executionMode) throws InterruptedException {
         FactorizationUtils.logMessage("Bit length of the input: " + input.bitLength());
-        boolean factorizationComplete = ExtractLargestPowerOf2();
+
+        boolean factorizationComplete = input.testBit(0) ? PrimalityTest.isPrime(input) : ExtractLargestPowerOf2();
 
         if (!factorizationComplete) {
+            unfactorizedDivisors.add(input);
             FactorizationUtils.logMessage("Testing divisibility by odd numbers up to floor(sqrt(" + input + ")) = " + sqrt);
 
             switch (executionMode) {
