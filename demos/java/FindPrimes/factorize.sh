@@ -23,5 +23,7 @@ for ((i=$lower_lim; i<=$upper_lim; i++))
 do
     echo "Factorizing $i"
     $JAVA_HOME/bin/java Factorize $i
+    # Use the next line to generate a random number with $i bytes
+    # $JAVA_HOME/bin/java Factorize $i CUSTOM_THREAD_COUNT_VIA_THREAD_CLASS 4 0
     echo "---------------------------------------------------"
 done
