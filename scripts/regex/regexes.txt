@@ -6,3 +6,8 @@ Split mpstat output:
 Using Grep:
 
 grep -PRin '(\d\d:\d\d:\d\d [AP]M)(\s+)(\w+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)'
+grep -PRih '(\d\d:\d\d:\d\d [AP]M)(\s+)all(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)'
+grep -PRih '(\d\d:\d\d:\d\d [AP]M)(\s+)all(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)(\s+)([\w\.]+)|CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle'
+
+Summarizing perf report
+grep -Prin '^\s+\d.+%.+' report01.txt
