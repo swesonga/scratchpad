@@ -52,6 +52,11 @@ declare -a java_tests=(
  "test/langtools/tools/javac/warnings/suppress/PackageInfo.java"
 )
 
+# https://github.com/microsoft/openjdk-jdk/pull/9
+declare -a pr_tests_00009=(
+ "test/jdk/javax/management/mxbean/MXBeanInteropTest1.java"
+)
+
 if [ $# -lt 2 ]
 then
     echo "Usage:    run-jtreg-tests.sh openjdk-repo-path test-jdk-path jtreg-jar-path"
