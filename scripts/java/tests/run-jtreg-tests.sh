@@ -57,6 +57,10 @@ declare -a pr_tests_00009=(
  "test/jdk/javax/management/mxbean/MXBeanInteropTest1.java"
 )
 
+declare -a rsa_tests=(
+ "test/jdk/sun/security/rsa/RSAPaddingCheck.java"
+)
+
 if [ $# -lt 2 ]
 then
     echo "Usage:    ./run-jtreg-tests.sh openjdk-repo-path test-jdk-path jtreg-jar-path"
@@ -66,6 +70,7 @@ then
     echo "          ./run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x86/jdk-17.0.8+7  /d/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
     echo "          ./run-jtreg-tests.sh ~/java/ms/openjdk-jdk ~/java/ms/openjdk-jdk/build/linux-x86_64-server-slowdebug/jdk ~/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
     echo "          ./run-jtreg-tests.sh ~/java/forks/jdk      ~/java/forks/jdk/build/linux-x86_64-server-slowdebug/jdk ~/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
+    echo "          ./run-jtreg-tests.sh ~/java/forks/jdk17u   ~/java/forks/jdk17u/build/linux-x86_64-server-slowdebug/jdk ~/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
     exit
 fi
 
