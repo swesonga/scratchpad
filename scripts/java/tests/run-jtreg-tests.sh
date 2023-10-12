@@ -88,17 +88,19 @@ declare -a missing_tests=()
 for java_test in "${java_tests[@]}"
 do
    if test -f $java_test ; then
+       date;
        echo -e "\n\n\n---- Running $java_test ----"
 
        command="$test_jdk/bin/java -Xmx512m -jar $jtreg_jar_path -agentvm -ignore:quiet -automatic -xml -vmoption:-Xmx512m -timeoutFactor:4 -concurrency:1 -testjdk:$test_jdk -verbose:fail,error,summary $java_test"
 
        echo -e "Executing: $command"
-       $command
+       time $command
    else
        missing_tests+=($java_test)
    fi
 done
 
+date
 echo "Missing tests: "
 for java_test in ${missing_tests[@]}
 do
