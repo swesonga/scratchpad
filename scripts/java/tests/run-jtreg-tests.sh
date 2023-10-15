@@ -80,6 +80,7 @@ jtreg_jar_path=$3
 
 $test_jdk/bin/java -version
 
+echo -e "\nChanging current directory to $openjdk_repo_path\n"
 cd $openjdk_repo_path
 
 declare -a missing_tests=()
@@ -101,7 +102,8 @@ do
 done
 
 date
-echo "Missing tests: "
+echo -e "\nMissing tests:"
+echo "---------------------------------------"
 for java_test in ${missing_tests[@]}
 do
     echo $java_test
