@@ -61,6 +61,11 @@ declare -a rsa_tests=(
  "test/jdk/sun/security/rsa/RSAPaddingCheck.java"
 )
 
+declare -a docker_tests=(
+ "test/jdk/jdk/internal/platform/docker/TestLimitsUpdating.java"
+ "test/hotspot/jtreg/containers/docker/TestLimitsUpdating.java"
+)
+
 if [ $# -lt 2 ]
 then
     echo "Usage:    ./run-jtreg-tests.sh openjdk-repo-path test-jdk-path jtreg-jar-path"
@@ -86,7 +91,7 @@ cd $openjdk_repo_path
 declare -a missing_tests=()
 
 # https://stackoverflow.com/questions/8880603/loop-through-an-array-of-strings-in-bash
-for java_test in "${java_tests[@]}"
+for java_test in "${docker_tests[@]}"
 do
    if test -f $java_test ; then
        date;
