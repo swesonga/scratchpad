@@ -88,6 +88,8 @@ $test_jdk/bin/java -version
 echo -e "\nChanging current directory to $openjdk_repo_path\n"
 cd $openjdk_repo_path
 
+# https://stackoverflow.com/questions/1886374/how-to-find-the-length-of-an-array-in-shell
+echo -e "Tests to Run: ${#docker_tests[@]}"
 declare -a missing_tests=()
 
 # https://stackoverflow.com/questions/8880603/loop-through-an-array-of-strings-in-bash
@@ -107,17 +109,21 @@ do
 done
 
 date
-echo -e "\nMissing tests:"
-echo "---------------------------------------"
-for java_test in ${missing_tests[@]}
-do
-    echo $java_test
-done | sort
+num_missing_tests=${#missing_tests[@]}
 
-for java_test in ${missing_tests[@]}
-do
-    echo -e "---------------------------------------\n"
-    echo -e "Last commit to modify missing file $java_test\n"
-    git_command="git log --full-history -1 -- ./$java_test"
-    $git_command
-done
+if [ $num_missing_tests -ne '0' ]; then
+    echo -e "\nMissing tests: ${num_missing_tests}"
+    echo "---------------------------------------"
+    for java_test in ${missing_tests[@]}
+    do
+        echo $java_test
+    done | sort
+
+    for java_test in ${missing_tests[@]}
+    do
+        echo -e "---------------------------------------\n"
+        echo -e "Last commit to modify missing file $java_test\n"
+        git_command="git log --full-history -1 -- ./$java_test"
+        $git_command
+    done
+fi
