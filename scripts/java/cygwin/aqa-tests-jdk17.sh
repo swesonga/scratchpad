@@ -7,8 +7,8 @@ export TEST_JDK_HOME=C:\\java\\binaries\\jdk\\aarch64\\jdk-17.0.9+8
 export TESTIMAGE_PATH=C:\\java\\binaries\\jdk\\aarch64\\jdk-17.0.9+8-test-image
 export USE_TESTENV_PROPERTIES=true BUILD_LIST=openjdk
 
-mkdir -p /cygdrive/c/java/aqa/2023-10
-cd /cygdrive/c/java/aqa/2023-10
+mkdir -p /cygdrive/c/java/aqa/2023-10/jdk17
+cd /cygdrive/c/java/aqa/2023-10/jdk17
 
 git clone --depth 1 -b v0.9.7-release https://github.com/adoptium/aqa-tests.git
 cd aqa-tests/openjdk
