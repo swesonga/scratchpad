@@ -102,6 +102,10 @@ built_jdk="build/${build_conf}/jdk/"
 log_message "Zipping the JDK into $images_zip"
 cd $built_jdk
 
+zip -qru $images_zip .
+mv $images_zip ..
+cd ../../../
+
 log_message "Building jtreg native binaries"
 if [ $redirect_output -ne 0 ]; then
     make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity > $jtreg_native_log
@@ -137,8 +141,7 @@ if [ $build_hsdis -ne 0 ]; then
     cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
 fi
 
-zip -qru $images_zip .
-mv $images_zip ..
+cd $built_jdk
 
 log_message "Zipping support/test into $test_zip"
 cd ..
