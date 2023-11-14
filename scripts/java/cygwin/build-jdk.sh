@@ -88,6 +88,8 @@ else
     make images CONF=$build_conf LOG=$log_verbosity
 fi
 
+built_jdk="build/${build_conf}/jdk/"
+
 log_message "Zipping the JDK into $images_zip"
 cd $built_jdk
 
@@ -104,8 +106,6 @@ if [ $redirect_output -ne 0 ]; then
 else
     make test-image CONF=$build_conf LOG=$log_verbosity
 fi
-
-built_jdk="build/${build_conf}/jdk/"
 
 if [ $build_hsdis -ne 0 ]; then
     hsdis_build_log="$log_root/hsdis_build-${timestamp}.txt"
