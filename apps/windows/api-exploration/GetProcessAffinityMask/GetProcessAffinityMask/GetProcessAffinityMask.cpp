@@ -1,5 +1,9 @@
-﻿// GetProcessAffinityMask.cpp : Defines the entry point for the application.
+﻿// To test this application using the start command on the command prompt:
 //
+// start /b /wait /node 0 /affinity 000000000000000f "Simple App for Testing Affinity" GetProcessAffinityMask.exe
+//
+// For the start command's parameter descriptions, see
+// https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/start
 
 #include "GetProcessAffinityMask.h"
 #include "../../include/WindowsErrorHandling.h"
