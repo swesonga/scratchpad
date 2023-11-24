@@ -70,9 +70,9 @@ if [ $# -lt 2 ]
 then
     echo "Usage:    ./run-jtreg-tests.sh openjdk-repo-path test-jdk-path jtreg-jar-path"
     echo -e "\nExamples:"
-    echo "          ./run-jtreg-tests.sh /c/java/ms/openjdk-jdk11u /c/java/binaries/jdk/x64/jdk-11.0.17+8 /c/java/binaries/jtreg-6.1+1/lib/jtreg.jar"
-    echo "          ./run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x64/jdk-17.0.8+7  /d/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
-    echo "          ./run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x86/jdk-17.0.8+7  /d/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
+    echo "          ./run-jtreg-tests.sh /c/java/ms/openjdk-jdk11u /c/java/binaries/jdk/x64/jdk-11.0.17+8 /c/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
+    echo "          ./run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x64/jdk-17.0.8+7  /c/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
+    echo "          ./run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x86/jdk-17.0.8+7  /c/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
     echo "          ./run-jtreg-tests.sh ~/java/ms/openjdk-jdk ~/java/ms/openjdk-jdk/build/linux-x86_64-server-slowdebug/jdk ~/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
     echo "          ./run-jtreg-tests.sh ~/java/forks/jdk      ~/java/forks/jdk/build/linux-x86_64-server-slowdebug/jdk ~/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
     echo "          ./run-jtreg-tests.sh ~/java/forks/openjdk/jdk17u-dev ~/java/forks/openjdk/jdk17u-dev/build/linux-x86_64-server-slowdebug/jdk ~/java/binaries/jtreg-7.3.1/lib/jtreg.jar"
