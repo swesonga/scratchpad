@@ -147,14 +147,5 @@ log_message "Zipping support/test into $test_zip"
 cd ..
 zip -qru $test_zip support/test
 
-if [ $# -gt 0 ]
-then
-    log_message "Moving $images_zip to $1"
-    mv $images_zip $1
-
-    log_message "Moving $test_zip to $1"
-    mv $test_zip $1
-fi
-
 log_message "Build complete"
 date
