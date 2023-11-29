@@ -100,4 +100,6 @@ int main()
     printf("Number of Processor Groups:   %d\n", processorGroups);
     printf("Number of Active Processors:  %d\n", activeProcessors);
     printf("Maximum Number of Processors: %d\n", maximumProcessors);
+
+    Sleep(10000);
 }
