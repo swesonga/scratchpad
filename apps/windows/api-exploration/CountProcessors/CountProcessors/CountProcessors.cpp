@@ -4,6 +4,22 @@
 #include <Windows.h>
 #include <cassert>
 
+int printAffinity() {
+    DWORD_PTR processAffinityMask;
+    DWORD_PTR systemAffinityMask;
+
+    // https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprocessaffinitymask
+    if (!GetProcessAffinityMask(GetCurrentProcess(), &processAffinityMask, &systemAffinityMask)) {
+        PrintError(TEXT("GetProcessAffinityMask"), GetLastError());
+        return -1;
+    }
+
+    printf("Process Affinity Mask: 0x%08llx\n", processAffinityMask);
+    printf("System  Affinity Mask: 0x%08llx\n", systemAffinityMask);
+
+    return 0;
+}
+
 typedef BOOL(WINAPI* LPFN_GET_LOGICAL_PROCESSOR_INFORMATION_EX)(
     LOGICAL_PROCESSOR_RELATIONSHIP, PSYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX, PDWORD);
 
@@ -99,7 +115,9 @@ int main()
 
     printf("Number of Processor Groups:   %d\n", processorGroups);
     printf("Number of Active Processors:  %d\n", activeProcessors);
-    printf("Maximum Number of Processors: %d\n", maximumProcessors);
+    printf("Maximum Number of Processors: %d\n\n", maximumProcessors);
+
+    printAffinity();
 
     Sleep(10000);
 }
