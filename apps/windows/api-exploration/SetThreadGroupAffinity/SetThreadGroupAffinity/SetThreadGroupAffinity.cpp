@@ -37,7 +37,14 @@ int main(int argc, TCHAR* argv[])
         return 1;
     }
 
-    unsigned long long userSpecifiedAffinity = strtoull(argv[1], nullptr, 16);
+    unsigned long long userSpecifiedAffinity;
+
+    // https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strtoull-strtoull-l-wcstoull-wcstoull-l?view=msvc-170
+#ifdef UNICODE
+    userSpecifiedAffinity = wcstoull(argv[1], nullptr, 16);
+#else
+    userSpecifiedAffinity = strtoull(argv[1], nullptr, 16);
+#endif
 
     if (printAffinity()) {
         return -1;
