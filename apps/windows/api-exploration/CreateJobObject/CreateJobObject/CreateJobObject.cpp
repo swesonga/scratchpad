@@ -1,9 +1,10 @@
-﻿#include "CreateJobObject.h"
+﻿//#define UNICODE
+#include "CreateJobObject.h"
 #include "../../include/WindowsErrorHandling.h"
 #include <Windows.h>
 #include <cassert>
 
-int _tmain(int argc, TCHAR* argv[])
+int main(int argc, TCHAR* argv[])
 {
     TCHAR* commandLine = argv[0];
 
@@ -20,7 +21,11 @@ int _tmain(int argc, TCHAR* argv[])
     unsigned long long* affinities = new unsigned long long[affinityArgCount]; // TODO: delete me
 
     for (int i = 0; i < affinityArgCount; i++) {
+#ifdef UNICODE
+        affinities[i] = wcstoull(argv[2 + i], nullptr, 16);
+#else
         affinities[i] = strtoull(argv[2 + i], nullptr, 16);
+#endif
         printf("Affinity mask %d set to 0x%08llx.\n", i, affinities[i]);
     }
 
@@ -33,9 +38,6 @@ int _tmain(int argc, TCHAR* argv[])
         printf("CreateJobObject returned handle to an existing job.\n");
     }
 
-    // Get the GROUP_AFFINITY structures
-    GROUP_AFFINITY* groupAffinities = NULL;
-    DWORD numGroupAffinities = 0;
     typedef BOOL(WINAPI* LPFN_GET_LOGICAL_PROCESSOR_INFORMATION_EX)(
         LOGICAL_PROCESSOR_RELATIONSHIP, PSYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX, PDWORD);
 
@@ -46,16 +48,14 @@ int _tmain(int argc, TCHAR* argv[])
         "GetLogicalProcessorInformationEx");
     if (NULL == glpiex)
     {
-        _tprintf(TEXT("GetLogicalProcessorInformationEx is not supported.\n"));
+        printf("GetLogicalProcessorInformationEx is not supported.\n");
         return (1);
     }
 
-    LOGICAL_PROCESSOR_RELATIONSHIP relationshipType = RelationProcessorCore;
+    LOGICAL_PROCESSOR_RELATIONSHIP relationshipType = RelationGroup;
     PSYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX buffer = NULL;
     DWORD returnedLength = 0;
     DWORD byteOffset = 0;
-
-    DWORD processorCores = 0;
 
     // https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getlogicalprocessorinformationex
     if (!glpiex(relationshipType, buffer, &returnedLength)) {
@@ -90,42 +90,24 @@ int _tmain(int argc, TCHAR* argv[])
     }
 
     PSYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX pSytemLogicalProcessorInfo = buffer;
-    while (byteOffset + sizeof(SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX) <= returnedLength)
-    {
-        switch (pSytemLogicalProcessorInfo->Relationship) {
-        
-        case RelationProcessorCore:
-            PROCESSOR_RELATIONSHIP processorRelationship = pSytemLogicalProcessorInfo->Processor;
-            groupAffinities = processorRelationship.GroupMask;
-            numGroupAffinities = processorRelationship.GroupCount;
+    DWORD processorGroups = pSytemLogicalProcessorInfo->Group.ActiveGroupCount;
 
-            for (int i = 0; i < numGroupAffinities; i++) {
-                KAFFINITY affinityMask = (i < affinityArgCount) ? affinities[i] : groupAffinities[i].Mask;
-                groupAffinities[i].Mask = affinityMask;
+    // Get the GROUP_AFFINITY structures
+    DWORD sizeOfGroupData = affinityArgCount * sizeof(GROUP_AFFINITY);
+    GROUP_AFFINITY* groupAffinities = (GROUP_AFFINITY*)malloc(sizeOfGroupData); // TODO: free me
 
-                printf("ProcessorCore %d, Group %d, PROCESSOR_RELATIONSHIP.GroupMask 0x%08llx - Set mask to 0x%08llx.\n",
-                    processorCores, i, groupAffinities[i].Mask, affinityMask);
-            }
-
-            processorCores++;
-            break;
-        }
-
-        byteOffset += sizeof(SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX);
-        pSytemLogicalProcessorInfo++;
-    }
-
-    printf("Processor Cores:    %d\n", processorCores);
-
-    JOBOBJECTINFOCLASS jobObjectInformationClass = JobObjectGroupInformationEx;
-
-    DWORD sizeOfGroupData = sizeof(GROUP_AFFINITY) * numGroupAffinities;
     if (groupAffinities == NULL) {
-        printf("No group affinity structures available.\n");
+        printf("Failed to allocate memory for group affinity structures.\n");
         return 1;
     }
 
-    if (!SetInformationJobObject(jobHandle, jobObjectInformationClass, groupAffinities, sizeOfGroupData)) {
+    for (int i = 0; i < affinityArgCount; i++) {
+        groupAffinities[i].Group = i;
+        groupAffinities[i].Mask = affinities[i];
+        printf("GROUP_AFFINITY[%d].Mask set to 0x%08llx.\n", i, affinities[i]);
+    }
+
+    if (!SetInformationJobObject(jobHandle, JobObjectGroupInformationEx, groupAffinities, sizeOfGroupData)) {
         PrintError(TEXT("SetInformationJobObject"), GetLastError());
         return 1;
     }
@@ -140,7 +122,7 @@ int _tmain(int argc, TCHAR* argv[])
     si.cb = sizeof(si);
     ZeroMemory(&pi, sizeof(pi));
 
-    // Start the child process. 
+    printf("Start the child process...\n\n");
     if (!CreateProcess(NULL,   // No module name (use command line)
         argv[1],        // Command line
         NULL,           // Process handle not inheritable
