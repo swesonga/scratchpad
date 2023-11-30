@@ -14,8 +14,8 @@ fi
 
 # Download JDKs from https://adoptium.net/temurin/releases/?version=20
 #
-# export JAVA_HOME=/c/java/binaries/jdk/x64/jdk-20+36
-# export JAVA_HOME=~/java/binaries/jdk/x64/jdk-20+36
+# export JAVA_HOME=/c/java/binaries/jdk/x64/jdk-21.0.1+12
+# export JAVA_HOME=~/java/binaries/jdk/x64/jdk-21.0.1+12
 # export JAVA_HOME=~/java/binaries/jdk/aarch64/jdk-17.0.8+7/Contents/Home
 
 $JAVA_HOME/bin/javac Factorize.java
