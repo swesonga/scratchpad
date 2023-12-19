@@ -57,8 +57,9 @@ declare -a pr_tests_00009=(
  "test/jdk/javax/management/mxbean/MXBeanInteropTest1.java"
 )
 
-declare -a rsa_tests=(
- "test/jdk/sun/security/rsa/RSAPaddingCheck.java"
+declare -a security_tests=(
+ # "test/jdk/sun/security/rsa/RSAPaddingCheck.java"
+ "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java"
 )
 
 declare -a docker_tests=(
@@ -89,11 +90,11 @@ echo -e "\nChanging current directory to $openjdk_repo_path\n"
 cd $openjdk_repo_path
 
 # https://stackoverflow.com/questions/1886374/how-to-find-the-length-of-an-array-in-shell
-echo -e "Tests to Run: ${#docker_tests[@]}"
+echo -e "Tests to Run: ${#security_tests[@]}"
 declare -a missing_tests=()
 
 # https://stackoverflow.com/questions/8880603/loop-through-an-array-of-strings-in-bash
-for java_test in "${docker_tests[@]}"
+for java_test in "${security_tests[@]}"
 do
    if test -f $java_test ; then
        date;
