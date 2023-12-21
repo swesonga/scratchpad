@@ -97,14 +97,14 @@ else
     make images CONF=$build_conf LOG=$log_verbosity
 fi
 
-built_jdk="build/${build_conf}/jdk/"
+built_jdk="build/${build_conf}/images/jdk/"
 
 log_message "Zipping the JDK into $images_zip"
 cd $built_jdk
 
 zip -qru $images_zip .
-mv $images_zip ..
-cd ../../../
+mv $images_zip ../..
+cd ../../../../
 
 log_message "Building jtreg native binaries"
 if [ $redirect_output -ne 0 ]; then
