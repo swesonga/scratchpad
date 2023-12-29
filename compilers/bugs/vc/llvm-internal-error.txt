@@ -1,0 +1,46 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.8.3
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+
+C:\Program Files\Microsoft Visual Studio\2022\Community> cl
+Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33133 for x64
+
+...
+
+[4416/7266] Building CXX object tools\clang\lib\Analysis\FlowSensitive\CMakeFiles\obj.clangAnalysisFlowSensitive.dir\HTMLLogger.cpp.obj
+FAILED: tools/clang/lib/Analysis/FlowSensitive/CMakeFiles/obj.clangAnalysisFlowSensitive.dir/HTMLLogger.cpp.obj
+C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe  /nologo /TP -DGTEST_HAS_RTTI=0 -DUNICODE -D_CRT_NONSTDC_NO_DEPRECATE -D_CRT_NONSTDC_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE -D_CRT_SECURE_NO_WARNINGS -D_HAS_EXCEPTIONS=0 -D_SCL_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_WARNINGS -D_UNICODE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -IC:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\build64_stage0\tools\clang\lib\Analysis\FlowSensitive -IC:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\llvm-project\clang\lib\Analysis\FlowSensitive -IC:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\llvm-project\clang\include -IC:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\build64_stage0\tools\clang\include -IC:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\build64_stage0\include -IC:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\llvm-project\llvm\include -DLIBXML_STATIC /Zc:inline /Zc:preprocessor /Zc:__cplusplus /Oi /bigobj /permissive- /W4 -wd4141 -wd4146 -wd4244 -wd4267 -wd4291 -wd4351 -wd4456 -wd4457 -wd4458 -wd4459 -wd4503 -wd4624 -wd4722 -wd4100 -wd4127 -wd4512 -wd4505 -wd4610 -wd4510 -wd4702 -wd4245 -wd4706 -wd4310 -wd4701 -wd4703 -wd4389 -wd4611 -wd4805 -wd4204 -wd4577 -wd4091 -wd4592 -wd4319 -wd4709 -wd5105 -wd4324 -w14062 -we4238 /Gw /O2 /Ob2 /DNDEBUG -MD  /EHs-c- /GR- -std:c++17 /showIncludes /Fotools\clang\lib\Analysis\FlowSensitive\CMakeFiles\obj.clangAnalysisFlowSensitive.dir\HTMLLogger.cpp.obj /Fdtools\clang\lib\Analysis\FlowSensitive\CMakeFiles\obj.clangAnalysisFlowSensitive.dir\ /FS -c C:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\llvm-project\clang\lib\Analysis\FlowSensitive\HTMLLogger.cpp
+C:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\llvm-project\clang\lib\Analysis\FlowSensitive\HTMLLogger.cpp(332): fatal error C1001: Internal compiler error.
+(compiler file 'msc1.cpp', line 1587)
+ To work around this problem, try simplifying or changing the program near the locations listed above.
+If possible please provide a repro here: https://developercommunity.visualstudio.com
+Please choose the Technical Support command on the Visual C++
+ Help menu, or open the Technical Support help file for more information
+C:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\llvm-project\clang\lib\Analysis\FlowSensitive\HTMLLogger.cpp(378): note: This diagnostic occurred in the compiler generated function 'clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo::TokenInfo(void)'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xmemory(723): note: see reference to function 'clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo::TokenInfo(void)'
+C:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\llvm-project\clang\lib\Analysis\FlowSensitive\HTMLLogger.cpp(332): note: the template instantiation context (the oldest one first) is
+C:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\llvm-project\clang\lib\Analysis\FlowSensitive\HTMLLogger.cpp(382): note: see reference to class template instantiation 'std::vector<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo,std::allocator<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo>>' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\vector(616): note: while compiling class template member function 'std::vector<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo,std::allocator<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo>>::vector(const unsigned __int64,const _Alloc &)'
+        with
+        [
+            _Alloc=std::allocator<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo>
+        ]
+C:\repos\llvm\llvm-project\llvm\utils\release\llvm_package_17.0.1\llvm-project\clang\lib\Analysis\FlowSensitive\HTMLLogger.cpp(382): note: see the first reference to 'std::vector<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo,std::allocator<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo>>::vector' in 'clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\vector(618): note: see reference to function template instantiation 'void std::vector<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo,std::allocator<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo>>::_Construct_n<>(const unsigned __int64)' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\vector(2077): note: see reference to function template instantiation 'clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo *std::_Uninitialized_value_construct_n<std::allocator<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo>>(clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo *,unsigned __int64,_Alloc &)' being compiled
+        with
+        [
+            _Alloc=std::allocator<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo>
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xmemory(2041): note: see reference to function template instantiation 'void std::_Uninitialized_backout_al<std::allocator<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo>>::_Emplace_back<>(void)' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xmemory(1801): note: see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,>(_Alloc &,_Objty *const )' being compiled
+        with
+        [
+            _Alloc=std::allocator<clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo>,
+            _Ty=clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo,
+            _Objty=clang::dataflow::`anonymous-namespace'::HTMLLogger::writeCode::TokenInfo
+        ]
+INTERNAL COMPILER ERROR in 'C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe'
+    Please choose the Technical Support command on the Visual C++
+    Help menu, or open the Technical Support help file for more information
