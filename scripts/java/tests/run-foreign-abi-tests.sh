@@ -20,9 +20,9 @@
 #
 # To run the foreign function & memory tests, use a command line similar to this one:
 #
-#  time ./run-foreign-abi-tests.sh ~/repos/java/forks/panama-foreign ~/java/binaries/jtreg-7.1.1+1 ~/repos/java/forks/panama-foreign/build/macosx-aarch64-server-release
-#  time ./run-foreign-abi-tests.sh ~/java/forks/openjdk/jdk ~/java/binaries/jtreg-7.1.1+1 ~/java/forks/panama-foreign/build/linux-x86_64-server-slowdebug
-#  time ./run-foreign-abi-tests.sh /d/java/forks/panama-foreign /d/java/binaries/jtreg-7.1.1+1 /d/java/forks/panama-foreign/build/windows-x86_64-server-slowdebug
+#  time ./run-foreign-abi-tests.sh ~/repos/java/forks/panama-foreign ~/java/binaries/jtreg-7.3.1+1 ~/repos/java/forks/panama-foreign/build/macosx-aarch64-server-release
+#  time ./run-foreign-abi-tests.sh ~/java/forks/openjdk/jdk ~/java/binaries/jtreg-7.3.1+1 ~/java/forks/openjdk/jdk/build/linux-x86_64-server-slowdebug
+#  time ./run-foreign-abi-tests.sh /d/java/forks/panama-foreign /d/java/binaries/jtreg-7.3.1 /d/java/forks/panama-foreign/build/windows-x86_64-server-slowdebug
 #  time ./run-foreign-abi-tests.sh /c/java/forks/openjdk/jdk /c/java/binaries/jtreg-7.3.1 /c/java/forks/openjdk/jdk/build/windows-aarch64-server-slowdebug
 #
 set -e
