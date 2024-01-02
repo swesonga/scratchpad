@@ -24,6 +24,7 @@
 #  time ./run-foreign-abi-tests.sh ~/java/forks/panama-foreign ~/java/binaries/jtreg-7.1.1+1 ~/java/forks/panama-foreign/build/linux-x86_64-server-slowdebug
 #  time ./run-foreign-abi-tests.sh /d/java/forks/panama-foreign /d/java/binaries/jtreg-7.1.1+1 /d/java/forks/panama-foreign/build/windows-x86_64-server-slowdebug
 #
+set -e
 
 jdk_repo=$1
 jtreg_path=$2
