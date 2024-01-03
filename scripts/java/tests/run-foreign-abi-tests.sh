@@ -178,8 +178,10 @@ do
         # see https://stackoverflow.com/questions/55316852/append-elements-to-an-array-in-bash
         existing_tests+=($java_test)
 
-        echo "Running $java_test"
-        time $JAVA_HOME/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -testjdk:$jdk_artifacts/jdk -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib $java_test
+        command="$JAVA_HOME/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -testjdk:$jdk_artifacts/jdk -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib $java_test"
+
+        echo -e "Executing: $command"
+        time $command
      else
          missing_tests+=($java_test)
      fi
