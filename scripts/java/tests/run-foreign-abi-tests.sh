@@ -50,6 +50,9 @@ declare -a java_foreign_tests=(
  "test/jdk/java/foreign/channels/TestAsyncSocketChannels.java"
  "test/jdk/java/foreign/channels/TestSocketChannels.java"
  "test/jdk/java/foreign/CompositeLookupTest.java"
+ "test/jdk/java/foreign/critical/TestCritical.java"
+ "test/jdk/java/foreign/critical/TestCriticalUpcall.java"
+ "test/jdk/java/foreign/critical/TestStressAllowHeap.java"
  "test/jdk/java/foreign/dontrelease/TestDontRelease.java"
 #"test/jdk/java/foreign/enablenativeaccess/NativeAccessDynamicMain.java"
 #"test/jdk/java/foreign/enablenativeaccess/org/openjdk/foreigntest/unnamed/PanamaMainUnnamedModule.java"
@@ -134,6 +137,7 @@ declare -a java_foreign_tests=(
  "test/jdk/java/foreign/TestSpliterator.java"
  "test/jdk/java/foreign/TestStringEncoding.java"
  "test/jdk/java/foreign/TestStringEncodingJumbo.java"
+ "test/jdk/java/foreign/TestStubAllocFailure.java"
  "test/jdk/java/foreign/TestTypeAccess.java"
  "test/jdk/java/foreign/TestUpcallAsync.java"
 #"test/jdk/java/foreign/TestUpcallBase.java"
@@ -174,6 +178,7 @@ do
         # see https://stackoverflow.com/questions/55316852/append-elements-to-an-array-in-bash
         existing_tests+=($java_test)
 
+        echo "Running $java_test"
         time $JAVA_HOME/bin/java -jar $jtreg_path/lib/jtreg.jar -agentvm -timeoutFactor:4 -concurrency:4 -verbose:fail,error,summary -testjdk:$jdk_artifacts/jdk -nativepath:$jdk_artifacts/support/test/jdk/jtreg/native/lib $java_test
      else
          missing_tests+=($java_test)
