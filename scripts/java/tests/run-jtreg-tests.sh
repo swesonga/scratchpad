@@ -12,44 +12,8 @@
 # https://stackoverflow.com/questions/19622198/what-does-set-e-mean-in-a-bash-script
 #set -e
 
-declare -a ui_tests=(
- "test/jdk/java/awt/Focus/8000326/SetFocusTraversalKeysEnabledTest.java"
- "test/jdk/java/awt/Focus/8282640/ScrollPaneFocusBugTest.java"
- "test/jdk/javax/swing/JButton/4659800/SpaceKeyActivatesButton.java"
- "test/jdk/javax/swing/JComboBox/JComboBoxPopupMenuEventTest.java"
- "test/jdk/javax/swing/JFileChooser/JFileChooserSetLocationTest.java"
- "test/jdk/javax/swing/JLabel/4138746/JLabelMnemonicsTest.java"
- "test/jdk/javax/swing/JList/4618767/JListSelectedElementTest.java"
- "test/jdk/javax/swing/JRootPane/DefaultButtonTest.java"
- "test/jdk/javax/swing/JSpinner/4670051/DateFieldUnderCursorTest.java"
- "test/jdk/javax/swing/JSplitPane/4164779/JSplitPaneKeyboardNavigationTest.java"
- "test/jdk/javax/swing/JSplitPane/4615365/JSplitPaneDividerLocationTest.java"
- "test/jdk/javax/swing/JSplitPane/4820080/JSplitPaneDragColorTest.java"
- "test/jdk/javax/swing/JTextArea/4514331/TabShiftsFocusToNextComponent.java"
- "test/jdk/javax/swing/JTextField/4532513/DefaultCaretRequestsFocusTest.java"
- "test/jdk/javax/swing/JTree/4518432/JTreeNodeCopyPasteTest.java"
- "test/jdk/javax/swing/JTree/4618767/JTreeSelectedElementTest.java"
-)
-
 declare -a java_tests=(
- "test/hotspot/jtreg/compiler/c2/ClearArray.java"
- "test/hotspot/jtreg/compiler/c2/irTests/scalarReplacement/AllocationMergesTests.java"
- "test/hotspot/jtreg/compiler/intrinsics/unsafe/HeapByteBufferTest.java#id1"
- "test/hotspot/jtreg/compiler/loopopts/TestOverUnrolling2.java"
- "test/hotspot/jtreg/compiler/loopopts/superword/TestPeeledReductionNode.java"
- "test/hotspot/jtreg/compiler/rangechecks/TestRangeCheckCmpUUnderflow.java"
- "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large002/TestDescription.java"
- "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large002/TestDescription.java"
- "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large003/TestDescription.java"
- "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large004/TestDescription.java"
- "test/hotspot/jtreg/vmTestbase/gc/gctests/LargeObjects/large005/TestDescription.java"
- "test/jdk/java/nio/file/Files/probeContentType/Basic.java"
- "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/QuoVadisCA.java"
- "test/langtools/tools/javac/6257443/T6257443.java"
- "test/langtools/tools/javac/8074306/TestSyntheticNullChecks.java"
- "test/langtools/tools/javac/StringConcat/TestIndyStringConcat.java"
- "test/langtools/tools/javac/jvm/ClassRefDupInConstantPoolTest.java"
- "test/langtools/tools/javac/warnings/suppress/PackageInfo.java"
+ "test/hotspot/jtreg/applications/scimark/Scimark.java"
 )
 
 # https://github.com/microsoft/openjdk-jdk/pull/9
@@ -60,6 +24,8 @@ declare -a pr_tests_00009=(
 declare -a security_tests=(
  # "test/jdk/sun/security/rsa/RSAPaddingCheck.java"
  "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java"
+ "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/DigicertCSRootG5.java"
+ "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/EmSignRootG2CA.java"
 )
 
 # Use -Ddocker.support=true in the test_flags if you get "Test results: no tests selected"
