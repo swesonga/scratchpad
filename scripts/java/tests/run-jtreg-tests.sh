@@ -62,6 +62,7 @@ declare -a security_tests=(
  "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java"
 )
 
+# Use -Ddocker.support=true in the test_flags if you get "Test results: no tests selected"
 declare -a docker_tests=(
  "test/jdk/jdk/internal/platform/docker/TestLimitsUpdating.java"
  "test/hotspot/jtreg/containers/docker/TestLimitsUpdating.java"
@@ -83,6 +84,7 @@ fi
 openjdk_repo_path=$1
 test_jdk=$2
 jtreg_jar_path=$3
+test_flags=$4
 
 $test_jdk/bin/java -version
 
@@ -100,7 +102,7 @@ do
        date;
        echo -e "\n\n\n---- Running $java_test ----"
 
-       command="$test_jdk/bin/java -Xmx512m -jar $jtreg_jar_path -agentvm -ignore:quiet -automatic -xml -vmoption:-Xmx512m -timeoutFactor:4 -concurrency:1 -testjdk:$test_jdk -verbose:fail,error,summary $java_test"
+       command="$test_jdk/bin/java -Xmx512m -jar $jtreg_jar_path -agentvm -ignore:quiet -automatic -xml -vmoption:-Xmx512m -timeoutFactor:4 -concurrency:1 -testjdk:$test_jdk -verbose:fail,error,summary $test_flags $java_test"
 
        echo -e "Executing: $command"
        time $command
