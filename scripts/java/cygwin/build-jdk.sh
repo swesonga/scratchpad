@@ -141,10 +141,9 @@ if [ $build_hsdis -ne 0 ]; then
     cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
 fi
 
-cd $built_jdk
-
-log_message "Zipping support/test into $test_zip"
-cd ..
+support_test_parent="build/${build_conf}"
+log_message "Zipping support/test into $test_zip (switching from `pwd` to $support_test_parent)"
+cd $support_test_parent
 zip -qru $test_zip support/test
 
 log_message "Build complete"
