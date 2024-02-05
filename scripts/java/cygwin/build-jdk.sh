@@ -88,7 +88,8 @@ jtreg_native_log="$log_root/test-${build_conf}-${timestamp}.txt"
 test_image_log="$log_root/test-image-${build_conf}-${timestamp}.txt"
 
 images_zip="jdk-${build_conf}-${timestamp}.zip"
-test_zip="test-${build_conf}-${timestamp}.zip"
+support_test_zip="support-test-${build_conf}-${timestamp}.zip"
+images_test_zip="images-test-${build_conf}-${timestamp}.zip"
 
 log_message "Building images"
 if [ $redirect_output -ne 0 ]; then
@@ -141,10 +142,13 @@ if [ $build_hsdis -ne 0 ]; then
     cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
 fi
 
-support_test_parent="build/${build_conf}"
-log_message "Zipping support/test into $test_zip (switching from `pwd` to $support_test_parent)"
-cd $support_test_parent
-zip -qru $test_zip support/test
+build_conf_dir="build/${build_conf}"
+log_message "Zipping support/test into $support_test_zip (switching from `pwd` to $build_conf_dir)"
+cd $build_conf_dir
+zip -qru $support_test_zip support/test
+
+log_message "Zipping images/test into $images_test_zip"
+zip -qru $images_test_zip images/test
 
 log_message "Build complete"
 date
