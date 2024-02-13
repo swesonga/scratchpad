@@ -2,10 +2,10 @@
 
 cd /d/java/ms/openjdk-jdk
 cd build/windows-x86_64-server-slowdebug/images/test/hotspot/gtest/server
-./gtestLauncher.exe -jdk:/d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/jdk
+./gtestLauncher.exe -jdk:/d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/images/jdk
 
 # To launch the gtests from a bash command line
-# /d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/images/test/hotspot/gtest/server/gtestLauncher.exe -jdk:/d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/jdk
+# /d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/images/test/hotspot/gtest/server/gtestLauncher.exe -jdk:/d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/images/jdk
 
 # To debug the gtests in Visual Studio
 # 1. Open the properties of the project
