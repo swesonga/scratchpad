@@ -11,8 +11,7 @@
 
 using namespace std;
 
-int main()
-{
+int printAffinity() {
     DWORD_PTR processAffinityMask;
     DWORD_PTR systemAffinityMask;
 
@@ -24,4 +23,27 @@ int main()
 
     printf("Process Affinity Mask: 0x%08llx\n", processAffinityMask);
     printf("System  Affinity Mask: 0x%08llx\n", systemAffinityMask);
+
+    return 0;
+}
+
+int main()
+{
+    char choice;
+
+    while (true) {
+        printAffinity();
+
+        cout << endl;
+        cout << "Press Q to quit or any other key to display the current process affinity" << endl;
+        cin >> choice;
+
+        switch (choice) {
+        case 'q':
+        case 'Q':
+            return 0;
+        default:
+            break;
+        }
+    }
 }
