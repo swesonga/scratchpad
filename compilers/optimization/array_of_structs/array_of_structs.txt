@@ -1,0 +1,285 @@
+
+Dump of file array_of_structs.obj
+
+File Type: COFF OBJECT
+
+FILE HEADER VALUES
+            8664 machine (x64)
+               7 number of sections
+        65CAE55B time date stamp Mon Feb 12 20:43:23 2024
+             56C file pointer to symbol table
+              23 number of symbols
+               0 size of optional header
+               0 characteristics
+
+SECTION HEADER #1
+.drectve name
+       0 physical address
+       0 virtual address
+      5D size of raw data
+     12C file pointer to raw data (0000012C to 00000188)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+  100A00 flags
+         Info
+         Remove
+         1 byte align
+
+RAW DATA #1
+  00000000: 20 20 20 2F 44 45 46 41 55 4C 54 4C 49 42 3A 22     /DEFAULTLIB:"
+  00000010: 75 75 69 64 2E 6C 69 62 22 20 2F 44 45 46 41 55  uuid.lib" /DEFAU
+  00000020: 4C 54 4C 49 42 3A 22 75 75 69 64 2E 6C 69 62 22  LTLIB:"uuid.lib"
+  00000030: 20 2F 44 45 46 41 55 4C 54 4C 49 42 3A 22 4C 49   /DEFAULTLIB:"LI
+  00000040: 42 43 4D 54 22 20 2F 44 45 46 41 55 4C 54 4C 49  BCMT" /DEFAULTLI
+  00000050: 42 3A 22 4F 4C 44 4E 41 4D 45 53 22 20           B:"OLDNAMES" 
+
+   Linker Directives
+   -----------------
+   /DEFAULTLIB:uuid.lib
+   /DEFAULTLIB:uuid.lib
+   /DEFAULTLIB:LIBCMT
+   /DEFAULTLIB:OLDNAMES
+
+SECTION HEADER #2
+.debug$S name
+       0 physical address
+       0 virtual address
+      90 size of raw data
+     189 file pointer to raw data (00000189 to 00000218)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42100040 flags
+         Initialized Data
+         Discardable
+         1 byte align
+         Read Only
+
+RAW DATA #2
+  00000000: 04 00 00 00 F1 00 00 00 84 00 00 00 46 00 01 11  ....ñ.......F...
+  00000010: 00 00 00 00 43 3A 5C 72 65 70 6F 73 5C 73 63 72  ....C:\repos\scr
+  00000020: 61 74 63 68 70 61 64 5C 63 6F 6D 70 69 6C 65 72  atchpad\compiler
+  00000030: 73 5C 6F 70 74 69 6D 69 7A 61 74 69 6F 6E 5C 61  s\optimization\a
+  00000040: 72 72 61 79 5F 6F 66 5F 73 74 72 75 63 74 73 2E  rray_of_structs.
+  00000050: 6F 62 6A 00 3A 00 3C 11 01 62 00 00 D0 00 13 00  obj.:.<..b..Ð...
+  00000060: 26 00 6E 81 00 00 13 00 26 00 6E 81 00 00 4D 69  &.n.....&.n...Mi
+  00000070: 63 72 6F 73 6F 66 74 20 28 52 29 20 4F 70 74 69  crosoft (R) Opti
+  00000080: 6D 69 7A 69 6E 67 20 43 6F 6D 70 69 6C 65 72 00  mizing Compiler.
+
+SECTION HEADER #3
+  .rdata name
+       0 physical address
+       0 virtual address
+      BC size of raw data
+     219 file pointer to raw data (00000219 to 000002D4)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40400040 flags
+         Initialized Data
+         8 byte align
+         Read Only
+
+RAW DATA #3
+  00000000: 61 00 72 00 72 00 61 00 79 00 5F 00 6F 00 66 00  a.r.r.a.y._.o.f.
+  00000010: 5F 00 73 00 74 00 72 00 75 00 63 00 74 00 73 00  _.s.t.r.u.c.t.s.
+  00000020: 2E 00 63 00 70 00 70 00 00 00 00 00 00 00 00 00  ..c.p.p.........
+  00000030: 67 00 72 00 6F 00 75 00 70 00 5F 00 69 00 6E 00  g.r.o.u.p._.i.n.
+  00000040: 66 00 6F 00 20 00 21 00 3D 00 20 00 6E 00 75 00  f.o. .!.=. .n.u.
+  00000050: 6C 00 6C 00 70 00 74 00 72 00 00 00 00 00 00 00  l.l.p.t.r.......
+  00000060: 61 00 72 00 72 00 61 00 79 00 5F 00 6F 00 66 00  a.r.r.a.y._.o.f.
+  00000070: 5F 00 73 00 74 00 72 00 75 00 63 00 74 00 73 00  _.s.t.r.u.c.t.s.
+  00000080: 2E 00 63 00 70 00 70 00 00 00 00 00 00 00 00 00  ..c.p.p.........
+  00000090: 67 00 72 00 6F 00 75 00 70 00 5F 00 69 00 6E 00  g.r.o.u.p._.i.n.
+  000000A0: 66 00 6F 00 20 00 21 00 3D 00 20 00 6E 00 75 00  f.o. .!.=. .n.u.
+  000000B0: 6C 00 6C 00 70 00 74 00 72 00 00 00              l.l.p.t.r...
+
+SECTION HEADER #4
+.text$mn name
+       0 physical address
+       0 virtual address
+     165 size of raw data
+     2D5 file pointer to raw data (000002D5 to 00000439)
+     43A file pointer to relocation table
+       0 file pointer to line numbers
+       A number of relocations
+       0 number of line numbers
+60500020 flags
+         Code
+         16 byte align
+         Execute Read
+
+RAW DATA #4
+  00000000: 89 4C 24 08 48 83 EC 38 8B 44 24 40 48 6B C0 30  .L$.H.ì8.D$@HkÀ0
+  00000010: 48 8B C8 E8 00 00 00 00 48 89 44 24 28 48 83 7C  H.Èè....H.D$(H.|
+  00000020: 24 28 00 75 1B 41 B8 18 00 00 00 48 8D 15 00 00  $(.u.A¸....H....
+  00000030: 00 00 48 8D 0D 00 00 00 00 E8 00 00 00 00 33 C0  ..H......è....3À
+  00000040: C7 44 24 24 00 00 00 00 C7 44 24 20 00 00 00 00  ÇD$$....ÇD$ ....
+  00000050: EB 18 8B 44 24 20 FF C0 89 44 24 20 48 8B 44 24  ë..D$ ÿÀ.D$ H.D$
+  00000060: 28 48 83 C0 30 48 89 44 24 28 8B 44 24 40 39 44  (H.À0H.D$(.D$@9D
+  00000070: 24 20 73 17 48 8B 44 24 28 0F B6 40 01 8B 4C 24  $ s.H.D$(.¶@..L$
+  00000080: 24 03 C8 8B C1 89 44 24 24 EB C7 48 83 C4 38 C3  $.È.Á.D$$ëÇH.Ä8Ã
+  00000090: CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC  ÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌ
+  000000A0: 89 4C 24 08 48 83 EC 38 8B 44 24 40 48 6B C0 30  .L$.H.ì8.D$@HkÀ0
+  000000B0: 48 8B C8 E8 00 00 00 00 48 89 44 24 28 48 83 7C  H.Èè....H.D$(H.|
+  000000C0: 24 28 00 75 1B 41 B8 22 00 00 00 48 8D 15 00 00  $(.u.A¸"...H....
+  000000D0: 00 00 48 8D 0D 00 00 00 00 E8 00 00 00 00 33 C0  ..H......è....3À
+  000000E0: C7 44 24 24 00 00 00 00 C7 44 24 20 00 00 00 00  ÇD$$....ÇD$ ....
+  000000F0: EB 0A 8B 44 24 20 FF C0 89 44 24 20 8B 44 24 40  ë..D$ ÿÀ.D$ .D$@
+  00000100: 39 44 24 20 73 20 8B 44 24 20 48 6B C0 30 48 8B  9D$ s .D$ HkÀ0H.
+  00000110: 4C 24 28 0F B6 44 01 01 8B 4C 24 24 03 C8 8B C1  L$(.¶D...L$$.È.Á
+  00000120: 89 44 24 24 EB CC 48 83 C4 38 C3 CC CC CC CC CC  .D$$ëÌH.Ä8ÃÌÌÌÌÌ
+  00000130: CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC  ÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌ
+  00000140: 48 83 EC 38 C7 44 24 20 04 00 00 00 8B 4C 24 20  H.ì8ÇD$ .....L$ 
+  00000150: E8 00 00 00 00 8B 4C 24 20 E8 00 00 00 00 33 C0  è.....L$ è....3À
+  00000160: 48 83 C4 38 C3                                   H.Ä8Ã
+
+RELOCATIONS #4
+                                                Symbol    Symbol
+ Offset    Type              Applied To         Index     Name
+ --------  ----------------  -----------------  --------  ------
+ 00000014  REL32                      00000000         F  malloc
+ 0000002E  REL32                      00000000         9  $SG90942
+ 00000035  REL32                      00000000         A  $SG90943
+ 0000003A  REL32                      00000000        10  _wassert
+ 000000B4  REL32                      00000000         F  malloc
+ 000000CE  REL32                      00000000         B  $SG90958
+ 000000D5  REL32                      00000000         C  $SG90959
+ 000000DA  REL32                      00000000        10  _wassert
+ 00000151  REL32                      00000000        11  ?arrayOfStructsUpdatingPointer@@YAXK@Z (void __cdecl arrayOfStructsUpdatingPointer(unsigned long))
+ 0000015A  REL32                      00000000        12  ?arrayOfStructsIndexingBasePointer@@YAXK@Z (void __cdecl arrayOfStructsIndexingBasePointer(unsigned long))
+
+SECTION HEADER #5
+  .xdata name
+       0 physical address
+       0 virtual address
+      18 size of raw data
+     49E file pointer to raw data (0000049E to 000004B5)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40300040 flags
+         Initialized Data
+         4 byte align
+         Read Only
+
+RAW DATA #5
+  00000000: 01 08 01 00 08 62 00 00 01 08 01 00 08 62 00 00  .....b.......b..
+  00000010: 01 04 01 00 04 62 00 00                          .....b..
+
+SECTION HEADER #6
+  .pdata name
+       0 physical address
+       0 virtual address
+      24 size of raw data
+     4B6 file pointer to raw data (000004B6 to 000004D9)
+     4DA file pointer to relocation table
+       0 file pointer to line numbers
+       9 number of relocations
+       0 number of line numbers
+40300040 flags
+         Initialized Data
+         4 byte align
+         Read Only
+
+RAW DATA #6
+  00000000: 00 00 00 00 90 00 00 00 00 00 00 00 00 00 00 00  ................
+  00000010: 8B 00 00 00 00 00 00 00 00 00 00 00 25 00 00 00  ............%...
+  00000020: 00 00 00 00                                      ....
+
+Function Table #6 (3)
+
+           Begin     End       Info
+
+  00000000 00000000  00000090  00000000
+  0000000C 00000000  0000008B  00000000
+  00000018 00000000  00000025  00000000
+
+RELOCATIONS #6
+                                                Symbol    Symbol
+ Offset    Type              Applied To         Index     Name
+ --------  ----------------  -----------------  --------  ------
+ 00000000  ADDR32NB                   00000000        14  $LN7
+ 00000004  ADDR32NB                   00000090        14  $LN7
+ 00000008  ADDR32NB                   00000000        19  $unwind$?arrayOfStructsUpdatingPointer@@YAXK@Z
+ 0000000C  ADDR32NB                   00000000        15  $LN7
+ 00000010  ADDR32NB                   0000008B        15  $LN7
+ 00000014  ADDR32NB                   00000000        1D  $unwind$?arrayOfStructsIndexingBasePointer@@YAXK@Z
+ 00000018  ADDR32NB                   00000000        16  $LN3
+ 0000001C  ADDR32NB                   00000025        16  $LN3
+ 00000020  ADDR32NB                   00000000        1F  $unwind$main
+
+SECTION HEADER #7
+ .chks64 name
+       0 physical address
+       0 virtual address
+      38 size of raw data
+     534 file pointer to raw data (00000534 to 0000056B)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+     A00 flags
+         Info
+         Remove
+         (no align specified)
+
+RAW DATA #7
+  00000000: C7 36 6A 9D 7F DA 0F E2 93 35 DE E0 98 15 BD 2E  Ç6j..Ú.â.5Þà..½.
+  00000010: B4 78 FD CE 9C 39 78 99 0A 2B D9 07 05 18 BB 7D  ´xýÎ.9x..+Ù...»}
+  00000020: 1F A7 03 0F 67 8B 73 62 DD 91 5F 74 F1 22 7C 6A  .§..g.sbÝ._tñ"|j
+  00000030: 00 00 00 00 00 00 00 00                          ........
+
+COFF SYMBOL TABLE
+000 0105816E ABS    notype       Static       | @comp.id
+001 80010190 ABS    notype       Static       | @feat.00
+002 00000002 ABS    notype       Static       | @vol.md
+003 00000000 SECT1  notype       Static       | .drectve
+    Section length   5D, #relocs    0, #linenums    0, checksum        0
+005 00000000 SECT2  notype       Static       | .debug$S
+    Section length   90, #relocs    0, #linenums    0, checksum        0
+007 00000000 SECT3  notype       Static       | .rdata
+    Section length   BC, #relocs    0, #linenums    0, checksum 3CFADD81
+009 00000000 SECT3  notype       Static       | $SG90942
+00A 00000030 SECT3  notype       Static       | $SG90943
+00B 00000060 SECT3  notype       Static       | $SG90958
+00C 00000090 SECT3  notype       Static       | $SG90959
+00D 00000000 SECT4  notype       Static       | .text$mn
+    Section length  165, #relocs    A, #linenums    0, checksum C7AFB6FC
+00F 00000000 UNDEF  notype ()    External     | malloc
+010 00000000 UNDEF  notype ()    External     | _wassert
+011 00000000 SECT4  notype ()    External     | ?arrayOfStructsUpdatingPointer@@YAXK@Z (void __cdecl arrayOfStructsUpdatingPointer(unsigned long))
+012 000000A0 SECT4  notype ()    External     | ?arrayOfStructsIndexingBasePointer@@YAXK@Z (void __cdecl arrayOfStructsIndexingBasePointer(unsigned long))
+013 00000140 SECT4  notype ()    External     | main
+014 00000000 SECT4  notype       Label        | $LN7
+015 000000A0 SECT4  notype       Label        | $LN7
+016 00000140 SECT4  notype       Label        | $LN3
+017 00000000 SECT5  notype       Static       | .xdata
+    Section length   18, #relocs    0, #linenums    0, checksum D18592E8
+019 00000000 SECT5  notype       Static       | $unwind$?arrayOfStructsUpdatingPointer@@YAXK@Z
+01A 00000000 SECT6  notype       Static       | .pdata
+    Section length   24, #relocs    9, #linenums    0, checksum 1F87AEC7
+01C 00000000 SECT6  notype       Static       | $pdata$?arrayOfStructsUpdatingPointer@@YAXK@Z
+01D 00000008 SECT5  notype       Static       | $unwind$?arrayOfStructsIndexingBasePointer@@YAXK@Z
+01E 0000000C SECT6  notype       Static       | $pdata$?arrayOfStructsIndexingBasePointer@@YAXK@Z
+01F 00000010 SECT5  notype       Static       | $unwind$main
+020 00000018 SECT6  notype       Static       | $pdata$main
+021 00000000 SECT7  notype       Static       | .chks64
+    Section length   38, #relocs    0, #linenums    0, checksum        0
+
+String Table Size = 0x131 bytes
+
+  Summary
+
+          38 .chks64
+          90 .debug$S
+          5D .drectve
+          24 .pdata
+          BC .rdata
+         165 .text$mn
+          18 .xdata
