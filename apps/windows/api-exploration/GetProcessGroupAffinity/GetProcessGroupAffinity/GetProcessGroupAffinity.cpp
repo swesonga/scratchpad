@@ -39,7 +39,23 @@ int main()
         return -1;
     }
 
-    printf("Groups with assigned threads: %d\n\n", groupCount);
+    printf("Groups with assigned threads: %d\n", groupCount);
+
+    WORD activeProcessorGroupCount = GetActiveProcessorGroupCount();
+    if (activeProcessorGroupCount == 0) {
+        PrintError(TEXT("GetActiveProcessorGroupCount"), GetLastError());
+    }
+    else {
+        printf("Active Processor Group Count: %d\n\n", activeProcessorGroupCount);
+    }
+
+    DWORD activeProcessorCount = GetActiveProcessorCount(ALL_PROCESSOR_GROUPS);
+    if (activeProcessorCount == 0) {
+        PrintError(TEXT("GetActiveProcessorCount"), GetLastError());
+    }
+    else {
+        printf("Active Processor Count:       %d\n\n", activeProcessorCount);
+    }
 
     printAffinity();
 }
