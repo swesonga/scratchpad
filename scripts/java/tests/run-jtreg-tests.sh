@@ -41,6 +41,7 @@ then
     echo -e "\nExamples:"
     echo "          ./run-jtreg-tests.sh /c/java/ms/openjdk-jdk11u /c/java/binaries/jdk/x64/jdk-11.0.17+8 /c/java/binaries/jtreg-7.3.1/lib/jtreg.jar"
     echo "          ./run-jtreg-tests.sh /d/java/ms/openjdk-jdk17u /d/java/binaries/jdk/x64/jdk-17.0.9+8  /c/java/binaries/jtreg-7.3.1/lib/jtreg.jar"
+    echo "          ./run-jtreg-tests.sh /d/java/forks/openjdk/jdk /d/java/forks/openjdk/jdk/build/windows-x86_64-server-slowdebug/jdk  /c/java/binaries/jtreg-7.4+1/lib/jtreg.jar"
     echo "          ./run-jtreg-tests.sh /d/java/forks/openjdk/jdk17u-dev /d/java/binaries/jdk/x64/jdk-17.0.9+8  /c/java/binaries/jtreg-7.3.1/lib/jtreg.jar"
     echo "          ./run-jtreg-tests.sh ~/java/ms/openjdk-jdk ~/java/ms/openjdk-jdk/build/linux-x86_64-server-slowdebug/jdk ~/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
     echo "          ./run-jtreg-tests.sh ~/java/forks/jdk      ~/java/forks/jdk/build/linux-x86_64-server-slowdebug/jdk ~/java/binaries/jtreg-7.3+1/lib/jtreg.jar"
