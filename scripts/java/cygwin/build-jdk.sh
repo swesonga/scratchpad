@@ -11,15 +11,18 @@
 #
 # To download and set up jtreg, run these commands:
 #
-#  curl -Lo jtreg-7.3+1.tar.gz https://ci.adoptopenjdk.net/view/Dependencies/job/dependency_pipeline/lastSuccessfulBuild/artifact/jtreg/jtreg-7.3+1.tar.gz
-#  tar xzf jtreg-7.3+1.tar.gz
-#  mv jtreg jtreg-7.3+1
+#  cd ~/java/binaries/
+#  curl -Lo jtreg-7.4+1.tar.gz https://ci.adoptium.net/view/Dependencies/job/dependency_pipeline/lastSuccessfulBuild/artifact/jtreg/jtreg-7.4+1.tar.gz
+#  tar xzf jtreg-7.4+1.tar.gz
+#  mv jtreg jtreg-7.4+1
 #
 # To download googletest (use the "release-1.8.1" branch for JDK 17):
 #
 #  cd /c/repos
 #  git clone -b v1.13.0 https://github.com/google/googletest
 #
+# For details on the options for configuring the build, see
+# https://github.com/openjdk/jdk/blob/master/doc/building.md#running-configure
 # Use jdk-17.0.6+10 as the boot JDK if building JDK 17. Otherwise,
 # to configure the build on tip for:
 #
