@@ -13,7 +13,8 @@
 #set -e
 
 declare -a java_tests=(
- "test/hotspot/jtreg/applications/scimark/Scimark.java"
+ # "test/hotspot/jtreg/applications/scimark/Scimark.java"
+ "test/hotspot/jtreg/compiler/gcbarriers/UnsafeIntrinsicsTest.java"
 )
 
 # https://github.com/microsoft/openjdk-jdk/pull/9
@@ -58,11 +59,11 @@ echo -e "\nChanging current directory to $openjdk_repo_path\n"
 cd $openjdk_repo_path
 
 # https://stackoverflow.com/questions/1886374/how-to-find-the-length-of-an-array-in-shell
-echo -e "Tests to Run: ${#security_tests[@]}"
+echo -e "Tests to Run: ${#java_tests[@]}"
 declare -a missing_tests=()
 
 # https://stackoverflow.com/questions/8880603/loop-through-an-array-of-strings-in-bash
-for java_test in "${security_tests[@]}"
+for java_test in "${java_tests[@]}"
 do
    if test -f $java_test ; then
        date;
