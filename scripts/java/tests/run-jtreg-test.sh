@@ -5,6 +5,7 @@ then
     echo "Usage:    ./run-jtreg-test.sh openjdk-repo-path test-jdk-path jtreg-jar-path test-path test-flags"
     echo -e "\nExample:"
     echo "          ./run-jtreg-test.sh /d/java/forks/openjdk/jdk /d/java/forks/openjdk/jdk/build/windows-x86_64-server-slowdebug/jdk /c/java/binaries/jtreg-7.4+1/lib/jtreg.jar test/hotspot/jtreg/serviceability/sa/ClhsdbFindPC.java -nativepath:/d/java/forks/openjdk/jdk/build/windows-x86_64-server-slowdebug/images/test/hotspot/jtreg/native"
+    echo "          ./run-jtreg-test.sh /c/java/forks/openjdk/jdk /c/java/forks/openjdk/jdk/build/windows-aarch64-server-slowdebug/jdk /c/java/binaries/jtreg-7.4+1/lib/jtreg.jar test/hotspot/jtreg/serviceability/sa/ClhsdbFindPC.java -nativepath:/c/java/forks/openjdk/jdk/build/windows-aarch64-server-slowdebug/images/test/hotspot/jtreg/native"
     exit
 fi
 
