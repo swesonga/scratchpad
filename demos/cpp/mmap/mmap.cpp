@@ -52,6 +52,19 @@ int main(int argc, char** argv)
 
   std::cout << "result: " << std::hex << result << std::endl;
 
+  size_t bytes_to_write = 0;
+  if (argc > 3) {
+    bytes_to_write = strtoull(argv[3], nullptr, 10);
+  }
+
+  if (bytes_to_write > 0) {
+    std::cout << "Writing " << std::dec << bytes_to_write << " bytes to the new mapping." << std::endl;
+  }
+
+  for (size_t i = 0; i < bytes_to_write; i++) {
+    *((char*)(result) + i) = '0';
+  }
+
   auto pid = getpid();
 
   std::cout << "Press any key to exit (pid " << std::dec << pid << ")" << std::endl;
