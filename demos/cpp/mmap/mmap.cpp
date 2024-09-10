@@ -7,9 +7,9 @@
 #include <sys/mman.h>
 #include <iostream>
 
-int main()
+int main(int argc, char** argv)
 {
-  std::cout << "Creating a new mapping in the virtual address space..." << std::endl;
+  std::cout << "Creating a new mapping in the virtual address space by" << std::endl;
 
   void* address = (void*)0;
   size_t length = (1 << 30);
@@ -18,7 +18,24 @@ int main()
   int fd = -1;
   int offset = 0;
 
+  if (argc > 1) {
+    address = (void*)strtoull(argv[1], nullptr, 16);
+  }
+  if (argc > 2) {
+    length = strtoull(argv[2], nullptr, 10);
+  }
+
   void* result = mmap((void*)address, length, protection, flags, fd, offset);
+
+  std::cout << "calling mmap(0x"
+    << std::hex << address
+    << ", 0x" << length
+    << ", 0x" << protection
+    << ", 0x" << flags
+    << ", 0x" << fd
+    << ", 0x" << offset
+    << ')'
+    << std::endl;
 
   std::cout << "result: " << std::hex << result << std::endl;
 
