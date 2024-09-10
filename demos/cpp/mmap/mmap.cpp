@@ -1,7 +1,11 @@
 /*
-* To compile using GCC:
-*
-*     g++ -std=c++11 -o mmap mmap.cpp
+  To compile using GCC:
+
+    g++ -std=c++11 -o mmap mmap.cpp
+
+  Sample usage:
+
+    ./mmap 1234abcd0000 65536
 */
 
 #include <sys/mman.h>
