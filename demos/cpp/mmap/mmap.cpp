@@ -22,6 +22,12 @@
 
 int main(int argc, char** argv)
 {
+  auto pid = getpid();
+
+  std::cout << "To report a memory map of this process (pid " << pid << "), run one of these commands:" << std::endl << std::endl;
+  std::cout << " pmap -x " << pid << std::endl;
+  std::cout << " vmmap " << pid << std::endl << std::endl;
+
   std::cout << "Creating a new mapping in the virtual address space by" << std::endl;
 
   void* address = (void*)0;
@@ -65,9 +71,27 @@ int main(int argc, char** argv)
     *((char*)(result) + i) = '0';
   }
 
-  auto pid = getpid();
+  size_t bytes_not_needed_after_write = 0;
+  if (argc > 4) {
+    bytes_not_needed_after_write = strtoull(argv[4], nullptr, 10);
+  }
 
-  std::cout << "Press any key to exit (pid " << std::dec << pid << ")" << std::endl;
+  if (bytes_not_needed_after_write > 0) {
+    std::cout << "Press ENTER to advise that memory is not needed..." << std::endl;
+    std::cin.get();
+
+    uintptr_t address_to_advise = (uintptr_t)address + (uintptr_t)length - (uintptr_t)bytes_not_needed_after_write;
+    madvise((void*)address_to_advise, bytes_not_needed_after_write, MADV_DONTNEED);
+
+    std::cout << "calling madvise(0x"
+    << std::hex << address_to_advise
+    << ", 0x" << bytes_not_needed_after_write
+    << ", 0x" << MADV_DONTNEED
+    << ')'
+    << std::endl;
+  }
+
+  std::cout << "Press ENTER to exit..." << std::endl;
   std::cin.get();
   return 0;
 }
