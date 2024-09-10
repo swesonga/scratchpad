@@ -5,7 +5,15 @@
 
   Sample usage:
 
-    ./mmap 1234abcd0000 65536
+    ./mmap 1234abcd0000 1073741824
+
+  To report a memory map of the process on Linux:
+
+    pmap -x <pid>
+
+  To report a memory map of the process on macOS:
+
+    vmmap <pid>
 */
 
 #include <sys/mman.h>
