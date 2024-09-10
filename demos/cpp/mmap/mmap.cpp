@@ -10,6 +10,7 @@
 
 #include <sys/mman.h>
 #include <iostream>
+#include <unistd.h>
 
 int main(int argc, char** argv)
 {
@@ -43,7 +44,9 @@ int main(int argc, char** argv)
 
   std::cout << "result: " << std::hex << result << std::endl;
 
-  std::cout << "Press any key to exit" << std::endl;
+  auto pid = getpid();
+
+  std::cout << "Press any key to exit (pid " << std::dec << pid << ")" << std::endl;
   std::cin.get();
   return 0;
 }
