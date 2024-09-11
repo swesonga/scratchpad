@@ -52,7 +52,7 @@ int main(int argc, char** argv)
   }
 
   unsigned long long ranges_to_alloc = 1;
-  if (argc > 4) {
+  if (argc > 5) {
     ranges_to_alloc = strtoull(argv[5], nullptr, 10);
   }
 
