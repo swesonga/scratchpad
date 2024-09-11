@@ -108,7 +108,8 @@ int main(int argc, char** argv)
     }
 
     if (i < ranges_to_alloc - 1) {
-      std::cout << std::dec << i+1 << " of " << ranges_to_alloc << " mmap/madvise invocations complete. Press ENTER to continue to next mmap allocation..." << std::endl;
+      std::cout << std::dec << i+1 << " of " << ranges_to_alloc << " mmap/madvise invocations complete." << std::endl;
+      std::cout << "Press ENTER to continue to next mmap allocation..." << std::endl << std::endl;
       std::cin.get();
     }
   }
