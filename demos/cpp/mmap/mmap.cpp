@@ -56,7 +56,7 @@ int main(int argc, char** argv)
     ranges_to_alloc = strtoull(argv[5], nullptr, 10);
   }
 
-  const unsigned long long addr_range_increment = 0x100000000000;
+  const unsigned long long addr_range_increment = 0x100000000;
 
   for (unsigned long long i = 0; i < ranges_to_alloc; i++) {
     unsigned long long address = (unsigned long long)cmdline_address + (i * addr_range_increment);
