@@ -26,26 +26,33 @@
 # Use jdk-17.0.6+10 as the boot JDK if building JDK 17. Otherwise,
 # to configure the build on tip for:
 #
-# x86_64 Debug:
+# x86_64 Debug (Windows):
 #  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-21.0.1+12 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.3.1 --with-gtest=/cygdrive/c/repos/googletest
 #  bash configure --with-debug-level=slowdebug --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-21.0.1+12 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.3.1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-x86_64/
 #
-# x86_64 Release:
+# x86_64 Debug (Linux):
+#  bash configure --with-debug-level=slowdebug --with-boot-jdk=~/java/binaries/jdk/x64/jdk-22.0.1+8 --with-jtreg=/home/saint/java/binaries/jtreg-7.4+1 --with-gtest=/home/saint/repos/googletest
+#
+# x86_64 Release (Windows):
 #  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-21.0.1+12 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.3.1 --with-gtest=/cygdrive/c/repos/googletest
 #  bash configure --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-21.0.1+12 --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.3.1 --with-gtest=/cygdrive/c/repos/googletest --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-x86_64/
 #
-# aarch64 Debug (for cross compiling, otherwise replace x64 in boot jdk path):
+# x86_64 Release (Linux):
+#  bash configure --with-boot-jdk=~/java/binaries/jdk/x64/jdk-22.0.1+8 --with-jtreg=/home/saint/java/binaries/jtreg-7.4+1 --with-gtest=/home/saint/repos/googletest
+#
+# aarch64 Debug (Windows) (for cross compiling, otherwise replace x64 in boot jdk path):
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.3.1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-21.0.1+12
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.3.1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-21.0.1+12 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-aarch64/
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.3.1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/forks/jdk/build/windows-x86_64-server-slowdebug/jdk --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-aarch64/
 #
-# aarch64 Release (for cross compiling, otherwise replace x64 in boot jdk path):
+# aarch64 Release (Windows) (for cross compiling, otherwise replace x64 in boot jdk path):
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.3.1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-21.0.1+12
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=/cygdrive/c/java/binaries/jtreg-7.3.1 --with-gtest=/cygdrive/c/repos/googletest --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-21.0.1+12 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-aarch64/
 #
 # Run this script as follows:
 #
 #  time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh windows x86_64 0 release
+#  time ~/repos/scratchpad/scripts/java/cygwin/build-jdk.sh linux x86_64 0 slowdebug
 #
 
 # Exit immediately if a command exits with a non-zero status. See
