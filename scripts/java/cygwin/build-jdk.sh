@@ -51,7 +51,7 @@
 #
 # Run this script as follows:
 #
-#  time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh windows x86_64 0 release
+#  time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh windows x86_64 0 slowdebug
 #  time ~/repos/scratchpad/scripts/java/cygwin/build-jdk.sh linux x86_64 0 slowdebug
 #
 
@@ -101,52 +101,57 @@ images_zip="jdk-${build_conf}-${timestamp}.zip"
 support_test_zip="support-test-${build_conf}-${timestamp}.zip"
 images_test_zip="images-test-${build_conf}-${timestamp}.zip"
 
-log_message "Building images"
+build_command="make images CONF=$build_conf LOG=$log_verbosity"
+log_message "Building images using command: $build_command"
 if [ $redirect_output -ne 0 ]; then
-    make images CONF=$build_conf LOG=$log_verbosity > $images_log
+    $build_command > $images_log
 else
-    make images CONF=$build_conf LOG=$log_verbosity
+    $build_command
 fi
 
 built_jdk="build/${build_conf}/images/jdk/"
 
-log_message "Zipping the JDK into $images_zip"
+log_message "Zipping the JDK in $built_jdk into $images_zip"
 cd $built_jdk
 
 zip -qru $images_zip .
 mv $images_zip ../..
 cd ../../../../
 
-log_message "Building jtreg native binaries"
+build_command="make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity"
+log_message "Building jtreg native binaries using command: $build_command"
 if [ $redirect_output -ne 0 ]; then
-    make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity > $jtreg_native_log
+    $build_command > $jtreg_native_log
 else
-    make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity
+    $build_command
 fi
 
-log_message "Building test image"
+build_command="make test-image CONF=$build_conf LOG=$log_verbosity"
+log_message "Building test image using command: $build_command"
 if [ $redirect_output -ne 0 ]; then
-    make test-image CONF=$build_conf LOG=$log_verbosity > $test_image_log
+    $build_command > $test_image_log
 else
-    make test-image CONF=$build_conf LOG=$log_verbosity
+    $build_command
 fi
 
 if [ $build_hsdis -ne 0 ]; then
     hsdis_build_log="$log_root/hsdis_build-${timestamp}.txt"
     hsdis_install_log="$log_root/hsdis_install-${timestamp}.txt"
 
-    log_message "Building hsdis"
+    build_command="make build-hsdis CONF=$build_conf LOG=$log_verbosity"
+    log_message "Building hsdis using command: $build_command"
     if [ $redirect_output -ne 0 ]; then
-        make build-hsdis CONF=$build_conf LOG=$log_verbosity > $hsdis_build_log
+        $build_command > $hsdis_build_log
     else
-        make build-hsdis CONF=$build_conf LOG=$log_verbosity
+        $build_command
     fi
 
-    log_message "Installing hsdis"
+    build_command="make install-hsdis CONF=$build_conf LOG=$log_verbosity"
+    log_message "Installing hsdis using command: $build_command"
     if [ $redirect_output -ne 0 ]; then
-        make install-hsdis CONF=$build_conf LOG=$log_verbosity > $hsdis_install_log
+        $build_command > $hsdis_install_log
     else
-        make install-hsdis CONF=$build_conf LOG=$log_verbosity
+        $build_command
     fi
 
     cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
