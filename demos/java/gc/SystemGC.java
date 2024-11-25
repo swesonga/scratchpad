@@ -35,6 +35,8 @@ public class SystemGC {
             }
         }
 
+        System.out.printf("Running %d System.gc() iterations with %d ms pauses in between...", iterations, interval_millis);
+
         for (int i = 0; i < iterations; i++) {
             System.gc();
             Thread.sleep(interval_millis);
