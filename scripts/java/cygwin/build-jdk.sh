@@ -55,8 +55,8 @@
 #
 # Run this script as follows:
 #
-#  time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh windows x86_64 0 slowdebug
-#  time ~/repos/scratchpad/scripts/java/cygwin/build-jdk.sh linux x86_64 0 slowdebug
+#  time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh windows x86_64 slowdebug
+#  time ~/repos/scratchpad/scripts/java/cygwin/build-jdk.sh linux x86_64 slowdebug
 #
 
 # Exit immediately if a command exits with a non-zero status. See
@@ -72,10 +72,10 @@ function log_message()
 
 if [ $# -lt 4 ]
 then
-    echo -e "Usage: build-jdk.sh os architecture build_hsdis debug_level\n"
+    echo -e "Usage: build-jdk.sh os architecture debug_level build_hsdis\n"
     echo -e "Examples:\n"
-    echo "       build-jdk.sh windows x86_64 0 release"
-    echo "       build-jdk.sh windows x86_64 1 slowdebug"
+    echo "       build-jdk.sh windows x86_64 release 0"
+    echo "       build-jdk.sh windows x86_64 slowdebug 1"
     exit
 fi
 
@@ -85,8 +85,8 @@ timestamp=`date +%Y-%m-%d_%H%M%S`
 # Select either the x86_64 or aarch64 architectures
 os=$1
 arch=$2
-build_hsdis=$3
-debug_level=$4
+debug_level=$3
+build_hsdis=$4
 llvm_path=/cygdrive/c/software/llvm/llvm-$arch
 log_root="build/mylogs"
 # use "debug" for a more detailed log
