@@ -1,6 +1,11 @@
 #!/bin/bash
 #
-# Execute in Cygwin after configuring the repo.
+# Download and install Cygwin if running on Windows:
+#  mkdir -p ~/cygwin
+#  cd ~/cygwin
+#  curl -Lo setup-x86_64.exe https://www.cygwin.com/setup-x86_64.exe
+#  setup-x86_64.exe -q -P autoconf -P make -P unzip -P zip
+#
 # A boot JDK may be required if building the latest code from upstream.
 # Download JDKs from https://adoptium.net/temurin/releases/?version=20 or
 # https://learn.microsoft.com/en-us/java/openjdk/download e.g.
@@ -24,12 +29,6 @@
 #
 #  cd /c/repos
 #  git clone -b v1.13.0 https://github.com/google/googletest
-#
-# Download and install Cygwin:
-#  mkdir -p ~/cygwin
-#  cd ~/cygwin
-#  wget https://www.cygwin.com/setup-x86_64.exe
-#  setup-x86_64.exe -q -P autoconf -P make -P unzip -P zip
 #
 # For details on the options for configuring the build, see
 # https://github.com/openjdk/jdk/blob/master/doc/building.md#running-configure
