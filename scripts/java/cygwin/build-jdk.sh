@@ -75,7 +75,7 @@ function log_message()
     echo "$current_time $1"
 }
 
-if [ $# -lt 4 ]
+if [ $# -lt 3 ]
 then
     echo -e "Usage: build-jdk.sh os architecture debug_level build_hsdis\n"
     echo -e "Examples:\n"
