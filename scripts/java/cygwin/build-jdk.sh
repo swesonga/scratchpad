@@ -128,6 +128,12 @@ log_message "Zipping the JDK in $built_jdk into $images_zip"
 cd $built_jdk
 
 zip -qru $images_zip .
+
+if [ -d "$JDK_ZIP_DEST" ]; then
+    log_message "Copying $images_zip to $JDK_ZIP_DEST"
+    cp $images_zip "$JDK_ZIP_DEST"
+fi
+
 mv $images_zip ../..
 cd ../../../../
 
