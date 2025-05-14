@@ -16,7 +16,7 @@ import java.lang.reflect.Field;
 
 public class JDK8348862CrashRepro {
     public static void main(String... args) throws Exception {
-        if (args.length > 0) {
+        if (args.length == 0) {
             System.out.println("Crash:");
             getUnsafe().putInt(0L, 0);
         }
