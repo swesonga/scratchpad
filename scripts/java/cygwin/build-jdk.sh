@@ -77,27 +77,34 @@ function log_message()
 
 if [ $# -lt 3 ]
 then
-    echo -e "Usage: build-jdk.sh os architecture debug_level build_hsdis\n"
+    echo -e "Usage: build-jdk.sh os architecture debug_level variant build_hsdis\n"
     echo -e "Examples:\n"
-    echo "       build-jdk.sh windows x86_64 release 0"
-    echo "       build-jdk.sh windows x86_64 slowdebug 1"
+    echo "       build-jdk.sh windows x86_64 release server 0"
+    echo "       build-jdk.sh windows x86_64 slowdebug server 1"
+    echo "       build-jdk.sh windows aarch64 slowdebug zero"
     exit
 fi
 
 timestamp=`date +%Y-%m-%d_%H%M%S`
+variant="server"
 
 # TODO: automatically detect current os and architecture if not specified.
 # Select either the x86_64 or aarch64 architectures
 os=$1
 arch=$2
 debug_level=$3
-build_hsdis=$4
+if [ $# -gt 3 ]
+then
+    variant=$4
+    build_hsdis=$5
+fi
+
 llvm_path=/cygdrive/c/software/llvm/llvm-$arch
 log_root="build/mylogs"
 # use "debug" for a more detailed log
 log_verbosity=cmdlines
 redirect_output=1
-build_conf="${os}-${arch}-server-${debug_level}"
+build_conf="${os}-${arch}-${variant}-${debug_level}"
 
 log_message "Starting $build_conf build with timestamp $timestamp for OS type $OSTYPE"
 log_message "Latest commits:"
