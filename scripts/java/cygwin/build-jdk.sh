@@ -133,6 +133,8 @@ built_jdk="build/${build_conf}/images/jdk/"
 
 log_message "Zipping the JDK in $built_jdk into $images_zip"
 cd $built_jdk
+git log -2 > repo_info.txt
+git status >> repo_info.txt
 
 zip -qru $images_zip .
 
