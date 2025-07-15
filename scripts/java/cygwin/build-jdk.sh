@@ -130,37 +130,7 @@ else
 fi
 
 built_jdk="build/${build_conf}/images/jdk/"
-
-log_message "Zipping the JDK in $built_jdk into $images_zip"
-cd $built_jdk
-git log -2 > repo_info.txt
-git status >> repo_info.txt
-
-zip -qru $images_zip .
-
-if [ -d "$JDK_ZIP_DEST" ]; then
-    log_message "Copying $images_zip to $JDK_ZIP_DEST"
-    cp $images_zip "$JDK_ZIP_DEST"
-fi
-
-mv $images_zip ../..
-cd ../../../../
-
-build_command="make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity"
-log_message "Building jtreg native binaries using command: $build_command"
-if [ $redirect_output -ne 0 ]; then
-    $build_command > $jtreg_native_log
-else
-    $build_command
-fi
-
-build_command="make test-image CONF=$build_conf LOG=$log_verbosity"
-log_message "Building test image using command: $build_command"
-if [ $redirect_output -ne 0 ]; then
-    $build_command > $test_image_log
-else
-    $build_command
-fi
+build_conf_dir="build/${build_conf}"
 
 if [ $build_hsdis -ne 0 ]; then
     hsdis_build_log="$log_root/hsdis_build-${timestamp}.txt"
@@ -185,13 +155,50 @@ if [ $build_hsdis -ne 0 ]; then
     cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
 fi
 
-build_conf_dir="build/${build_conf}"
+log_message "Zipping the JDK in $built_jdk into $images_zip"
+cd $built_jdk
+git log -2 > repo_info.txt
+git status >> repo_info.txt
+
+zip -qru $images_zip .
+
+if [ -d "$JDK_ZIP_DEST" ]; then
+    log_message "Copying $images_zip to $JDK_ZIP_DEST"
+    cp $images_zip "$JDK_ZIP_DEST"
+fi
+
+mv $images_zip ../..
+cd ../../../../
+
+build_command="make test-image CONF=$build_conf LOG=$log_verbosity"
+log_message "Building test image using command: $build_command"
+if [ $redirect_output -ne 0 ]; then
+    $build_command > $test_image_log
+else
+    $build_command
+fi
+
+log_message "Zipping images/test into $images_test_zip"
+cd $build_conf_dir
+zip -qru $images_test_zip images/test
+
+if [ -d "$JDK_ZIP_DEST" ]; then
+    log_message "Copying $images_test_zip to $JDK_ZIP_DEST"
+    cp $images_test_zip "$JDK_ZIP_DEST"
+fi
+
+cd ../../
+build_command="make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity"
+log_message "Building jtreg native binaries using command: $build_command"
+if [ $redirect_output -ne 0 ]; then
+    $build_command > $jtreg_native_log
+else
+    $build_command
+fi
+
 log_message "Zipping support/test into $support_test_zip (switching from `pwd` to $build_conf_dir)"
 cd $build_conf_dir
 zip -qru $support_test_zip support/test
-
-log_message "Zipping images/test into $images_test_zip"
-zip -qru $images_test_zip images/test
 
 log_message "Build complete"
 date
