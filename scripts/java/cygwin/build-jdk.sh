@@ -49,6 +49,9 @@
 # x86_64 Release (Linux):
 #  bash configure --with-boot-jdk=~/java/binaries/jdk/x64/jdk-24+36 --with-jtreg=/home/saint/java/binaries/jtreg/jtreg-7.5.1+1 --with-gtest=/home/saint/repos/googletest
 #
+# aarch64 Debug (native Windows)
+#  bash configure --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg/jtreg-7.5.2 --with-gtest=/cygdrive/c/repos/googletest --with-extra-ldflags=-profile --with-boot-jdk=/cygdrive/c/java/binaries/jdk/aarch64/jdk-24+36
+#
 # aarch64 Debug (Windows) (for cross compiling, otherwise replace x64 in boot jdk path):
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg/jtreg-7.5.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-extra-ldflags=-profile --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-24+36
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-debug-level=slowdebug --with-jtreg=/cygdrive/c/java/binaries/jtreg/jtreg-7.5.1+1 --with-gtest=/cygdrive/c/repos/googletest --with-extra-ldflags=-profile --with-boot-jdk=/cygdrive/c/java/binaries/jdk/x64/jdk-24+36 --with-hsdis=llvm --with-llvm=/cygdrive/c/software/llvm/llvm-aarch64/
