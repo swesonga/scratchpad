@@ -1,0 +1,9 @@
+delete all lines from ":: jdk21u x64"
+replace 2025-07 with a variable called psu
+replace aarch64 and x64 with a variable called arch
+replace jdk21u with a variable called jdkrepo
+replace jdk-21.0.6+7 with a variable called jdktag
+replace D:\java\binaries\jdk\%arch%\%psu%\windows-%jdkrepo% with a variable called psudir
+output a message showing the psudir after setting it
+make the variables user-specified variables
+make the variables command line arguments instead
