@@ -162,6 +162,7 @@ log_message "Zipping the JDK in $built_jdk into $images_zip"
 cd $built_jdk
 git log -2 > repo_info.txt
 git status >> repo_info.txt
+git diff > repo_diff.txt
 
 zip -qru $images_zip .
 
