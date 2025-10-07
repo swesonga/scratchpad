@@ -21,9 +21,9 @@
 #  tar xzf jtreg-7.4+1.tar.gz
 #  mv jtreg jtreg-7.4+1
 #
-#  curl -Lo jtreg-7.5.2+1.tar.gz https://builds.shipilev.net/jtreg/jtreg-7.5.2%2B1.zip
-#  unzip -q jtreg-7.5.2+1.tar.gz
-#  mv jtreg jtreg-7.5.2+1
+#  curl -Lo jtreg-8+2.tar.gz https://builds.shipilev.net/jtreg/jtreg-7.5.2%2B1.zip
+#  unzip -q jtreg-8+2.tar.gz
+#  mv jtreg jtreg-8+2
 #
 # To download googletest (use the "release-1.8.1" branch for JDK 17):
 #
