@@ -3,7 +3,12 @@
  * Extracted from MonitorEnterExit.java to run without JUnit dependencies
  */
 
-import java.util.stream.IntStream;
+/*
+export JAVA_HOME=/c/java/binaries/jdk/aarch64/2025-10/windows-jdk25u/jdk-25.0.1+8/
+export JAVA_HOME=/c/java/binaries/jdk/aarch64/2025-09/windows-jdk25u/jdk-25+36/
+$JAVA_HOME/bin/javac StandaloneMutualExclusionTest.java
+$JAVA_HOME/bin/java StandaloneMutualExclusionTest --all
+*/
 
 public class StandaloneMutualExclusionTest {
     /**
@@ -147,7 +152,6 @@ public class StandaloneMutualExclusionTest {
 
         // Check command line arguments
         boolean runAll = args.length > 0 && args[0].equals("--all");
-        boolean runQuick = args.length == 0 || (args.length > 0 && args[0].equals("--quick"));
 
         if (args.length > 0 && !args[0].equals("--all") && !args[0].equals("--quick")) {
             System.out.println("Usage: java StandaloneMutualExclusionTest [--quick|--all]");
