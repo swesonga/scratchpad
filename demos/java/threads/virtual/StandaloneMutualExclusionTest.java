@@ -4,11 +4,15 @@
  */
 
 /*
-export JAVA_HOME=/c/java/binaries/jdk/aarch64/2025-09/windows-jdk25u/jdk-25+36
-export JAVA_HOME2=/c/java/binaries/jdk/aarch64/2025-10/windows-jdk25u/jdk-25.0.1+8
+export JAVA_HOME24=/c/java/binaries/jdk/aarch64/2025-07/windows-jdk24u/jdk-24.0.2+12
+export JAVA_HOME25=/c/java/binaries/jdk/aarch64/2025-09/windows-jdk25u/jdk-25+36
+export JAVA_HOME=/c/java/binaries/jdk/aarch64/2025-10/windows-jdk25u/jdk-25.0.1+8
 export JAVA_HOME3=/c/java/forks/openjdk/jdk/build/windows-aarch64-server-slowdebug/images/jdk
 $JAVA_HOME/bin/javac StandaloneMutualExclusionTest.java
 $JAVA_HOME/bin/java StandaloneMutualExclusionTest
+
+$JAVA_HOME/bin/jcmd
+$JAVA_HOME/bin/jstack -l -e <pid>
 */
 
 public class StandaloneMutualExclusionTest {
