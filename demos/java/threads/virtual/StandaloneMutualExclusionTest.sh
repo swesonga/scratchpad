@@ -18,8 +18,10 @@ $JAVA_HOME/bin/jstack -l -e <pid>
 /c/software/visualvm_22/bin/visualvm.exe
 
 export CURRDATE=`date +%Y-%m-%d_%H%M%S`; date; \
-time $JAVA_HOME_FORKS_DUPS4/bin/java \
-  -Xcomp -XX:TieredStopAtLevel=1 -XX:LockingMode=2 \
+time $JAVA_HOME/bin/java \
+  -Xcomp \
+  -XX:TieredStopAtLevel=1 \
+  -XX:LockingMode=2 \
   -Xlog:monitorinflation=debug,continuations=debug:deadlock.$CURRDATE.log:time,pid,tid,level \
   -XX:+UnlockDiagnosticVMOptions \
   -XX:+JavaMonitorsInStackTrace \
