@@ -20,7 +20,7 @@ public class StandaloneMutualExclusionTest {
      * Test mutual exclusion of monitors with platform and virtual threads.
      * This is the core test from MonitorEnterExit.testMutualExclusion
      */
-    static void testMutualExclusion(int nPlatformThreads, int nVirtualThreads) throws Exception {
+    static void testMutualExclusion(int nPlatformThreads, int nVirtualThreads, boolean printCount, boolean shouldYield) throws Exception {
         System.out.printf("Testing with %d platform threads and %d virtual threads%n", 
                           nPlatformThreads, nVirtualThreads);
 
@@ -28,7 +28,13 @@ public class StandaloneMutualExclusionTest {
             int count;
             synchronized void increment() {
                 count++;
-                Thread.yield();
+                if (printCount) {
+                    System.out.printf("Thread %s incremented count to %d%n", 
+                                      Thread.currentThread().getName(), count);
+                }
+                if (shouldYield) {
+                    Thread.yield();
+                }
             }
         }
 
@@ -78,7 +84,7 @@ public class StandaloneMutualExclusionTest {
      * Generate test cases - same logic as the original threadCounts() method
      * 0,2,4,..16 platform threads. 2,4,6,..32 virtual threads.
      */
-    static void runAllTestCases() throws Exception {
+    static void runAllTestCases(boolean printCount, boolean shouldYield) throws Exception {
         System.out.println("Running mutual exclusion tests...");
 
         int testCount = 0;
@@ -88,7 +94,7 @@ public class StandaloneMutualExclusionTest {
             for (int nv = 2; nv <= 32; nv += 2) {  // 2,4,6,...,32 virtual threads
                 testCount++;
                 try {
-                    testMutualExclusion(np, nv);
+                    testMutualExclusion(np, nv, printCount, shouldYield);
                     passCount++;
                 } catch (Exception e) {
                     System.err.printf("✗ FAILED: testMutualExclusion(%d, %d) - %s%n", 
@@ -108,7 +114,41 @@ public class StandaloneMutualExclusionTest {
         try {
             long startTime = System.currentTimeMillis();
 
-            runAllTestCases();
+            boolean printCount = false;
+            boolean shouldYield = false;
+            int platformThreads = -1;
+            int virtualThreads = -1;
+            for (int i = 0; i < args.length; i++) {
+                if (args[i].equalsIgnoreCase("--printCount")) {
+                    printCount = true;
+                } else if (args[i].equalsIgnoreCase("--yield")) {
+                    shouldYield = true;
+                } else {
+                    int threads = -1;
+                    try {
+                        threads = Integer.parseInt(args[i]);
+                        if (platformThreads == -1) {
+                            platformThreads = threads;
+                        } else if (virtualThreads == -1) {
+                            virtualThreads = threads;
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.printf("Invalid argument: %s%n", args[i]);
+                        System.out.println("Usage: java StandaloneMutualExclusionTest [--printCount] [--yield] [<platformThreads> <virtualThreads>]");
+                        System.exit(1);
+                    }
+                }
+            }
+
+            if (platformThreads != -1 || virtualThreads != -1) {
+                // Run single test case
+                platformThreads = Integer.max(platformThreads, 0);
+                virtualThreads = Integer.max(virtualThreads, 0);
+                testMutualExclusion(platformThreads, virtualThreads, printCount, shouldYield);
+            } else {
+                // Run all test cases
+                runAllTestCases(printCount, shouldYield);
+            }
 
             long duration = System.currentTimeMillis() - startTime;
             System.out.printf("All tests completed successfully in %d ms%n", duration);
