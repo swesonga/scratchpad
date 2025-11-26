@@ -23,6 +23,8 @@ time $JAVA_HOME/bin/java \
   -XX:TieredStopAtLevel=1 \
   -XX:LockingMode=2 \
   -Xlog:monitorinflation=debug,continuations=debug:deadlock.$CURRDATE.log:time,pid,tid,level \
+  -Xlog:os=info:file=os.$CURRDATE.txt::filecount=0 \
+  -Xlog:os+thread=info:file=os+thread.$CURRDATE.txt::filecount=0 \
   -XX:+UnlockDiagnosticVMOptions \
   -XX:+JavaMonitorsInStackTrace \
   -XX:LightweightFastLockingSpins=1 \
