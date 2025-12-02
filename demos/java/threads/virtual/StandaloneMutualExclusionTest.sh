@@ -22,7 +22,7 @@ time $JAVA_HOME/bin/java \
   -Xcomp \
   -XX:TieredStopAtLevel=1 \
   -XX:LockingMode=2 \
-  -Xlog:monitorinflation=debug,continuations=debug:deadlock.$CURRDATE.log:time,pid,tid,level \
+  -Xlog:monitorinflation=debug,continuations=debug:deadlock.$CURRDATE.txt:time,pid,tid,level \
   -Xlog:os=info:file=os.$CURRDATE.txt::filecount=0 \
   -Xlog:os+thread=info:file=os+thread.$CURRDATE.txt::filecount=0 \
   -XX:+UnlockDiagnosticVMOptions \
@@ -30,4 +30,4 @@ time $JAVA_HOME/bin/java \
   -XX:LightweightFastLockingSpins=1 \
   -XX:+CreateCoredumpOnCrash \
   -XX:+UseSerialGC \
-  StandaloneMutualExclusionTest
+  StandaloneMutualExclusionTest 0 2 --printCount --yield
