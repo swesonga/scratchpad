@@ -7,6 +7,7 @@ export JAVA_HOME_FORKS_DUPS=/c/java/forks/dups/openjdk/jdk/build/windows-aarch64
 export JAVA_HOME_FORKS_DUPS3=/c/java/forks/dups3/openjdk/jdk/build/windows-aarch64-server-slowdebug/images/jdk
 export JAVA_HOME_FORKS_DUPS4=/c/java/forks/dups4/openjdk/jdk/build/windows-aarch64-server-slowdebug/images/jdk
 export JAVA_HOME_MS_JDK25U=/c/java/ms/openjdk-jdk25u/build/windows-aarch64-server-slowdebug/images/jdk
+export JAVA_HOME_MS_DUPS_JDK25U=/c/java/ms/dups/openjdk-jdk25u/build/windows-aarch64-server-slowdebug/images/jdk
 export JAVA_HOME_LOCAL=/c/java/binaries/jdk/aarch64/local/jdk-windows-aarch64-server-release-2025-10-01_130524
 
 $JAVA_HOME/bin/javac StandaloneMutualExclusionTest.java
@@ -18,7 +19,7 @@ $JAVA_HOME/bin/jstack -l -e <pid>
 /c/software/visualvm_22/bin/visualvm.exe
 
 export CURRDATE=`date +%Y-%m-%d_%H%M%S`; date; \
-time $JAVA_HOME/bin/java \
+time $JAVA_HOME_MS_JDK25U/bin/java \
   -Xcomp \
   -XX:TieredStopAtLevel=1 \
   -XX:LockingMode=2 \
@@ -30,4 +31,6 @@ time $JAVA_HOME/bin/java \
   -XX:LightweightFastLockingSpins=1 \
   -XX:+CreateCoredumpOnCrash \
   -XX:+UseSerialGC \
+  -Xlog:gc=debug,safepoint:file=serialgc.$CURRDATE.log::filecount=0 \
+  -Xlog:stubs,codecache=trace:file=stubs,codecache.$CURRDATE.txt::filecount=0 \
   StandaloneMutualExclusionTest 0 2 --printCount --yield
