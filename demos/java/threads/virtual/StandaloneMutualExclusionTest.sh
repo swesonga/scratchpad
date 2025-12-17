@@ -31,6 +31,9 @@ time $JAVA_HOME_MS_JDK25U/bin/java \
   -XX:LightweightFastLockingSpins=1 \
   -XX:+CreateCoredumpOnCrash \
   -XX:+UseSerialGC \
-  -Xlog:gc=debug,safepoint:file=serialgc.$CURRDATE.log::filecount=0 \
-  -Xlog:stubs,codecache=trace:file=stubs,codecache.$CURRDATE.txt::filecount=0 \
+  -Xlog:gc=debug,safepoint:file=serialgc.$CURRDATE.txt::filecount=0 \
+  -Xlog:stubs,codecache=debug:file=stubs,codecache.$CURRDATE.txt::filecount=0 \
   StandaloneMutualExclusionTest 0 2 --printCount --yield
+
+# Additional flags for placing the heap at a fixed address when debugging
+#  -XX:-UseCompressedOops -XX:HeapBaseMinAddress=0x12340000000000 \
