@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Print Demo</title>
+<style>
+    span.mainspan {
+        height: 1200px;
+        display: block;
+    }
+    div.maindiv {
+        height: 100%;
+        overflow-y: auto;
+    }
+    span.tallspan {
+        display: block; /* shows the height of the span in the computed box */
+        width: 800px;   /* reduce amount of text required to make tall span */
+        border: 1px solid black;
+    }
+    p {
+        margin: 100px;
+    }
+    p.even {
+        background-color: #556677;
+    }
+    p.odd {
+        background-color: #d0d0d0;
+    }
+</style>
+<body>
+    <span class="mainspan">
+        <div class="maindiv">
+
+            <span class="tallspan">
+                <h1>Print Demo</h1>
+
+                <p>
+                    Text from <a href="https://lean-lang.org/theorem_proving_in_lean4/Introduction/#Intro">Theorem Proving in Lean 4</a>
+                </p>
+
+                <p class="even">
+                    Formal verification involves the use of logical and computational methods to establish claims that are expressed in precise mathematical terms. These can include ordinary mathematical theorems, as well as claims that pieces of hardware or software, network protocols, and mechanical and hybrid systems meet their specifications. In practice, there is not a sharp distinction between verifying a piece of mathematics and verifying the correctness of a system: formal verification requires describing hardware and software systems in mathematical terms, at which point establishing claims as to their correctness becomes a form of theorem proving. Conversely, the proof of a mathematical theorem may require a lengthy computation, in which case verifying the truth of the theorem requires verifying that the computation does what it is supposed to do.
+                </p>
+
+                <p class="odd">
+                    The gold standard for supporting a mathematical claim is to provide a proof, and twentieth-century developments in logic show most if not all conventional proof methods can be reduced to a small set of axioms and rules in any of a number of foundational systems. With this reduction, there are two ways that a computer can help establish a claim: it can help find a proof in the first place, and it can help verify that a purported proof is correct.
+                </p>
+
+                <p class="even">
+                    Automated theorem proving focuses on the “finding” aspect. Resolution theorem provers, tableau theorem provers, fast satisfiability solvers, and so on provide means of establishing the validity of formulas in propositional and first-order logic. Other systems provide search procedures and decision procedures for specific languages and domains, such as linear or nonlinear expressions over the integers or the real numbers. Architectures like SMT ("satisfiability modulo theories”) combine domain-general search methods with domain-specific procedures. Computer algebra systems and specialized mathematical software packages provide means of carrying out mathematical computations, establishing mathematical bounds, or finding mathematical objects. A calculation can be viewed as a proof as well, and these systems, too, help establish mathematical claims.
+                </p>
+
+                <p class="odd">
+                    Automated reasoning systems strive for power and efficiency, often at the expense of guaranteed soundness. Such systems can have bugs, and it can be difficult to ensure that the results they deliver are correct. In contrast, interactive theorem proving focuses on the “verification” aspect of theorem proving, requiring that every claim is supported by a proof in a suitable axiomatic foundation. This sets a very high standard: every rule of inference and every step of a calculation has to be justified by appealing to prior definitions and theorems, all the way down to basic axioms and rules. In fact, most such systems provide fully elaborated “proof objects” that can be communicated to other systems and checked independently. Constructing such proofs typically requires much more input and interaction from users, but it allows you to obtain deeper and more complex proofs.
+                </p>
+
+                <p class="even">
+                    The Lean Theorem Prover aims to bridge the gap between interactive and automated theorem proving, by situating automated tools and methods in a framework that supports user interaction and the construction of fully specified axiomatic proofs. The goal is to support both mathematical reasoning and reasoning about complex systems, and to verify claims in both domains.
+                </p>
+
+                <p class="odd">
+                    Lean's underlying logic has a computational interpretation, and Lean can be viewed equally well as a programming language. More to the point, it can be viewed as a system for writing programs with a precise semantics, as well as reasoning about the functions that the programs compute. Lean also has mechanisms to serve as its own metaprogramming language, which means that you can implement automation and extend the functionality of Lean using Lean itself. These aspects of Lean are described in the free online book, Functional Programming in Lean, though computational aspects of the system will make an appearance here.
+                </p>
+            </span>
+
+            <p>End of Page</p>
+        </div>
+    </span>
+</body>
+</html>
