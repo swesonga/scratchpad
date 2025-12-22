@@ -144,6 +144,9 @@ images_zip="jdk-${build_conf}-${timestamp}.zip"
 support_test_zip="support-test-${build_conf}-${timestamp}.zip"
 images_test_zip="images-test-${build_conf}-${timestamp}.zip"
 
+# Alternative build command
+# build_command="make product-images test-image CONF=$build_conf LOG=$log_verbosity"
+
 build_command="make images CONF=$build_conf LOG=$log_verbosity"
 log_message "Building images using command: $build_command"
 if [ $redirect_output -ne 0 ]; then
