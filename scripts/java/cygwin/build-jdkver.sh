@@ -1,6 +1,6 @@
 #!/bin/bash
 export jdk21u_BOOT_JDK_TAG=jdk-21.0.9+10
-export jdk21u_BOOT_JDK_PATH=/cygdrive/c/java/binaries/jdk/aarch64/2025-10/windows-jdk21u/$BOOT_JDK_TAG
+export jdk21u_BOOT_JDK_PATH=/cygdrive/c/java/binaries/jdk/aarch64/2025-10/windows-jdk21u/$jdk21u_BOOT_JDK_TAG
 export jdk21u_OPENJDK_REPO_PATH=/cygdrive/c/java/ms/openjdk-jdk21u
 
 export jdk25u_BOOT_JDK_TAG=jdk-25.0.1+8
