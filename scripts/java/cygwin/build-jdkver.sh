@@ -1,10 +1,44 @@
 #!/bin/bash
+
+# Detect current OS
+OS_NAME=$(uname -s)
+case $OS_NAME in
+    CYGWIN*|MINGW*|MSYS*)
+        OS="windows"
+        ;;
+    Darwin)
+        OS="macosx"
+        ;;
+    Linux)
+        OS="linux"
+        ;;
+    *)
+        echo "Unsupported OS: $OS_NAME"
+        exit 1
+        ;;
+esac
+
+# Detect current architecture
+ARCH=$(uname -m)
+case $ARCH in
+    x86_64)
+        ARCH="x64"
+        ;;
+    aarch64|arm64)
+        ARCH="aarch64"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
+
 export jdk21u_BOOT_JDK_TAG=jdk-21.0.9+10
-export jdk21u_BOOT_JDK_PATH=/cygdrive/c/java/binaries/jdk/aarch64/2025-10/windows-jdk21u/$jdk21u_BOOT_JDK_TAG
+export jdk21u_BOOT_JDK_PATH=/cygdrive/c/java/binaries/jdk/$ARCH/2025-10/$OS-jdk21u/$jdk21u_BOOT_JDK_TAG
 export jdk21u_OPENJDK_REPO_PATH=/cygdrive/c/java/ms/openjdk-jdk21u
 
 export jdk25u_BOOT_JDK_TAG=jdk-25.0.1+8
-export jdk25u_BOOT_JDK_PATH=/cygdrive/c/java/binaries/jdk/aarch64/2025-10/windows-jdk25u/$jdk25u_BOOT_JDK_TAG
+export jdk25u_BOOT_JDK_PATH=/cygdrive/c/java/binaries/jdk/$ARCH/2025-10/$OS-jdk25u/$jdk25u_BOOT_JDK_TAG
 export jdk25u_OPENJDK_REPO_PATH=/cygdrive/c/java/ms/openjdk-jdk25u
 
 # Set variables based on JDK version argument (default to jdk25u)
@@ -45,4 +79,5 @@ if [[ "$2" == "--configure" ]]; then
         --with-boot-jdk=$BOOT_JDK_PATH
 fi
 
-time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh windows aarch64 $OPENJDK_DEBUG_LEVEL
+# Change $ARCH if you want to build for a different architecture than the current one
+time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $ARCH $OPENJDK_DEBUG_LEVEL
