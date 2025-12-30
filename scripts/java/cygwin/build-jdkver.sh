@@ -41,6 +41,10 @@ export jdk25u_BOOT_JDK_TAG=jdk-25.0.1+8
 export jdk25u_BOOT_JDK_PATH=/cygdrive/c/java/binaries/jdk/$ARCH/2025-10/$OS-jdk25u/$jdk25u_BOOT_JDK_TAG
 export jdk25u_OPENJDK_REPO_PATH=/cygdrive/c/java/ms/openjdk-jdk25u
 
+export tip_BOOT_JDK_TAG=jdk-25.0.1+8
+export tip_BOOT_JDK_PATH=/cygdrive/c/java/binaries/jdk/$ARCH/2025-10/$OS-jdk25u/$tip_BOOT_JDK_TAG
+export tip_OPENJDK_REPO_PATH=/cygdrive/c/java/ms/openjdk-jdk
+
 # Set variables based on JDK version argument (default to jdk25u)
 JDK_VERSION=${1:-jdk25u}
 
@@ -54,6 +58,11 @@ case $JDK_VERSION in
         export BOOT_JDK_TAG=$jdk25u_BOOT_JDK_TAG
         export BOOT_JDK_PATH=$jdk25u_BOOT_JDK_PATH
         export OPENJDK_REPO_PATH=$jdk25u_OPENJDK_REPO_PATH
+        ;;
+    tip)
+        export BOOT_JDK_TAG=$tip_BOOT_JDK_TAG
+        export BOOT_JDK_PATH=$tip_BOOT_JDK_PATH
+        export OPENJDK_REPO_PATH=$tip_OPENJDK_REPO_PATH
         ;;
     *)
         echo "Unknown JDK version: $JDK_VERSION"
