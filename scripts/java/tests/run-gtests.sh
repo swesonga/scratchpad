@@ -2,7 +2,9 @@
 
 cd /d/java/ms/openjdk-jdk
 cd build/windows-x86_64-server-slowdebug/images/test/hotspot/gtest/server
-./gtestLauncher.exe -jdk:/d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/images/jdk
+./gtestLauncher.exe --gtest_catch_exceptions=0 -jdk:/d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/images/jdk
+
+# Use --gtest_filter=*windows* to run only tests with "windows" in the name
 
 # To launch the gtests from a bash command line
 # /d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/images/test/hotspot/gtest/server/gtestLauncher.exe -jdk:/d/java/ms/openjdk-jdk/build/windows-x86_64-server-slowdebug/images/jdk
