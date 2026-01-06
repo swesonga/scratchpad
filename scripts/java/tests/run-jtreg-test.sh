@@ -33,8 +33,9 @@ if test -f $java_test ; then
     echo -e "Executing: $command"
     time $command
 
-#    for i in {1..10}; do
-#        echo -e "\n=== Iteration $i of 10 ==="
+#    iterations=3
+#    for i in $(seq 1 $iterations); do
+#        echo -e "\n---- Iteration $i of $iterations ----"
 #        time $command
 #    done
 else
