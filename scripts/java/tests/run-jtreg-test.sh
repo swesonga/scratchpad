@@ -27,10 +27,16 @@ if test -f $java_test ; then
     date;
     echo -e "\n\n\n---- Running $java_test ----"
 
+    # Use -verbose:all to get all output (e.g. when debugging)
     command="$test_jdk/bin/java -Xmx512m -jar $jtreg_jar_path -agentvm -ignore:quiet -automatic -xml -vmoption:-Xmx512m -timeoutFactor:4 -concurrency:1 -testjdk:$test_jdk -verbose:fail,error,summary $test_flags $java_test"
 
     echo -e "Executing: $command"
     time $command
+
+#    for i in {1..10}; do
+#        echo -e "\n=== Iteration $i of 10 ==="
+#        time $command
+#    done
 else
     missing_tests+=($java_test)
 fi
