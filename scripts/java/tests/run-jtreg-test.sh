@@ -33,11 +33,11 @@ if test -f $java_test ; then
     echo -e "Executing: $command"
     time $command
 
-#    iterations=3
-#    for i in $(seq 1 $iterations); do
-#        echo -e "\n---- Iteration $i of $iterations ----"
-#        time $command
-#    done
+    iterations=1
+    for i in $(seq 2 $iterations); do
+        echo -e "\n---- Iteration $i of $iterations ----"
+        time $command
+    done
 else
     missing_tests+=($java_test)
 fi
