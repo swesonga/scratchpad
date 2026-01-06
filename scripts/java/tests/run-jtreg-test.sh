@@ -36,6 +36,7 @@ if test -f $java_test ; then
     iterations=1
     for i in $(seq 2 $iterations); do
         echo -e "\n---- Iteration $i of $iterations ----"
+        date
         time $command
     done
 else
