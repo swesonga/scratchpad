@@ -39,6 +39,7 @@ esac
 export jdk11u_BOOT_JDK_TAG=jdk-11.0.29+7
 export jdk11u_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2025-10/$OS-jdk11u/$jdk11u_BOOT_JDK_TAG
 export jdk11u_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk11u
+# googletest branch: release-1.8.1 ?
 
 export jdk17u_BOOT_JDK_TAG=jdk-17.0.17+10
 export jdk17u_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2025-10/$OS-jdk17u/$jdk17u_BOOT_JDK_TAG
@@ -53,14 +54,18 @@ export jdk18u_OPENJDK_REPO_PATH=$PATHPREFIX/java/forks/openjdk/jdk
 export jdk21u_BOOT_JDK_TAG=jdk-21.0.9+10
 export jdk21u_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2025-10/$OS-jdk21u/$jdk21u_BOOT_JDK_TAG
 export jdk21u_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk21u
+# googletest branch: v1.14.0
 
 export jdk25u_BOOT_JDK_TAG=jdk-25.0.1+8
 export jdk25u_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2025-10/$OS-jdk25u/$jdk25u_BOOT_JDK_TAG
 export jdk25u_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk25u
+# googletest branch: v1.14.0
 
 export tip_BOOT_JDK_TAG=jdk-25.0.1+8
 export tip_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2025-10/$OS-jdk25u/$tip_BOOT_JDK_TAG
 export tip_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk
+# googletest branch: v1.14.0
+
 # Set variables based on JDK version argument (default to jdk25u)
 JDK_VERSION=${1:-jdk25u}
 
