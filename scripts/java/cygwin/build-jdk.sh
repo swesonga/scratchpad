@@ -140,9 +140,12 @@ images_log="$log_root/images-${build_conf}-${timestamp}.txt"
 jtreg_native_log="$log_root/test-${build_conf}-${timestamp}.txt"
 test_image_log="$log_root/test-image-${build_conf}-${timestamp}.txt"
 
-images_zip="jdk-${build_conf}-${timestamp}.zip"
-support_test_zip="support-test-${build_conf}-${timestamp}.zip"
-images_test_zip="images-test-${build_conf}-${timestamp}.zip"
+# Prompt: insert latest git commit hash before ${build_conf} in the images_zip variable
+git_hash=$(git rev-parse --short HEAD)
+
+images_zip="jdk-${git_hash}-${build_conf}-${timestamp}.zip"
+support_test_zip="support-test-${git_hash}-${build_conf}-${timestamp}.zip"
+images_test_zip="images-test-${git_hash}-${build_conf}-${timestamp}.zip"
 
 # Alternative build command
 # build_command="make product-images test-image CONF=$build_conf LOG=$log_verbosity"
