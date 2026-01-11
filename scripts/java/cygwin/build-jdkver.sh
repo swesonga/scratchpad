@@ -39,17 +39,22 @@ esac
 export jdk11u_BOOT_JDK_TAG=jdk-11.0.29+7
 export jdk11u_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2025-10/$OS-jdk11u/$jdk11u_BOOT_JDK_TAG
 export jdk11u_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk11u
-# googletest branch: release-1.8.1 ?
+# googletest branch: release-1.8.1
 
 export jdk17u_BOOT_JDK_TAG=jdk-17.0.17+10
 export jdk17u_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2025-10/$OS-jdk17u/$jdk17u_BOOT_JDK_TAG
 export jdk17u_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk17u
-# googletest branch: v1.13.0
+# googletest branch: release-1.8.1
 
 export jdk18u_BOOT_JDK_TAG=$jdk17u_BOOT_JDK_TAG
 export jdk18u_BOOT_JDK_PATH=$jdk17u_BOOT_JDK_PATH
 export jdk18u_OPENJDK_REPO_PATH=$PATHPREFIX/java/forks/openjdk/jdk
-# googletest branch: v1.13.0
+# googletest branch: release-1.8.1
+
+export jdk19u_BOOT_JDK_TAG=jdk-19.0.2+7
+export jdk19u_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/adoptium/$jdk19u_BOOT_JDK_TAG
+export jdk19u_OPENJDK_REPO_PATH=$PATHPREFIX/java/forks/openjdk/jdk
+# googletest branch: release-1.8.1
 
 export jdk21u_BOOT_JDK_TAG=jdk-21.0.9+10
 export jdk21u_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2025-10/$OS-jdk21u/$jdk21u_BOOT_JDK_TAG
@@ -84,6 +89,11 @@ case $JDK_VERSION in
         export BOOT_JDK_TAG=$jdk18u_BOOT_JDK_TAG
         export BOOT_JDK_PATH=$jdk18u_BOOT_JDK_PATH
         export OPENJDK_REPO_PATH=$jdk18u_OPENJDK_REPO_PATH
+        ;;
+    jdk19u)
+        export BOOT_JDK_TAG=$jdk19u_BOOT_JDK_TAG
+        export BOOT_JDK_PATH=$jdk19u_BOOT_JDK_PATH
+        export OPENJDK_REPO_PATH=$jdk19u_OPENJDK_REPO_PATH
         ;;
     jdk21u)
         export BOOT_JDK_TAG=$jdk21u_BOOT_JDK_TAG
