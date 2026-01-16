@@ -125,13 +125,17 @@ export OPENJDK_DEBUG_LEVEL=slowdebug
 echo -e "\nChanging current directory to $OPENJDK_REPO_PATH\n"
 cd $OPENJDK_REPO_PATH
 
+#EXTRA_CONFIGURE_ARGS="--disable-warnings-as-errors --openjdk-target=aarch64-unknown-cygwin"
+EXTRA_CONFIGURE_ARGS=""
+
 if [[ "$2" == "--configure" ]]; then
     date; time bash configure                    \
         --with-debug-level=$OPENJDK_DEBUG_LEVEL  \
         --with-jtreg=$JTREG_PATH                 \
         --with-gtest=$GTEST_PATH                 \
         --with-extra-ldflags=-profile            \
-        --with-boot-jdk=$BOOT_JDK_PATH
+        --with-boot-jdk=$BOOT_JDK_PATH           \
+        $EXTRA_CONFIGURE_ARGS
 fi
 
 # Change $ARCH if you want to build for a different architecture than the current one
