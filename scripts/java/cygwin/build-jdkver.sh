@@ -121,6 +121,8 @@ export JTREG_VER=8.1+1
 export JTREG_PATH=$PATHPREFIX/java/binaries/jtreg/jtreg-$JTREG_VER
 export GTEST_PATH=$PATHPREFIX/repos/googletest
 export OPENJDK_DEBUG_LEVEL=slowdebug
+export OPENJDK_VARIANT=server
+export BUILD_HSDIS=0
 
 echo -e "\nChanging current directory to $OPENJDK_REPO_PATH\n"
 cd $OPENJDK_REPO_PATH
@@ -139,4 +141,4 @@ if [[ "$2" == "--configure" ]]; then
 fi
 
 # Change $ARCH if you want to build for a different architecture than the current one
-time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $ARCH $OPENJDK_DEBUG_LEVEL
+time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $ARCH $OPENJDK_DEBUG_LEVEL $OPENJDK_VARIANT $BUILD_HSDIS
