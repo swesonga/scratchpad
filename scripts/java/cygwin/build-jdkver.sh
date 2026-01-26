@@ -6,6 +6,7 @@ case $OS_NAME in
     CYGWIN*|MINGW*|MSYS*)
         OS="windows"
         PATHPREFIX="/cygdrive/c"
+        OS_EXTRA_CONFIGURE_ARGS="--with-extra-ldflags=-profile"
         ;;
     Darwin)
         OS="macosx"
@@ -127,15 +128,16 @@ export BUILD_HSDIS=0
 echo -e "\nChanging current directory to $OPENJDK_REPO_PATH\n"
 cd $OPENJDK_REPO_PATH
 
-#EXTRA_CONFIGURE_ARGS="--disable-warnings-as-errors --openjdk-target=aarch64-unknown-cygwin"
-EXTRA_CONFIGURE_ARGS=""
+LLVM_PATH=$PATHPREFIX/repos/llvm/llvm-project/build_llvm_AArch64/install_local_release_21.x
+LLVM_EXTRA_CONFIGURE_ARGS="--with-hsdis=llvm --with-llvm=$LLVM_PATH"
+WIN_AARCH64_CROSS_COMPILE_EXTRA_CONFIGURE_ARGS="--openjdk-target=aarch64-unknown-cygwin"
+EXTRA_CONFIGURE_ARGS="$OS_EXTRA_CONFIGURE_ARGS"
 
 if [[ "$2" == "--configure" ]]; then
     date; time bash configure                    \
         --with-debug-level=$OPENJDK_DEBUG_LEVEL  \
         --with-jtreg=$JTREG_PATH                 \
         --with-gtest=$GTEST_PATH                 \
-        --with-extra-ldflags=-profile            \
         --with-boot-jdk=$BOOT_JDK_PATH           \
         $EXTRA_CONFIGURE_ARGS
 fi
