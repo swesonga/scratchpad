@@ -22,8 +22,8 @@ case $OS_NAME in
 esac
 
 # Detect current architecture
-ARCH=$(uname -m)
-case $ARCH in
+BUILDARCH=$(uname -m)
+case $BUILDARCH in
     x86_64)
         ARCH="x64"
         ;;
@@ -141,4 +141,4 @@ if [[ "$2" == "--configure" ]]; then
 fi
 
 # Change $ARCH if you want to build for a different architecture than the current one
-time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $ARCH $OPENJDK_DEBUG_LEVEL $OPENJDK_VARIANT $BUILD_HSDIS
+time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $BUILDARCH $OPENJDK_DEBUG_LEVEL $OPENJDK_VARIANT $BUILD_HSDIS
