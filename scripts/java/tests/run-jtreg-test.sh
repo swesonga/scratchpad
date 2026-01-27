@@ -47,7 +47,6 @@ if test -f $java_test ; then
     command="$test_jdk/bin/java -Xmx512m -jar $jtreg_jar_path -agentvm -ignore:quiet -automatic -xml -vmoption:-Xmx512m -timeoutFactor:4 -concurrency:1 -testjdk:$test_jdk -verbose:fail,error,summary $test_flags $java_test"
 
     echo -e "Executing: $command"
-    time $command
 
     iterations=1
     for i in $(seq 2 $iterations); do
