@@ -181,7 +181,9 @@ if [ $build_hsdis -ne 0 ]; then
         $build_command
     fi
 
-    cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
+    if [ -f "${llvm_path}/bin/LLVM-C.dll" ]; then
+        cp "${llvm_path}/bin/LLVM-C.dll" "${built_jdk}/bin"
+    fi
 fi
 
 log_message "Zipping the JDK in $built_jdk into $images_zip"
