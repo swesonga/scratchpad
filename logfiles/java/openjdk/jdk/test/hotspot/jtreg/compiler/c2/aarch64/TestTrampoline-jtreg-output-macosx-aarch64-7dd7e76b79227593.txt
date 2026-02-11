@@ -1,0 +1,1597 @@
+---- Running test/hotspot/jtreg/compiler/c2/aarch64/TestTrampoline.java ----
+Executing: /Users/saint/java/forks/openjdk/jdk//build/macosx-aarch64-server-slowdebug/images/jdk/bin/java -Xmx512m -jar /Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/jtreg.jar -agentvm -ignore:quiet -automatic -xml -vmoption:-Xmx512m -timeoutFactor:4 -concurrency:1 -testjdk:/Users/saint/java/forks/openjdk/jdk//build/macosx-aarch64-server-slowdebug/images/jdk -verbose:fail,error,summary -nativepath:/Users/saint/java/forks/openjdk/jdk//build/macosx-aarch64-server-slowdebug/support/test/hotspot/jtreg/native/lib test/hotspot/jtreg/compiler/c2/aarch64/TestTrampoline.java
+
+XML output  to /Users/saint/java/forks/openjdk/jdk/JTwork
+--------------------------------------------------
+TEST: compiler/c2/aarch64/TestTrampoline.java
+TEST JDK: /Users/saint/java/forks/openjdk/jdk/build/macosx-aarch64-server-slowdebug/images/jdk
+
+ACTION: build -- Passed. All files up to date
+REASON: Named class compiled on demand
+TIME:   0.079 seconds
+messages:
+command: build compiler.c2.aarch64.TestTrampoline
+reason: Named class compiled on demand
+started: Tue Feb 10 22:02:42.933 MST 2026
+finished: Tue Feb 10 22:02:43.012 MST 2026
+elapsed time (seconds): 0.079
+
+ACTION: driver -- Failed. Execution failed: `main' threw exception: java.lang.RuntimeException: Test completed successfully
+REASON: User specified action: run driver compiler.c2.aarch64.TestTrampoline 
+TIME:   8.496 seconds
+messages:
+command: driver compiler.c2.aarch64.TestTrampoline
+reason: User specified action: run driver compiler.c2.aarch64.TestTrampoline 
+started: Tue Feb 10 22:02:43.026 MST 2026
+Mode: agentvm
+Agent id: 1
+Process id: 62917
+finished: Tue Feb 10 22:02:51.522 MST 2026
+elapsed time (seconds): 8.496
+configuration:
+Boot Layer
+  class path: /Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/jtreg.jar 
+              /Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/junit-platform-console-standalone-1.13.4.jar 
+              /Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/testng-7.3.0.jar 
+              /Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/guice-5.1.0.jar 
+              /Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/jcommander-1.82.jar 
+  patch:      java.base /Users/saint/java/forks/openjdk/jdk/JTwork/patches/java.base
+
+Test Layer
+  class path: /Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d
+              /Users/saint/java/forks/openjdk/jdk/test/hotspot/jtreg/compiler/c2/aarch64
+              /Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d/test/lib
+              /Users/saint/java/forks/openjdk/jdk/test/lib
+
+rerun:
+cd /Users/saint/java/forks/openjdk/jdk/JTwork/scratch && \
+HOME=/Users/saint \
+LANG=en_US.UTF-8 \
+PATH=/bin:/usr/bin:/usr/sbin \
+    /Users/saint/java/forks/openjdk/jdk/build/macosx-aarch64-server-slowdebug/images/jdk/bin/java \
+        -Dtest.vm.opts=-Xmx512m \
+        -Dtest.tool.vm.opts=-J-Xmx512m \
+        -Dtest.compiler.opts= \
+        -Dtest.java.opts= \
+        -Dtest.jdk=/Users/saint/java/forks/openjdk/jdk/build/macosx-aarch64-server-slowdebug/images/jdk \
+        -Dcompile.jdk=/Users/saint/java/forks/openjdk/jdk/build/macosx-aarch64-server-slowdebug/images/jdk \
+        -Dtest.timeout.factor=4.0 \
+        -Dtest.nativepath=/Users/saint/java/forks/openjdk/jdk/build/macosx-aarch64-server-slowdebug/support/test/hotspot/jtreg/native/lib \
+        -Dtest.root=/Users/saint/java/forks/openjdk/jdk/test/hotspot/jtreg \
+        -Dtest.name=compiler/c2/aarch64/TestTrampoline.java \
+        -Dtest.verbose=Verbose[p=SUMMARY,f=FULL,e=FULL,t=false,m=false] \
+        -Dtest.file=/Users/saint/java/forks/openjdk/jdk/test/hotspot/jtreg/compiler/c2/aarch64/TestTrampoline.java \
+        -Dtest.main.class=compiler.c2.aarch64.TestTrampoline \
+        -Dtest.src=/Users/saint/java/forks/openjdk/jdk/test/hotspot/jtreg/compiler/c2/aarch64 \
+        -Dtest.src.path=/Users/saint/java/forks/openjdk/jdk/test/hotspot/jtreg/compiler/c2/aarch64:/Users/saint/java/forks/openjdk/jdk/test/lib \
+        -Dtest.classes=/Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d \
+        -Dtest.class.path=/Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d:/Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d/test/lib \
+        -Dtest.class.path.prefix=/Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d:/Users/saint/java/forks/openjdk/jdk/test/hotspot/jtreg/compiler/c2/aarch64:/Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d/test/lib \
+        -classpath /Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d:/Users/saint/java/forks/openjdk/jdk/test/hotspot/jtreg/compiler/c2/aarch64:/Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d/test/lib:/Users/saint/java/forks/openjdk/jdk/test/lib:/Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/jtreg.jar \
+        compiler.c2.aarch64.TestTrampoline
+STDOUT:
+Command line: [/Users/saint/java/forks/openjdk/jdk/build/macosx-aarch64-server-slowdebug/images/jdk/bin/java -cp /Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d:/Users/saint/java/forks/openjdk/jdk/test/hotspot/jtreg/compiler/c2/aarch64:/Users/saint/java/forks/openjdk/jdk/JTwork/classes/compiler/c2/aarch64/TestTrampoline.d/test/lib:/Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/jtreg.jar:/Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/junit-platform-console-standalone-1.13.4.jar:/Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/testng-7.3.0.jar:/Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/guice-5.1.0.jar:/Users/saint/java/binaries/jtreg/jtreg-8.1+1/lib/jcommander-1.82.jar -XX:+UnlockDiagnosticVMOptions -Xbatch -XX:CompileCommand=print,compiler.c2.aarch64.TestTrampoline$Test::test -XX:ReservedCodeCacheSize=130M -XX:+SegmentedCodeCache compiler.c2.aarch64.TestTrampoline$Test ]
+[2026-02-11T05:02:45.327011Z] Gathering output for process 62918
+[2026-02-11T05:02:45.469865Z] Waiting for completion for process 62918
+[2026-02-11T05:02:51.463724Z] Waiting for completion finished for process 62918
+CompileCommand: print compiler/c2/aarch64/TestTrampoline$Test.test bool print = true
+MY DEBUG INFO: emit_trampoline_stub for void compiler.c2.aarch64.TestTrampoline$Test.test(java.lang.String, int)::test
+  call_site=0x000000011b513fa8 dest=0x000000011b50dd00 distance=0xffffffffffff9d58
+  CodeCache: low=0x0000000117604000 high=0x000000011f808000
+MY DEBUG INFO: emit_trampoline_stub for void compiler.c2.aarch64.TestTrampoline$Test.test(java.lang.String, int)::test
+  call_site=0x000000011b514064 dest=0x000000011b50d900 distance=0xffffffffffff989c
+  CodeCache: low=0x0000000117604000 high=0x000000011f808000
+
+============================= C1-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c1) 6122   12       3       compiler.c2.aarch64.TestTrampoline$Test::test (20 bytes)
+ total in heap  [0x0000000117605c48,0x0000000117606358] = 1808
+ main code      [0x0000000117605d40,0x00000001176062d0] = 1424
+ stub code      [0x00000001176062d0,0x0000000117606348] = 120
+ oops           [0x0000000117606348,0x0000000117606358] = 16
+ mutable data [0x0000000105689be0,0x0000000105689d28] = 328
+ relocation     [0x0000000105689be0,0x0000000105689cc0] = 224
+ metadata       [0x0000000105689cc0,0x0000000105689d28] = 104
+ immutable data [0x0000000a428b4010,0x0000000a428b4394] = 900
+ dependencies   [0x0000000a428b4010,0x0000000a428b4020] = 16
+ nul chk table  [0x0000000a428b4020,0x0000000a428b4038] = 24
+ scopes pcs     [0x0000000a428b4038,0x0000000a428b4288] = 592
+ scopes data    [0x0000000a428b4288,0x0000000a428b4390] = 264
+
+[Disassembly]
+--------------------------------------------------------------------------------
+[Constant Pool (empty)]
+
+--------------------------------------------------------------------------------
+
+[Verified Entry Point]
+  # {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+  # parm0:    c_rarg1:c_rarg1 
+                        = 'java/lang/String'
+  # parm1:    c_rarg2   = int
+  #           [sp+0x80]  (sp of caller)
+ ;;  block B17 [0, 0]
+  0x0000000117605d40:   nop
+  0x0000000117605d44:   sub	x9, sp, #0x1c, lsl #12
+  0x0000000117605d48:   str	xzr, [x9]
+  0x0000000117605d4c:   sub	sp, sp, #0x80
+  0x0000000117605d50:   stp	x29, x30, [sp, #112]
+  0x0000000117605d54:   ldrb	w8, [x28, #1296]
+  0x0000000117605d58:   cbz	x8, 0x0000000117605d70
+ ;; 0x10CB89364
+  0x0000000117605d5c:   mov	x8, #0x9364                	// #37732
+                                                            ;   {runtime_call JavaThread::verify_cross_modify_fence_failure(JavaThread*)}
+  0x0000000117605d60:   movk	x8, #0xcb8, lsl #16
+  0x0000000117605d64:   movk	x8, #0x1, lsl #32
+  0x0000000117605d68:   mov	x0, x28
+  0x0000000117605d6c:   blr	x8
+  0x0000000117605d70:   ldr	w8, 0x0000000117605d94
+  0x0000000117605d74:   ldr	w9, [x28, #32]
+  0x0000000117605d78:   cmp	x8, x9
+  0x0000000117605d7c:   b.eq	0x0000000117605d98  // b.none
+ ;; 0x11B4ECC80
+  0x0000000117605d80:   mov	x8, #0xcc80                	// #52352
+                                                            ;   {runtime_call Stub::method_entry_barrier_stub (stub gen)}
+  0x0000000117605d84:   movk	x8, #0x1b4e, lsl #16
+  0x0000000117605d88:   movk	x8, #0x1, lsl #32
+  0x0000000117605d8c:   blr	x8
+  0x0000000117605d90:   b	0x0000000117605d98
+  0x0000000117605d94:   udf	#1
+ ;; 0x126401128
+  0x0000000117605d98:   mov	x0, #0x1128                	// #4392
+                                                            ;   {metadata(method data for {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test')}
+  0x0000000117605d9c:   movk	x0, #0x2640, lsl #16
+  0x0000000117605da0:   movk	x0, #0x1, lsl #32
+  0x0000000117605da4:   ldr	w3, [x0, #152]
+  0x0000000117605da8:   add	w3, w3, #0x2
+  0x0000000117605dac:   str	w3, [x0, #152]
+  0x0000000117605db0:   and	w3, w3, #0x7fe
+  0x0000000117605db4:   cmp	w3, #0x0
+ ;;   20 branch [EQ]   [CounterOverflowStub: 0x0000000a4436b278]
+  0x0000000117605db8:   b.eq	0x000000011760617c  // b.none;*aload_0 {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@0 (line 95)
+ ;;  block B18 [0, 0]
+ ;;  block B0 [0, 3]
+  0x0000000117605dbc:   ldr	xzr, [x1]                   ; implicit exception: dispatches to 0x000000011760619c
+                                                            ;*invokevirtual charAt {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+  0x0000000117605dc0:   mov	x0, x1
+ ;; 0x126401128
+  0x0000000117605dc4:   mov	x3, #0x1128                	// #4392
+                                                            ;   {metadata(method data for {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test')}
+  0x0000000117605dc8:   movk	x3, #0x2640, lsl #16
+  0x0000000117605dcc:   movk	x3, #0x1, lsl #32
+  0x0000000117605dd0:   ldr	w0, [x0, #8]
+  0x0000000117605dd4:   eor	x0, x0, #0x1f0000000000
+  0x0000000117605dd8:   ldr	x8, [x3, #232]
+  0x0000000117605ddc:   cmp	x0, x8
+  0x0000000117605de0:   b.ne	0x0000000117605df4  // b.any
+  0x0000000117605de4:   ldr	x8, [x3, #240]
+  0x0000000117605de8:   add	x8, x8, #0x1
+  0x0000000117605dec:   str	x8, [x3, #240]
+  0x0000000117605df0:   b	0x0000000117605e4c
+  0x0000000117605df4:   ldr	x8, [x3, #248]
+  0x0000000117605df8:   cmp	x0, x8
+  0x0000000117605dfc:   b.ne	0x0000000117605e10  // b.any
+  0x0000000117605e00:   ldr	x8, [x3, #256]
+  0x0000000117605e04:   add	x8, x8, #0x1
+  0x0000000117605e08:   str	x8, [x3, #256]
+  0x0000000117605e0c:   b	0x0000000117605e4c
+  0x0000000117605e10:   ldr	x8, [x3, #232]
+  0x0000000117605e14:   cbnz	x8, 0x0000000117605e28
+  0x0000000117605e18:   str	x0, [x3, #232]
+ ;; 0x1
+  0x0000000117605e1c:   orr	x8, xzr, #0x1
+  0x0000000117605e20:   str	x8, [x3, #240]
+  0x0000000117605e24:   b	0x0000000117605e4c
+  0x0000000117605e28:   ldr	x8, [x3, #248]
+  0x0000000117605e2c:   cbnz	x8, 0x0000000117605e40
+  0x0000000117605e30:   str	x0, [x3, #248]
+ ;; 0x1
+  0x0000000117605e34:   orr	x8, xzr, #0x1
+  0x0000000117605e38:   str	x8, [x3, #256]
+  0x0000000117605e3c:   b	0x0000000117605e4c
+  0x0000000117605e40:   ldr	x8, [x3, #224]
+  0x0000000117605e44:   add	x8, x8, #0x1
+  0x0000000117605e48:   str	x8, [x3, #224]
+ ;; 0x12600E800
+  0x0000000117605e4c:   mov	x0, #0xe800                	// #59392
+                                                            ;   {metadata(method data for {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String')}
+  0x0000000117605e50:   movk	x0, #0x2600, lsl #16
+  0x0000000117605e54:   movk	x0, #0x1, lsl #32
+  0x0000000117605e58:   ldr	w3, [x0, #152]
+  0x0000000117605e5c:   add	w3, w3, #0x2
+  0x0000000117605e60:   str	w3, [x0, #152]
+  0x0000000117605e64:   and	w3, w3, #0x1ffffe
+  0x0000000117605e68:   cmp	w3, #0x0
+ ;;   50 branch [EQ]   [CounterOverflowStub: 0x0000000a4436bd28]
+  0x0000000117605e6c:   b.eq	0x00000001176061b0  // b.none
+  0x0000000117605e70:   mov	x0, x1
+ ;; 0x12600E800
+  0x0000000117605e74:   mov	x3, #0xe800                	// #59392
+                                                            ;   {metadata(method data for {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String')}
+  0x0000000117605e78:   movk	x3, #0x2600, lsl #16
+  0x0000000117605e7c:   movk	x3, #0x1, lsl #32
+  0x0000000117605e80:   ldr	w0, [x0, #8]
+  0x0000000117605e84:   eor	x0, x0, #0x1f0000000000
+  0x0000000117605e88:   ldr	x8, [x3, #232]
+  0x0000000117605e8c:   cmp	x0, x8
+  0x0000000117605e90:   b.ne	0x0000000117605ea4  // b.any
+  0x0000000117605e94:   ldr	x8, [x3, #240]
+  0x0000000117605e98:   add	x8, x8, #0x1
+  0x0000000117605e9c:   str	x8, [x3, #240]
+  0x0000000117605ea0:   b	0x0000000117605efc
+  0x0000000117605ea4:   ldr	x8, [x3, #248]
+  0x0000000117605ea8:   cmp	x0, x8
+  0x0000000117605eac:   b.ne	0x0000000117605ec0  // b.any
+  0x0000000117605eb0:   ldr	x8, [x3, #256]
+  0x0000000117605eb4:   add	x8, x8, #0x1
+  0x0000000117605eb8:   str	x8, [x3, #256]
+  0x0000000117605ebc:   b	0x0000000117605efc
+  0x0000000117605ec0:   ldr	x8, [x3, #232]
+  0x0000000117605ec4:   cbnz	x8, 0x0000000117605ed8
+  0x0000000117605ec8:   str	x0, [x3, #232]
+ ;; 0x1
+  0x0000000117605ecc:   orr	x8, xzr, #0x1
+  0x0000000117605ed0:   str	x8, [x3, #240]
+  0x0000000117605ed4:   b	0x0000000117605efc
+  0x0000000117605ed8:   ldr	x8, [x3, #248]
+  0x0000000117605edc:   cbnz	x8, 0x0000000117605ef0
+  0x0000000117605ee0:   str	x0, [x3, #248]
+ ;; 0x1
+  0x0000000117605ee4:   orr	x8, xzr, #0x1
+  0x0000000117605ee8:   str	x8, [x3, #256]
+  0x0000000117605eec:   b	0x0000000117605efc
+  0x0000000117605ef0:   ldr	x8, [x3, #224]
+  0x0000000117605ef4:   add	x8, x8, #0x1
+  0x0000000117605ef8:   str	x8, [x3, #224]
+ ;; 0x12600ABF0
+  0x0000000117605efc:   mov	x0, #0xabf0                	// #44016
+                                                            ;   {metadata(method data for {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String')}
+  0x0000000117605f00:   movk	x0, #0x2600, lsl #16
+  0x0000000117605f04:   movk	x0, #0x1, lsl #32
+  0x0000000117605f08:   ldr	w3, [x0, #152]
+  0x0000000117605f0c:   add	w3, w3, #0x2
+  0x0000000117605f10:   str	w3, [x0, #152]
+  0x0000000117605f14:   and	w3, w3, #0x1ffffe
+  0x0000000117605f18:   cmp	w3, #0x0
+ ;;   70 branch [EQ]   [CounterOverflowStub: 0x0000000a4436c540]
+  0x0000000117605f1c:   b.eq	0x00000001176061d0  // b.none
+ ;; 0x12600ABF0
+  0x0000000117605f20:   mov	x0, #0xabf0                	// #44016
+                                                            ;   {metadata(method data for {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String')}
+  0x0000000117605f24:   movk	x0, #0x2600, lsl #16
+  0x0000000117605f28:   movk	x0, #0x1, lsl #32
+  0x0000000117605f2c:   ldr	x3, [x0, #240]
+  0x0000000117605f30:   add	x3, x3, #0x1
+  0x0000000117605f34:   str	x3, [x0, #240]              ;*ifeq {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::isLatin1@3 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;;  block B9 [6, 10]
+  0x0000000117605f38:   ldrsb	x0, [x1, #16]               ;*getfield coder {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::isLatin1@7 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+  0x0000000117605f3c:   cmp	w0, #0x0
+ ;; 0x12600ABF0
+  0x0000000117605f40:   mov	x0, #0xabf0                	// #44016
+                                                            ;   {metadata(method data for {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String')}
+  0x0000000117605f44:   movk	x0, #0x2600, lsl #16
+  0x0000000117605f48:   movk	x0, #0x1, lsl #32
+ ;; 0x100
+  0x0000000117605f4c:   orr	x8, xzr, #0x100
+ ;; 0x110
+  0x0000000117605f50:   mov	x9, #0x110                 	// #272
+  0x0000000117605f54:   csel	x3, x8, x9, ne  // ne = any
+  0x0000000117605f58:   ldr	x4, [x0, x3]
+  0x0000000117605f5c:   add	x4, x4, #0x1
+  0x0000000117605f60:   str	x4, [x0, x3]
+ ;;  100 branch [NE]   [B10] 
+  0x0000000117605f64:   b.ne	0x0000000117605f88  // b.any;*ifne {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::isLatin1@10 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;;  block B11 [13, 14]
+ ;; 0x12600ABF0
+  0x0000000117605f68:   mov	x0, #0xabf0                	// #44016
+                                                            ;   {metadata(method data for {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String')}
+  0x0000000117605f6c:   movk	x0, #0x2600, lsl #16
+  0x0000000117605f70:   movk	x0, #0x1, lsl #32
+  0x0000000117605f74:   ldr	x3, [x0, #288]
+  0x0000000117605f78:   add	x3, x3, #0x1
+  0x0000000117605f7c:   str	x3, [x0, #288]
+ ;; 0x1
+  0x0000000117605f80:   orr	w0, wzr, #0x1
+ ;;  116 branch [AL]   [B12] 
+  0x0000000117605f84:   b	0x0000000117605f8c          ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::isLatin1@14 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;;  block B10 [17, 18]
+ ;; 0x0
+  0x0000000117605f88:   movz	w0, #0x0, lsl #16           ;*ireturn {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::isLatin1@18 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;;  block B12 [18, 4]
+  0x0000000117605f8c:   and	w0, w0, #0x1
+ ;;  block B7 [4, 4]
+  0x0000000117605f90:   cmp	w0, #0x0
+ ;; 0x12600E800
+  0x0000000117605f94:   mov	x0, #0xe800                	// #59392
+                                                            ;   {metadata(method data for {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String')}
+  0x0000000117605f98:   movk	x0, #0x2600, lsl #16
+  0x0000000117605f9c:   movk	x0, #0x1, lsl #32
+ ;; 0x110
+  0x0000000117605fa0:   mov	x8, #0x110                 	// #272
+ ;; 0x120
+  0x0000000117605fa4:   mov	x9, #0x120                 	// #288
+  0x0000000117605fa8:   csel	x3, x8, x9, eq  // eq = none
+  0x0000000117605fac:   ldr	x4, [x0, x3]
+  0x0000000117605fb0:   add	x4, x4, #0x1
+  0x0000000117605fb4:   str	x4, [x0, x3]
+ ;;  144 branch [EQ]   [B6] 
+  0x0000000117605fb8:   b.eq	0x00000001176060a0  // b.none;*ifeq {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::charAt@4 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;;  block B5 [7, 5]
+  0x0000000117605fbc:   ldr	w1, [x1, #20]
+  0x0000000117605fc0:   lsl	x1, x1, #3                  ;*getfield value {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::charAt@8 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; 0x12600E800
+  0x0000000117605fc4:   mov	x0, #0xe800                	// #59392
+                                                            ;   {metadata(method data for {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String')}
+  0x0000000117605fc8:   movk	x0, #0x2600, lsl #16
+  0x0000000117605fcc:   movk	x0, #0x1, lsl #32
+  0x0000000117605fd0:   ldr	x8, [x0, #304]
+  0x0000000117605fd4:   add	x8, x8, #0x1
+  0x0000000117605fd8:   str	x8, [x0, #304]
+ ;; 0x12600E998
+  0x0000000117605fdc:   mov	x0, #0xe998                	// #59800
+                                                            ;   {metadata(method data for {method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1')}
+  0x0000000117605fe0:   movk	x0, #0x2600, lsl #16
+  0x0000000117605fe4:   movk	x0, #0x1, lsl #32
+  0x0000000117605fe8:   ldr	w3, [x0, #152]
+  0x0000000117605fec:   add	w3, w3, #0x2
+  0x0000000117605ff0:   str	w3, [x0, #152]
+  0x0000000117605ff4:   and	w3, w3, #0x1ffffe
+  0x0000000117605ff8:   cmp	w3, #0x0
+ ;;  166 branch [EQ]   [CounterOverflowStub: 0x0000000a4436ede8]
+  0x0000000117605ffc:   b.eq	0x00000001176061f0  // b.none
+  0x0000000117606000:   ldr	w0, [x1, #12]               ; implicit exception: dispatches to 0x0000000117606210
+                                                            ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.StringLatin1::charAt@2 (line 47)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; 0x12600E998
+  0x0000000117606004:   mov	x3, #0xe998                	// #59800
+                                                            ;   {metadata(method data for {method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1')}
+  0x0000000117606008:   movk	x3, #0x2600, lsl #16
+  0x000000011760600c:   movk	x3, #0x1, lsl #32
+  0x0000000117606010:   ldr	x8, [x3, #224]
+  0x0000000117606014:   add	x8, x8, #0x1
+  0x0000000117606018:   str	x8, [x3, #224]
+ ;; 0x12600EAD0
+  0x000000011760601c:   mov	x3, #0xead0                	// #60112
+                                                            ;   {metadata(method data for {method} {0x00001f0000577380} 'checkIndex' '(II)V' in 'java/lang/String')}
+  0x0000000117606020:   movk	x3, #0x2600, lsl #16
+  0x0000000117606024:   movk	x3, #0x1, lsl #32
+  0x0000000117606028:   ldr	w4, [x3, #152]
+  0x000000011760602c:   add	w4, w4, #0x2
+  0x0000000117606030:   str	w4, [x3, #152]
+  0x0000000117606034:   and	w4, w4, #0x1ffffe
+  0x0000000117606038:   cmp	w4, #0x0
+ ;;  186 branch [EQ]   [CounterOverflowStub: 0x0000000a4436f698]
+  0x000000011760603c:   b.eq	0x0000000117606224  // b.none
+ ;; 0x12600EAD0
+  0x0000000117606040:   mov	x3, #0xead0                	// #60112
+                                                            ;   {metadata(method data for {method} {0x00001f0000577380} 'checkIndex' '(II)V' in 'java/lang/String')}
+  0x0000000117606044:   movk	x3, #0x2600, lsl #16
+  0x0000000117606048:   movk	x3, #0x1, lsl #32
+  0x000000011760604c:   ldr	x8, [x3, #224]
+  0x0000000117606050:   add	x8, x8, #0x1
+  0x0000000117606054:   str	x8, [x3, #224]
+ ;; 0xA42D002D0
+  0x0000000117606058:   mov	x3, #0x40a0                	// #16544
+                                                            ;   {oop(a 'jdk/internal/util/Preconditions$4'{0x0000000300e040a0})}
+  0x000000011760605c:   movk	x3, #0xe0, lsl #16
+  0x0000000117606060:   movk	x3, #0x3, lsl #32
+ ;; 0x0
+  0x0000000117606064:   movz	w3, #0x0, lsl #16
+  0x0000000117606068:   cmp	w2, w3
+ ;;  198 branch [LT]   [DeoptimizeStub: 0x0000000a4436fc88] [bci:5]
+  0x000000011760606c:   b.lt	0x0000000117606244  // b.tstop
+  0x0000000117606070:   cmp	w2, w0
+ ;;  202 branch [GE]   [DeoptimizeStub: 0x0000000a44f18028] [bci:5]
+  0x0000000117606074:   b.ge	0x0000000117606260  // b.tcont
+  0x0000000117606078:   mov	x3, x2                      ;*invokestatic checkIndex {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::checkIndex@5 (line 5198)
+                                                            ; - java.lang.StringLatin1::charAt@3 (line 47)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+  0x000000011760607c:   cmp	w0, w2
+ ;;  208 branch [BE]   [RangeCheckStub: 0x0000000a44f183c0] [bci:8]
+  0x0000000117606080:   b.ls	0x000000011760627c  // b.plast
+  0x0000000117606084:   add	w2, w2, #0x10
+  0x0000000117606088:   ldrsb	x1, [x1, x2, lsl #0]        ;*baload {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.StringLatin1::charAt@8 (line 48)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+  0x000000011760608c:   and	w1, w1, #0xff
+ ;; 0xFFFF
+  0x0000000117606090:   orr	w2, wzr, #0xffff
+  0x0000000117606094:   and	w1, w1, w2
+  0x0000000117606098:   and	w1, w1, w2
+ ;;  224 branch [AL]   [B3] 
+  0x000000011760609c:   b	0x00000001176060c0          ;*sipush {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@5 (line 95)
+ ;;  block B6 [16, 5]
+  0x00000001176060a0:   ldr	w1, [x1, #20]
+  0x00000001176060a4:   lsl	x1, x1, #3                  ;*getfield value {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::charAt@17 (line 1787)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+  0x00000001176060a8:   bl	0x000000011b50dd00          ; ImmutableOopMap {}
+                                                            ;*invokestatic charAt {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::charAt@21 (line 1787)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {static_call}
+  0x00000001176060ac:   nop                                 ;   {post_call_nop}
+  0x00000001176060b0:   movk	xzr, #0x464
+  0x00000001176060b4:   movk	xzr, #0x0                   ;*invokestatic charAt {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::charAt@21 (line 1787)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+  0x00000001176060b8:   and	w3, w0, #0xffff
+  0x00000001176060bc:   mov	x1, x3                      ;*sipush {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@5 (line 95)
+ ;;  block B3 [5, 8]
+  0x00000001176060c0:   cmp	w1, #0x80
+ ;; 0x126401128
+  0x00000001176060c4:   mov	x3, #0x1128                	// #4392
+                                                            ;   {metadata(method data for {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test')}
+  0x00000001176060c8:   movk	x3, #0x2640, lsl #16
+  0x00000001176060cc:   movk	x3, #0x1, lsl #32
+ ;; 0x120
+  0x00000001176060d0:   mov	x8, #0x120                 	// #288
+ ;; 0x110
+  0x00000001176060d4:   mov	x9, #0x110                 	// #272
+  0x00000001176060d8:   csel	x0, x8, x9, gt
+  0x00000001176060dc:   ldr	x4, [x3, x0]
+  0x00000001176060e0:   add	x4, x4, #0x1
+  0x00000001176060e4:   str	x4, [x3, x0]
+ ;;  258 branch [GT]   [B1] 
+  0x00000001176060e8:   b.gt	0x0000000117606104          ;*if_icmple {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)
+ ;;  block B2 [19, 19]
+  0x00000001176060ec:   ldp	x29, x30, [sp, #112]
+  0x00000001176060f0:   add	sp, sp, #0x80
+  0x00000001176060f4:   ldr	x8, [x28, #40]              ;   {poll_return}
+  0x00000001176060f8:   cmp	sp, x8
+  0x00000001176060fc:   b.hi	0x00000001176062a4  // b.pmore
+  0x0000000117606100:   ret                                 ;*return {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@19 (line 97)
+ ;;  block B1 [11, 18]
+ ;;  268 move [metadata:0x0000000000000000|M] [c_rarg3|M] [patch_normal] [bci:11]
+  0x0000000117606104:   bl	0x000000011b48ca00          ; ImmutableOopMap {}
+                                                            ;*new {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@11 (line 96)
+                                                            ;   {runtime_call load_mirror_patching_blob (C1 runtime)}
+  0x0000000117606108:   ldr	x0, [x28, #440]
+  0x000000011760610c:   add	x11, x0, #0x28
+  0x0000000117606110:   ldr	x8, [x28, #456]
+  0x0000000117606114:   cmp	x11, x8
+  0x0000000117606118:   b.hi	0x00000001176062b0  // b.pmore
+  0x000000011760611c:   str	x11, [x28, #440]
+ ;; 0x1
+  0x0000000117606120:   orr	x10, xzr, #0x1
+  0x0000000117606124:   str	x10, [x0]
+  0x0000000117606128:   eor	x10, x3, #0x1f0000000000
+ ;; merged str pair
+  0x000000011760612c:   stp	w10, wzr, [x0, #8]
+  0x0000000117606130:   add	x10, x0, #0x10
+ ;; zero_words (count = 3) {
+  0x0000000117606134:   str	xzr, [x10]
+  0x0000000117606138:   stp	xzr, xzr, [x10, #8]
+ ;; } zero_words
+  0x000000011760613c:   dmb	ishst
+  0x0000000117606140:   mov	x29, x0                     ;*new {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@11 (line 96)
+  0x0000000117606144:   mov	x1, x29
+ ;; 0x126401128
+  0x0000000117606148:   mov	x0, #0x1128                	// #4392
+                                                            ;   {metadata(method data for {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test')}
+  0x000000011760614c:   movk	x0, #0x2640, lsl #16
+  0x0000000117606150:   movk	x0, #0x1, lsl #32
+  0x0000000117606154:   ldr	x8, [x0, #304]
+  0x0000000117606158:   add	x8, x8, #0x1
+  0x000000011760615c:   str	x8, [x0, #304]
+  0x0000000117606160:   mov	x1, x29                     ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@15 (line 96)
+  0x0000000117606164:   bl	0x000000011b50d900          ; ImmutableOopMap {rfp=Oop }
+                                                            ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@15 (line 96)
+                                                            ;   {optimized virtual_call}
+  0x0000000117606168:   nop                                 ;   {post_call_nop}
+  0x000000011760616c:   movk	xzr, #0x520
+  0x0000000117606170:   movk	xzr, #0x200                 ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@15 (line 96)
+  0x0000000117606174:   mov	x0, x29
+  0x0000000117606178:   b	0x00000001176062c4
+ ;; CounterOverflowStub slow case
+ ;; 0x126400328
+  0x000000011760617c:   mov	x8, #0x328                 	// #808
+                                                            ;   {metadata({method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test')}
+  0x0000000117606180:   movk	x8, #0x2640, lsl #16
+  0x0000000117606184:   movk	x8, #0x1, lsl #32
+  0x0000000117606188:   str	x8, [sp, #8]
+ ;; 0xFFFFFFFFFFFFFFFF
+  0x000000011760618c:   mov	x8, #0xffffffffffffffff    	// #-1
+  0x0000000117606190:   str	x8, [sp]
+  0x0000000117606194:   bl	0x000000011b48c3c0          ; ImmutableOopMap {c_rarg1=Oop }
+                                                            ;*synchronization entry
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@-1 (line 95)
+                                                            ;   {runtime_call counter_overflow_blob (C1 runtime)}
+  0x0000000117606198:   b	0x0000000117605dbc
+ ;; ImplicitNullCheckStub slow case
+  0x000000011760619c:   bl	0x000000011b48fc40          ; ImmutableOopMap {c_rarg1=Oop }
+                                                            ;*invokevirtual charAt {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {runtime_call throw_null_pointer_exception_blob (C1 runtime)}
+ ;; should not reach here
+ ;; 0x10D7EEBE4
+  0x00000001176061a0:   mov	x0, #0xebe4                	// #60388
+                                                            ;   {external_word}
+  0x00000001176061a4:   movk	x0, #0xd7e, lsl #16
+  0x00000001176061a8:   movk	x0, #0x1, lsl #32
+  0x00000001176061ac:   dcps1	#0xdeae
+ ;; CounterOverflowStub slow case
+ ;; 0x1F00001C28F8
+  0x00000001176061b0:   mov	x8, #0x28f8                	// #10488
+                                                            ;   {metadata({method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String')}
+  0x00000001176061b4:   movk	x8, #0x1c, lsl #16
+  0x00000001176061b8:   movk	x8, #0x1f00, lsl #32
+  0x00000001176061bc:   str	x8, [sp, #8]
+ ;; 0xFFFFFFFFFFFFFFFF
+  0x00000001176061c0:   mov	x8, #0xffffffffffffffff    	// #-1
+  0x00000001176061c4:   str	x8, [sp]
+  0x00000001176061c8:   bl	0x000000011b48c3c0          ; ImmutableOopMap {c_rarg1=Oop }
+                                                            ;*synchronization entry
+                                                            ; - java.lang.String::charAt@-1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {runtime_call counter_overflow_blob (C1 runtime)}
+  0x00000001176061cc:   b	0x0000000117605e70
+ ;; CounterOverflowStub slow case
+ ;; 0x1F00005757F0
+  0x00000001176061d0:   mov	x8, #0x57f0                	// #22512
+                                                            ;   {metadata({method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String')}
+  0x00000001176061d4:   movk	x8, #0x57, lsl #16
+  0x00000001176061d8:   movk	x8, #0x1f00, lsl #32
+  0x00000001176061dc:   str	x8, [sp, #8]
+ ;; 0xFFFFFFFFFFFFFFFF
+  0x00000001176061e0:   mov	x8, #0xffffffffffffffff    	// #-1
+  0x00000001176061e4:   str	x8, [sp]
+  0x00000001176061e8:   bl	0x000000011b48c3c0          ; ImmutableOopMap {c_rarg1=Oop }
+                                                            ;*synchronization entry
+                                                            ; - java.lang.String::isLatin1@-1 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {runtime_call counter_overflow_blob (C1 runtime)}
+  0x00000001176061ec:   b	0x0000000117605f20
+ ;; CounterOverflowStub slow case
+ ;; 0x1F00001DD188
+  0x00000001176061f0:   mov	x8, #0xd188                	// #53640
+                                                            ;   {metadata({method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1')}
+  0x00000001176061f4:   movk	x8, #0x1d, lsl #16
+  0x00000001176061f8:   movk	x8, #0x1f00, lsl #32
+  0x00000001176061fc:   str	x8, [sp, #8]
+ ;; 0xFFFFFFFFFFFFFFFF
+  0x0000000117606200:   mov	x8, #0xffffffffffffffff    	// #-1
+  0x0000000117606204:   str	x8, [sp]
+  0x0000000117606208:   bl	0x000000011b48c3c0          ; ImmutableOopMap {c_rarg1=Oop }
+                                                            ;*synchronization entry
+                                                            ; - java.lang.StringLatin1::charAt@-1 (line 47)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {runtime_call counter_overflow_blo
+
+...
+Output overflow:
+JT Harness has limited the test output to the text
+at the beginning and the end, so that you can see how the
+test began, and how it completed.
+
+If you need to see more of the output from the test,
+set the system property javatest.maxOutputSize to a higher
+value. The current value is 100000
+...
+
+89c2e [type=12(metadata) addr=0x0000000117606148 offset=68 data=1] | [metadata_addr=0x0000000105689cc0 *=0x0000000126401128]metadata_value=0x0000000126401128: method data for {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+         @0x0000000105689c30: 1807
+relocInfo@0x0000000105689c30 [type=3(opt_virtual_call) addr=0x0000000117606164 offset=28] | [destination=0x000000011b50d900 metadata=0x0000000000000000] Blob::resolve_opt_virtual_call_blob (shared runtime)
+         @0x0000000105689c32: 8001
+relocInfo@0x0000000105689c32 [type=16(post_call_nop) addr=0x0000000117606168 offset=4]
+         @0x0000000105689c34: 78026005
+relocInfo@0x0000000105689c36 [type=12(metadata) addr=0x000000011760617c offset=20 data=2] | [metadata_addr=0x0000000105689cc8 *=0x0000000126400328]metadata_value=0x0000000126400328: {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+         @0x0000000105689c38: 3006
+relocInfo@0x0000000105689c38 [type=6(runtime_call) addr=0x0000000117606194 offset=24] | [destination=0x000000011b48c3c0] counter_overflow_blob (C1 runtime)
+         @0x0000000105689c3a: 3002
+relocInfo@0x0000000105689c3a [type=6(runtime_call) addr=0x000000011760619c offset=8] | [destination=0x000000011b48fc40] throw_null_pointer_exception_blob (C1 runtime)
+         @0x0000000105689c3c: 7c02000000013801
+relocInfo@0x0000000105689c42 [type=7(external_word) addr=0x00000001176061a0 offset=4 data={00000001}] | [target=0x000000010d7eebe4]
+         @0x0000000105689c44: 78056004
+relocInfo@0x0000000105689c46 [type=12(metadata) addr=0x00000001176061b0 offset=16 data=5] | [metadata_addr=0x0000000105689ce0 *=0x00001f00001c28f8]metadata_value=0x00001f00001c28f8: {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String'
+         @0x0000000105689c48: 3006
+relocInfo@0x0000000105689c48 [type=6(runtime_call) addr=0x00000001176061c8 offset=24] | [destination=0x000000011b48c3c0] counter_overflow_blob (C1 runtime)
+         @0x0000000105689c4a: 78066002
+relocInfo@0x0000000105689c4c [type=12(metadata) addr=0x00000001176061d0 offset=8 data=6] | [metadata_addr=0x0000000105689ce8 *=0x00001f00005757f0]metadata_value=0x00001f00005757f0: {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String'
+         @0x0000000105689c4e: 3006
+relocInfo@0x0000000105689c4e [type=6(runtime_call) addr=0x00000001176061e8 offset=24] | [destination=0x000000011b48c3c0] counter_overflow_blob (C1 runtime)
+         @0x0000000105689c50: 78096002
+relocInfo@0x0000000105689c52 [type=12(metadata) addr=0x00000001176061f0 offset=8 data=9] | [metadata_addr=0x0000000105689d00 *=0x00001f00001dd188]metadata_value=0x00001f00001dd188: {method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1'
+         @0x0000000105689c54: 3006
+relocInfo@0x0000000105689c54 [type=6(runtime_call) addr=0x0000000117606208 offset=24] | [destination=0x000000011b48c3c0] counter_overflow_blob (C1 runtime)
+         @0x0000000105689c56: 3002
+relocInfo@0x0000000105689c56 [type=6(runtime_call) addr=0x0000000117606210 offset=8] | [destination=0x000000011b48fc40] throw_null_pointer_exception_blob (C1 runtime)
+         @0x0000000105689c58: 7c02000000013801
+relocInfo@0x0000000105689c5e [type=7(external_word) addr=0x0000000117606214 offset=4 data={00000001}] | [target=0x000000010d7eebe4]
+         @0x0000000105689c60: 780a6004
+relocInfo@0x0000000105689c62 [type=12(metadata) addr=0x0000000117606224 offset=16 data=10] | [metadata_addr=0x0000000105689d08 *=0x00001f0000577380]metadata_value=0x00001f0000577380: {method} {0x00001f0000577380} 'checkIndex' '(II)V' in 'java/lang/String'
+         @0x0000000105689c64: 3006
+relocInfo@0x0000000105689c64 [type=6(runtime_call) addr=0x000000011760623c offset=24] | [destination=0x000000011b48c3c0] counter_overflow_blob (C1 runtime)
+         @0x0000000105689c66: 3004
+relocInfo@0x0000000105689c66 [type=6(runtime_call) addr=0x000000011760624c offset=16] | [destination=0x000000011b48d180] deoptimize_blob (C1 runtime)
+         @0x0000000105689c68: 7c02000000013801
+relocInfo@0x0000000105689c6e [type=7(external_word) addr=0x0000000117606250 offset=4 data={00000001}] | [target=0x000000010d7eebe4]
+         @0x0000000105689c70: 3006
+relocInfo@0x0000000105689c70 [type=6(runtime_call) addr=0x0000000117606268 offset=24] | [destination=0x000000011b48d180] deoptimize_blob (C1 runtime)
+         @0x0000000105689c72: 7c02000000013801
+relocInfo@0x0000000105689c78 [type=7(external_word) addr=0x000000011760626c offset=4 data={00000001}] | [target=0x000000010d7eebe4]
+         @0x0000000105689c7a: 3006
+relocInfo@0x0000000105689c7a [type=6(runtime_call) addr=0x0000000117606284 offset=24] | [destination=0x000000011b490240] throw_range_check_failed_blob (C1 runtime)
+         @0x0000000105689c7c: 7c02000000013804
+relocInfo@0x0000000105689c82 [type=7(external_word) addr=0x0000000117606294 offset=16 data={00000001}] | [target=0x000000010d7eebe4]
+         @0x0000000105689c84: 786c4004
+relocInfo@0x0000000105689c86 [type=8(internal_word) addr=0x00000001176062a4 offset=16 data=108] | [target=0x00000001176060f4]
+         @0x0000000105689c88: 3002
+relocInfo@0x0000000105689c88 [type=6(runtime_call) addr=0x00000001176062ac offset=8] | [destination=0x000000011b50ef80] SafepointBlob
+         @0x0000000105689c8a: 3001
+relocInfo@0x0000000105689c8a [type=6(runtime_call) addr=0x00000001176062b0 offset=4] | [destination=0x000000011b48f580] fast_new_instance_blob (C1 runtime)
+         @0x0000000105689c8c: 3007
+relocInfo@0x0000000105689c8c [type=6(runtime_call) addr=0x00000001176062cc offset=28] | [destination=0x000000011b440000] unwind_exception_blob (C1 runtime)
+         @0x0000000105689c8e: 0001
+relocInfo@0x0000000105689c8e [type=0(none) addr=0x00000001176062d0 offset=4]
+         @0x0000000105689c90: 7c01ff262800
+relocInfo@0x0000000105689c94 [type=5(static_stub) addr=0x00000001176062d0 offset=0 data=-218] | [static_call=0x00000001176060a8]
+         @0x0000000105689c96: 780b6001
+relocInfo@0x0000000105689c98 [type=12(metadata) addr=0x00000001176062d4 offset=4 data=11] | [metadata_addr=0x0000000105689d10 *=0x0000000000000000]
+         @0x0000000105689c9a: 7c01ff266805
+relocInfo@0x0000000105689c9e [type=13(trampoline_stub) addr=0x00000001176062e8 offset=20 data=-218] | [trampoline owner=0x00000001176060a8]
+         @0x0000000105689ca0: 7c01fef76804
+relocInfo@0x0000000105689ca4 [type=13(trampoline_stub) addr=0x00000001176062f8 offset=16 data=-265] | [trampoline owner=0x0000000117606164]
+         @0x0000000105689ca6: 7c01fef72804
+relocInfo@0x0000000105689caa [type=5(static_stub) addr=0x0000000117606308 offset=16 data=-265] | [static_call=0x0000000117606164]
+         @0x0000000105689cac: 780c6001
+relocInfo@0x0000000105689cae [type=12(metadata) addr=0x000000011760630c offset=4 data=12] | [metadata_addr=0x0000000105689d18 *=0x0000000000000000]
+         @0x0000000105689cb0: 3008
+relocInfo@0x0000000105689cb0 [type=6(runtime_call) addr=0x000000011760632c offset=32] | [destination=0x000000011b48e540] handle_exception_from_callee_blob (C1 runtime)
+         @0x0000000105689cb2: 7c02000000013801
+relocInfo@0x0000000105689cb8 [type=7(external_word) addr=0x0000000117606330 offset=4 data={00000001}] | [target=0x000000010d7eebe4]
+         @0x0000000105689cba: 3004
+relocInfo@0x0000000105689cba [type=6(runtime_call) addr=0x0000000117606340 offset=16] | [destination=0x000000011b50f180] DeoptimizationBlob
+         @0x0000000105689cbc: 0000
+relocInfo@0x0000000105689cbc [type=0(none) addr=0x0000000117606340 offset=0]
+         @0x0000000105689cbe: 0000
+relocInfo@0x0000000105689cbe [type=0(none) addr=0x0000000117606340 offset=0]
+         @0x0000000105689cc0: 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Dependencies:
+Dependency of type evol_method
+  method  = *{method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+Dependency of type evol_method
+  method  = {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String'
+Dependency of type evol_method
+  method  = {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String'
+Dependency of type evol_method
+  method  = *{method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1'
+Dependency of type evol_method
+  method  = *{method} {0x00001f0000577380} 'checkIndex' '(II)V' in 'java/lang/String'
+Dependency of type evol_method
+  method  = *{method} {0x00001f00002194e0} 'checkIndex' '(IILjava/util/function/BiFunction;)I' in 'jdk/internal/util/Preconditions'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ExceptionHandlerTable (size = 0 bytes)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ImplicitExceptionTable (size = 2 entries, 20 bytes):
+{
+   < 0x0000000117605dbc, 0x000000011760619c > < 0x0000000117606000, 0x0000000117606210 > 
+}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded oops:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x0000000300e040a0 a 'jdk/internal/util/Preconditions$4'{0x0000000300e040a0}
+#2: 0x000000040061fab8 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x000000040061fab8}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded metadata:
+# 0: 0x0000000000000000 nullptr-oop
+# 1: 0x0000000126401128 method data for {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+# 2: 0x0000000126400328 {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+# 3: 0x000000012600e800 method data for {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String'
+# 4: 0x000000012600abf0 method data for {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String'
+# 5: 0x00001f00001c28f8 {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String'
+# 6: 0x00001f00005757f0 {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String'
+# 7: 0x000000012600e998 method data for {method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1'
+# 8: 0x000000012600ead0 method data for {method} {0x00001f0000577380} 'checkIndex' '(II)V' in 'java/lang/String'
+# 9: 0x00001f00001dd188 {method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1'
+#10: 0x00001f0000577380 {method} {0x00001f0000577380} 'checkIndex' '(II)V' in 'java/lang/String'
+#11: 0x0000000000000000 nullptr-oop
+#12: 0x0000000000000000 nullptr-oop
+#13: 0x00001f00002194e0 {method} {0x00001f00002194e0} 'checkIndex' '(IILjava/util/function/BiFunction;)I' in 'jdk/internal/util/Preconditions'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+============================= C2-compiled nmethod ==============================
+#r020 c_rarg1:c_rarg1   : parm 0: instptr:java/lang/String (java/io/Serializable,java/lang/Comparable,java/lang/CharSequence,java/lang/constant/Constable,java/lang/constant/ConstantDesc):BotPTR:exact+0,iid=bot
+#r022 c_rarg2   : parm 1: int
+# -- Old r31_sp -- Framesize: 48 --
+#r223 r31_sp+44: in_preserve
+#r222 r31_sp+40: return address
+#r221 r31_sp+36: in_preserve
+#r220 r31_sp+32: saved fp register
+#r219 r31_sp+28: pad2, stack alignment
+#r218 r31_sp+24: pad2, stack alignment
+#r217 r31_sp+20: Fixed slot 1
+#r216 r31_sp+16: Fixed slot 0
+#r227 r31_sp+12: spill
+#r226 r31_sp+ 8: spill
+#r225 r31_sp+ 4: spill
+#r224 r31_sp+ 0: spill
+#
+----------------------- MetaData before Compile_id = 14 ------------------------
+{method}
+ - this oop:          0x0000000126400328
+ - method holder:     'compiler/c2/aarch64/TestTrampoline$Test'
+ - constants:         0x0000000126400030 constant pool [40] {0x0000000126400030} for 'compiler/c2/aarch64/TestTrampoline$Test' cache=0x0000000126400568
+ - access:            0xa  private static 
+ - flags:             0x4080  queued_for_compilation has_loops_flag_init 
+ - name:              'test'
+ - signature:         '(Ljava/lang/String;I)V'
+ - max stack:         3
+ - max locals:        2
+ - size of params:    2
+ - method size:       14
+ - highest level:     3
+ - vtable index:      -2
+ - i2i entry:         0x000000011b444540
+ - adapters:          AHE@0x0000000a42888410: 0xba i2c: 0x000000011b5135c0 c2i: 0x000000011b513614 c2iUV: 0x000000011b5135f0 c2iNCI: 0x000000011b51364c
+ - compiled entry     0x0000000117605d40
+ - code size:         20
+ - code start:        0x0000000126400308
+ - code end (excl):   0x000000012640031c
+ - method data:       0x0000000126401128
+ - checked ex length: 0
+ - linenumber start:  0x000000012640031c
+ - localvar length:   0
+ - compiled code: nmethod
+6147   12       3       compiler.c2.aarch64.TestTrampoline$Test::test (20 bytes)
+
+------------------------ OptoAssembly for Compile_id = 14 -----------------------
+#
+#  void ( instptr:java/lang/String (java/io/Serializable,java/lang/Comparable,java/lang/CharSequence,java/lang/constant/Constable,java/lang/constant/ConstantDesc):BotPTR:exact+0,iid=bot, int )
+#
+000     N1: #	out( B1 ) <- in( B12 B10 B13 B8 B9 B11 B7 )  Freq: 1
+
+000     B1: #	out( B12 B2 ) <- BLOCK HEAD IS JUNK  Freq: 1
+000     # stack bang size=48
+	sub  sp, sp, #48
+	stp  rfp, lr, [sp, #32]
+	ldr  rscratch1, [guard]
+	dmb ishld
+	ldr  rscratch2, [rthread, #thread_disarmed_guard_value_offset]
+	cmp  rscratch1, rscratch2
+	b.eq skip
+	blr #nmethod_entry_barrier_stub
+	b skip
+	guard: int
+	
+	skip:
+	
+03c     ldrsbw  R11, [R1, #16]	# byte ! Field: java/lang/String.coder (constant)
+040     NullCheck R1
+
+040     B2: #	out( B10 B3 ) <- in( B1 )  Freq: 0.999999
+040 +   ldrw  R10, [R1, #20]	# compressed ptr ! Field: java/lang/String.value (constant)
+044 +   decode_heap_oop R12, R10
+048     cbwne   R11, B10  P=0.000000 C=6369.000000
+
+04c     B3: #	out( B13 B4 ) <- in( B2 )  Freq: 0.999999
+04c     ldrw  R29, [R12, #12]	# range
+050     NullCheck R12
+
+050     B4: #	out( B8 B5 ) <- in( B3 )  Freq: 0.999997
+050 +   cmpw  R2, R29	# unsigned
+054     bhs  B8	# unsigned  P=0.000001 C=-1.000000
+
+058     B5: #	out( B9 B6 ) <- in( B4 )  Freq: 0.999996
+058 +   # castII of R2
+058     add R10, R12, R2, sxtw	# ptr
+05c +   cmpw  R2, R29	# unsigned
+060     bhs  B9	# unsigned  P=0.000001 C=-1.000000
+
+064     B6: #	out( B11 B7 ) <- in( B5 )  Freq: 0.999995
+064 +   ldrbw  R29, [R10, #16]	# byte
+068 +   cmpw  R29, #128
+06c     bgt  B11  P=0.000000 C=5375.000000
+
+070     B7: #	out( N1 ) <- in( B6 )  Freq: 0.999995
+070     # pop frame 48
+	ldp  lr, rfp, [sp,#32]
+	add  sp, sp, #48
+	# test polling word
+	ldr  rscratch1, [rthread],#40
+	cmp  sp, rscratch1
+	bhi #slow_path
+084 +   ret	// return register
+
+088     B8: #	out( N1 ) <- in( B4 )  Freq: 1.01328e-06
+088 +   mov R1, #-28	# int
+08c     spill R2 -> [sp, #4]	# spill size = 32
+090 +   spill R12 -> [sp, #8]	# spill size = 64
+094     call,static 0x000000011b48b440 	// ==>  wrapper for: uncommon_trap(reason='range_check' action='make_not_entrant' debug_id='0')
+        # java.lang.String::checkIndex @ bci:5 (line 5198) L[0]=_ L[1]=_ STK[0]=r31_sp + #4 STK[1]=R29 STK[2]=#Ptr0x0000000a44f1ad80
+        # java.lang.StringLatin1::charAt @ bci:3 (line 47) L[0]=r31_sp + #8 L[1]=r31_sp + #4
+        # java.lang.String::charAt @ bci:12 (line 1785) L[0]=_ L[1]=_
+        # compiler.c2.aarch64.TestTrampoline$Test::test @ bci:2 (line 95) L[0]=_ L[1]=_
+        # OopMap {[8]=Oop off=152/0x98}
+0a4     ShouldNotReachHere
+
+0b4     B9: #	out( N1 ) <- in( B5 )  Freq: 1.01328e-06
+0b4 +   spill R12 -> [sp, #0]	# spill size = 64
+0b8 +   mov R1, #-28	# int
+0bc     spill R2 -> R29	# spill size = 32
+0c0     call,static 0x000000011b48b440 	// ==>  wrapper for: uncommon_trap(reason='range_check' action='make_not_entrant' debug_id='0')
+        # java.lang.StringLatin1::charAt @ bci:8 (line 48) L[0]=_ L[1]=_ STK[0]=r31_sp + #0 STK[1]=R29
+        # java.lang.String::charAt @ bci:12 (line 1785) L[0]=_ L[1]=_
+        # compiler.c2.aarch64.TestTrampoline$Test::test @ bci:2 (line 95) L[0]=_ L[1]=_
+        # OopMap {[0]=Oop off=196/0xc4}
+0d0     ShouldNotReachHere
+
+0e0     B10: #	out( N1 ) <- in( B2 )  Freq: 4.99999e-07
+0e0 +   spill R1 -> R29	# spill size = 64
+0e4 +   spill R2 -> [sp, #0]	# spill size = 32
+0e8 +   spill R11 -> [sp, #4]	# spill size = 32
+0e8 +   mov R1, #-187	# int
+0ec     call,static 0x000000011b48b440 	// ==>  wrapper for: uncommon_trap(reason='unstable_if' action='reinterpret' debug_id='0')
+        # java.lang.String::isLatin1 @ bci:10 (line 5187) L[0]=_ STK[0]=r31_sp + #4
+        # java.lang.String::charAt @ bci:1 (line 1784) L[0]=R29 L[1]=r31_sp + #0
+        # compiler.c2.aarch64.TestTrampoline$Test::test @ bci:2 (line 95) L[0]=_ L[1]=_
+        # OopMap {rfp=Oop off=240/0xf0}
+0fc     ShouldNotReachHere
+
+10c     B11: #	out( N1 ) <- in( B6 )  Freq: 4.76835e-07
+10c +   mov R1, #-187	# int
+110     call,static 0x000000011b48b440 	// ==>  wrapper for: uncommon_trap(reason='unstable_if' action='reinterpret' debug_id='0')
+        # compiler.c2.aarch64.TestTrampoline$Test::test @ bci:8 (line 95) L[0]=_ L[1]=_ STK[0]=R29 STK[1]=#128
+        # OopMap {off=276/0x114}
+120     ShouldNotReachHere
+
+130     B12: #	out( N1 ) <- in( B1 )  Freq: 1.01328e-06
+130 +   mov R1, #-10	# int
+134     spill R2 -> R29	# spill size = 32
+138     call,static 0x000000011b48b440 	// ==>  wrapper for: uncommon_trap(reason='null_check' action='maybe_recompile' debug_id='0')
+        # compiler.c2.aarch64.TestTrampoline$Test::test @ bci:2 (line 95) L[0]=_ L[1]=_ STK[0]=#null STK[1]=R29
+        # OopMap {off=316/0x13c}
+148     ShouldNotReachHere
+
+158     B13: #	out( N1 ) <- in( B3 )  Freq: 1.01328e-06
+158 +   mov R1, #-10	# int
+15c     call,static 0x000000011b48b440 	// ==>  wrapper for: uncommon_trap(reason='null_check' action='maybe_recompile' debug_id='0')
+        # java.lang.StringLatin1::charAt @ bci:2 (line 47) L[0]=_ L[1]=_ STK[0]=_ STK[1]=#null
+        # java.lang.String::charAt @ bci:12 (line 1785) L[0]=_ L[1]=_
+        # compiler.c2.aarch64.TestTrampoline$Test::test @ bci:2 (line 95) L[0]=_ L[1]=_
+        # OopMap {off=352/0x160}
+16c +   ShouldNotReachHere
+
+--------------------------------------------------------------------------------
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 6148   14       4       compiler.c2.aarch64.TestTrampoline$Test::test (20 bytes)
+ total in heap  [0x000000011b9d0a88,0x000000011b9d0d38] = 688
+ main code      [0x000000011b9d0b80,0x000000011b9d0d20] = 416
+ stub code      [0x000000011b9d0d20,0x000000011b9d0d28] = 8
+ oops           [0x000000011b9d0d28,0x000000011b9d0d38] = 16
+ mutable data [0x0000000a43851eb0,0x0000000a43851f38] = 136
+ relocation     [0x0000000a43851eb0,0x0000000a43851f10] = 96
+ metadata       [0x0000000a43851f10,0x0000000a43851f38] = 40
+ immutable data [0x0000000105689fe0,0x000000010568a234] = 596
+ dependencies   [0x0000000105689fe0,0x0000000105689ff0] = 16
+ nul chk table  [0x0000000105689ff0,0x000000010568a008] = 24
+ scopes pcs     [0x000000010568a008,0x000000010568a168] = 352
+ scopes data    [0x000000010568a168,0x000000010568a230] = 200
+
+[Disassembly]
+--------------------------------------------------------------------------------
+[Constant Pool (empty)]
+
+--------------------------------------------------------------------------------
+
+[Verified Entry Point]
+  # {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+  # parm0:    c_rarg1:c_rarg1 
+                        = 'java/lang/String'
+  # parm1:    c_rarg2   = int
+  #           [sp+0x30]  (sp of caller)
+ ;; N1: #	out( B1 ) <- in( B12 B10 B13 B8 B9 B11 B7 )  Freq: 1
+ ;; B1: #	out( B12 B2 ) <- BLOCK HEAD IS JUNK  Freq: 1
+  0x000000011b9d0b80:   sub	x9, sp, #0x1c, lsl #12
+  0x000000011b9d0b84:   str	xzr, [x9]
+  0x000000011b9d0b88:   sub	sp, sp, #0x30
+  0x000000011b9d0b8c:   stp	x29, x30, [sp, #32]
+  0x000000011b9d0b90:   ldrb	w8, [x28, #1296]
+  0x000000011b9d0b94:   cbz	x8, 0x000000011b9d0bac
+ ;; 0x10CB89364
+  0x000000011b9d0b98:   mov	x8, #0x9364                	// #37732
+                                                            ;   {runtime_call JavaThread::verify_cross_modify_fence_failure(JavaThread*)}
+  0x000000011b9d0b9c:   movk	x8, #0xcb8, lsl #16
+  0x000000011b9d0ba0:   movk	x8, #0x1, lsl #32
+  0x000000011b9d0ba4:   mov	x0, x28
+  0x000000011b9d0ba8:   blr	x8
+  0x000000011b9d0bac:   ldr	w8, 0x000000011b9d0d1c
+  0x000000011b9d0bb0:   ldr	w9, [x28, #32]
+  0x000000011b9d0bb4:   cmp	x8, x9
+  0x000000011b9d0bb8:   b.ne	0x000000011b9d0d08  // b.any;*synchronization entry
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@-1 (line 95)
+  0x000000011b9d0bbc:   ldrsb	w11, [x1, #16]              ; implicit exception: dispatches to 0x000000011b9d0cb0
+                                                            ;*getfield coder {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::isLatin1@7 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; B2: #	out( B10 B3 ) <- in( B1 )  Freq: 0.999999
+  0x000000011b9d0bc0:   ldr	w10, [x1, #20]
+  0x000000011b9d0bc4:   lsl	x12, x10, #3                ;*getfield value {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::charAt@8 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+  0x000000011b9d0bc8:   cbnz	w11, 0x000000011b9d0c60     ;*ifne {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::isLatin1@10 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; B3: #	out( B13 B4 ) <- in( B2 )  Freq: 0.999999
+  0x000000011b9d0bcc:   ldr	w29, [x12, #12]             ; implicit exception: dispatches to 0x000000011b9d0cd8
+                                                            ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.StringLatin1::charAt@2 (line 47)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; B4: #	out( B8 B5 ) <- in( B3 )  Freq: 0.999997
+  0x000000011b9d0bd0:   cmp	w2, w29
+  0x000000011b9d0bd4:   b.cs	0x000000011b9d0c08  // b.hs, b.nlast
+                                                            ;*invokestatic checkIndex {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::checkIndex@5 (line 5198)
+                                                            ; - java.lang.StringLatin1::charAt@3 (line 47)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; B5: #	out( B9 B6 ) <- in( B4 )  Freq: 0.999996
+  0x000000011b9d0bd8:   add	x10, x12, w2, sxtw
+  0x000000011b9d0bdc:   cmp	w2, w29
+  0x000000011b9d0be0:   b.cs	0x000000011b9d0c34  // b.hs, b.nlast
+ ;; B6: #	out( B11 B7 ) <- in( B5 )  Freq: 0.999995
+  0x000000011b9d0be4:   ldrb	w29, [x10, #16]             ;*iand {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.StringLatin1::charAt@12 (line 48)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+  0x000000011b9d0be8:   cmp	w29, #0x80
+  0x000000011b9d0bec:   b.gt	0x000000011b9d0c8c          ;*if_icmple {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)
+ ;; B7: #	out( N1 ) <- in( B6 )  Freq: 0.999995
+  0x000000011b9d0bf0:   ldp	x29, x30, [sp, #32]
+  0x000000011b9d0bf4:   add	sp, sp, #0x30
+  0x000000011b9d0bf8:   ldr	x8, [x28, #40]              ;   {poll_return}
+  0x000000011b9d0bfc:   cmp	sp, x8
+  0x000000011b9d0c00:   b.hi	0x000000011b9d0cfc  // b.pmore
+  0x000000011b9d0c04:   ret
+ ;; B8: #	out( N1 ) <- in( B4 )  Freq: 1.01328e-06
+ ;; 0xFFFFFFE4
+  0x000000011b9d0c08:   mov	w1, #0xffffffe4            	// #-28
+  0x000000011b9d0c0c:   str	w2, [sp, #4]
+  0x000000011b9d0c10:   str	x12, [sp, #8]
+  0x000000011b9d0c14:   bl	0x000000011b48b440          ; ImmutableOopMap {[8]=Oop }
+                                                            ;*invokestatic checkIndex {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::checkIndex@5 (line 5198)
+                                                            ; - java.lang.StringLatin1::charAt@3 (line 47)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {runtime_call UncommonTrapBlob}
+  0x000000011b9d0c18:   nop                                 ;   {post_call_nop}
+  0x000000011b9d0c1c:   movk	xzr, #0x190
+  0x000000011b9d0c20:   movk	xzr, #0x0
+ ;; uncommon trap returned which should never happen
+ ;; 0xA428A92D0
+  0x000000011b9d0c24:   mov	x0, #0x92d0                	// #37584
+                                                            ;   {external_word}
+  0x000000011b9d0c28:   movk	x0, #0x428a, lsl #16
+  0x000000011b9d0c2c:   movk	x0, #0xa, lsl #32
+  0x000000011b9d0c30:   dcps1	#0xdeae                     ;*invokestatic checkIndex {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::checkIndex@5 (line 5198)
+                                                            ; - java.lang.StringLatin1::charAt@3 (line 47)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; B9: #	out( N1 ) <- in( B5 )  Freq: 1.01328e-06
+  0x000000011b9d0c34:   str	x12, [sp]
+ ;; 0xFFFFFFE4
+  0x000000011b9d0c38:   mov	w1, #0xffffffe4            	// #-28
+  0x000000011b9d0c3c:   mov	w29, w2
+  0x000000011b9d0c40:   bl	0x000000011b48b440          ; ImmutableOopMap {[0]=Oop }
+                                                            ;*baload {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.StringLatin1::charAt@8 (line 48)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {runtime_call UncommonTrapBlob}
+  0x000000011b9d0c44:   nop                                 ;   {post_call_nop}
+  0x000000011b9d0c48:   movk	xzr, #0x1bc
+  0x000000011b9d0c4c:   movk	xzr, #0x100
+ ;; uncommon trap returned which should never happen
+ ;; 0xA428A92D0
+  0x000000011b9d0c50:   mov	x0, #0x92d0                	// #37584
+                                                            ;   {external_word}
+  0x000000011b9d0c54:   movk	x0, #0x428a, lsl #16
+  0x000000011b9d0c58:   movk	x0, #0xa, lsl #32
+  0x000000011b9d0c5c:   dcps1	#0xdeae                     ;*baload {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.StringLatin1::charAt@8 (line 48)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; B10: #	out( N1 ) <- in( B2 )  Freq: 4.99999e-07
+  0x000000011b9d0c60:   mov	x29, x1
+ ;; merged str pair
+  0x000000011b9d0c64:   stp	w2, w11, [sp]
+ ;; 0xFFFFFF45
+  0x000000011b9d0c68:   mov	w1, #0xffffff45            	// #-187
+  0x000000011b9d0c6c:   bl	0x000000011b48b440          ; ImmutableOopMap {rfp=Oop }
+                                                            ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                                                            ; - (reexecute) java.lang.String::isLatin1@10 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {runtime_call UncommonTrapBlob}
+  0x000000011b9d0c70:   nop                                 ;   {post_call_nop}
+  0x000000011b9d0c74:   movk	xzr, #0x1e8
+  0x000000011b9d0c78:   movk	xzr, #0x200
+ ;; uncommon trap returned which should never happen
+ ;; 0xA428A92D0
+  0x000000011b9d0c7c:   mov	x0, #0x92d0                	// #37584
+                                                            ;   {external_word}
+  0x000000011b9d0c80:   movk	x0, #0x428a, lsl #16
+  0x000000011b9d0c84:   movk	x0, #0xa, lsl #32
+  0x000000011b9d0c88:   dcps1	#0xdeae                     ;*ifne {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.String::isLatin1@10 (line 5187)
+                                                            ; - java.lang.String::charAt@1 (line 1784)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; B11: #	out( N1 ) <- in( B6 )  Freq: 4.76835e-07
+ ;; 0xFFFFFF45
+  0x000000011b9d0c8c:   mov	w1, #0xffffff45            	// #-187
+  0x000000011b9d0c90:   bl	0x000000011b48b440          ; ImmutableOopMap {}
+                                                            ;*if_icmple {reexecute=1 rethrow=0 return_oop=0}
+                                                            ; - (reexecute) compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)
+                                                            ;   {runtime_call UncommonTrapBlob}
+  0x000000011b9d0c94:   nop                                 ;   {post_call_nop}
+  0x000000011b9d0c98:   movk	xzr, #0x20c
+  0x000000011b9d0c9c:   movk	xzr, #0x300
+ ;; uncommon trap returned which should never happen
+ ;; 0xA428A92D0
+  0x000000011b9d0ca0:   mov	x0, #0x92d0                	// #37584
+                                                            ;   {external_word}
+  0x000000011b9d0ca4:   movk	x0, #0x428a, lsl #16
+  0x000000011b9d0ca8:   movk	x0, #0xa, lsl #32
+  0x000000011b9d0cac:   dcps1	#0xdeae                     ;*if_icmple {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)
+ ;; B12: #	out( N1 ) <- in( B1 )  Freq: 1.01328e-06
+ ;; 0xFFFFFFF6
+  0x000000011b9d0cb0:   mov	w1, #0xfffffff6            	// #-10
+  0x000000011b9d0cb4:   mov	w29, w2
+  0x000000011b9d0cb8:   bl	0x000000011b48b440          ; ImmutableOopMap {}
+                                                            ;*invokevirtual charAt {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {runtime_call UncommonTrapBlob}
+  0x000000011b9d0cbc:   nop                                 ;   {post_call_nop}
+  0x000000011b9d0cc0:   movk	xzr, #0x234
+  0x000000011b9d0cc4:   movk	xzr, #0x400
+ ;; uncommon trap returned which should never happen
+ ;; 0xA428A92D0
+  0x000000011b9d0cc8:   mov	x0, #0x92d0                	// #37584
+                                                            ;   {external_word}
+  0x000000011b9d0ccc:   movk	x0, #0x428a, lsl #16
+  0x000000011b9d0cd0:   movk	x0, #0xa, lsl #32
+  0x000000011b9d0cd4:   dcps1	#0xdeae                     ;*invokevirtual charAt {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ ;; B13: #	out( N1 ) <- in( B3 )  Freq: 1.01328e-06
+ ;; 0xFFFFFFF6
+  0x000000011b9d0cd8:   mov	w1, #0xfffffff6            	// #-10
+  0x000000011b9d0cdc:   bl	0x000000011b48b440          ; ImmutableOopMap {}
+                                                            ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.StringLatin1::charAt@2 (line 47)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+                                                            ;   {runtime_call UncommonTrapBlob}
+  0x000000011b9d0ce0:   nop                                 ;   {post_call_nop}
+  0x000000011b9d0ce4:   movk	xzr, #0x258
+  0x000000011b9d0ce8:   movk	xzr, #0x500
+ ;; uncommon trap returned which should never happen
+ ;; 0xA428A92D0
+  0x000000011b9d0cec:   mov	x0, #0x92d0                	// #37584
+                                                            ;   {external_word}
+  0x000000011b9d0cf0:   movk	x0, #0x428a, lsl #16
+  0x000000011b9d0cf4:   movk	x0, #0xa, lsl #32
+  0x000000011b9d0cf8:   dcps1	#0xdeae                     ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                                                            ; - java.lang.StringLatin1::charAt@2 (line 47)
+                                                            ; - java.lang.String::charAt@12 (line 1785)
+                                                            ; - compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+  0x000000011b9d0cfc:   adr	x8, 0x000000011b9d0bf8      ;   {internal_word}
+  0x000000011b9d0d00:   str	x8, [x28, #1288]
+  0x000000011b9d0d04:   b	0x000000011b50ef80          ;   {runtime_call SafepointBlob}
+ ;; 0x11B4ECC80
+  0x000000011b9d0d08:   mov	x8, #0xcc80                	// #52352
+                                                            ;   {runtime_call Stub::method_entry_barrier_stub (stub gen)}
+  0x000000011b9d0d0c:   movk	x8, #0x1b4e, lsl #16
+  0x000000011b9d0d10:   movk	x8, #0x1, lsl #32
+  0x000000011b9d0d14:   blr	x8
+  0x000000011b9d0d18:   b	0x000000011b9d0bbc
+  0x000000011b9d0d1c:   udf	#1                          ;   {entry_guard}
+[Stub Code]
+  0x000000011b9d0d20:   bl	0x000000011b50f180          ;   {runtime_call DeoptimizationBlob}
+[Deopt Handler Entry Point]
+  0x000000011b9d0d24:   b	0x000000011b9d0d20
+--------------------------------------------------------------------------------
+[/Disassembly]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Oops:
+  0x000000011b9d0d28:   0x0000000300e040a0 a 'jdk/internal/util/Preconditions$4'{0x0000000300e040a0}
+  0x000000011b9d0d30:   0x000000040061fab8 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x000000040061fab8}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Metadata:
+  0x0000000a43851f10:   0x0000000126400328 {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+  0x0000000a43851f18:   0x00001f00001c28f8 {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String'
+  0x0000000a43851f20:   0x00001f00005757f0 {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String'
+  0x0000000a43851f28:   0x00001f00001dd188 {method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1'
+  0x0000000a43851f30:   0x00001f0000577380 {method} {0x00001f0000577380} 'checkIndex' '(II)V' in 'java/lang/String'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+pc-bytecode offsets:
+PcDesc(pc=0x000000011b9d0b7f offset=ffffffff bits=0):
+PcDesc(pc=0x000000011b9d0bbc offset=3c bits=0):
+   compiler.c2.aarch64.TestTrampoline$Test::test@-1 (line 95)
+PcDesc(pc=0x000000011b9d0bc0 offset=40 bits=0):
+   java.lang.String::isLatin1@7 (line 5187)
+   java.lang.String::charAt@1 (line 1784)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0bc8 offset=48 bits=0):
+   java.lang.String::charAt@8 (line 1785)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0bcc offset=4c bits=0):
+   java.lang.String::isLatin1@10 (line 5187)
+   java.lang.String::charAt@1 (line 1784)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0bd0 offset=50 bits=0):
+   java.lang.StringLatin1::charAt@2 (line 47)
+   java.lang.String::charAt@12 (line 1785)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0bd8 offset=58 bits=0):
+   java.lang.String::checkIndex@5 (line 5198)
+   java.lang.StringLatin1::charAt@3 (line 47)
+   java.lang.String::charAt@12 (line 1785)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0be8 offset=68 bits=0):
+   java.lang.StringLatin1::charAt@12 (line 48)
+   java.lang.String::charAt@12 (line 1785)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0bf0 offset=70 bits=0):
+   compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)
+PcDesc(pc=0x000000011b9d0c18 offset=98 bits=0):
+   java.lang.String::checkIndex@5 (line 5198)
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: stack[4]
+    - @1: reg rfp [58],int
+    - @2: a 'jdk/internal/util/Preconditions$4'{0x0000000300e040a0}
+   java.lang.StringLatin1::charAt@3 (line 47)
+   Locals
+    - l0: stack[8],oop
+    - l1: stack[4]
+   java.lang.String::charAt@12 (line 1785)
+   Locals
+    - l0: empty
+    - l1: empty
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+PcDesc(pc=0x000000011b9d0c34 offset=b4 bits=0):
+   java.lang.String::checkIndex@5 (line 5198)
+   java.lang.StringLatin1::charAt@3 (line 47)
+   java.lang.String::charAt@12 (line 1785)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0c44 offset=c4 bits=0):
+   java.lang.StringLatin1::charAt@8 (line 48)
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: stack[0],oop
+    - @1: reg rfp [58],int
+   java.lang.String::charAt@12 (line 1785)
+   Locals
+    - l0: empty
+    - l1: empty
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+PcDesc(pc=0x000000011b9d0c60 offset=e0 bits=0):
+   java.lang.StringLatin1::charAt@8 (line 48)
+   java.lang.String::charAt@12 (line 1785)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0c70 offset=f0 bits=1):
+   java.lang.String::isLatin1@10 (line 5187)  reexecute=true
+   Locals
+    - l0: empty
+   Expression stack
+    - @0: stack[4]
+   java.lang.String::charAt@1 (line 1784)
+   Locals
+    - l0: reg rfp [58],oop
+    - l1: stack[0]
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+PcDesc(pc=0x000000011b9d0c8c offset=10c bits=0):
+   java.lang.String::isLatin1@10 (line 5187)
+   java.lang.String::charAt@1 (line 1784)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0c94 offset=114 bits=1):
+   compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)  reexecute=true
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: reg rfp [58],int
+    - @1: 128
+PcDesc(pc=0x000000011b9d0cb0 offset=130 bits=0):
+   compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)
+PcDesc(pc=0x000000011b9d0cbc offset=13c bits=0):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: null
+    - @1: reg rfp [58],int
+PcDesc(pc=0x000000011b9d0cd8 offset=158 bits=0):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0ce0 offset=160 bits=0):
+   java.lang.StringLatin1::charAt@2 (line 47)
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: empty
+    - @1: null
+   java.lang.String::charAt@12 (line 1785)
+   Locals
+    - l0: empty
+    - l1: empty
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+PcDesc(pc=0x000000011b9d0cfc offset=17c bits=0):
+   java.lang.StringLatin1::charAt@2 (line 47)
+   java.lang.String::charAt@12 (line 1785)
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+PcDesc(pc=0x000000011b9d0d29 offset=1a9 bits=0):
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+oop maps:ImmutableOopMapSet contains 6 OopMaps
+
+ImmutableOopMap {[8]=Oop } pc offsets: 152 
+ImmutableOopMap {[0]=Oop } pc offsets: 196 
+ImmutableOopMap {rfp=Oop } pc offsets: 240 
+ImmutableOopMap {} pc offsets: 276 316 352 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+scopes:
+ScopeDesc(pc=0x000000011b9d0bbc offset=3c):
+   compiler.c2.aarch64.TestTrampoline$Test::test@-1 (line 95)
+ScopeDesc(pc=0x000000011b9d0bc0 offset=40):
+   java.lang.String::isLatin1@7 (line 5187)
+ScopeDesc(pc=0x000000011b9d0bc0 offset=40):
+   java.lang.String::charAt@1 (line 1784)
+ScopeDesc(pc=0x000000011b9d0bc0 offset=40):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0bc8 offset=48):
+   java.lang.String::charAt@8 (line 1785)
+ScopeDesc(pc=0x000000011b9d0bc8 offset=48):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0bcc offset=4c):
+   java.lang.String::isLatin1@10 (line 5187)
+ScopeDesc(pc=0x000000011b9d0bcc offset=4c):
+   java.lang.String::charAt@1 (line 1784)
+ScopeDesc(pc=0x000000011b9d0bcc offset=4c):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0bd0 offset=50):
+   java.lang.StringLatin1::charAt@2 (line 47)
+ScopeDesc(pc=0x000000011b9d0bd0 offset=50):
+   java.lang.String::charAt@12 (line 1785)
+ScopeDesc(pc=0x000000011b9d0bd0 offset=50):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0bd8 offset=58):
+   java.lang.String::checkIndex@5 (line 5198)
+ScopeDesc(pc=0x000000011b9d0bd8 offset=58):
+   java.lang.StringLatin1::charAt@3 (line 47)
+ScopeDesc(pc=0x000000011b9d0bd8 offset=58):
+   java.lang.String::charAt@12 (line 1785)
+ScopeDesc(pc=0x000000011b9d0bd8 offset=58):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0be8 offset=68):
+   java.lang.StringLatin1::charAt@12 (line 48)
+ScopeDesc(pc=0x000000011b9d0be8 offset=68):
+   java.lang.String::charAt@12 (line 1785)
+ScopeDesc(pc=0x000000011b9d0be8 offset=68):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0bf0 offset=70):
+   compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)
+ScopeDesc(pc=0x000000011b9d0c18 offset=98):
+   java.lang.String::checkIndex@5 (line 5198)
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: stack[4]
+    - @1: reg rfp [58],int
+    - @2: a 'jdk/internal/util/Preconditions$4'{0x0000000300e040a0}
+ScopeDesc(pc=0x000000011b9d0c18 offset=98):
+   java.lang.StringLatin1::charAt@3 (line 47)
+   Locals
+    - l0: stack[8],oop
+    - l1: stack[4]
+ScopeDesc(pc=0x000000011b9d0c18 offset=98):
+   java.lang.String::charAt@12 (line 1785)
+   Locals
+    - l0: empty
+    - l1: empty
+ScopeDesc(pc=0x000000011b9d0c18 offset=98):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+ScopeDesc(pc=0x000000011b9d0c34 offset=b4):
+   java.lang.String::checkIndex@5 (line 5198)
+ScopeDesc(pc=0x000000011b9d0c34 offset=b4):
+   java.lang.StringLatin1::charAt@3 (line 47)
+ScopeDesc(pc=0x000000011b9d0c34 offset=b4):
+   java.lang.String::charAt@12 (line 1785)
+ScopeDesc(pc=0x000000011b9d0c34 offset=b4):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0c44 offset=c4):
+   java.lang.StringLatin1::charAt@8 (line 48)
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: stack[0],oop
+    - @1: reg rfp [58],int
+ScopeDesc(pc=0x000000011b9d0c44 offset=c4):
+   java.lang.String::charAt@12 (line 1785)
+   Locals
+    - l0: empty
+    - l1: empty
+ScopeDesc(pc=0x000000011b9d0c44 offset=c4):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+ScopeDesc(pc=0x000000011b9d0c60 offset=e0):
+   java.lang.StringLatin1::charAt@8 (line 48)
+ScopeDesc(pc=0x000000011b9d0c60 offset=e0):
+   java.lang.String::charAt@12 (line 1785)
+ScopeDesc(pc=0x000000011b9d0c60 offset=e0):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0c70 offset=f0):
+   java.lang.String::isLatin1@10 (line 5187)  reexecute=true
+   Locals
+    - l0: empty
+   Expression stack
+    - @0: stack[4]
+ScopeDesc(pc=0x000000011b9d0c70 offset=f0):
+   java.lang.String::charAt@1 (line 1784)
+   Locals
+    - l0: reg rfp [58],oop
+    - l1: stack[0]
+ScopeDesc(pc=0x000000011b9d0c70 offset=f0):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+ScopeDesc(pc=0x000000011b9d0c8c offset=10c):
+   java.lang.String::isLatin1@10 (line 5187)
+ScopeDesc(pc=0x000000011b9d0c8c offset=10c):
+   java.lang.String::charAt@1 (line 1784)
+ScopeDesc(pc=0x000000011b9d0c8c offset=10c):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0c94 offset=114):
+   compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)  reexecute=true
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: reg rfp [58],int
+    - @1: 128
+ScopeDesc(pc=0x000000011b9d0cb0 offset=130):
+   compiler.c2.aarch64.TestTrampoline$Test::test@8 (line 95)
+ScopeDesc(pc=0x000000011b9d0cbc offset=13c):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: null
+    - @1: reg rfp [58],int
+ScopeDesc(pc=0x000000011b9d0cd8 offset=158):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+ScopeDesc(pc=0x000000011b9d0ce0 offset=160):
+   java.lang.StringLatin1::charAt@2 (line 47)
+   Locals
+    - l0: empty
+    - l1: empty
+   Expression stack
+    - @0: empty
+    - @1: null
+ScopeDesc(pc=0x000000011b9d0ce0 offset=160):
+   java.lang.String::charAt@12 (line 1785)
+   Locals
+    - l0: empty
+    - l1: empty
+ScopeDesc(pc=0x000000011b9d0ce0 offset=160):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+   Locals
+    - l0: empty
+    - l1: empty
+ScopeDesc(pc=0x000000011b9d0cfc offset=17c):
+   java.lang.StringLatin1::charAt@2 (line 47)
+ScopeDesc(pc=0x000000011b9d0cfc offset=17c):
+   java.lang.String::charAt@12 (line 1785)
+ScopeDesc(pc=0x000000011b9d0cfc offset=17c):
+   compiler.c2.aarch64.TestTrampoline$Test::test@2 (line 95)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+relocations:
+         @0x0000000a43851eb0: 3006
+relocInfo@0x0000000a43851eb0 [type=6(runtime_call) addr=0x000000011b9d0b98 offset=24] | [destination=0x000000010cb89364] JavaThread::verify_cross_modify_fence_failure(JavaThread*)
+         @0x0000000a43851eb2: 5818
+relocInfo@0x0000000a43851eb2 [type=11(poll_return) addr=0x000000011b9d0bf8 offset=96]
+         @0x0000000a43851eb4: 3007
+relocInfo@0x0000000a43851eb4 [type=6(runtime_call) addr=0x000000011b9d0c14 offset=28] | [destination=0x000000011b48b440] UncommonTrapBlob
+         @0x0000000a43851eb6: 8001
+relocInfo@0x0000000a43851eb6 [type=16(post_call_nop) addr=0x000000011b9d0c18 offset=4]
+         @0x0000000a43851eb8: 7c02000000123803
+relocInfo@0x0000000a43851ebe [type=7(external_word) addr=0x000000011b9d0c24 offset=12 data={00000012}] | [target=0x0000000a428a92d0]
+         @0x0000000a43851ec0: 3007
+relocInfo@0x0000000a43851ec0 [type=6(runtime_call) addr=0x000000011b9d0c40 offset=28] | [destination=0x000000011b48b440] UncommonTrapBlob
+         @0x0000000a43851ec2: 8001
+relocInfo@0x0000000a43851ec2 [type=16(post_call_nop) addr=0x000000011b9d0c44 offset=4]
+         @0x0000000a43851ec4: 7c02000000123803
+relocInfo@0x0000000a43851eca [type=7(external_word) addr=0x000000011b9d0c50 offset=12 data={00000012}] | [target=0x0000000a428a92d0]
+         @0x0000000a43851ecc: 3007
+relocInfo@0x0000000a43851ecc [type=6(runtime_call) addr=0x000000011b9d0c6c offset=28] | [destination=0x000000011b48b440] UncommonTrapBlob
+         @0x0000000a43851ece: 8001
+relocInfo@0x0000000a43851ece [type=16(post_call_nop) addr=0x000000011b9d0c70 offset=4]
+         @0x0000000a43851ed0: 7c02000000123803
+relocInfo@0x0000000a43851ed6 [type=7(external_word) addr=0x000000011b9d0c7c offset=12 data={00000012}] | [target=0x0000000a428a92d0]
+         @0x0000000a43851ed8: 3005
+relocInfo@0x0000000a43851ed8 [type=6(runtime_call) addr=0x000000011b9d0c90 offset=20] | [destination=0x000000011b48b440] UncommonTrapBlob
+         @0x0000000a43851eda: 8001
+relocInfo@0x0000000a43851eda [type=16(post_call_nop) addr=0x000000011b9d0c94 offset=4]
+         @0x0000000a43851edc: 7c02000000123803
+relocInfo@0x0000000a43851ee2 [type=7(external_word) addr=0x000000011b9d0ca0 offset=12 data={00000012}] | [target=0x0000000a428a92d0]
+         @0x0000000a43851ee4: 3006
+relocInfo@0x0000000a43851ee4 [type=6(runtime_call) addr=0x000000011b9d0cb8 offset=24] | [destination=0x000000011b48b440] UncommonTrapBlob
+         @0x0000000a43851ee6: 8001
+relocInfo@0x0000000a43851ee6 [type=16(post_call_nop) addr=0x000000011b9d0cbc offset=4]
+         @0x0000000a43851ee8: 7c02000000123803
+relocInfo@0x0000000a43851eee [type=7(external_word) addr=0x000000011b9d0cc8 offset=12 data={00000012}] | [target=0x0000000a428a92d0]
+         @0x0000000a43851ef0: 3005
+relocInfo@0x0000000a43851ef0 [type=6(runtime_call) addr=0x000000011b9d0cdc offset=20] | [destination=0x000000011b48b440] UncommonTrapBlob
+         @0x0000000a43851ef2: 8001
+relocInfo@0x0000000a43851ef2 [type=16(post_call_nop) addr=0x000000011b9d0ce0 offset=4]
+         @0x0000000a43851ef4: 7c02000000123803
+relocInfo@0x0000000a43851efa [type=7(external_word) addr=0x000000011b9d0cec offset=12 data={00000012}] | [target=0x0000000a428a92d0]
+         @0x0000000a43851efc: 78414004
+relocInfo@0x0000000a43851efe [type=8(internal_word) addr=0x000000011b9d0cfc offset=16 data=65] | [target=0x000000011b9d0bf8]
+         @0x0000000a43851f00: 3002
+relocInfo@0x0000000a43851f00 [type=6(runtime_call) addr=0x000000011b9d0d04 offset=8] | [destination=0x000000011b50ef80] SafepointBlob
+         @0x0000000a43851f02: 3001
+relocInfo@0x0000000a43851f02 [type=6(runtime_call) addr=0x000000011b9d0d08 offset=4] | [destination=0x000000011b4ecc80] Stub::method_entry_barrier_stub (stub gen)
+         @0x0000000a43851f04: 8805
+relocInfo@0x0000000a43851f04 [type=17(entry_guard) addr=0x000000011b9d0d1c offset=20]
+         @0x0000000a43851f06: 0001
+relocInfo@0x0000000a43851f06 [type=0(none) addr=0x000000011b9d0d20 offset=4]
+         @0x0000000a43851f08: 3000
+relocInfo@0x0000000a43851f08 [type=6(runtime_call) addr=0x000000011b9d0d20 offset=0] | [destination=0x000000011b50f180] DeoptimizationBlob
+         @0x0000000a43851f0a: 0000
+relocInfo@0x0000000a43851f0a [type=0(none) addr=0x000000011b9d0d20 offset=0]
+         @0x0000000a43851f0c: 0000
+relocInfo@0x0000000a43851f0c [type=0(none) addr=0x000000011b9d0d20 offset=0]
+         @0x0000000a43851f0e: 0000
+relocInfo@0x0000000a43851f0e [type=0(none) addr=0x000000011b9d0d20 offset=0]
+         @0x0000000a43851f10: 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Dependencies:
+Dependency of type evol_method
+  method  = *{method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+Dependency of type evol_method
+  method  = {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String'
+Dependency of type evol_method
+  method  = {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String'
+Dependency of type evol_method
+  method  = *{method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1'
+Dependency of type evol_method
+  method  = *{method} {0x00001f0000577380} 'checkIndex' '(II)V' in 'java/lang/String'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ExceptionHandlerTable (size = 0 bytes)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ImplicitExceptionTable (size = 2 entries, 20 bytes):
+{
+   < 0x000000011b9d0bbc, 0x000000011b9d0cb0 > < 0x000000011b9d0bcc, 0x000000011b9d0cd8 > 
+}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded oops:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x0000000300e040a0 a 'jdk/internal/util/Preconditions$4'{0x0000000300e040a0}
+#2: 0x000000040061fab8 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x000000040061fab8}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded metadata:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x0000000126400328 {method} {0x0000000126400328} 'test' '(Ljava/lang/String;I)V' in 'compiler/c2/aarch64/TestTrampoline$Test'
+#2: 0x00001f00001c28f8 {method} {0x00001f00001c28f8} 'charAt' '(I)C' in 'java/lang/String'
+#3: 0x00001f00005757f0 {method} {0x00001f00005757f0} 'isLatin1' '()Z' in 'java/lang/String'
+#4: 0x00001f00001dd188 {method} {0x00001f00001dd188} 'charAt' '([BI)C' in 'java/lang/StringLatin1'
+#5: 0x00001f0000577380 {method} {0x00001f0000577380} 'checkIndex' '(II)V' in 'java/lang/String'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+------------------------------------------------------------------------
+static compiler.c2.aarch64.TestTrampoline$Test::test(Ljava/lang/String;I)V
+  interpreter_invocation_count:        5376
+  invocation_counter:                  5376
+  backedge_counter:                       0
+  decompile_count:                        0
+  mdo size: 392 bytes
+
+   0 fast_aload_0
+   1 iload_1
+   2 invokevirtual 9 <java/lang/String.charAt(I)C> 
+  0    bci: 2    VirtualCallData    count(0) entries(1)
+                                    'java/lang/String'(5120 1.00)
+   5 sipush 128
+   8 if_icmple 19
+  48   bci: 8    BranchData         taken(5120) displacement(48)
+                                    not taken(0)
+  11 new 15 <java/lang/RuntimeException>
+  14 dup
+  15 invokespecial 17 <java/lang/RuntimeException.<init>()V> 
+  80   bci: 15   CounterData        count(0)
+  18 athrow
+  19 return
+------------------------------------------------------------------------
+Total MDO size: 392 bytes
+
+STDERR:
+java.lang.RuntimeException: Test completed successfully
+	at compiler.c2.aarch64.TestTrampoline.checkOutput(TestTrampoline.java:90)
+	at compiler.c2.aarch64.TestTrampoline.main(TestTrampoline.java:65)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at com.sun.javatest.regtest.agent.MainActionHelper$AgentVMRunnable.run(MainActionHelper.java:335)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+
+JavaTest Message: Test threw exception: java.lang.RuntimeException
+JavaTest Message: shutting down test
+
+
+TEST RESULT: Failed. Execution failed: `main' threw exception: java.lang.RuntimeException: Test completed successfully
+--------------------------------------------------
+Test results: failed: 1
+Report written to /Users/saint/java/forks/openjdk/jdk/JTreport/html/report.html
+Results written to /Users/saint/java/forks/openjdk/jdk/JTwork
+Error: Some tests failed or other problems occurred.
