@@ -21,10 +21,10 @@
 #  tar xzf jtreg-7.4+1.tar.gz
 #  mv jtreg jtreg-7.4+1
 #
-#  curl -Lo jtreg-8.1+1.tar.gz https://builds.shipilev.net/jtreg/jtreg-8.1%2B1.zip
-#  unzip -q jtreg-8.1+1.tar.gz
-#  mv jtreg jtreg-8.1+1
-#  export JTREG_VER=8.1+1
+#  curl -Lo jtreg-8.2.1+1.tar.gz https://builds.shipilev.net/jtreg/jtreg-8.2%2B1.zip
+#  unzip -q jtreg-8.2.1+1.tar.gz
+#  mv jtreg jtreg-8.2.1+1
+#  export JTREG_VER=8.2.1+1
 #
 # To download googletest (use the "release-1.8.1" branch for JDK 17):
 #
@@ -36,7 +36,7 @@
 # Use jdk-17.0.6+10 as the boot JDK if building JDK 17. Otherwise,
 # to configure the build on tip for:
 #
-# export JTREG_VER=8.1+1
+# export JTREG_VER=8.2.1+1
 # export BOOT_JDK_TAG=jdk-25+36
 #
 # Windows:
