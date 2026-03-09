@@ -4,11 +4,15 @@ Test code for investigating behavior of the /volatile compiler option.
 cl /c /Od /volatile:iso /Fo"volatileflag-iso.obj" volatileflag.cpp
 cl /c /Od /volatile:ms  /Fo"volatileflag-ms.obj"  volatileflag.cpp
 dumpbin /disasm /out:volatileflag-iso.asm volatileflag-iso.obj
-dumpbin /all    /out:volatileflag-iso.ms  volatileflag-ms.obj
+dumpbin /disasm /out:volatileflag-ms.asm  volatileflag-ms.obj
+dumpbin /all    /out:volatileflag-iso.txt volatileflag-iso.obj
+dumpbin /all    /out:volatileflag-ms.txt  volatileflag-ms.obj
 
 cl /c /O2 /volatile:iso /Fo"volatileflag-iso-o2.obj" volatileflag.cpp
 cl /c /O2 /volatile:ms  /Fo"volatileflag-ms-o2.obj"  volatileflag.cpp
 dumpbin /disasm /out:volatileflag-iso-o2.asm volatileflag-iso-o2.obj
+dumpbin /disasm /out:volatileflag-ms-o2.asm  volatileflag-ms-o2.obj
+dumpbin /all    /out:volatileflag-iso-o2.txt volatileflag-iso-o2.obj
 dumpbin /all    /out:volatileflag-ms-o2.txt  volatileflag-ms-o2.obj
 
 Tool documentation:
