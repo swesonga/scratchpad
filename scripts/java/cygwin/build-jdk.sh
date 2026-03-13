@@ -21,7 +21,7 @@
 #  tar xzf jtreg-7.4+1.tar.gz
 #  mv jtreg jtreg-7.4+1
 #
-#  curl -Lo jtreg-8.2.1+1.tar.gz https://builds.shipilev.net/jtreg/jtreg-8.2%2B1.zip
+#  curl -Lo jtreg-8.2.1+1.tar.gz https://builds.shipilev.net/jtreg/jtreg-8.2.1%2B1.zip
 #  unzip -q jtreg-8.2.1+1.tar.gz
 #  mv jtreg jtreg-8.2.1+1
 #  export JTREG_VER=8.2.1+1
