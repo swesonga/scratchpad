@@ -18,7 +18,8 @@ def get_stash_list():
 
 def export_stash_patches(stashes):
     for stash in stashes:
-        idx = stash[6:-1]  # Extract the number from 'stash@{N}'
+        # Extract the number from 'stash@{N}' (removes curly braces)
+        idx = stash[7:-1]  # 'stash@{N}' -> N
         patch_file = f'stash-{idx}.patch'
         with open(patch_file, 'w', encoding='utf-8') as f:
             subprocess.run(['git', 'stash', 'show', '-p', stash], stdout=f, check=True)
