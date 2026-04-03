@@ -128,7 +128,7 @@ case $JDK_VERSION in
         ;;
 esac
 
-export JTREG_VER=8.1+1
+export JTREG_VER=8.2.1+1
 export JTREG_PATH=$PATHPREFIX/java/binaries/jtreg/jtreg-$JTREG_VER
 export GTEST_PATH=$PATHPREFIX/repos/googletest
 export OPENJDK_DEBUG_LEVEL=slowdebug
