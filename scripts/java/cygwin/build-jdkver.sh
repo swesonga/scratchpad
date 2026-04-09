@@ -77,6 +77,8 @@ export tip_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2025-10/$OS-jdk25u/
 export tip_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk
 # googletest branch: v1.14.0
 
+export JTREG_VER=8.2.1+1
+
 # Set variables based on JDK version argument (default to jdk25u)
 JDK_VERSION=${1:-jdk25u}
 
@@ -84,6 +86,7 @@ case $JDK_VERSION in
     jdk11u)
         export BOOT_JDK_TAG=$jdk11u_BOOT_JDK_TAG
         export BOOT_JDK_PATH=$jdk11u_BOOT_JDK_PATH
+        export JTREG_VER=7.3.1
         export OPENJDK_REPO_PATH=$jdk11u_OPENJDK_REPO_PATH
         ;;
     jdk17u)
@@ -128,7 +131,6 @@ case $JDK_VERSION in
         ;;
 esac
 
-export JTREG_VER=8.2.1+1
 export JTREG_PATH=$PATHPREFIX/java/binaries/jtreg/jtreg-$JTREG_VER
 export GTEST_PATH=$PATHPREFIX/repos/googletest
 export OPENJDK_DEBUG_LEVEL=slowdebug
