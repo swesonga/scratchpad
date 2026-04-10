@@ -23,8 +23,8 @@ case $OS_NAME in
 esac
 
 # Detect current architecture
-BUILDARCH=$(uname -m)
-case $BUILDARCH in
+BUILD_MACHINE=$(uname -m)
+case $BUILD_MACHINE in
     x86_64)
         ARCH="x64"
         ;;
@@ -78,7 +78,7 @@ export tip_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk
 # googletest branch: v1.14.0
 
 export JTREG_VER=8.2.1+1
-BUILDARCH_SUFFIX=
+TARGET_ARCH_SUFFIX=
 
 # Set variables based on JDK version argument (default to jdk25u)
 JDK_VERSION=${1:-jdk25u}
@@ -89,7 +89,7 @@ case $JDK_VERSION in
         export BOOT_JDK_PATH=$jdk11u_BOOT_JDK_PATH
         export JTREG_VER=7.3.1
         export OPENJDK_REPO_PATH=$jdk11u_OPENJDK_REPO_PATH
-        BUILDARCH_SUFFIX="-normal"
+        TARGET_ARCH_SUFFIX="-normal"
         ;;
     jdk17u)
         export BOOT_JDK_TAG=$jdk17u_BOOT_JDK_TAG
@@ -148,10 +148,10 @@ WIN_AARCH64_CROSS_COMPILE_EXTRA_CONFIGURE_ARGS="--openjdk-target=aarch64-unknown
 EXTRA_CONFIGURE_ARGS="$OS_EXTRA_CONFIGURE_ARGS"
 
 # Change $TARGET_ARCH if you want to build for a different architecture than the current one
-TARGET_ARCH="$BUILDARCH"
+TARGET_ARCH="$BUILD_MACHINE"
 TARGET_ARCH="aarch64"
 
-if [[ "$OS" == "windows" && "$BUILDARCH" == "x86_64" && "$TARGET_ARCH" == "aarch64" ]]; then
+if [[ "$OS" == "windows" && "$BUILD_MACHINE" == "x86_64" && "$TARGET_ARCH" == "aarch64" ]]; then
     EXTRA_CONFIGURE_ARGS="$WIN_AARCH64_CROSS_COMPILE_EXTRA_CONFIGURE_ARGS"
 fi
 
@@ -172,4 +172,4 @@ if [[ "$2" == "--configure" ]]; then
     fi
 fi
 
-time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $TARGET_ARCH$BUILDARCH_SUFFIX $OPENJDK_DEBUG_LEVEL $OPENJDK_VARIANT $BUILD_HSDIS
+time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $TARGET_ARCH$TARGET_ARCH_SUFFIX $OPENJDK_DEBUG_LEVEL $OPENJDK_VARIANT $BUILD_HSDIS
