@@ -147,8 +147,13 @@ LLVM_EXTRA_CONFIGURE_ARGS="--with-hsdis=llvm --with-llvm=$LLVM_PATH"
 WIN_AARCH64_CROSS_COMPILE_EXTRA_CONFIGURE_ARGS="--openjdk-target=aarch64-unknown-cygwin"
 EXTRA_CONFIGURE_ARGS="$OS_EXTRA_CONFIGURE_ARGS"
 
-# Change $BUILDARCH if you want to build for a different architecture than the current one
-#BUILDARCH="aarch64"
+# Change $TARGET_ARCH if you want to build for a different architecture than the current one
+TARGET_ARCH="$BUILDARCH"
+TARGET_ARCH="aarch64"
+
+if [[ "$OS" == "windows" && "$BUILDARCH" == "x86_64" && "$TARGET_ARCH" == "aarch64" ]]; then
+    EXTRA_CONFIGURE_ARGS="$WIN_AARCH64_CROSS_COMPILE_EXTRA_CONFIGURE_ARGS"
+fi
 
 if [[ "$2" == "--configure" ]]; then
     if [[ "$JDK_VERSION" == "jdk11u" ]]; then
@@ -167,4 +172,4 @@ if [[ "$2" == "--configure" ]]; then
     fi
 fi
 
-time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $BUILDARCH$BUILDARCH_SUFFIX $OPENJDK_DEBUG_LEVEL $OPENJDK_VARIANT $BUILD_HSDIS
+time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $TARGET_ARCH$BUILDARCH_SUFFIX $OPENJDK_DEBUG_LEVEL $OPENJDK_VARIANT $BUILD_HSDIS
