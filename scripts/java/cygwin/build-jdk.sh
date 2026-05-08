@@ -136,9 +136,9 @@ log_message "Git repo status:"
 git status
 mkdir -p $log_root
 
-images_log="$log_root/images-${build_conf}-${timestamp}.txt"
-jtreg_native_log="$log_root/test-${build_conf}-${timestamp}.txt"
-test_image_log="$log_root/test-image-${build_conf}-${timestamp}.txt"
+images_log="$log_root/${build_conf}-${timestamp}-images.txt"
+jtreg_native_log="$log_root/${build_conf}-${timestamp}-jtreg-native.txt"
+test_image_log="$log_root/${build_conf}-${timestamp}-test-image.txt"
 
 # Prompt: insert latest git commit hash before ${build_conf} in the images_zip variable
 git_hash=$(git rev-parse --short HEAD)
