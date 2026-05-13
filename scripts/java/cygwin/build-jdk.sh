@@ -143,9 +143,9 @@ test_image_log="$log_root/${build_conf}-${timestamp}-test-image.txt"
 # Prompt: insert latest git commit hash before ${build_conf} in the images_zip variable
 git_hash=$(git rev-parse --short HEAD)
 
-images_zip="jdk-${git_hash}-${build_conf}-${timestamp}.zip"
-support_test_zip="support-test-${git_hash}-${build_conf}-${timestamp}.zip"
-images_test_zip="images-test-${git_hash}-${build_conf}-${timestamp}.zip"
+images_zip="${build_conf}-${git_hash}-${timestamp}-jdk.zip"
+support_test_zip="${build_conf}-${git_hash}-${timestamp}-support-test.zip"
+images_test_zip="${build_conf}-${git_hash}-${timestamp}-images-test.zip"
 
 # Alternative build command
 # build_command="make product-images test-image CONF=$build_conf LOG=$log_verbosity"
