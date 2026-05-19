@@ -9,6 +9,9 @@ def compute_sha256(filepath):
             sha256.update(chunk)
     return sha256.hexdigest()
 
+import time
+from datetime import datetime
+
 def main(directory):
     for root, _, files in os.walk(directory):
         for filename in files:
@@ -17,9 +20,16 @@ def main(directory):
                 hashfile = filepath + ".sha256.txt"
                 if os.path.exists(hashfile):
                     continue  # Skip if hash file already exists
+                start_time = time.time()
+                now_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                print(f"[{now_time}] Processing: {filepath}")
                 sha256sum = compute_sha256(filepath)
                 with open(hashfile, "w") as f:
                     f.write(sha256sum + "\n")
+                end_time = time.time()
+                duration = end_time - start_time
+                now_time_end = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                print(f"[{now_time_end}] Finished: {filepath} (Duration: {duration:.2f}s)")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
