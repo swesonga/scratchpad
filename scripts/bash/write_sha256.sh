@@ -2,18 +2,34 @@
 # write_sha256.sh
 # Usage: ./write_sha256.sh <directory>
 
+dir="$1"
+
 set -e
+
+force=0
+while getopts "f" opt; do
+  case $opt in
+    f)
+      force=1
+      ;;
+    *)
+      echo "Usage: $0 [-f] <directory>"
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND -1))
 
 dir="$1"
 
 if [ -z "$dir" ]; then
-  echo "Usage: $0 <directory>"
+  echo "Usage: $0 [-f] <directory>"
   exit 1
 fi
 
 find "$dir" -type f ! -name '*.sha256.txt' | while read -r file; do
   hashfile="$file.sha256.txt"
-  if [ -e "$hashfile" ]; then
+  if [ -e "$hashfile" ] && [ "$force" -ne 1 ]; then
     continue
   fi
   start_time=$(date +%s)
