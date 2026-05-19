@@ -12,14 +12,14 @@ def compute_sha256(filepath):
 import time
 from datetime import datetime
 
-def main(directory):
+def main(directory, force=False):
     for root, _, files in os.walk(directory):
         for filename in files:
             if not filename.endswith(".sha256.txt"):
                 filepath = os.path.join(root, filename)
                 hashfile = filepath + ".sha256.txt"
-                if os.path.exists(hashfile):
-                    continue  # Skip if hash file already exists
+                if os.path.exists(hashfile) and not force:
+                    continue  # Skip if hash file already exists unless force is set
                 start_time = time.time()
                 now_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 print(f"[{now_time}] Processing: {filepath}")
@@ -32,7 +32,9 @@ def main(directory):
                 print(f"[{now_time_end}] Finished: {filepath} (Duration: {duration:.2f}s)")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python write_sha256.py <directory>")
-        sys.exit(1)
-    main(sys.argv[1])
+    import argparse
+    parser = argparse.ArgumentParser(description="Write SHA256 hashes for files in a directory.")
+    parser.add_argument("directory", help="Directory to process")
+    parser.add_argument("-f", "--force", action="store_true", help="Overwrite existing .sha256.txt files")
+    args = parser.parse_args()
+    main(args.directory, force=args.force)
