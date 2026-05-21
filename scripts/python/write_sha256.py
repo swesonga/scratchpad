@@ -14,7 +14,7 @@ from datetime import datetime
 
 def main(directory, force=False):
     for root, _, files in os.walk(directory):
-        for filename in files:
+        for filename in sorted(files):
             if not filename.endswith(".sha256.txt"):
                 filepath = os.path.join(root, filename)
                 hashfile = filepath + ".sha256.txt"
