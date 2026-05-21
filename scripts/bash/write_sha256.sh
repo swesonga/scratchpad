@@ -27,7 +27,7 @@ if [ -z "$dir" ]; then
   exit 1
 fi
 
-find "$dir" -type f ! -name '*.sha256.txt' | while read -r file; do
+find "$dir" -type f ! -name '*.sha256.txt' | sort | while read -r file; do
   hashfile="$file.sha256.txt"
   if [ -e "$hashfile" ] && [ "$force" -ne 1 ]; then
     continue
