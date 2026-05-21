@@ -29,7 +29,7 @@ def main(directory, force=False):
                 end_time = time.time()
                 duration = end_time - start_time
                 now_time_end = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                print(f"[{now_time_end}] Finished: {filepath} (Duration: {duration:.2f}s)")
+                print(f"[{now_time_end}] Finished: {sha256sum} (Duration: {duration:.2f}s)")
 
 if __name__ == "__main__":
     import argparse
