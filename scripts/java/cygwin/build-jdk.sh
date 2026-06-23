@@ -232,5 +232,6 @@ log_message "Zipping support/test into $support_test_zip (switching from `pwd` t
 cd $build_conf_dir
 zip -qru $support_test_zip support/test
 
+log_message "export JAVA_HOME=`pwd`/${built_jdk}"
 log_message "Build complete"
 date
