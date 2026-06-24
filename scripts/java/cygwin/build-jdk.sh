@@ -153,7 +153,7 @@ images_test_zip="${build_conf}-${git_hash}-${timestamp}-images-test.zip"
 build_command="make images CONF=$build_conf LOG=$log_verbosity"
 log_message "Building images using command: $build_command"
 if [ $redirect_output -ne 0 ]; then
-    $build_command > $images_log
+    $build_command > $images_log 2>&1
 else
     $build_command
 fi
@@ -168,7 +168,7 @@ if [ $build_hsdis -ne 0 ]; then
     build_command="make build-hsdis CONF=$build_conf LOG=$log_verbosity"
     log_message "Building hsdis using command: $build_command"
     if [ $redirect_output -ne 0 ]; then
-        $build_command > $hsdis_build_log
+        $build_command > $hsdis_build_log 2>&1
     else
         $build_command
     fi
@@ -176,7 +176,7 @@ if [ $build_hsdis -ne 0 ]; then
     build_command="make install-hsdis CONF=$build_conf LOG=$log_verbosity"
     log_message "Installing hsdis using command: $build_command"
     if [ $redirect_output -ne 0 ]; then
-        $build_command > $hsdis_install_log
+        $build_command > $hsdis_install_log 2>&1
     else
         $build_command
     fi
@@ -205,7 +205,7 @@ cd ../../../../
 build_command="make test-image CONF=$build_conf LOG=$log_verbosity"
 log_message "Building test image using command: $build_command"
 if [ $redirect_output -ne 0 ]; then
-    $build_command > $test_image_log
+    $build_command > $test_image_log 2>&1
 else
     $build_command
 fi
@@ -223,7 +223,7 @@ cd ../../
 build_command="make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity"
 log_message "Building jtreg native binaries using command: $build_command"
 if [ $redirect_output -ne 0 ]; then
-    $build_command > $jtreg_native_log
+    $build_command > $jtreg_native_log 2>&1
 else
     $build_command
 fi
