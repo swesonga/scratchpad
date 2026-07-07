@@ -231,6 +231,7 @@ fi
 log_message "Zipping support/test into $support_test_zip (switching from `pwd` to $build_conf_dir)"
 cd $build_conf_dir
 zip -qru $support_test_zip support/test
+cd -
 
 log_message "export JAVA_HOME=`pwd`/${built_jdk}"
 log_message "Build complete"
