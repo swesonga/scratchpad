@@ -200,7 +200,7 @@ if [ -d "$JDK_ZIP_DEST" ]; then
 fi
 
 mv $images_zip ../..
-cd ../../../../
+cd -
 
 build_command="make test-image CONF=$build_conf LOG=$log_verbosity"
 log_message "Building test image using command: $build_command"
@@ -219,7 +219,7 @@ if [ -d "$JDK_ZIP_DEST" ]; then
     cp $images_test_zip "$JDK_ZIP_DEST"
 fi
 
-cd ../../
+cd -
 build_command="make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity"
 log_message "Building jtreg native binaries using command: $build_command"
 if [ $redirect_output -ne 0 ]; then
