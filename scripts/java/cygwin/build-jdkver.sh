@@ -172,4 +172,9 @@ if [[ "$2" == "--configure" ]]; then
     fi
 fi
 
-time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh $OS $TARGET_ARCH$TARGET_ARCH_SUFFIX $OPENJDK_DEBUG_LEVEL $OPENJDK_VARIANT $BUILD_HSDIS
+time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh \
+    --os $OS                                       \
+    --arch $TARGET_ARCH$TARGET_ARCH_SUFFIX         \
+    --debug-level $OPENJDK_DEBUG_LEVEL             \
+    --variant $OPENJDK_VARIANT                     \
+    --build-hsdis $BUILD_HSDIS
