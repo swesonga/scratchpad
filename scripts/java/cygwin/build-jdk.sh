@@ -124,7 +124,7 @@ arch=""
 debug_level=""
 variant="server"
 build_hsdis=0
-create_zip_files=1
+create_zip_files=0
 
 # Parse arguments. Support both --prefixed flags (in any order) and the
 # legacy positional form (os arch debug_level [variant] [build_hsdis]).
