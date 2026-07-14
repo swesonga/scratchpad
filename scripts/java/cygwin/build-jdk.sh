@@ -104,7 +104,7 @@ function log_message()
 
 function print_usage()
 {
-    echo -e "Usage: build-jdk.sh --os <os> --arch <architecture> --debug-level <debug_level> [--variant <variant>] [--build-hsdis <0|1>] [--create-zip-files <0|1>]\n"
+    echo -e "Usage: build-jdk.sh --os <os> --arch <architecture> --debug-level <debug_level> [--variant <variant>] [--build-hsdis <0|1>] [--create-zip-files <0|1>] [--skip-images <0|1>] [--skip-test-image <0|1>] [--skip-jtreg-native <0|1>]\n"
     echo -e "Arguments may be specified in any order. Positional arguments are also"
     echo -e "supported for backwards compatibility: build-jdk.sh os arch debug_level [variant] [build_hsdis]\n"
     echo -e "Examples:\n"
@@ -112,6 +112,7 @@ function print_usage()
     echo "       build-jdk.sh --os windows --arch x86_64 --debug-level slowdebug --variant server --build-hsdis 1"
     echo "       build-jdk.sh --os windows --arch aarch64 --debug-level slowdebug --variant zero"
     echo "       build-jdk.sh --os windows --arch x86_64 --debug-level release --create-zip-files 0"
+    echo "       build-jdk.sh --os windows --arch x86_64 --debug-level release --skip-test-image 1 --skip-jtreg-native 1"
     echo "       build-jdk.sh windows x86_64 slowdebug server 1"
 }
 
@@ -125,6 +126,9 @@ debug_level=""
 variant="server"
 build_hsdis=0
 create_zip_files=0
+skip_images=0
+skip_test_image=0
+skip_jtreg_native=0
 
 # Parse arguments. Support both --prefixed flags (in any order) and the
 # legacy positional form (os arch debug_level [variant] [build_hsdis]).
@@ -143,6 +147,12 @@ if [[ "$1" == --* ]]; then
                 build_hsdis="$2"; shift 2;;
             --create-zip-files)
                 create_zip_files="$2"; shift 2;;
+            --skip-images)
+                skip_images="$2"; shift 2;;
+            --skip-test-image)
+                skip_test_image="$2"; shift 2;;
+            --skip-jtreg-native)
+                skip_jtreg_native="$2"; shift 2;;
             -h|--help)
                 print_usage; exit;;
             *)
