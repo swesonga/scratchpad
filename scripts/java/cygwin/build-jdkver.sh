@@ -178,3 +178,11 @@ time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh \
     --debug-level $OPENJDK_DEBUG_LEVEL             \
     --variant $OPENJDK_VARIANT                     \
     --build-hsdis $BUILD_HSDIS
+BUILD_EXIT_CODE=$?
+
+if [[ $BUILD_EXIT_CODE -ne 0 ]]; then
+    echo -e "\nbuild-jdk.sh failed with exit code $BUILD_EXIT_CODE" >&2
+    exit $BUILD_EXIT_CODE
+fi
+
+echo -e "\nbuild-jdk.sh completed successfully (exit code $BUILD_EXIT_CODE)"
