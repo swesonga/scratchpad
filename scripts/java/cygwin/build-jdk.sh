@@ -81,10 +81,14 @@
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=$JTREG_PATH --with-gtest=$GTEST_PATH --with-boot-jdk=$BOOT_JDK_PATH
 #  bash configure --openjdk-target=aarch64-unknown-cygwin --with-jtreg=$JTREG_PATH --with-gtest=$GTEST_PATH --with-boot-jdk=$BOOT_JDK_PATH --with-hsdis=llvm --with-llvm=$LLVM_PATH
 #
-# Run this script as follows:
+# Run this script as follows (flags may be given in any order):
+#
+#  time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh --os windows --arch x86_64 --debug-level slowdebug
+#  time ~/repos/scratchpad/scripts/java/cygwin/build-jdk.sh --os linux --arch x86_64 --debug-level slowdebug
+#
+# The legacy positional form is still supported:
 #
 #  time /cygdrive/c/repos/scratchpad/scripts/java/cygwin/build-jdk.sh windows x86_64 slowdebug
-#  time ~/repos/scratchpad/scripts/java/cygwin/build-jdk.sh linux x86_64 slowdebug
 #
 
 # Exit immediately if a command exits with a non-zero status. See
@@ -98,28 +102,66 @@ function log_message()
     echo "$current_time $1"
 }
 
-if [ $# -lt 3 ]
-then
-    echo -e "Usage: build-jdk.sh os architecture debug_level variant build_hsdis\n"
+function print_usage()
+{
+    echo -e "Usage: build-jdk.sh --os <os> --arch <architecture> --debug-level <debug_level> [--variant <variant>] [--build-hsdis <0|1>]\n"
+    echo -e "Arguments may be specified in any order. Positional arguments are also"
+    echo -e "supported for backwards compatibility: build-jdk.sh os arch debug_level [variant] [build_hsdis]\n"
     echo -e "Examples:\n"
-    echo "       build-jdk.sh windows x86_64 release server 0"
+    echo "       build-jdk.sh --os windows --arch x86_64 --debug-level release --variant server --build-hsdis 0"
+    echo "       build-jdk.sh --os windows --arch x86_64 --debug-level slowdebug --variant server --build-hsdis 1"
+    echo "       build-jdk.sh --os windows --arch aarch64 --debug-level slowdebug --variant zero"
     echo "       build-jdk.sh windows x86_64 slowdebug server 1"
-    echo "       build-jdk.sh windows aarch64 slowdebug zero"
-    exit
-fi
+}
 
 timestamp=`date +%Y-%m-%d_%H%M%S`
-variant="server"
 
 # TODO: automatically detect current os and architecture if not specified.
 # Select either the x86_64 or aarch64 architectures
-os=$1
-arch=$2
-debug_level=$3
-if [ $# -gt 3 ]
-then
-    variant=$4
-    build_hsdis=$5
+os=""
+arch=""
+debug_level=""
+variant="server"
+build_hsdis=0
+
+# Parse arguments. Support both --prefixed flags (in any order) and the
+# legacy positional form (os arch debug_level [variant] [build_hsdis]).
+if [[ "$1" == --* ]]; then
+    while [ $# -gt 0 ]; do
+        case "$1" in
+            --os)
+                os="$2"; shift 2;;
+            --arch|--architecture)
+                arch="$2"; shift 2;;
+            --debug-level)
+                debug_level="$2"; shift 2;;
+            --variant)
+                variant="$2"; shift 2;;
+            --build-hsdis)
+                build_hsdis="$2"; shift 2;;
+            -h|--help)
+                print_usage; exit;;
+            *)
+                echo "Unknown option: $1"
+                print_usage; exit 1;;
+        esac
+    done
+else
+    os=$1
+    arch=$2
+    debug_level=$3
+    if [ $# -gt 3 ]; then
+        variant=$4
+    fi
+    if [ $# -gt 4 ]; then
+        build_hsdis=$5
+    fi
+fi
+
+if [ -z "$os" ] || [ -z "$arch" ] || [ -z "$debug_level" ]; then
+    echo -e "Error: os, architecture and debug_level are required.\n"
+    print_usage
+    exit 1
 fi
 
 llvm_path=/cygdrive/c/software/llvm/llvm-$arch
