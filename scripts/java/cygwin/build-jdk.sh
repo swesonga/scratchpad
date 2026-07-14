@@ -104,13 +104,14 @@ function log_message()
 
 function print_usage()
 {
-    echo -e "Usage: build-jdk.sh --os <os> --arch <architecture> --debug-level <debug_level> [--variant <variant>] [--build-hsdis <0|1>]\n"
+    echo -e "Usage: build-jdk.sh --os <os> --arch <architecture> --debug-level <debug_level> [--variant <variant>] [--build-hsdis <0|1>] [--create-zip-files <0|1>]\n"
     echo -e "Arguments may be specified in any order. Positional arguments are also"
     echo -e "supported for backwards compatibility: build-jdk.sh os arch debug_level [variant] [build_hsdis]\n"
     echo -e "Examples:\n"
     echo "       build-jdk.sh --os windows --arch x86_64 --debug-level release --variant server --build-hsdis 0"
     echo "       build-jdk.sh --os windows --arch x86_64 --debug-level slowdebug --variant server --build-hsdis 1"
     echo "       build-jdk.sh --os windows --arch aarch64 --debug-level slowdebug --variant zero"
+    echo "       build-jdk.sh --os windows --arch x86_64 --debug-level release --create-zip-files 0"
     echo "       build-jdk.sh windows x86_64 slowdebug server 1"
 }
 
@@ -123,6 +124,7 @@ arch=""
 debug_level=""
 variant="server"
 build_hsdis=0
+create_zip_files=1
 
 # Parse arguments. Support both --prefixed flags (in any order) and the
 # legacy positional form (os arch debug_level [variant] [build_hsdis]).
@@ -139,6 +141,8 @@ if [[ "$1" == --* ]]; then
                 variant="$2"; shift 2;;
             --build-hsdis)
                 build_hsdis="$2"; shift 2;;
+            --create-zip-files)
+                create_zip_files="$2"; shift 2;;
             -h|--help)
                 print_usage; exit;;
             *)
@@ -234,14 +238,16 @@ git log -10 > repo_info.txt
 git status >> repo_info.txt
 git diff > repo_diff.txt
 
-zip -qru $images_zip .
+if [ $create_zip_files -ne 0 ]; then
+    zip -qru $images_zip .
 
-if [ -d "$JDK_ZIP_DEST" ]; then
-    log_message "Copying $images_zip to $JDK_ZIP_DEST"
-    cp $images_zip "$JDK_ZIP_DEST"
+    if [ -d "$JDK_ZIP_DEST" ]; then
+        log_message "Copying $images_zip to $JDK_ZIP_DEST"
+        cp $images_zip "$JDK_ZIP_DEST"
+    fi
+
+    mv $images_zip ../..
 fi
-
-mv $images_zip ../..
 cd -
 
 build_command="make test-image CONF=$build_conf LOG=$log_verbosity"
@@ -254,11 +260,13 @@ fi
 
 log_message "Zipping images/test into $images_test_zip"
 cd $build_conf_dir
-zip -qru $images_test_zip images/test
+if [ $create_zip_files -ne 0 ]; then
+    zip -qru $images_test_zip images/test
 
-if [ -d "$JDK_ZIP_DEST" ]; then
-    log_message "Copying $images_test_zip to $JDK_ZIP_DEST"
-    cp $images_test_zip "$JDK_ZIP_DEST"
+    if [ -d "$JDK_ZIP_DEST" ]; then
+        log_message "Copying $images_test_zip to $JDK_ZIP_DEST"
+        cp $images_test_zip "$JDK_ZIP_DEST"
+    fi
 fi
 
 cd -
@@ -272,7 +280,9 @@ fi
 
 log_message "Zipping support/test into $support_test_zip (switching from `pwd` to $build_conf_dir)"
 cd $build_conf_dir
-zip -qru $support_test_zip support/test
+if [ $create_zip_files -ne 0 ]; then
+    zip -qru $support_test_zip support/test
+fi
 cd -
 
 log_message "export JAVA_HOME=`pwd`/${built_jdk}"
