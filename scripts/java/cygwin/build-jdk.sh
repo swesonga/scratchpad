@@ -181,6 +181,17 @@ if [ -z "$os" ] || [ -z "$arch" ] || [ -z "$debug_level" ]; then
     exit 1
 fi
 
+log_message "Parsed arguments:
+  os                = $os
+  arch              = $arch
+  debug_level       = $debug_level
+  variant           = $variant
+  build_hsdis       = $build_hsdis
+  create_zip_files  = $create_zip_files
+  skip_images       = $skip_images
+  skip_test_image   = $skip_test_image
+  skip_jtreg_native = $skip_jtreg_native"
+
 llvm_path=/cygdrive/c/software/llvm/llvm-$arch
 log_root="build/mylogs"
 # use "debug" for a more detailed log
