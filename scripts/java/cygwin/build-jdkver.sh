@@ -173,11 +173,11 @@ if [[ "$2" == "--configure" ]]; then
 fi
 
 time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh \
-    --os $OS                                       \
-    --arch $TARGET_ARCH$TARGET_ARCH_SUFFIX         \
-    --debug-level $OPENJDK_DEBUG_LEVEL             \
-    --variant $OPENJDK_VARIANT                     \
-    --build-hsdis $BUILD_HSDIS
+    --os "$OS"                                     \
+    --arch "$TARGET_ARCH$TARGET_ARCH_SUFFIX"       \
+    --debug-level "$OPENJDK_DEBUG_LEVEL"           \
+    --variant "$OPENJDK_VARIANT"                   \
+    --build-hsdis "$BUILD_HSDIS"
 BUILD_EXIT_CODE=$?
 
 if [[ $BUILD_EXIT_CODE -ne 0 ]]; then

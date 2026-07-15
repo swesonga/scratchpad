@@ -132,31 +132,34 @@ skip_jtreg_native=0
 
 # Parse arguments. Support both --prefixed flags (in any order) and the
 # legacy positional form (os arch debug_level [variant] [build_hsdis]).
-if [[ "$1" == --* ]]; then
+if [[ "$1" == --* || "$1" == "-h" ]]; then
     while [ $# -gt 0 ]; do
-        case "$1" in
-            --os)
-                os="$2"; shift 2;;
-            --arch|--architecture)
-                arch="$2"; shift 2;;
-            --debug-level)
-                debug_level="$2"; shift 2;;
-            --variant)
-                variant="$2"; shift 2;;
-            --build-hsdis)
-                build_hsdis="$2"; shift 2;;
-            --create-zip-files)
-                create_zip_files="$2"; shift 2;;
-            --skip-images)
-                skip_images="$2"; shift 2;;
-            --skip-test-image)
-                skip_test_image="$2"; shift 2;;
-            --skip-jtreg-native)
-                skip_jtreg_native="$2"; shift 2;;
+        opt="$1"
+        case "$opt" in
+            --os|--arch|--architecture|--debug-level|--variant|--build-hsdis|--create-zip-files|--skip-images|--skip-test-image|--skip-jtreg-native)
+                if [ $# -lt 2 ]; then
+                    echo "Error: option '$opt' requires a value." >&2
+                    print_usage
+                    exit 1
+                fi
+                val="$2"
+                shift 2
+                case "$opt" in
+                    --os)                os="$val";;
+                    --arch|--architecture) arch="$val";;
+                    --debug-level)       debug_level="$val";;
+                    --variant)           variant="$val";;
+                    --build-hsdis)       build_hsdis="$val";;
+                    --create-zip-files)  create_zip_files="$val";;
+                    --skip-images)       skip_images="$val";;
+                    --skip-test-image)   skip_test_image="$val";;
+                    --skip-jtreg-native) skip_jtreg_native="$val";;
+                esac
+                ;;
             -h|--help)
-                print_usage; exit;;
+                print_usage; exit 0;;
             *)
-                echo "Unknown option: $1"
+                echo "Unknown option: $opt" >&2
                 print_usage; exit 1;;
         esac
     done
