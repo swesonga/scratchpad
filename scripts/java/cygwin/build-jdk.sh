@@ -256,13 +256,13 @@ if [ $build_hsdis -ne 0 ]; then
     fi
 fi
 
-log_message "Zipping the JDK in $built_jdk into $images_zip"
 cd $built_jdk
 git log -10 > repo_info.txt
 git status >> repo_info.txt
 git diff > repo_diff.txt
 
 if [ $create_zip_files -ne 0 ]; then
+    log_message "Zipping the JDK in $built_jdk into $images_zip"
     zip -qru $images_zip .
 
     if [ -d "$JDK_ZIP_DEST" ]; then
@@ -271,6 +271,8 @@ if [ $create_zip_files -ne 0 ]; then
     fi
 
     mv $images_zip ../..
+else
+    log_message "Skipping JDK zip creation (--create-zip-files 0)"
 fi
 cd -
 
@@ -282,15 +284,17 @@ else
     $build_command
 fi
 
-log_message "Zipping images/test into $images_test_zip"
 cd $build_conf_dir
 if [ $create_zip_files -ne 0 ]; then
+    log_message "Zipping images/test into $images_test_zip"
     zip -qru $images_test_zip images/test
 
     if [ -d "$JDK_ZIP_DEST" ]; then
         log_message "Copying $images_test_zip to $JDK_ZIP_DEST"
         cp $images_test_zip "$JDK_ZIP_DEST"
     fi
+else
+    log_message "Skipping images/test zip creation (--create-zip-files 0)"
 fi
 
 cd -
@@ -302,10 +306,12 @@ else
     $build_command
 fi
 
-log_message "Zipping support/test into $support_test_zip (switching from `pwd` to $build_conf_dir)"
 cd $build_conf_dir
 if [ $create_zip_files -ne 0 ]; then
+    log_message "Zipping support/test into $support_test_zip (switching from `pwd` to $build_conf_dir)"
     zip -qru $support_test_zip support/test
+else
+    log_message "Skipping support/test zip creation (--create-zip-files 0)"
 fi
 cd -
 
