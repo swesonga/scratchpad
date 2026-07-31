@@ -38,7 +38,7 @@ def process_concat(directory, concat_hashes, force=False):
     if os.path.exists(concat_path) and not force:
         print(f"{concat_path} already exists; use --force to overwrite.")
         return
-    with open(concat_path, "w") as concat_file:
+    with open(concat_path, "w", encoding="utf-8") as concat_file:
         for root, _, files in os.walk(directory):
             for filename in sorted(files):
                 if filename.endswith(".sha256.txt"):
