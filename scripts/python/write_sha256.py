@@ -30,7 +30,7 @@ def process_per_file(directory, force=False):
             end_time = time.time()
             duration = end_time - start_time
             now_time_end = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            print(f"[{now_time_end}] Finished: {sha256sum} (Duration: {duration:.2f}s)")
+            print(f"[{now_time_end}]    Digest: {sha256sum} (Duration: {duration:.2f}s)")
 
 
 def process_concat(directory, concat_hashes, force=False):
