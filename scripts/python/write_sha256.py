@@ -12,10 +12,16 @@ def compute_sha256(filepath):
 import time
 from datetime import datetime
 
-def process_per_file(directory, force=False):
+def is_appledouble(filename):
+    # AppleDouble resource-fork files created by macOS on non-HFS volumes
+    return filename.startswith("._")
+
+def process_per_file(directory, force=False, include_appledoubles=False):
     for root, _, files in os.walk(directory):
         for filename in sorted(files):
             if filename.endswith(".sha256.txt"):
+                continue
+            if not include_appledoubles and is_appledouble(filename):
                 continue
             filepath = os.path.join(root, filename)
             hashfile = filepath + ".sha256.txt"
@@ -33,7 +39,7 @@ def process_per_file(directory, force=False):
             print(f"[{now_time_end}]    Digest: {sha256sum} (Duration: {duration:.2f}s)")
 
 
-def process_concat(directory, concat_hashes, force=False):
+def process_concat(directory, concat_hashes, force=False, include_appledoubles=False):
     concat_path = os.path.join(directory, concat_hashes)
     if os.path.exists(concat_path) and not force:
         print(f"{concat_path} already exists; use --force to overwrite.")
@@ -42,6 +48,8 @@ def process_concat(directory, concat_hashes, force=False):
         for root, _, files in os.walk(directory):
             for filename in sorted(files):
                 if filename.endswith(".sha256.txt"):
+                    continue
+                if not include_appledoubles and is_appledouble(filename):
                     continue
                 filepath = os.path.join(root, filename)
                 if os.path.abspath(filepath) == os.path.abspath(concat_path):
@@ -74,8 +82,12 @@ if __name__ == "__main__":
                         metavar="FILENAME",
                         help="Write all hashes to a single file (default: hashes.sha256.txt) "
                              "instead of one file per input, then write its digest to a separate file")
+    parser.add_argument("--include-appledoubles", action="store_true",
+                        help="Include AppleDouble (._*) files, which are skipped by default")
     args = parser.parse_args()
     if args.concat_hashes:
-        process_concat(args.directory, args.concat_hashes, force=args.force)
+        process_concat(args.directory, args.concat_hashes, force=args.force,
+                       include_appledoubles=args.include_appledoubles)
     else:
-        process_per_file(args.directory, force=args.force)
+        process_per_file(args.directory, force=args.force,
+                         include_appledoubles=args.include_appledoubles)
