@@ -31,7 +31,7 @@ def process_per_file(directory, force=False, include_appledoubles=False):
             now_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             print(f"[{now_time}] Processing: {filepath}")
             sha256sum = compute_sha256(filepath)
-            with open(hashfile, "w") as f:
+            with open(hashfile, "w", newline="\n") as f:
                 f.write(sha256sum + "\n")
             end_time = time.time()
             duration = end_time - start_time
@@ -44,7 +44,7 @@ def process_concat(directory, concat_hashes, force=False, include_appledoubles=F
     if os.path.exists(concat_path) and not force:
         print(f"{concat_path} already exists; use --force to overwrite.")
         return
-    with open(concat_path, "w", encoding="utf-8") as concat_file:
+    with open(concat_path, "w", encoding="utf-8", newline="\n") as concat_file:
         for root, _, files in os.walk(directory):
             for filename in sorted(files):
                 if filename.endswith(".sha256.txt"):
@@ -68,7 +68,7 @@ def process_concat(directory, concat_hashes, force=False, include_appledoubles=F
     # Write the digest of the concatenated hash file itself
     digest = compute_sha256(concat_path)
     digest_file = concat_path + ".sha256.txt"
-    with open(digest_file, "w") as f:
+    with open(digest_file, "w", newline="\n") as f:
         f.write(digest + "\n")
     print(f"Wrote combined hashes to {concat_path}")
     print(f"Wrote digest of combined file to {digest_file}: {digest}")
