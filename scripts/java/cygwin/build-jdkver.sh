@@ -172,6 +172,7 @@ if [[ "$2" == "--configure" ]]; then
     fi
 fi
 
+echo -e "\nStarting build-jdk script\n"
 time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/build-jdk.sh \
     --os "$OS"                                     \
     --arch "$TARGET_ARCH$TARGET_ARCH_SUFFIX"       \
