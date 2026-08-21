@@ -192,6 +192,8 @@ log_message "Parsed arguments:
   skip_test_image   = $skip_test_image
   skip_jtreg_native = $skip_jtreg_native"
 
+echo -e "\n"
+
 llvm_path=/cygdrive/c/software/llvm/llvm-$arch
 log_root="build/mylogs"
 # use "debug" for a more detailed log
