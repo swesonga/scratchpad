@@ -72,6 +72,29 @@ for required_dir in "$built_jdk" "${build_conf_dir}/images/test" "${build_conf_d
     fi
 done
 
+output_paths=(
+    "${built_jdk}/repo_info.txt"
+    "${built_jdk}/repo_diff.txt"
+    "${built_jdk}/${images_zip}"
+    "${build_conf_dir}/${images_zip}"
+    "${build_conf_dir}/${images_test_zip}"
+    "${build_conf_dir}/${support_test_zip}"
+)
+
+if [ -d "$JDK_ZIP_DEST" ]; then
+    output_paths+=(
+        "${JDK_ZIP_DEST}/${images_zip}"
+        "${JDK_ZIP_DEST}/${images_test_zip}"
+    )
+fi
+
+for output_path in "${output_paths[@]}"; do
+    if [ -e "$output_path" ]; then
+        echo "Error: refusing to overwrite existing file: $output_path" >&2
+        exit 1
+    fi
+done
+
 git log -10 > "${built_jdk}/repo_info.txt"
 git status >> "${built_jdk}/repo_info.txt"
 git diff > "${built_jdk}/repo_diff.txt"
