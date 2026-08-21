@@ -221,17 +221,21 @@ images_test_zip="${build_conf}-${git_hash}-${timestamp}-images-test.zip"
 # build_command="make product-images test-image CONF=$build_conf LOG=$log_verbosity"
 
 build_command="make images CONF=$build_conf LOG=$log_verbosity"
-log_message "Building images using command: $build_command"
-if [ $redirect_output -ne 0 ]; then
-    $build_command > $images_log 2>&1
+if [ $skip_images -eq 0 ]; then
+    log_message "Building images using command: $build_command"
+    if [ $redirect_output -ne 0 ]; then
+        $build_command > $images_log 2>&1
+    else
+        $build_command
+    fi
 else
-    $build_command
+    log_message "Skipping images build (--skip-images 1)"
 fi
 
 built_jdk="build/${build_conf}/images/jdk/"
 build_conf_dir="build/${build_conf}"
 
-if [ $build_hsdis -ne 0 ]; then
+if [ $skip_images -eq 0 ] && [ $build_hsdis -ne 0 ]; then
     hsdis_build_log="$log_root/hsdis_build-${timestamp}.txt"
     hsdis_install_log="$log_root/hsdis_install-${timestamp}.txt"
 
@@ -256,64 +260,74 @@ if [ $build_hsdis -ne 0 ]; then
     fi
 fi
 
-cd $built_jdk
-git log -10 > repo_info.txt
-git status >> repo_info.txt
-git diff > repo_diff.txt
+if [ $skip_images -eq 0 ]; then
+    cd $built_jdk
+    git log -10 > repo_info.txt
+    git status >> repo_info.txt
+    git diff > repo_diff.txt
 
-if [ $create_zip_files -ne 0 ]; then
-    log_message "Zipping the JDK in $built_jdk into $images_zip"
-    zip -qru $images_zip .
+    if [ $create_zip_files -ne 0 ]; then
+        log_message "Zipping the JDK in $built_jdk into $images_zip"
+        zip -qru $images_zip .
 
-    if [ -d "$JDK_ZIP_DEST" ]; then
-        log_message "Copying $images_zip to $JDK_ZIP_DEST"
-        cp $images_zip "$JDK_ZIP_DEST"
+        if [ -d "$JDK_ZIP_DEST" ]; then
+            log_message "Copying $images_zip to $JDK_ZIP_DEST"
+            cp $images_zip "$JDK_ZIP_DEST"
+        fi
+
+        mv $images_zip ../..
+    else
+        log_message "Skipping JDK zip creation (--create-zip-files 0)"
     fi
-
-    mv $images_zip ../..
-else
-    log_message "Skipping JDK zip creation (--create-zip-files 0)"
+    cd -
 fi
-cd -
 
 build_command="make test-image CONF=$build_conf LOG=$log_verbosity"
-log_message "Building test image using command: $build_command"
-if [ $redirect_output -ne 0 ]; then
-    $build_command > $test_image_log 2>&1
-else
-    $build_command
-fi
-
-cd $build_conf_dir
-if [ $create_zip_files -ne 0 ]; then
-    log_message "Zipping images/test into $images_test_zip"
-    zip -qru $images_test_zip images/test
-
-    if [ -d "$JDK_ZIP_DEST" ]; then
-        log_message "Copying $images_test_zip to $JDK_ZIP_DEST"
-        cp $images_test_zip "$JDK_ZIP_DEST"
+if [ $skip_test_image -eq 0 ]; then
+    log_message "Building test image using command: $build_command"
+    if [ $redirect_output -ne 0 ]; then
+        $build_command > $test_image_log 2>&1
+    else
+        $build_command
     fi
+
+    cd $build_conf_dir
+    if [ $create_zip_files -ne 0 ]; then
+        log_message "Zipping images/test into $images_test_zip"
+        zip -qru $images_test_zip images/test
+
+        if [ -d "$JDK_ZIP_DEST" ]; then
+            log_message "Copying $images_test_zip to $JDK_ZIP_DEST"
+            cp $images_test_zip "$JDK_ZIP_DEST"
+        fi
+    else
+        log_message "Skipping images/test zip creation (--create-zip-files 0)"
+    fi
+    cd -
 else
-    log_message "Skipping images/test zip creation (--create-zip-files 0)"
+    log_message "Skipping test image build (--skip-test-image 1)"
 fi
 
-cd -
 build_command="make build-test-jdk-jtreg-native CONF=$build_conf LOG=$log_verbosity"
-log_message "Building jtreg native binaries using command: $build_command"
-if [ $redirect_output -ne 0 ]; then
-    $build_command > $jtreg_native_log 2>&1
-else
-    $build_command
-fi
+if [ $skip_jtreg_native -eq 0 ]; then
+    log_message "Building jtreg native binaries using command: $build_command"
+    if [ $redirect_output -ne 0 ]; then
+        $build_command > $jtreg_native_log 2>&1
+    else
+        $build_command
+    fi
 
-cd $build_conf_dir
-if [ $create_zip_files -ne 0 ]; then
-    log_message "Zipping support/test into $support_test_zip (switching from `pwd` to $build_conf_dir)"
-    zip -qru $support_test_zip support/test
+    cd $build_conf_dir
+    if [ $create_zip_files -ne 0 ]; then
+        log_message "Zipping support/test into $support_test_zip (switching from `pwd` to $build_conf_dir)"
+        zip -qru $support_test_zip support/test
+    else
+        log_message "Skipping support/test zip creation (--create-zip-files 0)"
+    fi
+    cd -
 else
-    log_message "Skipping support/test zip creation (--create-zip-files 0)"
+    log_message "Skipping jtreg native build (--skip-jtreg-native 1)"
 fi
-cd -
 
 log_message "export JAVA_HOME=`pwd`/${built_jdk}"
 log_message "Build complete"
