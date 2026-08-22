@@ -72,7 +72,7 @@ export jdk25u_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/2026-07/$OS-jdk2
 export jdk25u_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk25u
 # googletest branch: v1.14.0
 
-export tip_BOOT_JDK_TAG=jdk-26+35
+export tip_BOOT_JDK_TAG=jdk-26.0.2+10
 export tip_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/adoptium/$tip_BOOT_JDK_TAG
 export tip_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk
 export tip_OPENJDK_REPO_PATH=$PATHPREFIX/java/forks/openjdk/jdk
