@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#  PATHPREFIX="/home/saint"
+#  PATHPREFIX="/Users/saint"
+#  PATHPREFIX="/c"
+#  PATHPREFIX="/cygdrive/c"
+#  time $PATHPREFIX/repos/scratchpad/scripts/java/cygwin/create-zips-for-timestamp.sh --os windows --arch x86_64 --debug-level slowdebug --variant server --timestamp 2026-08-19_151946manual
+
 set -e
 
 function log_message()
