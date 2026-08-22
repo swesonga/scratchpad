@@ -77,7 +77,7 @@ export tip_BOOT_JDK_PATH=$PATHPREFIX/java/binaries/jdk/$ARCH/adoptium/$tip_BOOT_
 export tip_OPENJDK_REPO_PATH=$PATHPREFIX/java/ms/openjdk-jdk
 # googletest branch: v1.14.0
 
-export JTREG_VER=8.2.1+1
+export JTREG_VER=8.3+1
 TARGET_ARCH_SUFFIX=
 
 # Set variables based on JDK version argument (default to jdk25u)
@@ -149,7 +149,7 @@ EXTRA_CONFIGURE_ARGS="$OS_EXTRA_CONFIGURE_ARGS"
 
 # Change $TARGET_ARCH if you want to build for a different architecture than the current one
 TARGET_ARCH="$BUILD_MACHINE"
-TARGET_ARCH="aarch64"
+#TARGET_ARCH="aarch64"
 
 if [[ "$OS" == "windows" && "$BUILD_MACHINE" == "x86_64" && "$TARGET_ARCH" == "aarch64" ]]; then
     EXTRA_CONFIGURE_ARGS="$WIN_AARCH64_CROSS_COMPILE_EXTRA_CONFIGURE_ARGS"
