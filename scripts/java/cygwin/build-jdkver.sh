@@ -28,8 +28,12 @@ case $BUILD_MACHINE in
     x86_64)
         ARCH="x64"
         ;;
-    aarch64|arm64)
+    aarch64)
         ARCH="aarch64"
+        ;;
+    arm64)
+        ARCH="aarch64"
+        BUILDARCH="aarch64"
         ;;
     *)
         echo "Unsupported architecture: $ARCH"
