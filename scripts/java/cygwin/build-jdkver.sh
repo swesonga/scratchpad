@@ -176,6 +176,12 @@ if [[ "$2" == "--configure" ]]; then
             --with-boot-jdk=$BOOT_JDK_PATH           \
             $EXTRA_CONFIGURE_ARGS
     fi
+
+    CONFIGURE_EXIT_CODE=$?
+    if [[ $CONFIGURE_EXIT_CODE -ne 0 ]]; then
+        echo -e "\nconfigure failed with exit code $CONFIGURE_EXIT_CODE" >&2
+        exit $CONFIGURE_EXIT_CODE
+    fi
 fi
 
 echo -e "\nStarting build-jdk script\n"
