@@ -23,7 +23,7 @@ check_commit() {
     local commit="$1"
     local rc
 
-    if git grep -Il $'\r' "$commit" --; then
+    if git -C "$repo_root" grep -Il $'\r' "$commit" --; then
         echo "FAIL: CR characters found in $commit"
         return 1
     else
@@ -44,23 +44,35 @@ if [ "$#" -eq 1 ] && { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
 fi
 
 if [ "$#" -eq 1 ]; then
-    check_commit "$1"
-    exit $?
-fi
-
-if [ "$#" -ne 2 ] || [ "$1" != "--recent" ]; then
+    mode="commit"
+    commit="$1"
+elif [ "$#" -eq 2 ] && [ "$1" = "--recent" ]; then
+    mode="recent"
+    count="$2"
+else
     usage >&2
     exit 2
 fi
 
-count="$2"
-if ! [[ "$count" =~ ^[1-9][0-9]*$ ]]; then
+if [ "$mode" = "recent" ] && ! [[ "$count" =~ ^[1-9][0-9]*$ ]]; then
     echo "ERROR: count must be a positive integer." >&2
     usage >&2
     exit 2
 fi
 
-commits="$(git rev-list --max-count="$count" HEAD)"
+repo_root="$(git rev-parse --show-toplevel)"
+rc=$?
+if [ "$rc" -ne 0 ]; then
+    echo "ERROR: unable to determine the Git repository root." >&2
+    exit "$rc"
+fi
+
+if [ "$mode" = "commit" ]; then
+    check_commit "$commit"
+    exit $?
+fi
+
+commits="$(git -C "$repo_root" rev-list --max-count="$count" HEAD)"
 rc=$?
 if [ "$rc" -ne 0 ]; then
     echo "ERROR: unable to list recent commits." >&2
