@@ -3,8 +3,8 @@
 usage() {
     cat <<EOF
 Usage:
-  $0 [--modified-only] [--remove-cr] <commit>
-  $0 [--modified-only] [--remove-cr] --recent <count>
+  $0 [--modified-only] [--remove-cr] [--allow-untracked] <commit>
+  $0 [--modified-only] [--remove-cr] [--allow-untracked] --recent <count>
 
 Checks files in a Git commit for carriage return (CR) characters. Inspect one
 commit directly, or inspect a number of recent commits from newest to oldest.
@@ -19,6 +19,9 @@ Options:
                    to its first parent.
   --remove-cr      Remove CR characters from matching files in the current
                    worktree. Requires a clean worktree and index.
+  --allow-untracked
+                   With --remove-cr, allow untracked files while still
+                   rejecting staged or unstaged changes to tracked files.
   --recent         Inspect recent commits starting with HEAD.
   -h, --help       Display this help message.
 EOF
@@ -100,6 +103,7 @@ check_commit() {
 mode="commit"
 modified_only=false
 remove_cr=false
+allow_untracked=false
 recent_seen=false
 arguments=()
 declare -A removal_files=()
@@ -115,6 +119,9 @@ while [ "$#" -gt 0 ]; do
             ;;
         --remove-cr)
             remove_cr=true
+            ;;
+        --allow-untracked)
+            allow_untracked=true
             ;;
         --recent)
             if [ "$recent_seen" = true ]; then
@@ -157,6 +164,11 @@ else
     commit="${arguments[0]}"
 fi
 
+if [ "$allow_untracked" = true ] && [ "$remove_cr" != true ]; then
+    echo "ERROR: --allow-untracked requires --remove-cr." >&2
+    exit 2
+fi
+
 repo_root="$(git rev-parse --show-toplevel)"
 rc=$?
 if [ "$rc" -ne 0 ]; then
@@ -165,8 +177,17 @@ if [ "$rc" -ne 0 ]; then
 fi
 
 if [ "$remove_cr" = true ]; then
-    if [ -n "$(git -C "$repo_root" status --porcelain --untracked-files=normal)" ]; then
-        echo "ERROR: --remove-cr requires a clean worktree and index." >&2
+    untracked_mode=normal
+    if [ "$allow_untracked" = true ]; then
+        untracked_mode=no
+    fi
+
+    if [ -n "$(git -C "$repo_root" status --porcelain --untracked-files="$untracked_mode")" ]; then
+        if [ "$allow_untracked" = true ]; then
+            echo "ERROR: --remove-cr requires no staged or unstaged changes to tracked files." >&2
+        else
+            echo "ERROR: --remove-cr requires a clean worktree and index." >&2
+        fi
         exit 1
     fi
 
