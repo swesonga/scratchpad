@@ -16,12 +16,17 @@ def is_appledouble(filename):
     # AppleDouble resource-fork files created by macOS on non-HFS volumes
     return filename.startswith("._")
 
-def process_per_file(directory, force=False, include_appledoubles=False):
+def is_ds_store(filename):
+    return filename == ".DS_Store"
+
+def process_per_file(directory, force=False, include_appledoubles=False, include_ds_store=False):
     for root, _, files in os.walk(directory):
         for filename in sorted(files):
             if filename.endswith(".sha256.txt"):
                 continue
             if not include_appledoubles and is_appledouble(filename):
+                continue
+            if not include_ds_store and is_ds_store(filename):
                 continue
             filepath = os.path.join(root, filename)
             hashfile = filepath + ".sha256.txt"
@@ -39,7 +44,8 @@ def process_per_file(directory, force=False, include_appledoubles=False):
             print(f"[{now_time_end}]                 {sha256sum} (Duration: {duration:.2f}s)\n")
 
 
-def process_concat(directory, concat_hashes, force=False, include_appledoubles=False):
+def process_concat(directory, concat_hashes, force=False, include_appledoubles=False,
+                   include_ds_store=False):
     concat_path = os.path.join(directory, concat_hashes)
     if os.path.exists(concat_path) and not force:
         print(f"{concat_path} already exists; use --force to overwrite.")
@@ -50,6 +56,8 @@ def process_concat(directory, concat_hashes, force=False, include_appledoubles=F
                 if filename.endswith(".sha256.txt"):
                     continue
                 if not include_appledoubles and is_appledouble(filename):
+                    continue
+                if not include_ds_store and is_ds_store(filename):
                     continue
                 filepath = os.path.join(root, filename)
                 if os.path.abspath(filepath) == os.path.abspath(concat_path):
@@ -84,10 +92,14 @@ if __name__ == "__main__":
                              "instead of one file per input, then write its digest to a separate file")
     parser.add_argument("--include-appledoubles", action="store_true",
                         help="Include AppleDouble (._*) files, which are skipped by default")
+    parser.add_argument("--include-ds-store", action="store_true",
+                        help="Include .DS_Store files, which are skipped by default")
     args = parser.parse_args()
     if args.concat_hashes:
         process_concat(args.directory, args.concat_hashes, force=args.force,
-                       include_appledoubles=args.include_appledoubles)
+                       include_appledoubles=args.include_appledoubles,
+                       include_ds_store=args.include_ds_store)
     else:
         process_per_file(args.directory, force=args.force,
-                         include_appledoubles=args.include_appledoubles)
+                         include_appledoubles=args.include_appledoubles,
+                         include_ds_store=args.include_ds_store)
