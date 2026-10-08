@@ -32,6 +32,14 @@ Options:
 EOF
 }
 
+remove_cr_from_files() {
+    # -p reads each file line by line and prints every processed line.
+    # -i writes that output back to each input file in place.
+    # -e supplies the Perl expression; s/\r//g removes every CR on each line.
+    # -- ends Perl option parsing so filenames beginning with "-" are safe.
+    perl -pi -e 's/\r//g' -- "$@"
+}
+
 check_commit() {
     local commit="$1"
     local parent
@@ -185,7 +193,7 @@ if [ "$remove_cr_files" = true ]; then
         filesystem_files["$path"]=1
     done
 
-    perl -pi -e 's/\r//g' -- "${!filesystem_files[@]}"
+    remove_cr_from_files "${!filesystem_files[@]}"
     rc=$?
     if [ "$rc" -ne 0 ]; then
         echo "ERROR: failed to remove CR characters." >&2
@@ -293,7 +301,7 @@ if [ "$remove_cr" = true ]; then
 
     (
         cd "$repo_root" || exit 1
-        perl -pi -e 's/\r//g' -- "${!removal_files[@]}"
+        remove_cr_from_files "${!removal_files[@]}"
     )
     rc=$?
     if [ "$rc" -ne 0 ]; then
