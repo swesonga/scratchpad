@@ -5,6 +5,7 @@ usage() {
 Usage:
   $0 [--modified-only] [--remove-cr] [--allow-untracked] <commit>
   $0 [--modified-only] [--remove-cr] [--allow-untracked] --recent <count>
+  $0 --remove-cr-files <path>...
 
 Checks files in a Git commit for carriage return (CR) characters. Inspect one
 commit directly, or inspect a number of recent commits from newest to oldest.
@@ -19,6 +20,10 @@ Options:
                    to its first parent.
   --remove-cr      Remove CR characters from matching files in the current
                    worktree. Requires a clean worktree and index.
+  --remove-cr-files
+                   Remove CR characters from the supplied files without
+                   requiring a Git repository. Shell-expanded full-path globs
+                   are accepted, for example: --remove-cr-files /tmp/*.txt
   --allow-untracked
                    With --remove-cr, allow untracked files while still
                    rejecting staged or unstaged changes to tracked files.
@@ -103,6 +108,7 @@ check_commit() {
 mode="commit"
 modified_only=false
 remove_cr=false
+remove_cr_files=false
 allow_untracked=false
 recent_seen=false
 arguments=()
@@ -119,6 +125,10 @@ while [ "$#" -gt 0 ]; do
             ;;
         --remove-cr)
             remove_cr=true
+            ;;
+        --remove-cr-files)
+            mode="files"
+            remove_cr_files=true
             ;;
         --allow-untracked)
             allow_untracked=true
@@ -147,6 +157,44 @@ while [ "$#" -gt 0 ]; do
     esac
     shift
 done
+
+if [ "$remove_cr_files" = true ]; then
+    if [ "${#arguments[@]}" -eq 0 ]; then
+        echo "ERROR: --remove-cr-files requires at least one file." >&2
+        usage >&2
+        exit 2
+    fi
+
+    if [ "$modified_only" = true ] || [ "$remove_cr" = true ] ||
+        [ "$allow_untracked" = true ] || [ "$recent_seen" = true ]; then
+        echo "ERROR: --remove-cr-files cannot be combined with Git checking options." >&2
+        exit 2
+    fi
+
+    if ! command -v perl >/dev/null 2>&1; then
+        echo "ERROR: --remove-cr-files requires perl." >&2
+        exit 1
+    fi
+
+    declare -A filesystem_files=()
+    for path in "${arguments[@]}"; do
+        if [ ! -f "$path" ]; then
+            echo "ERROR: file not found or not a regular file: $path" >&2
+            exit 1
+        fi
+        filesystem_files["$path"]=1
+    done
+
+    perl -pi -e 's/\r//g' -- "${!filesystem_files[@]}"
+    rc=$?
+    if [ "$rc" -ne 0 ]; then
+        echo "ERROR: failed to remove CR characters." >&2
+        exit "$rc"
+    fi
+
+    echo "REMOVED: CR characters from ${#filesystem_files[@]} file(s)"
+    exit 0
+fi
 
 if [ "${#arguments[@]}" -ne 1 ]; then
     usage >&2
