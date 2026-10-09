@@ -19,6 +19,11 @@ def is_appledouble(filename):
 def is_ds_store(filename):
     return filename == ".DS_Store"
 
+def print_processing(filepath, timestamp):
+    prefix = f"[{timestamp}] "
+    print(f"{prefix}Processing: {filepath}")
+    print(f"{prefix}{'Size':>10}: {os.path.getsize(filepath):,} bytes")
+
 def process_per_file(directory, force=False, include_appledoubles=False, include_ds_store=False):
     for root, _, files in os.walk(directory):
         for filename in sorted(files):
@@ -34,7 +39,7 @@ def process_per_file(directory, force=False, include_appledoubles=False, include
                 continue  # Skip if hash file already exists unless force is set
             start_time = time.time()
             now_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            print(f"[{now_time}] Processing: {filepath}")
+            print_processing(filepath, now_time)
             sha256sum = compute_sha256(filepath)
             with open(hashfile, "w", newline="\n") as f:
                 f.write(sha256sum + "\n")
@@ -64,7 +69,7 @@ def process_concat(directory, concat_hashes, force=False, include_appledoubles=F
                     continue
                 start_time = time.time()
                 now_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                print(f"[{now_time}] Processing: {filepath}")
+                print_processing(filepath, now_time)
                 sha256sum = compute_sha256(filepath)
                 relpath = os.path.relpath(filepath, directory)
                 concat_file.write(f"{sha256sum}  {relpath}\n")
