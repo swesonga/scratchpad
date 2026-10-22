@@ -1,11 +1,12 @@
 import argparse
+import sys
 from zipfile import BadZipFile, ZipFile
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="List files in a ZIP archive from largest to smallest "
-                    "by uncompressed size in bytes."
+                    "by uncompressed size in bytes. Output uses UTF-8."
     )
     parser.add_argument("zip_path", help="Path to the ZIP file")
     args = parser.parse_args()
@@ -20,6 +21,7 @@ def main() -> None:
     except (OSError, BadZipFile) as error:
         parser.error(str(error))
 
+    sys.stdout.reconfigure(encoding="utf-8")
     for entry in files:
         print(f"{entry.file_size}\t{entry.filename}")
 
