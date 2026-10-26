@@ -24,6 +24,17 @@ esac
 
 # Detect current architecture
 BUILD_MACHINE=$(uname -m)
+if [[ "$OS" == "windows" ]]; then
+    # Match OpenJDK's config.guess when Cygwin runs under x64 emulation.
+    case ${PROCESSOR_IDENTIFIER%% *} in
+        ARMv8)
+            BUILD_MACHINE="aarch64"
+            ;;
+        intel64|Intel64|INTEL64|em64t|EM64T|amd64|AMD64|8664|x86_64)
+            BUILD_MACHINE="x86_64"
+            ;;
+    esac
+fi
 case $BUILD_MACHINE in
     x86_64)
         ARCH="x64"
@@ -32,11 +43,11 @@ case $BUILD_MACHINE in
         ARCH="aarch64"
         ;;
     arm64)
+        BUILD_MACHINE="aarch64"
         ARCH="aarch64"
-        BUILDARCH="aarch64"
         ;;
     *)
-        echo "Unsupported architecture: $ARCH"
+        echo "Unsupported architecture: $BUILD_MACHINE" >&2
         exit 1
         ;;
 esac
