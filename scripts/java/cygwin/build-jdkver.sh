@@ -146,7 +146,7 @@ export OPENJDK_VARIANT=server
 export BUILD_HSDIS=0
 
 echo -e "\nChanging current directory to $OPENJDK_REPO_PATH\n"
-cd $OPENJDK_REPO_PATH
+cd "$OPENJDK_REPO_PATH" || exit 1
 
 LLVM_PATH=$PATHPREFIX/repos/llvm/llvm-project/build_llvm_AArch64/install_local_release_21.x
 LLVM_EXTRA_CONFIGURE_ARGS="--with-hsdis=llvm --with-llvm=$LLVM_PATH"
